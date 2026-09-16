@@ -106,6 +106,29 @@ a colleague both grew up playing. Delivered:
   original link-checker bug pattern predicts and the old test wouldn't
   have caught.
 
+## Narrative pages (Brian's request, same day)
+
+Two long-form pages turn the tables into something a casual fan reads:
+
+- **Why This Exists** (`why.html`, first in the nav) - Brian's own
+  motivation, ghostwritten in his first-person voice from what he
+  described and meant for him to edit: the 2025 Patriots hunch (the data
+  agrees), the '85 Bears (2nd all-time), the Manning Colts, the Patriots
+  dynasty, and the 1990s Cowboys' absence from the top (four straight
+  seasons rated 18th-27th - sustained, not peaked).
+- **What It All Means** (`what-it-means.html`, after Methodology) - a
+  Sports-Illustrated-style walk through the top teams, the best that
+  never won, the weakest champions, the perfect-season paradox, the
+  eras, the franchises, and the Vikings. No quotes; every claim is either
+  well-established history or a number from this site's tables.
+
+Because prose can't be regenerated from data, `tests/test_narrative_claims.py`
+pins every load-bearing number in both pages to the data (33 checks).
+Writing those tests caught four factual errors in the first draft
+before anything shipped - see the BUILD_PLAN decision log for the list.
+That's the strongest argument this project has produced for testing
+prose the same way it tests code.
+
 ## What's carried forward
 
 - Roster Quality and Coach Strength Entering Season descriptive
@@ -115,6 +138,8 @@ a colleague both grew up playing. Delivered:
   escalate by round).
 - A dedicated NVDA/JAWS pass across every page type, beyond Brian's own
   spot-check.
+- Brian's review of the first-person "Why This Exists" page - it's his
+  voice and his story, drafted from a paragraph of description.
 
 ## Recommended next step
 

@@ -254,6 +254,8 @@ def render_all(out_dir: Path = OUT_DIR):
     render("index.html", out_dir / "index.html", root="")
     render("methodology.html", out_dir / "methodology.html", root="")
     render("electric_football.html", out_dir / "electric-football.html", root="")
+    render("why.html", out_dir / "why.html", root="")
+    render("what_it_means.html", out_dir / "what-it-means.html", root="")
 
     # --- seasons index ---
     by_decade = {}

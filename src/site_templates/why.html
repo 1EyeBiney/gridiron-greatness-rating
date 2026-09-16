@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block page_title %}Why This Exists{% endblock %}
+{% block content %}
+<h1>Why This Exists</h1>
+<p class="lede">A hunch, a favorite team, and a question about how you'd even compare a 1985 team to a 2025 one.</p>
+
+<h2>It started with a hunch</h2>
+<p>Going into the most recent Super Bowl, I had a feeling New England was a weaker opponent than a 14-3 record
+made them look - not a bad team, but not the kind of team that usually gets to that game. I had them somewhere
+around third-best in the league in my head. I wanted to know if the numbers agreed, and I didn't want a rating that
+just counted wins. I wanted one that knew who you beat, by how much, and how good those teams actually were.</p>
+<p>The model here rated that Patriots team <strong>fifth in the league</strong> that season, a couple of spots
+below where I had them - so my hunch was right, and if anything a little generous. Of the 112 teams that have
+played in a Super Bowl since 1970, about three-quarters were rated stronger going in than the 2025 Patriots were.
+Seattle, rated the best team in football that year and one of the top twenty team-seasons of the entire post-merger
+era, won 29-13. The gap between the two teams was one of the fifteen largest in Super Bowl history. That's the
+first thing this project told me, and it told me before I'd built anything to look at other than a table.</p>
+
+<h2>Then I wanted to know about my teams</h2>
+<p>I'm a Bears fan, which means I'm an <strong>1985 Bears</strong> fan, and I wanted to see how they'd hold up
+against every other great team since the merger without anybody's memory doing the grading. They come out
+<strong>second of all 1,669 team-seasons</strong>, behind only the 1996 Packers - a defense rated two-and-a-third
+standard deviations above that year's league, one loss all season, a 46-10 Super Bowl. I'll take it.</p>
+<p>The <strong>Manning Colts</strong> surprised me. Their best team by this measure wasn't the one that won the
+Super Bowl - the 2006 champions rate as only the fifth-best Colts team of that run. The peak was 2004, a team that
+lost in the divisional round in New England and never got the chance to prove it. That's a pattern you'll see a lot
+on this site: the trophy and the strength are two different things, and the site keeps them as two different
+numbers on purpose.</p>
+<p>And the <strong>Patriots through the whole run</strong>: nine of the top hundred team-seasons since 1970 are
+Patriots teams, more than any franchise except the 49ers. The 2007 team is eighth all-time and didn't win. The
+2004 team is fourteenth and did. If you want the argument about which one was better, the numbers are on the
+Super Bowl pages.</p>
+
+<h2>What comparing across eras actually means here</h2>
+<p>Every rating on this site is measured against that team's own season - how far above or below the league that
+year. So a 2.8 in 1985 and a 2.3 in 2025 are the same <em>kind</em> of number: standard deviations above average.
+That's what makes a 1985 team and a 2025 team comparable at all.</p>
+<p>It's worth being honest about what that does and doesn't tell you. It won't tell you who'd win if the '85 Bears
+lined up against the 2025 Seahawks - different rules, different athletes, different everything. What it tells you
+is <strong>how dominant each team was within its own time</strong>, and lets you put those dominances side by
+side. That's the argument worth having anyway. Nobody at the bar is actually proposing a time machine.</p>
+
+<h2>The one that made me look twice</h2>
+<p>I went looking for the <strong>1990s Cowboys</strong> and couldn't find them near the top. Three titles in four
+years and not one of those teams cracks the top fifteen. Then I looked closer: 1992, 1993, 1994, and 1995 rate
+eighteenth, twenty-fourth, twenty-third, and twenty-seventh all-time - four straight seasons in almost exactly
+the same place, including the one year (1994) they didn't win it all. That's not a team that got lucky once or
+twice. That's a team that was the same very good team four years running, and the two years it lost, it lost to
+the 49ers teams that rate third and nineteenth all-time. The dynasty is real; it just didn't have one towering
+peak. The data changed how I'd describe it, and that's the point.</p>
+<p>There are more of those in here - the perfect 1972 Dolphins rating below a hundred other teams, two Giants
+champions in the bottom three of all Super Bowl winners, a 15-1 Vikings team that never got to the game. The
+<a href="{{ root }}what-it-means.html">What It All Means</a> page walks through the big ones. The rest are in the
+tables, and in the <a href="{{ root }}queries/index.html">rankings</a>, for anyone who wants to go looking.</p>
+{% endblock %}
