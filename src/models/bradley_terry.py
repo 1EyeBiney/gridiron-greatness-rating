@@ -29,6 +29,13 @@ cross-validation protocol (src/evaluate.py) to land near the minimum of
 the log-loss curve, then fixed - it is not re-fit per season the way the
 Bayesian model's shrinkage is, so this stays a distinct "classical MLE
 plus a standard stabilizer" model rather than a second hierarchical model.
+
+Caveat for Phase 4: because that grid search scored against the same
+held-out folds Phase 2 then reported, the Phase 2 Bradley-Terry number is
+mildly optimistic (neighboring values scored within ~0.003 log loss, so
+the effect is small). Phase 4 must choose the penalty inside its own
+training window - fit_bradley_terry takes reg_strength as a parameter for
+exactly that reason - rather than reuse this constant.
 """
 import numpy as np
 import pandas as pd
@@ -58,7 +65,7 @@ def _neg_log_likelihood(beta, X, y, w, n_teams, reg_strength):
     return loss, grad
 
 
-def fit_bradley_terry(g: pd.DataFrame) -> dict:
+def fit_bradley_terry(g: pd.DataFrame, reg_strength: float = REG_STRENGTH) -> dict:
     """Fit margin-weighted Bradley-Terry ratings for one season's games.
 
     Returns a dict with:
@@ -76,7 +83,7 @@ def fit_bradley_terry(g: pd.DataFrame) -> dict:
     result = minimize(
         _neg_log_likelihood,
         x0,
-        args=(X, y, w, n_teams, REG_STRENGTH),
+        args=(X, y, w, n_teams, reg_strength),
         jac=True,
         method="L-BFGS-B",
     )

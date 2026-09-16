@@ -37,10 +37,17 @@ not assumed.
   handful of teams move, the broad ranking doesn't. Philadelphia is the
   single biggest mover under both models. This supports keeping the
   games in (flagged, not excluded), per BUILD_PLAN's default proposal.
-- 1982: mean Bayesian posterior SE is 2.97, the widest of the 1978-1986
-  window (next-widest is 2.80 in 1984) - the small-sample rule holds
+- 1982: mean Bayesian posterior SE is 3.05, the widest of the 1978-1986
+  window (next-widest is 2.83 in 1984) - the small-sample rule holds
   without any special-casing, since the Bayesian model's uncertainty
   already responds to games played.
+- The 1987 finding is grounded in the historical record, recovered from
+  our own data: Philadelphia's and the defending-champion Giants'
+  replacement squads went 0-3, Washington's went 3-0 (the team the film
+  The Replacements was based on). Washington barely moves in the
+  with/without comparison because its regulars won that year's Super
+  Bowl; Philadelphia moves most because its regular roster was far
+  better than its replacement results.
 
 ## What's carried forward, not fixed here
 

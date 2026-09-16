@@ -10,7 +10,7 @@ regular season and postseason, unlike the Phase 1 SRS validation tool
 which deliberately matched Pro Football Reference's regular-season-only
 convention:
 
-- `src/models/massey.py` - weighted least squares on blowout-capped
+- `src/models/massey.py` - ordinary least squares on blowout-capped
   margin (28-point cap, BUILD_PLAN section 4), with a fitted shared
   home-field term. The direct generalization of Phase 1's SRS.
 - `src/models/bradley_terry.py` - logistic win/loss model with a

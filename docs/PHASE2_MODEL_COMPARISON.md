@@ -6,7 +6,7 @@ postseason, per BUILD_PLAN section 2).
 
 ## Method
 
-Massey (weighted least squares on blowout-capped margin), Bradley-Terry
+Massey (ordinary least squares on blowout-capped margin), Bradley-Terry
 (margin-weighted logistic win/loss), and the Bayesian hierarchical margin
 model (ridge regression with an empirical-Bayes shrinkage prior) are each
 evaluated by 5-fold cross-validation within every season: fit on 4/5 of that
@@ -28,7 +28,7 @@ adversarial audit, and no model family is locked in by this report.
 
 | Model | Games scored | Log loss | Margin MAE | Accuracy |
 |---|---:|---:|---:|---:|
-| bayesian_margin | 13685 | 0.6223 | 10.54 | 0.655 |
+| bayesian_margin | 13685 | 0.6223 | 10.54 | 0.656 |
 | bradley_terry | 13685 | 0.6274 | n/a | 0.651 |
 | massey | 13685 | 0.6341 | 10.78 | 0.655 |
 | elo | 13685 | 0.6564 | 11.08 | 0.612 |
@@ -39,10 +39,10 @@ Lower log loss and margin MAE are better; higher accuracy is better.
 
 | Era | bayesian_margin | bradley_terry | elo | massey |
 |---|---:|---:|---:|---:|
-| 1970-1977 (14-game) | 0.5963 | 0.6043 | 0.6482 | 0.6099 |
-| 1978-1994 | 0.6329 | 0.6342 | 0.6583 | 0.6430 |
-| 1995-2010 | 0.6176 | 0.6248 | 0.6547 | 0.6296 |
-| 2011-2025 | 0.6270 | 0.6323 | 0.6596 | 0.6396 |
+| 1970-1977 (14-game) | 0.5959 | 0.6043 | 0.6482 | 0.6099 |
+| 1978-1994 | 0.6328 | 0.6342 | 0.6583 | 0.6430 |
+| 1995-2010 | 0.6178 | 0.6248 | 0.6547 | 0.6296 |
+| 2011-2025 | 0.6269 | 0.6323 | 0.6596 | 0.6396 |
 
 ## Fitted home-field advantage (mean across seasons)
 

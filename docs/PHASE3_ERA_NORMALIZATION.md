@@ -50,9 +50,22 @@ Refit 1987 twice - with all 210 regular-season games, and with the 42 replacemen
 | Model | Spearman rank correlation | Mean \|change\| | Max \|change\| | Most affected |
 |---|---:|---:|---:|---|
 | massey | 0.884 | 1.56 | 4.13 | PHI |
-| bayesian_margin | 0.904 | 0.83 | 2.16 | PHI |
+| bayesian_margin | 0.905 | 0.82 | 2.07 | PHI |
 
-Rank correlation between 0.884 and 0.904 for the two models means the replacement games shift a handful of teams (both models flag PHI as the biggest single mover) but do not reshuffle the 1987 ranking broadly; the largest single-team swings are documented in data/processed/phase3_1987_sensitivity_*.csv for anyone who wants to sanity-check a specific team. This supports BUILD_PLAN's default of including the replacement games (flagged, not excluded).
+Rank correlation between 0.884 and 0.905 for the two models means the replacement games shift a handful of teams (both models flag PHI as the biggest single mover) but do not reshuffle the 1987 ranking broadly; the largest single-team swings are documented in data/processed/phase3_1987_sensitivity_*.csv for anyone who wants to sanity-check a specific team. This supports BUILD_PLAN's default of including the replacement games (flagged, not excluded).
+
+Who the replacement weeks helped and hurt, from the 42 games themselves (worst and best point differential):
+
+| Team | Replacement-game record | Point diff |
+|---|---:|---:|
+| KC | 0-3 | -69 |
+| PHI | 0-3 | -57 |
+| NYG | 0-3 | -49 |
+| CLE | 2-1 | +39 |
+| WSH | 3-0 | +39 |
+| CHI | 2-1 | +50 |
+
+This is the historical record of that strike, recovered from the data rather than assumed: Philadelphia's and the defending-champion Giants' replacement squads were among the worst, and Washington's went unbeaten (the team the film The Replacements was based on). It is also why Washington barely moves in the with/without comparison - its regulars went on to win the Super Bowl, so its replacement results were consistent with its strength - while Philadelphia's regular roster was far better than its replacement results, making it the biggest mover under both models.
 
 ## Sensitivity: 1982 uncertainty
 
@@ -60,15 +73,15 @@ BUILD_PLAN section 4's small-sample rule expects the 9-game 1982 season to carry
 
 | Season | Mean Bayesian rating SE |
 |---:|---:|
-| 1978 | 2.285 |
-| 1979 | 2.529 |
-| 1980 | 2.517 |
-| 1981 | 2.585 |
-| 1982 | 2.971 <- strike season |
-| 1983 | 2.591 |
-| 1984 | 2.796 |
-| 1985 | 2.774 |
-| 1986 | 2.752 |
+| 1978 | 2.257 |
+| 1979 | 2.465 |
+| 1980 | 2.473 |
+| 1981 | 2.577 |
+| 1982 | 3.051 <- strike season |
+| 1983 | 2.569 |
+| 1984 | 2.827 |
+| 1985 | 2.716 |
+| 1986 | 2.764 |
 
 1982 has the widest mean uncertainty of this nine-season window, confirming the small-sample rule holds without any special-casing.
 

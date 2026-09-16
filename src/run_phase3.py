@@ -20,13 +20,19 @@ import pandas as pd
 
 from era import season_metadata, write_era_tables
 from models.common import load_games
-from sensitivity import check_1982_uncertainty_is_wider, compare_1987_with_and_without_replacement_games
+from sensitivity import (
+    check_1982_uncertainty_is_wider,
+    compare_1987_with_and_without_replacement_games,
+    replacement_game_records_1987,
+)
 from standardize import add_display_scales, zscore_within_season
 
 REPO = Path(__file__).resolve().parents[1]
 
 
-def write_report(meta: pd.DataFrame, sens_1987: dict, unc_1982: pd.DataFrame) -> str:
+def write_report(
+    meta: pd.DataFrame, sens_1987: dict, records_1987: pd.DataFrame, unc_1982: pd.DataFrame
+) -> str:
     lines = [
         "# Phase 3: Era Normalization",
         "",
@@ -110,6 +116,28 @@ def write_report(meta: pd.DataFrame, sens_1987: dict, unc_1982: pd.DataFrame) ->
         "of including the replacement games (flagged, not excluded)."
     )
     lines.append("")
+    lines.append(
+        "Who the replacement weeks helped and hurt, from the 42 games themselves "
+        "(worst and best point differential):"
+    )
+    lines.append("")
+    lines.append("| Team | Replacement-game record | Point diff |")
+    lines.append("|---|---:|---:|")
+    shown = pd.concat([records_1987.head(3), records_1987.tail(3)])
+    for _, row in shown.iterrows():
+        lines.append(f"| {row['team']} | {row['wins']}-{row['losses']} | {row['point_diff']:+d} |")
+    lines.append("")
+    lines.append(
+        "This is the historical record of that strike, recovered from the data rather "
+        "than assumed: Philadelphia's and the defending-champion Giants' replacement "
+        "squads were among the worst, and Washington's went unbeaten (the team the "
+        "film The Replacements was based on). It is also why Washington barely moves "
+        "in the with/without comparison - its regulars went on to win the Super Bowl, "
+        "so its replacement results were consistent with its strength - while "
+        "Philadelphia's regular roster was far better than its replacement results, "
+        "making it the biggest mover under both models."
+    )
+    lines.append("")
 
     lines.append("## Sensitivity: 1982 uncertainty")
     lines.append("")
@@ -173,10 +201,15 @@ def main():
         res["table"].to_csv(out_path)
         print(f"Wrote {out_path}")
 
+    records_1987 = replacement_game_records_1987(games)
+    records_path = REPO / "data" / "processed" / "phase3_1987_replacement_game_records.csv"
+    records_1987.to_csv(records_path, index=False)
+    print(f"Wrote {records_path}")
+
     print("Checking 1982 uncertainty width...")
     unc_1982 = check_1982_uncertainty_is_wider(ratings)
 
-    report = write_report(meta, sens_1987, unc_1982)
+    report = write_report(meta, sens_1987, records_1987, unc_1982)
     report_path = REPO / "docs" / "PHASE3_ERA_NORMALIZATION.md"
     report_path.write_text(report + "\n")
     print(f"Wrote {report_path}")

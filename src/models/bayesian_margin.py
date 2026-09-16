@@ -23,6 +23,7 @@ identified as the actual Bayesian answer, not an imposed convention.
 """
 import numpy as np
 import pandas as pd
+from scipy.optimize import minimize_scalar
 
 from .common import capped_margin, design_matrix, team_index
 
@@ -66,8 +67,24 @@ def fit_bayesian_margin(g: pd.DataFrame, alpha_grid=None) -> dict:
     if alpha_grid is None:
         alpha_grid = np.logspace(-2, 3, 40)
 
+    # Coarse grid to bracket the minimum, then a bounded 1-D search on
+    # log(alpha) between the bracketing grid points. The grid alone
+    # quantized alpha to ~34% steps (only 7 distinct values across 56
+    # seasons in the first Phase 2 run), which quantized tau and every
+    # reported standard error with it.
     sse = [_loo_sse(X, y, a, n_teams) for a in alpha_grid]
-    best_alpha = float(alpha_grid[int(np.argmin(sse))])
+    i = int(np.argmin(sse))
+    lo = alpha_grid[max(i - 1, 0)]
+    hi = alpha_grid[min(i + 1, len(alpha_grid) - 1)]
+    if hi > lo:
+        res = minimize_scalar(
+            lambda log_a: _loo_sse(X, y, float(np.exp(log_a)), n_teams),
+            bounds=(np.log(lo), np.log(hi)),
+            method="bounded",
+        )
+        best_alpha = float(np.exp(res.x))
+    else:
+        best_alpha = float(alpha_grid[i])
 
     beta, A_inv, h_diag = _ridge_fit(X, y, best_alpha, n_teams)
     resid = y - X @ beta

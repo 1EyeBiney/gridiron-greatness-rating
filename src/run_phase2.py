@@ -14,7 +14,10 @@ Writes:
     cross-validation metrics behind the comparison report.
   docs/PHASE2_MODEL_COMPARISON.md - the human-readable comparison report.
 
-Run from the repo root: `python src/run_phase2.py`.
+Run from the repo root: `python src/run_phase2.py`, then
+`python src/run_phase3.py` - or `python src/run_all.py` for both. This
+script rewrites team_season_ratings.csv WITHOUT the z-score columns that
+Phase 3 adds, so Phase 3 must always be re-run after Phase 2.
 """
 from pathlib import Path
 
@@ -88,7 +91,7 @@ def write_comparison_report(cv: pd.DataFrame, params: pd.DataFrame) -> str:
         "",
         "## Method",
         "",
-        "Massey (weighted least squares on blowout-capped margin), Bradley-Terry",
+        "Massey (ordinary least squares on blowout-capped margin), Bradley-Terry",
         "(margin-weighted logistic win/loss), and the Bayesian hierarchical margin",
         "model (ridge regression with an empirical-Bayes shrinkage prior) are each",
         "evaluated by 5-fold cross-validation within every season: fit on 4/5 of that",

@@ -53,6 +53,29 @@ def compare_1987_with_and_without_replacement_games(games: pd.DataFrame) -> dict
     return results
 
 
+def replacement_game_records_1987(games: pd.DataFrame) -> pd.DataFrame:
+    """Each team's W-L and point differential in the 42 replacement-player
+    games alone, from our own data - so the report's historical framing of
+    who the replacement weeks helped and hurt is grounded, not recalled."""
+    g = season_games(games, 1987)
+    rep = g[flag_1987_replacement_games(g)]
+    rows = []
+    for team in sorted(set(rep["home_franchise"]).union(rep["away_franchise"])):
+        home = rep[rep["home_franchise"] == team]
+        away = rep[rep["away_franchise"] == team]
+        wins = int((home["margin"] > 0).sum() + (away["margin"] < 0).sum())
+        losses = int((home["margin"] < 0).sum() + (away["margin"] > 0).sum())
+        rows.append(
+            {
+                "team": team,
+                "wins": wins,
+                "losses": losses,
+                "point_diff": int(home["margin"].sum() - away["margin"].sum()),
+            }
+        )
+    return pd.DataFrame(rows).sort_values("point_diff").reset_index(drop=True)
+
+
 def check_1982_uncertainty_is_wider(team_season_ratings: pd.DataFrame) -> pd.DataFrame:
     se_by_season = team_season_ratings.groupby("season")["bayes_rating_se"].mean()
     window = se_by_season.loc[1978:1986]
