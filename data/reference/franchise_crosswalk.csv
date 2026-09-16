@@ -1,0 +1,9 @@
+source,source_code,franchise_id,valid_from_season,valid_to_season,notes
+nflverse,LA,LAR,2016,,Rams returned to Los Angeles
+nflverse,STL,LAR,1999,2015,Rams in St. Louis
+nflverse,SD,LAC,1999,2016,Chargers in San Diego
+nflverse,LAC,LAC,2017,,Chargers moved to Los Angeles
+nflverse,OAK,OAK,1999,2019,Raiders in Oakland (second stint)
+nflverse,LV,OAK,2020,,Raiders moved to Las Vegas; franchise_id kept as OAK for continuity
+nflverse,WAS,WSH,1999,,Washington franchise; standardized on WSH to match FiveThirtyEight coding
+fivethirtyeight,WSH,WSH,1970,1998,Identity mapping
