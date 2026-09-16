@@ -36,6 +36,8 @@ def profile():
         (1992, "DAL", 18),
         (1995, "SF", 19),
         (1998, "MIN", 21),
+        (2023, "BAL", 22),
+        (2002, "TB", 13),
         (1994, "DAL", 23),
         (1993, "DAL", 24),
         (1995, "DAL", 27),
@@ -57,6 +59,11 @@ def test_alltime_ranks_cited_in_prose(profile, season, team, alltime_rank):
         (2011, "NYG", 9),
         (2001, "NE", 6),
         (1970, "IND", 7),
+        (1995, "SF", 1),
+        (1995, "GB", 3),
+        (2023, "BAL", 1),
+        (2023, "KC", 5),
+        (2002, "TB", 1),
     ],
 )
 def test_in_season_ranks_cited_in_prose(profile, season, team, rank_in_season):
@@ -124,3 +131,30 @@ def test_1972_dolphins_hold_the_only_maximum_acc(profile):
 def test_eight_champions_rate_below_1_25(profile):
     champs = profile[profile["won_super_bowl"]]
     assert (champs["bayes_rating_z"] < 1.25).sum() == 8
+
+
+def test_best_teams_that_never_reached_the_super_bowl(profile):
+    missed = profile[~profile["reached_super_bowl"]]
+    # 1995 SF is the highest-rated non-participant ever; 1998 MIN second.
+    assert missed["bayes_rating_z"].nlargest(2).index.tolist() == [(1995, "SF"), (1998, "MIN")]
+    assert profile.loc[(1995, "SF"), "offense_z"] == pytest.approx(1.98, abs=0.005)
+    assert profile.loc[(1995, "SF"), "defense_z"] == pytest.approx(2.19, abs=0.005)
+    # "a better team than a dozen Super Bowl winners"
+    champs = profile[profile["won_super_bowl"]]
+    assert (champs["bayes_rating_z"] < profile.loc[(1995, "SF"), "bayes_rating_z"]).sum() >= 12
+    # 2023 BAL: best 2020s non-participant, and no other one this decade above 1.9
+    this_decade = missed[missed.index.get_level_values("season") >= 2020]["bayes_rating_z"]
+    assert this_decade.idxmax() == (2023, "BAL")
+    assert (this_decade.drop((2023, "BAL")) < 1.9).all()
+    assert profile.loc[(2023, "BAL"), "offense_z"] == pytest.approx(1.60, abs=0.005)
+    assert profile.loc[(2023, "BAL"), "defense_z"] == pytest.approx(1.83, abs=0.005)
+
+
+def test_2002_buccaneers_are_the_champion_with_no_offense(profile):
+    champs = profile[profile["won_super_bowl"]]
+    tb = profile.loc[(2002, "TB")]
+    assert tb["offense_z"] == pytest.approx(-0.01, abs=0.005)
+    assert (champs["offense_z"] < 0).sum() == 3
+    assert champs["defense_z"].idxmax() == (2002, "TB")
+    assert tb["defense_z"] == pytest.approx(2.75, abs=0.005)
+    assert tb["wins"] == 12 and tb["losses"] == 4

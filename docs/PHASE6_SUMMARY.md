@@ -123,7 +123,7 @@ Two long-form pages turn the tables into something a casual fan reads:
   well-established history or a number from this site's tables.
 
 Because prose can't be regenerated from data, `tests/test_narrative_claims.py`
-pins every load-bearing number in both pages to the data (33 checks).
+pins every load-bearing number in both pages to the data (42 checks).
 Writing those tests caught four factual errors in the first draft
 before anything shipped - see the BUILD_PLAN decision log for the list.
 That's the strongest argument this project has produced for testing
