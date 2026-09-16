@@ -100,6 +100,8 @@ Phase 0 — Specification (this document). Done when Brian approves it and it is
 
 Phase 1 — Data acquisition and audit. Deliverable: a verified games table for 1970 through the most recent completed season, with a data-quality report (team counts per season, games per team, score sanity checks, playoff bracket reconciliation). Exit check: SRS reproduced for at least five seasons across different decades within rounding.
 
+STATUS: COMPLETE as of 2026-09-16. See docs/PHASE1_SUMMARY.md for the full report. Headline result: 13,685 games unified from FiveThirtyEight (1970-1998, MIT license) and nflverse (1999-2025, CC BY 4.0), all data-quality checks passed, and our SRS matched Pro Football Reference's published values within 0.05 points (max) across 148 team-seasons in 5 different decades - consistent with PFR's own display rounding. Two known items carried into Phase 2+: pre-1999 playoff games lack round labels (WC/DIV/CON/SB), and there is no team-season conference/division table yet (needed for Phase 5's Conference Strength Index).
+
 Phase 2 — Baseline and candidate models. Deliverable: SRS reproduction, then Massey, Bradley-Terry, and Bayesian implementations producing per-season ratings; a comparison report.
 
 Phase 3 — Era normalization. Deliverable: standardization layer, strike and expansion rules implemented, sensitivity report showing how much each rule moves rankings.
@@ -139,4 +141,6 @@ Semantic headings for every section; real HTML tables with scope attributes; sor
 
 ## 13. Notes for the next session
 
-Start with Phase 1. First task: identify and download a game-results source covering 1970 to the latest completed season, store it under data/raw with a source note, and write the games-table cleaning script. Exit check before moving on: reproduce Pro Football Reference SRS for five seasons in different decades. Report data-quality findings back to Brian in plain-text tables.
+Phase 1 is complete (see status note in section 8 and docs/PHASE1_SUMMARY.md). Start with Phase 2: implement Massey, Bradley-Terry, and Bayesian hierarchical margin models on the full Core games table (data/processed/games.csv), including playoff games this time (unlike the Phase 1 SRS validation, which deliberately matched PFR's regular-season-only convention). Compare candidates on out-of-sample prediction accuracy. Two open items from Phase 1 to pick up when convenient, not blocking: (1) reconstruct playoff round labels for 1970-1998 games, currently just a generic PLAYOFF flag; (2) build a team-season conference/division table.
+
+2026-09-16 — Phase 1 completed by Claude Sonnet 5. Repo built at github.com/1eyebiney (local working copy only so far; not yet pushed - this session has no GitHub credentials or shell access on Brian's machine, so Brian will need to push it himself, or connect a GitHub integration in a future session).
