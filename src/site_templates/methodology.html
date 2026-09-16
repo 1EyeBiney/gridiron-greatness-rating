@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block page_title %}Methodology{% endblock %}
+{% block content %}
+<h1>Methodology</h1>
+<p class="lede">A plain-language summary. The full research specification, every settled decision, and the
+complete build history are in <a href="https://github.com/1EyeBiney/gridiron-greatness-rating/blob/master/docs/BUILD_PLAN.md">BUILD_PLAN.md</a>
+on GitHub.</p>
+
+<h2>Scope</h2>
+<p>Every NFL regular-season and postseason game from the 1970 AFL-NFL merger through the most recently completed
+season. Super Bowls I-IV are excluded from the core model because the AFL and NFL didn't play each other yet, so
+there's no way to compare their teams' strength on a shared scale.</p>
+
+<h2>True Strength Rating (TSR)</h2>
+<p>TSR is a Bayesian hierarchical margin model: each game's (blowout-capped) point margin is treated as evidence
+about the two teams' underlying strength, with every team's rating shrunk toward the league average in proportion
+to how little data is available - a team's rating a few games into a season is appropriately uncertain, not a
+confident extreme. The model was chosen over three other candidates (a plain least-squares network rating, a
+logistic win/loss model, and Elo) after two independent rounds of out-of-sample testing and an audit checking its
+ratings against undisputed NFL history - see the repository's Phase 2 and Phase 4 documentation for the full
+comparison.</p>
+<p>TSR is reported as a z-score: 0 is an average team that season, +1 is one standard deviation above average, and
+so on - the same units in 1972 as in 2024, which is what makes cross-era comparison meaningful.</p>
+
+<h2>Accomplishment (ACC)</h2>
+<p>A separate score for how successful the season was, not how good the team was: regular-season record, division
+title, playoff wins, and the Super Bowl result. It is never combined with True Strength - the two numbers are
+designed to sometimes disagree, and when they do, that disagreement is the interesting part (see
+<a href="{{ root }}queries/index.html">the query pages</a> for examples).</p>
+
+<h2>Conference Strength Index (CSI)</h2>
+<p>The estimated strength gap between the AFC and NFC in a given season, with an uncertainty range, since each
+team only plays a handful of interconference games. A season's CSI is considered a meaningfully imbalanced
+conference only when that range doesn't include zero.</p>
+
+<h2>Data sources</h2>
+<p>Game results 1970-1998 come from FiveThirtyEight's historical NFL dataset (MIT license); 1999-present comes from
+the nflverse project (CC BY 4.0). Both are unified onto one stable franchise identifier per team, correctly
+handling every relocation and the 1996 Browns/Ravens split. Full provenance notes are in the repository's
+<code>data/raw/</code> directory.</p>
+
+<h2>What this site doesn't include yet</h2>
+<p>A comparison against historical betting-market point spreads was planned but deferred: the freely available
+spread datasets found all trace back to sources whose terms restrict redistribution. Two descriptive profile
+fields (roster quality, coach strength entering the season) need data this project hasn't acquired. Neither gap
+affects the True Strength Rating or Accomplishment score above.</p>
+{% endblock %}

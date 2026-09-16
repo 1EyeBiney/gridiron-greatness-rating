@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block page_title %}Home{% endblock %}
+{% block content %}
+<h1>Gridiron Greatness Rating</h1>
+<p class="lede">How strong was every NFL team really, given what it did, who it did it against, and how strong its
+competitive environment was? This project rates every team-season since the 1970 AFL-NFL merger on a single,
+schedule-adjusted True Strength Rating, reported alongside (never blended with) a separate Accomplishment score
+for how successful the season actually was.</p>
+
+<h2>Start here</h2>
+<ul class="card-grid">
+  <li><a href="{{ root }}seasons/index.html">Browse by season</a><br>Full standings, True Strength, and Accomplishment for every team, 1970-2025.</li>
+  <li><a href="{{ root }}super-bowls/index.html">Super Bowl matchups</a><br>Every Super Bowl since 1970, with both teams' True Strength Ratings side by side.</li>
+  <li><a href="{{ root }}queries/index.html">Rankings &amp; queries</a><br>Greatest champions, biggest upsets, most overstated records, and more.</li>
+  <li><a href="{{ root }}methodology.html">Methodology</a><br>How True Strength, Accomplishment, and Conference Strength are computed.</li>
+  <li><a href="{{ root }}data/index.html">Download the data</a><br>CSV and JSON exports of every table on this site.</li>
+</ul>
+
+<h2>The two headline numbers</h2>
+<p><strong>True Strength Rating (TSR)</strong> answers "how good was this team, really" - a network rating fit on
+every game a team played that season (regular season and postseason together), adjusted for the strength of every
+opponent faced, standardized so any two seasons from 1970 to today can be compared directly.</p>
+<p><strong>Accomplishment (ACC)</strong> answers "how successful was this season" - record, standing, division
+title, playoff wins, and the Super Bowl result. This is where the trophy is rewarded. TSR and ACC are always
+reported side by side and never combined into one number, because they answer different questions: the 2007
+Patriots have the highest True Strength Rating on record and still didn't win the Super Bowl that year, while the
+2011 Giants won it with a merely average regular season.</p>
+
+<div class="note">
+  <p>All figures on this site are also available as plain data tables and as CSV/JSON downloads - see
+  <a href="{{ root }}data/index.html">Download the data</a>. Nothing here is presented only as a chart.</p>
+</div>
+{% endblock %}

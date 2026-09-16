@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_title %}{{ title }}{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p class="lede">{{ description }}</p>
+<table>
+<caption>{{ title }}</caption>
+<thead>
+<tr>
+  {% for col in columns %}
+  <th scope="col"{% if col.num %} class="num"{% endif %}>{{ col.label }}</th>
+  {% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for row in rows %}
+<tr>
+  {% for col in columns %}
+  {% if loop.first %}
+  <th scope="row">{{ row[col.key] }}</th>
+  {% else %}
+  <td{% if col.num %} class="num"{% endif %}>{{ row[col.key] }}</td>
+  {% endif %}
+  {% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<p><a href="{{ root }}queries/index.html">&laquo; Back to all rankings &amp; queries</a></p>
+{% endblock %}

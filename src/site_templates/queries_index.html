@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_title %}Rankings &amp; queries{% endblock %}
+{% block content %}
+<h1>Rankings &amp; queries</h1>
+<p class="lede">Every ranking below uses True Strength Rating (TSR), the project's schedule-adjusted, cross-era
+comparable headline number - see the <a href="{{ root }}methodology.html">methodology page</a>.</p>
+<ul class="card-grid">
+  {% for q in queries %}
+  <li><a href="{{ root }}queries/{{ q.slug }}.html">{{ q.title }}</a><br>{{ q.description }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block page_title %}{{ title }}{% endblock %} · Gridiron Greatness Rating</title>
+<meta name="description" content="{{ description|default('A historical NFL team-strength rating system, 1970-present.') }}">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+  <div class="header-inner">
+    <p class="site-name"><a href="{{ root }}index.html">Gridiron Greatness Rating</a></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="{{ root }}seasons/index.html">Seasons</a></li>
+        <li><a href="{{ root }}super-bowls/index.html">Super Bowls</a></li>
+        <li><a href="{{ root }}queries/index.html">Rankings &amp; queries</a></li>
+        <li><a href="{{ root }}methodology.html">Methodology</a></li>
+        <li><a href="{{ root }}data/index.html">Download data</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+<footer>
+  <p>Gridiron Greatness Rating is a research project rating every NFL team-season since the 1970 merger.
+     Methodology, decisions, and full source are documented in the project's
+     <a href="https://github.com/1EyeBiney/gridiron-greatness-rating">GitHub repository</a>.
+     Generated {{ generated_date }}.</p>
+</footer>
+</body>
+</html>

@@ -70,17 +70,36 @@ def _best_in_group(records: pd.DataFrame, group_cols: list) -> pd.Series:
     return records.apply(lambda r: tuple(r[c] for c in group_cols + ["franchise"]) in winner_keys, axis=1)
 
 
+def find_super_bowl_games(games: pd.DataFrame) -> pd.DataFrame:
+    """One row per season: that season's Super Bowl game, plus the
+    resolved winner/loser franchise. Identified as the single postseason
+    game with the latest date that season - verified elsewhere (see
+    module docstring) to be unambiguous across all 56 seasons, so no
+    round label is needed even for 1970-1998, which only has a generic
+    PLAYOFF flag."""
+    post = games[games["game_type"] != "REG"]
+    rows = []
+    for season, g in post.groupby("season"):
+        sb_date = g["date"].max()
+        sb_game = g[g["date"] == sb_date].iloc[0].copy()
+        sb_game["winner"] = sb_game["home_franchise"] if sb_game["margin"] > 0 else sb_game["away_franchise"]
+        sb_game["loser"] = sb_game["away_franchise"] if sb_game["margin"] > 0 else sb_game["home_franchise"]
+        sb_game["winner_score"] = sb_game["home_score"] if sb_game["margin"] > 0 else sb_game["away_score"]
+        sb_game["loser_score"] = sb_game["away_score"] if sb_game["margin"] > 0 else sb_game["home_score"]
+        rows.append(sb_game)
+    return pd.DataFrame(rows).reset_index(drop=True)
+
+
 def playoff_win_counts(games: pd.DataFrame) -> pd.DataFrame:
     """Per team-season: total postseason wins, and whether that team won
     or appeared in the Super Bowl (identified as the season's last game -
     see module docstring)."""
     post = games[games["game_type"] != "REG"]
+    super_bowls = find_super_bowl_games(games).set_index("season")
     rows = []
     for season, g in post.groupby("season"):
-        sb_date = g["date"].max()
-        sb_game = g[g["date"] == sb_date].iloc[0]
-        sb_winner = sb_game["home_franchise"] if sb_game["margin"] > 0 else sb_game["away_franchise"]
-        sb_loser = sb_game["away_franchise"] if sb_game["margin"] > 0 else sb_game["home_franchise"]
+        sb_winner = super_bowls.loc[season, "winner"]
+        sb_loser = super_bowls.loc[season, "loser"]
 
         teams = sorted(set(g["home_franchise"]).union(g["away_franchise"]))
         for team in teams:

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block page_title %}Seasons{% endblock %}
+{% block content %}
+<h1>Seasons</h1>
+<p class="lede">Every season from 1970 to {{ seasons[-1] }}. Each page has the full standings, True Strength Rating,
+and Accomplishment score for every team that year.</p>
+{% for decade, decade_seasons in seasons_by_decade %}
+<h2>{{ decade }}s</h2>
+<ul class="card-grid">
+  {% for season in decade_seasons %}
+  <li><a href="{{ root }}seasons/{{ season }}.html">{{ season }}</a></li>
+  {% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}

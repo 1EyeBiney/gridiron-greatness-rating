@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block page_title %}Super Bowls{% endblock %}
+{% block content %}
+<h1>Super Bowls</h1>
+<p class="lede">Every Super Bowl from the 1970 season onward, with both teams' True Strength Rating (TSR) at the
+time. "Upset" means the team with the lower True Strength Rating won anyway.</p>
+<table>
+<caption>All {{ rows|length }} Super Bowls, most recent first</caption>
+<thead>
+<tr>
+  <th scope="col">Season</th>
+  <th scope="col">Winner</th>
+  <th scope="col">Loser</th>
+  <th scope="col">Score</th>
+  <th scope="col" class="num">TSR gap</th>
+  <th scope="col">Upset?</th>
+</tr>
+</thead>
+<tbody>
+{% for row in rows %}
+<tr>
+  <td><a href="{{ root }}super-bowls/{{ row.season }}.html">{{ row.season }}</a></td>
+  <td>{{ row.winner }}</td>
+  <td>{{ row.loser }}</td>
+  <td>{{ row.score }}</td>
+  <td class="num">{{ row.z_gap }}</td>
+  <td>{{ row.upset_text }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

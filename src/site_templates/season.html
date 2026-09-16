@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block page_title %}{{ season }} season{% endblock %}
+{% block content %}
+<h1>{{ season }} season</h1>
+<p class="lede">{{ n_teams }} teams. Sorted by True Strength Rating (TSR), highest first. Ties (record column) count
+as half a win. Full column definitions are on the <a href="{{ root }}methodology.html">methodology page</a>.</p>
+
+<div class="note">
+  <p><strong>Conference Strength Index:</strong> {{ csi_text }}</p>
+</div>
+
+<h2>Standings and ratings</h2>
+<table>
+<caption>Every team, {{ season }} season, ranked by True Strength Rating z-score</caption>
+<thead>
+<tr>
+  <th scope="col">Rank</th>
+  <th scope="col">Team</th>
+  <th scope="col">Conf / Div</th>
+  <th scope="col">Record</th>
+  <th scope="col" class="num">TSR (z)</th>
+  <th scope="col" class="num">ACC</th>
+  <th scope="col">Result</th>
+</tr>
+</thead>
+<tbody>
+{% for row in teams %}
+<tr>
+  <th scope="row">{{ loop.index }}</th>
+  <td>{{ row.franchise }}</td>
+  <td>{{ row.conference }} {{ row.division }}</td>
+  <td>{{ row.record }}</td>
+  <td class="num">{{ row.tsr_z }}</td>
+  <td class="num">{{ row.acc }}</td>
+  <td>{{ row.result }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<p><a href="{{ root }}super-bowls/{{ season }}.html">See this season's Super Bowl matchup &raquo;</a></p>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_title %}Download the data{% endblock %}
+{% block content %}
+<h1>Download the data</h1>
+<p class="lede">Every table used to build this site, as plain CSV and JSON. Nothing on this site exists only as a
+chart or an interactive page - see BUILD_PLAN section 6 in the
+<a href="https://github.com/1EyeBiney/gridiron-greatness-rating">repository</a> for the accessibility commitment
+behind that.</p>
+<table>
+<caption>Downloadable data files</caption>
+<thead>
+<tr>
+  <th scope="col">Table</th>
+  <th scope="col">Description</th>
+  <th scope="col">CSV</th>
+  <th scope="col">JSON</th>
+</tr>
+</thead>
+<tbody>
+{% for f in files %}
+<tr>
+  <th scope="row">{{ f.title }}</th>
+  <td>{{ f.description }}</td>
+  <td><a href="{{ root }}data/{{ f.slug }}.csv">Download CSV</a></td>
+  <td><a href="{{ root }}data/{{ f.slug }}.json">Download JSON</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
