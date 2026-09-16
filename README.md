@@ -6,4 +6,4 @@ participants against historical rankings.
 
 See `docs/BUILD_PLAN.md` for the full research specification, settled decisions, and phase plan.
 
-Status: Phases 1-3 complete. Phase 4 (validation) functionally complete - walk-forward out-of-sample results and adversarial audit both point to the Bayesian hierarchical margin model as the True Strength Rating (a recommendation pending confirmation); the spread comparison was deferred over data-licensing concerns. Phase 5 (Accomplishment, Conference Strength Index, profiles) next.
+Status: Phases 1-3 complete. Phase 4 complete - True Strength Rating's model family is locked to the Bayesian hierarchical margin model (spread comparison deferred over data-licensing concerns, not blocking). Phase 5 complete - Accomplishment score, Conference Strength Index, and team-season profiles built (the ACC point schedule is a recommendation pending Brian's review, not a locked decision). Phase 6 (outputs and the GitHub Pages site) next.
