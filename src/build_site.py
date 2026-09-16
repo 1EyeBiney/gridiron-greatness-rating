@@ -141,17 +141,17 @@ def build_super_bowls_table(sb: pd.DataFrame, profile: pd.DataFrame) -> pd.DataF
     return pd.DataFrame(rows).sort_values("season", ascending=False)
 
 
-def render_all():
-    if OUT_DIR.exists():
-        shutil.rmtree(OUT_DIR)
-    OUT_DIR.mkdir(parents=True)
-    (OUT_DIR / "static").mkdir()
-    (OUT_DIR / "seasons").mkdir()
-    (OUT_DIR / "super-bowls").mkdir()
-    (OUT_DIR / "queries").mkdir()
-    (OUT_DIR / "data").mkdir()
+def render_all(out_dir: Path = OUT_DIR):
+    if out_dir.exists():
+        shutil.rmtree(out_dir)
+    out_dir.mkdir(parents=True)
+    (out_dir / "static").mkdir()
+    (out_dir / "seasons").mkdir()
+    (out_dir / "super-bowls").mkdir()
+    (out_dir / "queries").mkdir()
+    (out_dir / "data").mkdir()
 
-    shutil.copy(TEMPLATES_DIR / "style.css", OUT_DIR / "static" / "style.css")
+    shutil.copy(TEMPLATES_DIR / "style.css", out_dir / "static" / "style.css")
 
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
     generated_date = date.today().isoformat()
@@ -168,8 +168,8 @@ def render_all():
     seasons = sorted(profile["season"].unique().tolist())
 
     # --- index & methodology ---
-    render("index.html", OUT_DIR / "index.html", root="")
-    render("methodology.html", OUT_DIR / "methodology.html", root="")
+    render("index.html", out_dir / "index.html", root="")
+    render("methodology.html", out_dir / "methodology.html", root="")
 
     # --- seasons index ---
     by_decade = {}
@@ -178,7 +178,7 @@ def render_all():
     seasons_by_decade = [(d, sorted(v)) for d, v in sorted(by_decade.items())]
     render(
         "seasons_index.html",
-        OUT_DIR / "seasons" / "index.html",
+        out_dir / "seasons" / "index.html",
         root="../",
         seasons=seasons,
         seasons_by_decade=seasons_by_decade,
@@ -208,7 +208,7 @@ def render_all():
             csi_text = f"No confidently stronger conference this season (estimate {_fmt(csi_row['csi'])}, 95% range {_fmt(csi_row['ci95_lower'])} to {_fmt(csi_row['ci95_upper'])})."
         render(
             "season.html",
-            OUT_DIR / "seasons" / f"{season}.html",
+            out_dir / "seasons" / f"{season}.html",
             root="../",
             season=season,
             n_teams=len(teams),
@@ -228,7 +228,7 @@ def render_all():
         }
         for _, r in sb_table.iterrows()
     ]
-    render("super_bowls_index.html", OUT_DIR / "super-bowls" / "index.html", root="../", rows=sb_rows)
+    render("super_bowls_index.html", out_dir / "super-bowls" / "index.html", root="../", rows=sb_rows)
 
     # --- per-super-bowl pages ---
     for _, r in sb_table.iterrows():
@@ -253,7 +253,7 @@ def render_all():
 
         render(
             "super_bowl.html",
-            OUT_DIR / "super-bowls" / f"{season}.html",
+            out_dir / "super-bowls" / f"{season}.html",
             root="../",
             season=season,
             winner=side(w_row, r["winner_score"]),
@@ -264,11 +264,15 @@ def render_all():
     # --- queries ---
     render(
         "queries_index.html",
-        OUT_DIR / "queries" / "index.html",
+        out_dir / "queries" / "index.html",
         root="../",
-        queries=[{"slug": slug, "title": title, "description": desc} for slug, title, desc, _ in QUERY_META],
+        queries=[
+            {"slug": slug.replace("_", "-"), "title": title, "description": desc}
+            for slug, title, desc, _ in QUERY_META
+        ],
     )
     for slug, title, desc, cols in QUERY_META:
+        page_slug = slug.replace("_", "-")
         table = queries[slug].copy()
         if slug == "largest_mismatches":
             table["upset_label"] = table["upset"].map({True: "Yes", False: "No"})
@@ -293,7 +297,7 @@ def render_all():
         columns = [{"key": key, "label": label, "num": is_num} for key, label, is_num in cols]
         render(
             "query.html",
-            OUT_DIR / "queries" / f"{slug.replace('_', '-')}.html",
+            out_dir / "queries" / f"{page_slug}.html",
             root="../",
             title=title,
             description=desc,
@@ -308,15 +312,15 @@ def render_all():
         "conference_strength_index": csi,
     }
     for name, table in export_tables.items():
-        table.to_csv(OUT_DIR / "data" / f"{name}.csv", index=False)
-        (OUT_DIR / "data" / f"{name}.json").write_text(
+        table.to_csv(out_dir / "data" / f"{name}.csv", index=False)
+        (out_dir / "data" / f"{name}.json").write_text(
             table.to_json(orient="records", indent=2), encoding="utf-8"
         )
-    render("data_index.html", OUT_DIR / "data" / "index.html", root="../", files=[
+    render("data_index.html", out_dir / "data" / "index.html", root="../", files=[
         {"slug": slug, "title": title, "description": desc} for slug, title, desc in DATA_FILES
     ])
 
-    print(f"Site generated at {OUT_DIR} ({len(seasons)} season pages, {len(sb_table)} Super Bowl pages, {len(QUERY_META)} query pages)")
+    print(f"Site generated at {out_dir} ({len(seasons)} season pages, {len(sb_table)} Super Bowl pages, {len(QUERY_META)} query pages)")
 
 
 if __name__ == "__main__":
