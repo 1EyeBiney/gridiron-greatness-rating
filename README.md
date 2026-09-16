@@ -6,4 +6,4 @@ participants against historical rankings.
 
 See `docs/BUILD_PLAN.md` for the full research specification, settled decisions, and phase plan.
 
-Status: Phase 1 (data acquisition and audit) complete. Phase 2 (baseline and candidate models) in progress.
+Status: Phase 1 (data acquisition and audit) and Phase 2 (baseline and candidate models) complete. Phase 3 (era normalization) next.
