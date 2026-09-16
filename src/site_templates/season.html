@@ -10,17 +10,27 @@ as half a win. Full column definitions are on the <a href="{{ root }}methodology
 </div>
 
 <h2>Standings and ratings</h2>
+<p>Off/Def/Dom are the Offense, Defense, and Dominance descriptive sub-scores (standardized within the season, like
+TSR); Sched Diff is average opponent strength faced; vs Elite is the record against opponents rated TSR z &ge; 1.
+None of these feed TSR itself - see the <a href="{{ root }}methodology.html">methodology page</a>.</p>
 <table>
 <caption>Every team, {{ season }} season, ranked by True Strength Rating z-score</caption>
 <thead>
 <tr>
   <th scope="col">Rank</th>
   <th scope="col">Team</th>
-  <th scope="col">Conf / Div</th>
+  <th scope="col">Conf/Div</th>
   <th scope="col">Record</th>
   <th scope="col" class="num">TSR (z)</th>
+  <th scope="col" class="num">TSR SE</th>
   <th scope="col" class="num">ACC</th>
-  <th scope="col">Result</th>
+  <th scope="col" class="num">Off (z)</th>
+  <th scope="col" class="num">Def (z)</th>
+  <th scope="col" class="num">Dom (z)</th>
+  <th scope="col" class="num">Sched Diff</th>
+  <th scope="col">vs Elite (z&ge;1)</th>
+  <th scope="col">Division title</th>
+  <th scope="col">Playoffs</th>
 </tr>
 </thead>
 <tbody>
@@ -28,11 +38,18 @@ as half a win. Full column definitions are on the <a href="{{ root }}methodology
 <tr>
   <th scope="row">{{ loop.index }}</th>
   <td>{{ row.franchise }}</td>
-  <td>{{ row.conference }} {{ row.division }}</td>
+  <td>{{ row.conf_div }}</td>
   <td>{{ row.record }}</td>
   <td class="num">{{ row.tsr_z }}</td>
+  <td class="num">{{ row.tsr_se }}</td>
   <td class="num">{{ row.acc }}</td>
-  <td>{{ row.result }}</td>
+  <td class="num">{{ row.offense_z }}</td>
+  <td class="num">{{ row.defense_z }}</td>
+  <td class="num">{{ row.dominance_z }}</td>
+  <td class="num">{{ row.schedule_difficulty }}</td>
+  <td>{{ row.vs_elite }}</td>
+  <td>{{ row.division_title }}</td>
+  <td>{{ row.playoffs }}</td>
 </tr>
 {% endfor %}
 </tbody>

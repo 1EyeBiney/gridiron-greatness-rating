@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from build_site import _fmt, _record, _season_result_text, build_super_bowls_table, render_all
+from build_site import _fmt, _full_stat_row, _playoffs_text, _record, _vs_elite_text, build_super_bowls_table, render_all
 
 HREF_RE = re.compile(r'href="([^"]+)"')
 
@@ -23,14 +23,49 @@ def test_record_includes_ties_only_when_present():
 @pytest.mark.parametrize(
     "row,expected",
     [
-        ({"won_super_bowl": True, "reached_super_bowl": True, "division_title": True}, "Won the Super Bowl"),
-        ({"won_super_bowl": False, "reached_super_bowl": True, "division_title": True}, "Lost the Super Bowl"),
-        ({"won_super_bowl": False, "reached_super_bowl": False, "division_title": True}, "Division champion"),
-        ({"won_super_bowl": False, "reached_super_bowl": False, "division_title": False}, ""),
+        ({"playoff_games": np.nan, "playoff_wins": 0}, "Did not qualify"),
+        ({"playoff_games": 3, "playoff_wins": 3, "won_super_bowl": True, "reached_super_bowl": True}, "3-0 (won SB)"),
+        ({"playoff_games": 3, "playoff_wins": 2, "won_super_bowl": False, "reached_super_bowl": True}, "2-1 (lost SB)"),
+        ({"playoff_games": 1, "playoff_wins": 0, "won_super_bowl": False, "reached_super_bowl": False}, "0-1"),
     ],
 )
-def test_season_result_text_priority_order(row, expected):
-    assert _season_result_text(row) == expected
+def test_playoffs_text(row, expected):
+    assert _playoffs_text(row) == expected
+
+
+def test_vs_elite_text_handles_no_elite_opponents_and_formats_percentage():
+    assert _vs_elite_text({"elite_opponents_played": np.nan}) == "-"
+    assert _vs_elite_text({"elite_opponents_played": 3, "record_vs_elite_win_pct": 2 / 3}) == "66.7% (3)"
+
+
+def test_full_stat_row_has_every_declared_column():
+    from build_site import FULL_STAT_COLUMNS
+
+    row = pd.Series(
+        {
+            "conference": "AFC",
+            "division": "East",
+            "wins": 10,
+            "losses": 6,
+            "ties": 0,
+            "bayes_rating_z": 1.23,
+            "bayes_rating_se": 2.5,
+            "acc": 15.5,
+            "offense_z": 0.5,
+            "defense_z": -0.3,
+            "dominance_z": 0.1,
+            "schedule_difficulty": 0.05,
+            "elite_opponents_played": 2,
+            "record_vs_elite_win_pct": 0.5,
+            "playoff_games": 2,
+            "playoff_wins": 1,
+            "won_super_bowl": False,
+            "reached_super_bowl": True,
+        }
+    )
+    result = _full_stat_row(row)
+    for key, _, _ in FULL_STAT_COLUMNS:
+        assert key in result, f"missing {key}"
 
 
 def test_build_super_bowls_table_computes_correct_z_gap():

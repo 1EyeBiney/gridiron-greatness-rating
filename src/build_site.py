@@ -31,64 +31,6 @@ REPO = Path(__file__).resolve().parents[1]
 TEMPLATES_DIR = Path(__file__).resolve().parent / "site_templates"
 OUT_DIR = REPO / "site"
 
-QUERY_META = [
-    (
-        "greatest_champions",
-        "Greatest champions",
-        "Super Bowl winners with the highest True Strength Rating.",
-        [("season", "Season", False), ("franchise", "Team", False), ("bayes_rating_z", "TSR (z)", True), ("win_pct", "Record", False)],
-    ),
-    (
-        "weakest_champions",
-        "Weakest champions",
-        "Super Bowl winners with the lowest True Strength Rating - teams that won it all without being the best team on paper.",
-        [("season", "Season", False), ("franchise", "Team", False), ("bayes_rating_z", "TSR (z)", True), ("win_pct", "Record", False)],
-    ),
-    (
-        "greatest_losers",
-        "Greatest losers",
-        "Super Bowl runners-up with the highest True Strength Rating - great teams that still came up short.",
-        [("season", "Season", False), ("franchise", "Team", False), ("bayes_rating_z", "TSR (z)", True), ("win_pct", "Record", False)],
-    ),
-    (
-        "best_teams_never_to_win",
-        "Best teams never to win",
-        "The highest True Strength Rating of any team-season that didn't win that year's Super Bowl, playoffs or not.",
-        [("season", "Season", False), ("franchise", "Team", False), ("bayes_rating_z", "TSR (z)", True), ("win_pct", "Record", False)],
-    ),
-    (
-        "largest_mismatches",
-        "Largest Super Bowl mismatches",
-        "Super Bowl matchups with the biggest True Strength gap between the two teams.",
-        [("season", "Season", False), ("winner", "Winner", False), ("loser", "Loser", False), ("z_gap", "TSR gap", True), ("upset_label", "Upset?", False)],
-    ),
-    (
-        "greatest_conference_imbalance",
-        "Greatest conference imbalance",
-        "Seasons with the largest estimated strength gap between the AFC and NFC (Conference Strength Index).",
-        [("season", "Season", False), ("csi", "CSI", True), ("ci95", "95% range", False), ("stronger_conference", "Stronger conference", False)],
-    ),
-    (
-        "best_decade",
-        "Best decade",
-        "Mean True Strength Rating of each decade's ten highest-rated team-seasons - since ratings are standardized within season, this asks which decade's best teams stood furthest above their own league average, not which decade scored the most points.",
-        [("decade", "Decade", False), ("mean_top10_tsr_z", "Mean top-10 TSR (z)", True), ("best_team_season", "Best team-season", False), ("best_tsr_z", "Its TSR (z)", True)],
-    ),
-    (
-        "records_that_most_overstated_strength",
-        "Records that most overstated strength",
-        "Team-seasons whose win-loss record was much better than their True Strength Rating - usually a lot of close wins mixed with a few lopsided losses.",
-        [("season", "Season", False), ("franchise", "Team", False), ("win_pct", "Win pct", True), ("bayes_rating_z", "TSR (z)", True), ("residual", "Gap", True)],
-    ),
-]
-
-DATA_FILES = [
-    ("team_seasons", "Team-season profile", "True Strength Rating, Accomplishment, and every descriptive sub-score for all 1,669 team-seasons, 1970-2025."),
-    ("super_bowls", "Super Bowl matchups", "Every Super Bowl since 1970, both teams' ratings, and the final score."),
-    ("conference_strength_index", "Conference Strength Index", "AFC-vs-NFC strength estimate and uncertainty range, one row per season."),
-]
-
-
 def _fmt(x, decimals=2):
     if pd.isna(x):
         return "-"
@@ -102,14 +44,154 @@ def _record(row):
     return rec
 
 
-def _season_result_text(row):
+def _playoffs_text(row):
+    """Postseason record plus how the run ended, e.g. '3-1 (lost SB)'."""
+    games = row.get("playoff_games")
+    if pd.isna(games) or not games:
+        return "Did not qualify"
+    wins = int(row["playoff_wins"])
+    losses = int(games) - wins
+    text = f"{wins}-{losses}"
     if row.get("won_super_bowl"):
-        return "Won the Super Bowl"
-    if row.get("reached_super_bowl"):
-        return "Lost the Super Bowl"
-    if row.get("division_title"):
-        return "Division champion"
-    return ""
+        text += " (won SB)"
+    elif row.get("reached_super_bowl"):
+        text += " (lost SB)"
+    return text
+
+
+def _vs_elite_text(row):
+    """Win pct against elite (TSR z >= 1.0) regular-season opponents,
+    with the opponent count, e.g. '66.7% (3)'. '-' if the team faced no
+    elite opponent that season (see team_profile.py:record_vs_elite)."""
+    n = row.get("elite_opponents_played")
+    if pd.isna(n) or not n:
+        return "-"
+    return f"{_fmt(row['record_vs_elite_win_pct'] * 100, 1)}% ({int(n)})"
+
+
+# The "full stat line" shared by season pages and the team-ranking query
+# pages, so a stats-minded reader sees the same depth everywhere: not
+# just True Strength Rating, but the descriptive sub-scores behind it
+# (BUILD_PLAN section 3) and how the season actually ended.
+FULL_STAT_COLUMNS = [
+    ("conf_div", "Conf/Div", False),
+    ("record", "Record", False),
+    ("tsr_z", "TSR (z)", True),
+    ("tsr_se", "TSR SE", True),
+    ("acc", "ACC", True),
+    ("offense_z", "Off (z)", True),
+    ("defense_z", "Def (z)", True),
+    ("dominance_z", "Dom (z)", True),
+    ("schedule_difficulty", "Sched Diff", True),
+    ("vs_elite", "vs Elite (z>=1)", False),
+    ("playoffs", "Playoffs", False),
+]
+
+
+def _full_stat_row(r):
+    return {
+        "conf_div": f"{r['conference']} {r['division']}",
+        "record": _record(r),
+        "tsr_z": _fmt(r["bayes_rating_z"]),
+        "tsr_se": _fmt(r["bayes_rating_se"]),
+        "acc": _fmt(r["acc"], 1),
+        "offense_z": _fmt(r["offense_z"]),
+        "defense_z": _fmt(r["defense_z"]),
+        "dominance_z": _fmt(r["dominance_z"]),
+        "schedule_difficulty": _fmt(r["schedule_difficulty"]),
+        "vs_elite": _vs_elite_text(r),
+        "playoffs": _playoffs_text(r),
+    }
+
+
+_TEAM_SEASON_COLS = [("season", "Season", False), ("franchise", "Team", False)]
+
+QUERY_META = [
+    (
+        "greatest_champions",
+        "Greatest champions",
+        "Super Bowl winners with the highest True Strength Rating.",
+        _TEAM_SEASON_COLS + FULL_STAT_COLUMNS,
+    ),
+    (
+        "weakest_champions",
+        "Weakest champions",
+        "Super Bowl winners with the lowest True Strength Rating - teams that won it all without being the best team on paper.",
+        _TEAM_SEASON_COLS + FULL_STAT_COLUMNS,
+    ),
+    (
+        "greatest_losers",
+        "Greatest losers",
+        "Super Bowl runners-up with the highest True Strength Rating - great teams that still came up short.",
+        _TEAM_SEASON_COLS + FULL_STAT_COLUMNS,
+    ),
+    (
+        "best_teams_never_to_win",
+        "Best teams never to win",
+        "The highest True Strength Rating of any team-season that didn't win that year's Super Bowl, playoffs or not.",
+        _TEAM_SEASON_COLS + FULL_STAT_COLUMNS,
+    ),
+    (
+        "largest_mismatches",
+        "Largest Super Bowl mismatches",
+        "Super Bowl matchups with the biggest True Strength gap between the two teams, both sides' full profile included.",
+        [
+            ("season", "Season", False),
+            ("winner", "Winner", False),
+            ("winner_record", "W Record", False),
+            ("winner_bayes_rating_z", "W TSR (z)", True),
+            ("winner_acc", "W ACC", True),
+            ("winner_offense_z", "W Off (z)", True),
+            ("winner_defense_z", "W Def (z)", True),
+            ("loser", "Loser", False),
+            ("loser_record", "L Record", False),
+            ("loser_bayes_rating_z", "L TSR (z)", True),
+            ("loser_acc", "L ACC", True),
+            ("loser_offense_z", "L Off (z)", True),
+            ("loser_defense_z", "L Def (z)", True),
+            ("z_gap", "TSR gap", True),
+            ("upset_label", "Upset?", False),
+        ],
+    ),
+    (
+        "greatest_conference_imbalance",
+        "Greatest conference imbalance",
+        "Seasons with the largest estimated strength gap between the AFC and NFC (Conference Strength Index), and that season's best team in each conference for concrete grounding.",
+        [
+            ("season", "Season", False),
+            ("csi", "CSI", True),
+            ("ci95", "95% range", False),
+            ("stronger_conference", "Stronger conf", False),
+            ("best_afc", "Best AFC team", False),
+            ("best_nfc", "Best NFC team", False),
+        ],
+    ),
+    (
+        "best_decade",
+        "Best decade",
+        "Mean True Strength Rating of each decade's ten highest-rated team-seasons - since ratings are standardized within season, this asks which decade's best teams stood furthest above their own league average, not which decade scored the most points.",
+        [
+            ("decade", "Decade", False),
+            ("seasons_covered", "Seasons", False),
+            ("mean_top10_tsr_z", "Mean top-10 TSR (z)", True),
+            ("n_elite_seasons", "Elite seasons (z>=1)", False),
+            ("n_weak_seasons", "Weak seasons (z<=-1)", False),
+            ("top3_team_seasons", "Top 3 team-seasons", False),
+        ],
+    ),
+    (
+        "records_that_most_overstated_strength",
+        "Records that most overstated strength",
+        "Team-seasons whose win-loss record was much better than their True Strength Rating - usually a lot of close wins mixed with a few lopsided losses.",
+        [("season", "Season", False), ("franchise", "Team", False), ("win_pct", "Win pct", True), ("residual", "Gap", True)] + FULL_STAT_COLUMNS,
+    ),
+]
+
+DATA_FILES = [
+    ("team_seasons", "Team-season profile", "True Strength Rating, Accomplishment, and every descriptive sub-score for all 1,669 team-seasons, 1970-2025."),
+    ("super_bowls", "Super Bowl matchups", "Every Super Bowl since 1970, both teams' ratings, and the final score."),
+    ("conference_strength_index", "Conference Strength Index", "AFC-vs-NFC strength estimate and uncertainty range, one row per season."),
+]
 
 
 def load_data():
@@ -190,12 +272,8 @@ def render_all(out_dir: Path = OUT_DIR):
         teams = [
             {
                 "franchise": r["franchise"],
-                "conference": r["conference"],
-                "division": r["division"],
-                "record": _record(r),
-                "tsr_z": _fmt(r["bayes_rating_z"]),
-                "acc": _fmt(r["acc"], 1),
-                "result": _season_result_text(r),
+                "division_title": "Yes" if r["division_title"] else "No",
+                **_full_stat_row(r),
             }
             for _, r in season_rows.iterrows()
         ]
@@ -245,10 +323,8 @@ def render_all(out_dir: Path = OUT_DIR):
             return {
                 "franchise": row["franchise"],
                 "score": int(score),
-                "record": _record(row),
-                "tsr_z": _fmt(row["bayes_rating_z"]),
-                "acc": _fmt(row["acc"], 1),
                 "division_title": "Yes" if row["division_title"] else "No",
+                **_full_stat_row(row),
             }
 
         render(
@@ -271,11 +347,27 @@ def render_all(out_dir: Path = OUT_DIR):
             for slug, title, desc, _ in QUERY_META
         ],
     )
+    full_stat_slugs = {
+        "greatest_champions",
+        "weakest_champions",
+        "greatest_losers",
+        "best_teams_never_to_win",
+        "records_that_most_overstated_strength",
+    }
     for slug, title, desc, cols in QUERY_META:
         page_slug = slug.replace("_", "-")
         table = queries[slug].copy()
+        if slug in full_stat_slugs:
+            stat_cols = pd.DataFrame(table.apply(_full_stat_row, axis=1).tolist(), index=table.index)
+            table = table.drop(columns=stat_cols.columns, errors="ignore").join(stat_cols)
         if slug == "largest_mismatches":
             table["upset_label"] = table["upset"].map({True: "Yes", False: "No"})
+            table["winner_record"] = table.apply(
+                lambda r: _record({"wins": r["winner_wins"], "losses": r["winner_losses"], "ties": r["winner_ties"]}), axis=1
+            )
+            table["loser_record"] = table.apply(
+                lambda r: _record({"wins": r["loser_wins"], "losses": r["loser_losses"], "ties": r["loser_ties"]}), axis=1
+            )
         if slug == "greatest_conference_imbalance":
             table["ci95"] = table.apply(lambda r: f"{_fmt(r['ci95_lower'])} to {_fmt(r['ci95_upper'])}", axis=1)
         rows = []
@@ -283,14 +375,16 @@ def render_all(out_dir: Path = OUT_DIR):
             row = {}
             for key, _, is_num in cols:
                 val = r[key]
-                if is_num:
-                    row[key] = _fmt(val)
-                elif key == "win_pct":
-                    row[key] = _fmt(val * 100, 1) + "%"
-                elif isinstance(val, float) and key not in ("season",):
-                    row[key] = _fmt(val)
+                if isinstance(val, str):
+                    row[key] = val
                 elif key == "season":
                     row[key] = int(val)
+                elif key == "win_pct":
+                    row[key] = _fmt(val * 100, 1) + "%"
+                elif key == "acc":
+                    row[key] = _fmt(val, 1)
+                elif is_num or isinstance(val, float):
+                    row[key] = _fmt(val)
                 else:
                     row[key] = val
             rows.append(row)

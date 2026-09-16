@@ -33,6 +33,30 @@ designed to sometimes disagree, and when they do, that disagreement is the inter
 team only plays a handful of interconference games. A season's CSI is considered a meaningfully imbalanced
 conference only when that range doesn't include zero.</p>
 
+<h2>Descriptive sub-scores</h2>
+<p>Shown on season and Super Bowl pages and in most rankings, for context - none of these feed True Strength
+Rating itself (BUILD_PLAN section 2, item 3: TSR is a single network rating, not a blend of components, to avoid
+triple-counting point margin). Every one is standardized the same way TSR is: 0 is that season's league average,
++1 is one standard deviation above it.</p>
+<table>
+<caption>Descriptive sub-score definitions</caption>
+<thead>
+<tr><th scope="col">Column</th><th scope="col">What it measures</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">TSR SE</th><td>Posterior standard error of the True Strength Rating - how uncertain the model is about that specific number, not a separate stat. Comes free from the Bayesian model's shrinkage.</td></tr>
+<tr><th scope="row">Off (z)</th><td>Points scored per game, standardized within season.</td></tr>
+<tr><th scope="row">Def (z)</th><td>Points allowed per game, standardized within season (sign-flipped so higher is always better, matching every other column here).</td></tr>
+<tr><th scope="row">Dom (z)</th><td>Average scoring margin per game, standardized - unlike TSR, not adjusted for opponent strength, so it's a read on sheer scoreboard dominance rather than quality of competition.</td></tr>
+<tr><th scope="row">Sched Diff</th><td>Average True Strength (z) of every regular-season opponent faced - how hard the schedule actually was.</td></tr>
+<tr><th scope="row">vs Elite</th><td>Win percentage against regular-season opponents rated TSR z &ge; 1 that year, with the number of such games played in parentheses. A dash means no opponent that season reached that bar.</td></tr>
+<tr><th scope="row">Playoffs</th><td>Postseason win-loss record, with how the run ended if it reached the Super Bowl.</td></tr>
+</tbody>
+</table>
+<p>Two sub-scores named in the original research plan aren't shown because they need data this project hasn't
+acquired: Roster Quality (would need Approximate Value data, with an open question about redistribution rights)
+and Coach Strength Entering Season (would need a head-coach-by-season dataset).</p>
+
 <h2>Data sources</h2>
 <p>Game results 1970-1998 come from FiveThirtyEight's historical NFL dataset (MIT license); 1999-present comes from
 the nflverse project (CC BY 4.0). Both are unified onto one stable franchise identifier per team, correctly
@@ -41,7 +65,6 @@ handling every relocation and the 1996 Browns/Ravens split. Full provenance note
 
 <h2>What this site doesn't include yet</h2>
 <p>A comparison against historical betting-market point spreads was planned but deferred: the freely available
-spread datasets found all trace back to sources whose terms restrict redistribution. Two descriptive profile
-fields (roster quality, coach strength entering the season) need data this project hasn't acquired. Neither gap
-affects the True Strength Rating or Accomplishment score above.</p>
+spread datasets found all trace back to sources whose terms restrict redistribution. Neither this nor the two
+missing descriptive sub-scores above affects the True Strength Rating or Accomplishment score.</p>
 {% endblock %}

@@ -10,17 +10,27 @@
     <h2>{{ winner.franchise }} <span class="badge">Winner</span></h2>
     <p><strong>Final score:</strong> {{ winner.score }}</p>
     <p><strong>Regular-season record:</strong> {{ winner.record }}</p>
-    <p><strong>True Strength Rating (z):</strong> {{ winner.tsr_z }}</p>
+    <p><strong>Conf/Div:</strong> {{ winner.conf_div }}</p>
+    <p><strong>True Strength Rating (z):</strong> {{ winner.tsr_z }} (SE {{ winner.tsr_se }})</p>
     <p><strong>Accomplishment score:</strong> {{ winner.acc }}</p>
+    <p><strong>Offense (z) / Defense (z) / Dominance (z):</strong> {{ winner.offense_z }} / {{ winner.defense_z }} / {{ winner.dominance_z }}</p>
+    <p><strong>Schedule difficulty:</strong> {{ winner.schedule_difficulty }}</p>
+    <p><strong>Record vs elite (TSR z&ge;1):</strong> {{ winner.vs_elite }}</p>
     <p><strong>Division title:</strong> {{ winner.division_title }}</p>
+    <p><strong>Full postseason record:</strong> {{ winner.playoffs }}</p>
   </div>
   <div>
     <h2>{{ loser.franchise }} <span class="badge">Runner-up</span></h2>
     <p><strong>Final score:</strong> {{ loser.score }}</p>
     <p><strong>Regular-season record:</strong> {{ loser.record }}</p>
-    <p><strong>True Strength Rating (z):</strong> {{ loser.tsr_z }}</p>
+    <p><strong>Conf/Div:</strong> {{ loser.conf_div }}</p>
+    <p><strong>True Strength Rating (z):</strong> {{ loser.tsr_z }} (SE {{ loser.tsr_se }})</p>
     <p><strong>Accomplishment score:</strong> {{ loser.acc }}</p>
+    <p><strong>Offense (z) / Defense (z) / Dominance (z):</strong> {{ loser.offense_z }} / {{ loser.defense_z }} / {{ loser.dominance_z }}</p>
+    <p><strong>Schedule difficulty:</strong> {{ loser.schedule_difficulty }}</p>
+    <p><strong>Record vs elite (TSR z&ge;1):</strong> {{ loser.vs_elite }}</p>
     <p><strong>Division title:</strong> {{ loser.division_title }}</p>
+    <p><strong>Full postseason record:</strong> {{ loser.playoffs }}</p>
   </div>
 </div>
 
