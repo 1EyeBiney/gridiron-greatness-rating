@@ -20,12 +20,26 @@ alpha > 0 the ridge penalty on the team columns alone makes X^T X + Lambda
 invertible (the shared-shift null vector of X becomes an eigenvector of
 Lambda with eigenvalue alpha), so the posterior mode is already uniquely
 identified as the actual Bayesian answer, not an imposed convention.
+
+MIN_ALPHA floors the search grid. Discovered via Phase 4's walk-forward
+validation: fit on a single week's worth of games (~13-16), LOO selected
+alpha=0.012 - barely any shrinkage at all - versus 2.4-16.7 for every
+full-season fit in data/processed/model_params.csv. That is backwards:
+less data should call for MORE shrinkage toward the prior, not less. With
+so few games, removing just one for LOO leaves enough freedom to fit it
+back almost perfectly regardless of alpha, so the LOO objective stops
+being a reliable guide - it was reporting overfitting as if it were a
+good fit. The floor is set just below the smallest alpha any full-season
+fit has ever needed, so it never binds on a well-determined fit and only
+guards against this specific small-sample failure.
 """
 import numpy as np
 import pandas as pd
 from scipy.optimize import minimize_scalar
 
 from .common import capped_margin, design_matrix, team_index
+
+MIN_ALPHA = 2.0
 
 
 def _ridge_fit(X: np.ndarray, y: np.ndarray, alpha: float, n_teams: int):
@@ -58,6 +72,10 @@ def fit_bayesian_margin(g: pd.DataFrame, alpha_grid=None) -> dict:
       ratings_se: pd.Series of posterior standard deviations (same order).
       home_adv, sigma (residual sd), tau (prior sd across teams), alpha
       (the selected ridge penalty sigma^2/tau^2).
+      team_index, beta_cov_unscaled: pass both to
+        models.common.predictive_sigma() for a game-specific predictive
+        standard deviation - sigma alone understates uncertainty for a
+        fit made on few games (see that function's docstring).
     """
     idx = team_index(g)
     n_teams = len(idx)
@@ -65,7 +83,7 @@ def fit_bayesian_margin(g: pd.DataFrame, alpha_grid=None) -> dict:
     y = capped_margin(g["margin"].to_numpy())
 
     if alpha_grid is None:
-        alpha_grid = np.logspace(-2, 3, 40)
+        alpha_grid = np.logspace(np.log10(MIN_ALPHA), 3, 40)
 
     # Coarse grid to bracket the minimum, then a bounded 1-D search on
     # log(alpha) between the bracketing grid points. The grid alone
@@ -103,6 +121,8 @@ def fit_bayesian_margin(g: pd.DataFrame, alpha_grid=None) -> dict:
         "ratings_se": ratings_se.loc[ratings.sort_values(ascending=False).index],
         "home_adv": float(beta[n_teams]),
         "sigma": float(np.sqrt(sigma2)),
+        "team_index": idx,
+        "beta_cov_unscaled": A_inv,
         "tau": float(np.sqrt(tau2)) if np.isfinite(tau2) else float("inf"),
         "alpha": best_alpha,
     }

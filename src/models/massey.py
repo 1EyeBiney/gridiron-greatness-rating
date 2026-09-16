@@ -30,8 +30,11 @@ def fit_massey(g: pd.DataFrame) -> dict:
     Returns a dict with:
       ratings: pd.Series of team ratings, league mean 0, higher is better.
       home_adv: fitted home-field advantage in points.
-      sigma: residual standard deviation of capped margin vs. fitted value,
-        used to convert a rating gap into a win probability elsewhere.
+      sigma: residual standard deviation of capped margin vs. fitted value.
+      team_index, beta_cov_unscaled: pass both to
+        models.common.predictive_sigma() for a game-specific predictive
+        standard deviation - sigma alone understates uncertainty for a
+        fit made on few games (see that function's docstring).
     """
     idx = team_index(g)
     n_teams = len(idx)
@@ -54,6 +57,8 @@ def fit_massey(g: pd.DataFrame) -> dict:
         "ratings": ratings.sort_values(ascending=False),
         "home_adv": home_adv,
         "sigma": sigma,
+        "team_index": idx,
+        "beta_cov_unscaled": np.linalg.pinv(X_aug.T @ X_aug),
     }
 
 

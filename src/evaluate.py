@@ -29,11 +29,10 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
-from scipy.stats import norm
 
 from models.bayesian_margin import fit_bayesian_margin, predict as bayes_predict
 from models.bradley_terry import fit_bradley_terry, predict_win_prob as bt_predict
-from models.common import load_games, log_loss, outcome_label, season_games
+from models.common import home_win_prob_normal, load_games, log_loss, outcome_label, predictive_sigma, season_games
 from models.elo import run_elo
 from models.massey import fit_massey, predict as massey_predict
 
@@ -90,7 +89,8 @@ def cv_massey(g: pd.DataFrame, k: int = N_FOLDS, seed: int = SEED) -> dict:
             continue
         pred_margin = massey_predict(test, fit["ratings"], fit["home_adv"])
         actual_margin = test["margin"].to_numpy()
-        p_home = norm.cdf(pred_margin / fit["sigma"])
+        pred_sigma = predictive_sigma(test, fit["team_index"], fit["beta_cov_unscaled"], fit["sigma"])
+        p_home = home_win_prob_normal(pred_margin, pred_sigma)
         label = outcome_label(actual_margin)
         rows.append(
             {
@@ -133,7 +133,8 @@ def cv_bayesian(g: pd.DataFrame, k: int = N_FOLDS, seed: int = SEED) -> dict:
             continue
         pred_margin = bayes_predict(test, fit["ratings"], fit["home_adv"])
         actual_margin = test["margin"].to_numpy()
-        p_home = norm.cdf(pred_margin / fit["sigma"])
+        pred_sigma = predictive_sigma(test, fit["team_index"], fit["beta_cov_unscaled"], fit["sigma"])
+        p_home = home_win_prob_normal(pred_margin, pred_sigma)
         label = outcome_label(actual_margin)
         rows.append(
             {

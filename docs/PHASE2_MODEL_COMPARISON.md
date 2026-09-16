@@ -28,9 +28,9 @@ adversarial audit, and no model family is locked in by this report.
 
 | Model | Games scored | Log loss | Margin MAE | Accuracy |
 |---|---:|---:|---:|---:|
-| bayesian_margin | 13685 | 0.6223 | 10.54 | 0.656 |
+| bayesian_margin | 13685 | 0.6220 | 10.54 | 0.656 |
 | bradley_terry | 13685 | 0.6274 | n/a | 0.651 |
-| massey | 13685 | 0.6341 | 10.78 | 0.655 |
+| massey | 13685 | 0.6283 | 10.78 | 0.655 |
 | elo | 13685 | 0.6564 | 11.08 | 0.612 |
 
 Lower log loss and margin MAE are better; higher accuracy is better.
@@ -39,10 +39,10 @@ Lower log loss and margin MAE are better; higher accuracy is better.
 
 | Era | bayesian_margin | bradley_terry | elo | massey |
 |---|---:|---:|---:|---:|
-| 1970-1977 (14-game) | 0.5959 | 0.6043 | 0.6482 | 0.6099 |
-| 1978-1994 | 0.6328 | 0.6342 | 0.6583 | 0.6430 |
-| 1995-2010 | 0.6178 | 0.6248 | 0.6547 | 0.6296 |
-| 2011-2025 | 0.6269 | 0.6323 | 0.6596 | 0.6396 |
+| 1970-1977 (14-game) | 0.5957 | 0.6043 | 0.6482 | 0.6028 |
+| 1978-1994 | 0.6326 | 0.6342 | 0.6583 | 0.6372 |
+| 1995-2010 | 0.6176 | 0.6248 | 0.6547 | 0.6241 |
+| 2011-2025 | 0.6266 | 0.6323 | 0.6596 | 0.6339 |
 
 ## Fitted home-field advantage (mean across seasons)
 
