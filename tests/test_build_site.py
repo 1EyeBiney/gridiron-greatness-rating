@@ -8,6 +8,7 @@ import pytest
 from build_site import _fmt, _full_stat_row, _playoffs_text, _record, _vs_elite_text, build_super_bowls_table, render_all
 
 HREF_RE = re.compile(r'href="([^"]+)"')
+SRC_RE = re.compile(r'src="([^"]+)"')
 
 
 def test_fmt_handles_nan_and_rounds():
@@ -84,13 +85,16 @@ def test_build_super_bowls_table_computes_correct_z_gap():
     assert row["winner_score"] == 20
 
 
-def test_every_internal_link_in_the_built_site_resolves_to_a_real_file(tmp_path):
+def test_every_internal_link_and_image_in_the_built_site_resolves_to_a_real_file(tmp_path):
     """Full-site integration test: catches exactly the kind of bug that
     shipped in the first live deploy, where queries/index.html linked to
     'greatest_champions.html' (underscores) but the page generator wrote
     'greatest-champions.html' (hyphens) - a 404 a unit test on either
     piece alone wouldn't catch, since each side was individually correct
-    with respect to its own inputs."""
+    with respect to its own inputs. Also checks every <img src="...">,
+    since that class of bug applies just as well to a typo'd image path
+    - nothing else would catch a homepage hero pointing at a filename
+    the resizer never wrote."""
     out_dir = tmp_path / "site"
     render_all(out_dir=out_dir)
 
@@ -100,7 +104,8 @@ def test_every_internal_link_in_the_built_site_resolves_to_a_real_file(tmp_path)
     broken = []
     for html_file in html_files:
         text = html_file.read_text(encoding="utf-8")
-        for href in HREF_RE.findall(text):
+        refs = HREF_RE.findall(text) + SRC_RE.findall(text)
+        for href in refs:
             if href.startswith(("http://", "https://", "mailto:", "#")):
                 continue
             target = (html_file.parent / href).resolve()
@@ -108,3 +113,23 @@ def test_every_internal_link_in_the_built_site_resolves_to_a_real_file(tmp_path)
                 broken.append(f"{html_file.relative_to(out_dir)} -> {href}")
 
     assert not broken, f"{len(broken)} broken internal link(s):\n" + "\n".join(broken[:20])
+
+
+IMG_TAG_RE = re.compile(r"<img\b[^>]*>")
+
+
+def test_every_image_in_the_built_site_has_an_alt_attribute(tmp_path):
+    """Every <img> must carry alt="..." - empty is fine for a purely
+    decorative image, but a missing attribute isn't the same thing to a
+    screen reader, which will announce the filename instead."""
+    out_dir = tmp_path / "site"
+    render_all(out_dir=out_dir)
+
+    missing = []
+    for html_file in out_dir.rglob("*.html"):
+        text = html_file.read_text(encoding="utf-8")
+        for tag in IMG_TAG_RE.findall(text):
+            if "alt=" not in tag:
+                missing.append(f"{html_file.relative_to(out_dir)}: {tag}")
+
+    assert not missing, f"{len(missing)} <img> tag(s) missing alt:\n" + "\n".join(missing[:20])

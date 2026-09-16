@@ -4,6 +4,12 @@
 <h1>Seasons</h1>
 <p class="lede">Every season from 1970 to {{ seasons[-1] }}. Each page has the full standings, True Strength Rating,
 and Accomplishment score for every team that year.</p>
+
+<figure class="accent-image">
+  <img src="{{ root }}images/team-lineup.jpg" alt="An illustrated toy vignette: five purple-and-gold Vikings figurines with horned helmets stand in a row across the electric football field, posed like a team photo." loading="lazy">
+  <figcaption>56 seasons of standings, one at a time.</figcaption>
+</figure>
+
 {% for decade, decade_seasons in seasons_by_decade %}
 <h2>{{ decade }}s</h2>
 <ul class="card-grid">

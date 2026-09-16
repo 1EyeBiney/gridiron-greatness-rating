@@ -4,6 +4,13 @@
 <h1>Super Bowls</h1>
 <p class="lede">Every Super Bowl from the 1970 season onward, with both teams' True Strength Rating (TSR) at the
 time. "Upset" means the team with the lower True Strength Rating won anyway.</p>
+
+<figure class="accent-image">
+  <img src="{{ root }}images/action-celebration.jpg" alt="An illustrated toy vignette: three purple-and-gold Vikings figurines celebrate in the end zone with a foam football held aloft, while a bear-head figurine lies face down on the field." loading="lazy">
+  <figcaption>Every Super Bowl on this page, at once, in spirit.</figcaption>
+</figure>
+
+<div class="table-scroll stats">
 <table>
 <caption>All {{ rows|length }} Super Bowls, most recent first</caption>
 <thead>
@@ -29,4 +36,5 @@ time. "Upset" means the team with the lower True Strength Rating won anyway.</p>
 {% endfor %}
 </tbody>
 </table>
+</div>
 {% endblock %}

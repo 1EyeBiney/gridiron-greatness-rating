@@ -3,6 +3,7 @@
 {% block content %}
 <h1>{{ title }}</h1>
 <p class="lede">{{ description }}</p>
+<div class="table-scroll stats">
 <table>
 <caption>{{ title }}</caption>
 <thead>
@@ -26,5 +27,6 @@
 {% endfor %}
 </tbody>
 </table>
+</div>
 <p><a href="{{ root }}queries/index.html">&laquo; Back to all rankings &amp; queries</a></p>
 {% endblock %}

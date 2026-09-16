@@ -1,6 +1,6 @@
 # Phase 6 Summary: Outputs and Website
 
-Status: COMPLETE (site built and tested locally; GitHub Pages not yet enabled - see "Publishing" below)
+Status: COMPLETE and published - live at https://1eyebiney.github.io/gridiron-greatness-rating/
 Date: 2026-09-16
 
 ## What was built
@@ -40,28 +40,71 @@ downloadable as CSV/JSON. Verified locally with `get_page_text` and a
 direct read of the generated HTML's landmark structure and table markup.
 
 **What this session could not do**: BUILD_PLAN section 10 calls for
-testing with NVDA and JAWS before release. That needs a human with that
-software running an actual screen reader against the live site - it
-is not something this session can perform, and this deliverable should
-not be read as having done it. Recommend an actual screen-reader pass
-before or shortly after the site goes live.
+testing with NVDA and JAWS before release - that needs a human with that
+software running an actual screen reader, not something this session can
+perform directly. Brian confirmed after the initial launch that the site
+"works pretty well" with his own screen reader, which is real evidence
+the accessibility approach holds up in practice, though it's not the
+same as a dedicated NVDA/JAWS pass across every page type.
 
-## Publishing: not yet done
+## Publishing
 
-The workflow file is ready and was tested locally (`python
-src/run_phase6.py` from the repo root, the same way CI will run it,
-generates the site correctly), but two things this session deliberately
-did not do without asking first:
+Enabled via `gh api` (Pages source: GitHub Actions) and pushed after
+Brian's explicit go-ahead - both the settings change and the push were
+held for confirmation first, since publishing public content needs that
+regardless of how ready the code is. Live at
+https://1eyebiney.github.io/gridiron-greatness-rating/, auto-deploying
+on every push to master.
 
-1. **Enable GitHub Pages** in the repository's settings (Settings →
-   Pages → Source: GitHub Actions). Until this is done, the workflow has
-   nothing to deploy to.
-2. **Push to master**, which would trigger the workflow and make the
-   site live at a public URL.
+One live bug shipped and was fixed within the hour: the query index
+page's links used underscore slugs while the page generator wrote
+hyphenated filenames, a 404 neither side's own code would have caught in
+isolation. Fixed, and a whole-site link checker (`tests/test_build_site.py`)
+now builds the entire site in a temp directory and verifies every
+internal `href` resolves to a real file - added specifically so this
+class of bug can't ship again unnoticed.
 
-Both are exactly the kind of "publish public content" action this
-project's safety guidelines ask to be confirmed explicitly, distinct
-from writing the code that makes publishing possible.
+## Visual redesign (Brian's request, same day)
+
+Once the site was live and confirmed working, Brian asked for a full
+visual pass: a Minnesota Vikings purple/gold color scheme, genuine
+mobile responsiveness (most readers will be on a phone), and original
+illustrations evoking the 1970s electric-football tabletop game he and
+a colleague both grew up playing. Delivered:
+
+- **Color palette**: every foreground/background pairing was checked
+  against WCAG contrast math before use (not eyeballed) - see the
+  session's `contrast_check.py`. Gold is never used for text on a light
+  background or for light text on gold (it fails both ways); purple is
+  never used as the accent color against the dark-mode background (it
+  fails there too - dark mode uses gold as the accent instead). Both
+  light and dark mode pass AA or better on every pair actually used.
+- **Mobile**: every dense stat table (up to 14 columns) is wrapped in a
+  scrollable container (`.table-scroll`) rather than squeezed or
+  reflowed - verified directly by emulating a 375px viewport and
+  confirming both the page layout holds and the table itself scrolls
+  horizontally on touch.
+- **Illustrations**: five images generated via Gemini (Brian's Chrome
+  session, driven through browser automation) in a consistent style
+  across follow-up prompts in one conversation - a Vikings figurine in
+  purple/gold with a horned helmet, styled after Tudor Electric
+  Football's real 1947-on design, facing off against opposing figurines
+  wearing a bear head, lion head, and cheesehead instead of a helmet.
+  Deliberately evocative rather than literal (no real NFL team logos
+  reproduced anywhere) given the site may be shared publicly. Resized
+  and compressed for web (88-254 KB each, from 3+ MB originals) before
+  committing.
+- **New page**: `electric-football.html`, a short, factually-grounded
+  history of the actual game (Norman Sas, 1947, the vibrating-board
+  mechanic, why it was equal parts beloved and unpredictable), tying the
+  site's visual theme to that shared memory without inventing specifics
+  about anyone's personal experience with it.
+- Two accessibility regressions were added as permanent tests, not just
+  fixed once: every `<img>` must carry an `alt` attribute (checked
+  site-wide), and the link checker now also validates every `src`, not
+  just `href` - a broken image path is exactly the kind of thing the
+  original link-checker bug pattern predicts and the old test wouldn't
+  have caught.
 
 ## What's carried forward
 
@@ -70,12 +113,12 @@ from writing the code that makes publishing possible.
 - The deferred spread comparison (Phase 4).
 - Pre-1999 playoff round labels (would let ACC's playoff-win bonus
   escalate by round).
-- An actual NVDA/JAWS pass, once the site is live.
+- A dedicated NVDA/JAWS pass across every page type, beyond Brian's own
+  spot-check.
 
 ## Recommended next step
 
-Confirm publishing (enable Pages, push), then a real screen-reader
-check. After that, the project's originally scoped phases (0-6) are all
-complete - anything further (Roster Quality, Coach Strength, the spread
-comparison, playoff-round reconstruction) is optional depth on an
-already-shippable result.
+The project's originally scoped phases (0-6) are complete and live.
+Anything further (Roster Quality, Coach Strength, the spread comparison,
+playoff-round reconstruction, a dedicated screen-reader audit) is
+optional depth on an already-shippable, already-shipped result.

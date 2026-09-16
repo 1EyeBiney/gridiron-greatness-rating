@@ -234,6 +234,7 @@ def render_all(out_dir: Path = OUT_DIR):
     (out_dir / "data").mkdir()
 
     shutil.copy(TEMPLATES_DIR / "style.css", out_dir / "static" / "style.css")
+    shutil.copytree(TEMPLATES_DIR / "images", out_dir / "images")
 
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
     generated_date = date.today().isoformat()
@@ -249,9 +250,10 @@ def render_all(out_dir: Path = OUT_DIR):
 
     seasons = sorted(profile["season"].unique().tolist())
 
-    # --- index & methodology ---
+    # --- index, methodology, electric football story ---
     render("index.html", out_dir / "index.html", root="")
     render("methodology.html", out_dir / "methodology.html", root="")
+    render("electric_football.html", out_dir / "electric-football.html", root="")
 
     # --- seasons index ---
     by_decade = {}

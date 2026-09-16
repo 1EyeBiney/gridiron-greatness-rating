@@ -6,4 +6,4 @@ participants against historical rankings.
 
 See `docs/BUILD_PLAN.md` for the full research specification, settled decisions, and phase plan.
 
-Status: Phases 1-5 complete (model family locked to the Bayesian hierarchical margin model; ACC point schedule is a recommendation, not locked). Phase 6 (outputs and the GitHub Pages site) is built and tested locally but not yet published - GitHub Pages needs to be enabled and master pushed to go live, both intentionally left for explicit confirmation. See `docs/PHASE6_SUMMARY.md`.
+Status: Phases 0-6 all complete. Live site: https://1eyebiney.github.io/gridiron-greatness-rating/ (model family locked to the Bayesian hierarchical margin model; ACC point schedule is a recommendation, not locked - see `docs/PHASE5_SUMMARY.md`). See `docs/PHASE6_SUMMARY.md` for the site itself, including the Vikings-themed visual redesign.
