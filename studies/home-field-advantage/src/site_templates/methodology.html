@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block page_title %}Methodology{% endblock %}
+{% block content %}
+<h1>Methodology</h1>
+<p class="lede">One yardstick, applied everywhere, and the three places it needs care.</p>
+
+<h2>The data</h2>
+<p>Every NFL regular-season game from 1970 through 2025: FiveThirtyEight's public game file for 1970-1998 and the
+nflverse schedule file for 1999 onward, unified into one table by the sibling
+<a href="{{ root }}{{ main_site }}index.html">Gridiron Greatness Rating</a> project, with franchise-stable team codes so a relocated team is
+one team throughout. Three exclusions: the 1982 strike season (nine games on an irregular schedule and a one-off
+sixteen-team tournament), the three weeks of 1987 replacement-player games, and neutral-site games, which are kept in
+the rating fit but carry no home-field advantage and so contribute nothing to any average. Postseason games are not
+used - the question is about the regular season and its late-season dynamics.</p>
+
+<h2>The yardstick: adjusted home margin</h2>
+<p>For each season, an ordinary-least-squares model fits every game's margin as</p>
+<pre>home score − away score = r<sub>home</sub> − r<sub>away</sub> + h × (1 if a true home game)</pre>
+<p>with one rating <em>r</em> per team, constrained to sum to zero, and one shared home-field term <em>h</em>. This is
+the Massey rating with a home term, fit on a full season at a time. The adjusted home margin of a game is then the
+actual margin minus the rating difference: how much the home team beat expectation by, before any home-field credit.
+Averaged over any set of true home games, it estimates the home-field advantage for that set, in points, with a
+standard error of the mean alongside it. Every table on this site is this average over a different set of games. Home
+win percentage and raw margin are shown too, but they are not adjusted for team quality and are there for context.</p>
+<p>Because the model is refit every season, "expectation" always means how good the two teams were that year, so the
+1970s and 2020s are treated identically. Schedules in the pre-1999 seasons have no week numbers in the source data; weeks
+are assigned from the calendar (Tuesday to Monday), which places a Thursday, Saturday, Sunday and Monday slate in one
+week and reproduces the true 14-, 16-, 17- and 18-week schedule lengths exactly. Each season is then split into
+thirds by week number.</p>
+
+<h2>Care point one: selecting games on outcomes</h2>
+<p>A team's playoff situation is a function of its earlier results. Group games by that situation and compare them to a
+full-season rating and you measure selection, not home field: teams picked for a bad start beat a rating that
+includes the bad start. The <a href="{{ root }}playoff-race.html">playoff race page</a> shows the artifact in full (it
+is worth about a point and a half, and it appears at home and on the road alike). The fix used here is to freeze each
+team's situation entering the window being studied and fit the ratings on that window's games alone. The residuals
+then contain no information about the results that defined the label, and their group averages are unbiased.</p>
+<p>Situation is computed from the standings entering each week, ignoring tiebreakers, with ties counting half a win.
+"Eliminated" means the team cannot reach the current point total of the last team holding a playoff spot in its
+conference; "clinched" means no more than that many other teams can still match its total; "3+ games back" is three
+or more games behind that last spot; everyone else is "in the race". Playoff spots per conference follow the real
+format: four through 1977, five through 1989, six through 2019, seven since 2020.</p>
+
+<h2>Care point two: what a rating model can and cannot separate</h2>
+<p>Suppose eliminated hosts really did have a smaller home edge. The fit has no separate term for that, so it does the
+next best thing: it lowers those teams' ratings slightly, which makes their home games look a little worse than
+expected and their road games a little better. Half the effect lands in each role. So the "as host" and "as visitor"
+averages for any group of teams come out nearly equal whatever the truth is, and only their combination - the
+home-field advantage across all games involving those teams - is cleanly identified. The site reports that combination
+as the headline and shows the two roles so the reader can see them agree.</p>
+<p>The same logic limits the franchise question. A team whose fans travel would give up less on the road, which is a
+small home/road swing. But a team with a weak home crowd would also have a small swing. The swing is identified;
+its cause is not. Separating the two would take attendance or ticket-market data, which this project does not have.</p>
+
+<h2>Care point three: what the numbers can't tell you</h2>
+<ul>
+  <li>The decline across decades is well outside sampling error, but its causes (travel, recovery, replay review,
+    stadium economics, rule changes) are not separable from scores.</li>
+  <li>A single season's home-field advantage has a standard error near 0.8 points. Season-to-season wiggles are mostly
+    noise; the decade averages are the signal.</li>
+  <li>Roof type and division-game flags exist only from 1999.</li>
+  <li>The 1982 exclusion removes one season; nothing else in the analysis changes if it is included with a coarser
+    week assignment, but its final-third fit has too few games for a rating model, so it is left out throughout.</li>
+</ul>
+
+<h2>Reproducibility</h2>
+<p>Everything is scripted. One command re-downloads nothing, re-fits every season, regenerates every table and every
+page, and the test suite pins every number quoted in the prose to the tables it came from. The
+<a href="{{ repo_url }}">repository</a> has the code; the <a href="{{ root }}data/index.html">data page</a> has every
+table as CSV.</p>
+{% endblock %}

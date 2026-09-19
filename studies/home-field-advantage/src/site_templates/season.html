@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_title %}Season and week{% endblock %}
+{% block content %}
+<h1>Home field by season, part of season, and week</h1>
+<p class="lede">The same yardstick - how much the home team beat expectation by - sliced by time.</p>
+
+<h2>By decade and part of the season</h2>
+<p>Each season is split into thirds by week number, so a 14-game 1970s season and an 18-week 2020s season are treated
+the same way. The final third is the strongest part for home teams in {{ facts.n_decades_late_highest }} of
+{{ facts.n_decades }} decades{% if facts.decades_late_not_highest %} and within {{ facts.late_shortfall_max|f2 }} points of
+the strongest in the {{ facts.decades_late_not_highest|join(" and ") }}{% endif %}.</p>
+{{ tables.by_decade_phase }}
+
+<h2>The final week</h2>
+<p>If eliminated teams' fans were selling their seats, the last week of the season is where it would show most. It
+doesn't: the final week is a little <em>stronger</em> for home teams than the rest of the year.</p>
+{{ tables.final_week }}
+
+<h2>By week number, 1999-2025</h2>
+<p>Exact week numbers exist only from 1999, when the nflverse schedule data begins. Week 1 stands out as the weakest
+week for home teams. Week 18 has existed only since 2021, so its sample is small.</p>
+{{ tables.by_week }}
+
+<h2>Every season</h2>
+<p>"Fitted HFA" is the home-field term from that season's rating model; the three "third" columns are the average
+adjusted home margin in each part of the season. A single season's fitted home-field advantage has a standard error
+near 0.8 points, and a single third of a season near 1.4, so read the trend across seasons, not the individual
+rows. 1982 (the strike season, nine games on an irregular schedule) is excluded throughout.</p>
+{{ tables.by_season }}
+{% endblock %}

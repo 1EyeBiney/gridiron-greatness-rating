@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block page_title %}What It Means{% endblock %}
+{% block content %}
+<h1>What It Means</h1>
+<p class="lede">Fifty-five seasons of final scores, one hypothesis about resale tickets that turned out to be wrong,
+and a better picture of what home field actually is.</p>
+
+<h2>The question we started with</h2>
+<p>Anyone who has bought a late-December ticket on the secondary market knows the feeling: the home team is 4-10,
+the upper deck is half visiting colors, and the place sounds like a neutral site. The hypothesis was simple.
+Season-ticket holders of teams going nowhere sell their seats, visiting fans buy them, and the home edge - already
+smaller than it used to be - drains out of the building in the last month of the year. If that were true, it would
+show up two ways: home-field advantage should shrink as the season goes on, and it should shrink most for teams already
+out of the race.</p>
+<p>Neither happens. Not in the 1970s, not in the 2010s, not since. Home field is worth about {{ facts.hfa_early|f1 }}
+points in the first third of a season and {{ facts.hfa_late|f1 }} in the last third, and that ordering holds in
+{{ facts.n_decades_late_highest }} of {{ facts.n_decades }} decades with the other a dead heat. The final week alone -
+the week of resting starters, meaningless games and the emptiest upper decks - is worth {{ facts.final_week|f1 }}.
+Games involving teams that were already eliminated carry as much home field as games between contenders. The
+stadium may look different in December. The scoreboard doesn't notice.</p>
+
+<h2>What did change</h2>
+<p>The real story in the data is the long decline. Through the 1970s, 1980s and 1990s, home field was worth about
+three points - which, for anyone who has ever looked at a point spread, is exactly the number the betting markets
+used for decades. Then it started sliding: {{ facts.dec.loc["2000s", "hfa"]|f1 }} in the 2000s, {{ facts.hfa_2010s|f1 }} in
+the 2010s, {{ facts.hfa_2020s|f1 }} so far in the 2020s. Home teams won six of every ten games in the 1990s. In the 2020s
+they win barely more than half.</p>
+<p>The scores can't tell you why. They can tell you what fits. Charter flights, sleep science, and hotel routines have
+turned a road trip from an ordeal into an inconvenience. Replay review took away some of what a loud crowd used to
+extract from officials on close calls. Stadiums got quieter as club seating and corporate sections replaced the
+bleachers. The rulebook tilted toward offense and away from the kind of game where a crowd could rattle a quarterback
+into a false start on third-and-short. Every one of those pushes the same direction, and no single one of them can be
+pulled out of a final score. What can be said is that the number has fallen by more than a point, that the fall is far
+too large to be noise, and that nothing in the last five seasons suggests it is coming back.</p>
+
+<h2>The season that proved the crowd matters</h2>
+<p>If the resale hypothesis is wrong, is the crowd irrelevant? The league ran that experiment in 2020 without meaning
+to. Same teams, same travel, same officials, and for most of the season nobody in the seats. Home-field advantage
+that year was {{ facts.hfa_2020|f1 }} points. Not small. Gone. Home teams won exactly half their games. The next season
+the fans came back and so did the edge, at {{ facts.hfa_2021_25|f1 }} points over 2021-2025.</p>
+<p>Put those two results side by side and the picture sharpens. A stadium full of people is worth roughly two points to
+the home team. A stadium full of somewhat different people - more visitors, fewer regulars, quieter in the fourth
+quarter of a lost season - is worth about the same. Whatever the crowd does for the home side, it seems to do it by
+being there, not by being loyal. That is a less romantic conclusion than the one we set out to test. It is also the one
+the data support.</p>
+
+<h2>Why the obvious test gives the wrong answer</h2>
+<p>There is a reason this question hasn't been settled by someone with a spreadsheet and an afternoon. The obvious
+test - sort late-season games by whether the home team is still in the race, compare margins to what the teams'
+ratings predict - produces a striking result: eliminated hosts appear to enjoy nearly {{ facts.naive_elim|f1 }} points of
+home field, against {{ facts.naive_alive|f1 }} for contenders. Bad teams, it seems, play up at home in December.</p>
+<p>They don't. That number is an artifact of how the groups were formed. A team is eliminated because it lost a lot of
+games early. Its season-long rating includes those losses. Measured against a rating dragged down by the very games that
+earned it the label, its late games look better than expected almost automatically - and, tellingly, they look better on
+the road too. Fix it by freezing each team's status before the window you study and rating teams only on games inside
+that window, so the yardstick knows nothing about the results that defined the groups, and the gap disappears. The
+<a href="{{ root }}playoff-race.html">playoff race page</a> shows both versions. The wrong one is worth seeing, because it is
+the one most people would produce.</p>
+
+<h2>The Terrible Towel test</h2>
+<p>The second question was about the fans who travel. Steelers fans are famous for it. So are Packers fans, Cowboys
+fans, Raiders fans in their day, 49ers fans across the West. If a visiting fan base can turn a road stadium half gold,
+the home team's edge should shrink when those teams visit - which would show up as a smaller-than-usual gap between how
+those teams play at home and how they play on the road.</p>
+<p>It doesn't show up. The league-average gap is {{ facts.swing_league|f1 }} points. Pittsburgh's is
+{{ facts.pit_swing|f1 }} - <em>larger</em> than average. The Steelers, for all the towels in the visiting sections, have
+been a noticeably better team at Three Rivers and Heinz Field than anywhere else, which is the opposite of what
+traveling fans would produce. San Francisco's gap is {{ facts.sf_swing|f1 }}, a little smaller than average, but no
+more so than chance would give a random team. Across all {{ facts.n_franchises }} franchises, only
+{{ facts.n_abs_z_over_2 }} sit more than two standard errors from the league average, which is roughly what you'd
+expect if every team were exactly the same. {{ facts.swing_max_team }} has the largest gap and
+{{ facts.swing_min_team }} the smallest; neither is the story anyone tells about traveling fans.</p>
+<p>Here too there is a limit to what scores can say. A team whose fans travel well and a team whose home crowd is
+quiet would look identical in this test: both play about as well away as at home. Separating them would take
+attendance figures or ticket-market data, and this study doesn't have them. What it can say is that if any fan base
+is worth points on the road, the effect is smaller than fifty-five seasons of scores can detect. Traveling fans are
+real. They are on television every week. They are not, as far as the scoreboard is concerned, worth a field goal.</p>
+
+<h2>What to take from it</h2>
+<p>Home field is smaller than it used to be and shows no sign of recovering. It is not eroded by the calendar, by
+elimination, or by the visiting fans in section 340. It is eroded by everything that has made the NFL a more
+controlled, more professional, more evenly officiated league, and it can be switched off entirely by taking the people
+out of the building. That is a cleaner story than the one about resale markets, and it has the advantage of being true.
+The tables behind every sentence here are one click away: <a href="{{ root }}season-and-week.html">by season and week</a>,
+<a href="{{ root }}playoff-race.html">by playoff race</a>, <a href="{{ root }}venues.html">by venue</a>, and
+<a href="{{ root }}franchises.html">by franchise</a>, with everything downloadable from the
+<a href="{{ root }}data/index.html">data page</a>.</p>
+{% endblock %}

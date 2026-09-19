@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block page_title %}{{ title }}{% endblock %} · Home Field Advantage</title>
+<meta name="description" content="{{ description|default('How much home field is worth in the NFL, 1970-2025, and whether it fades late in the season.') }}">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+  <div class="header-inner">
+    <p class="site-name"><a href="{{ root }}index.html">Home Field Advantage</a></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="{{ root }}index.html">Findings</a></li>
+        <li><a href="{{ root }}season-and-week.html">Season &amp; week</a></li>
+        <li><a href="{{ root }}playoff-race.html">Playoff race</a></li>
+        <li><a href="{{ root }}venues.html">Venues &amp; crowds</a></li>
+        <li><a href="{{ root }}franchises.html">Franchises</a></li>
+        <li><a href="{{ root }}methodology.html">Methodology</a></li>
+        <li><a href="{{ root }}what-it-means.html">What it means</a></li>
+        <li><a href="{{ root }}data/index.html">Download data</a></li>
+        <li><a href="{{ root }}{{ main_site }}index.html">Gridiron Greatness Rating</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+<footer>
+  <p>Home Field Advantage is a companion study to the
+     <a href="{{ root }}{{ main_site }}index.html">Gridiron Greatness Rating</a>, built from the same game table
+     (FiveThirtyEight 1970-1998, nflverse 1999-present). Methodology, decisions, and full source are in the
+     <a href="{{ repo_url }}">GitHub repository</a>. Generated {{ generated_date }}.</p>
+</footer>
+</body>
+</html>

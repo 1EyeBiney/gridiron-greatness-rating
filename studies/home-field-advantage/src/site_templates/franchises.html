@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block page_title %}Franchises{% endblock %}
+{% block content %}
+<h1>Which fan bases travel?</h1>
+<p class="lede">Every franchise's home/road swing - and why it is the only version of this question that scores can
+answer.</p>
+
+<figure class="accent-image">
+  <img src="{{ root }}images/team-lineup.jpg" width="1400" height="933"
+       alt="A row of electric football figurines in purple and gold lined up on a green tabletop field, facing a row of opponents wearing bear heads, lion heads and cheeseheads.">
+  <figcaption>Road crowds, tabletop edition.</figcaption>
+</figure>
+
+<h2>What is being measured</h2>
+<p>For each franchise, take every home game and ask how many points it beat expectation by; do the same for every
+road game, from the team's own point of view. The difference between the two averages is the team's home/road
+swing. For an ordinary team the swing is twice the league home-field advantage: it gets the edge at home and gives
+it up on the road. The league-average swing over 1970-2025 is {{ facts.swing_league|f1 }} points.</p>
+<p>A team whose fans travel well enough to neutralise road crowds should show a small swing - it gives up less on the
+road. But a small swing is also what a team with a quiet home crowd would show, and from scores alone the two can't
+be separated. The <a href="{{ root }}methodology.html">methodology page</a> explains why. What the table below can say
+is whether any franchise's home/road split is unusual at all. The "z" column is the swing's distance from the
+league average in standard errors; with {{ facts.n_franchises }} franchises, one or two beyond ±2 is what chance
+produces.</p>
+
+<h2>1970-2025</h2>
+{{ tables.franchise_swing }}
+<p>{{ facts.swing_min_team }} has the smallest swing ({{ facts.swing_min|f1 }}, z = {{ facts.swing_min_z|f2 }}) and
+{{ facts.swing_max_team }} the largest ({{ facts.swing_max|f1 }}, z = {{ facts.swing_max_z|f2 }}). Pittsburgh, the
+franchise most often named when people talk about fans taking over a road stadium, sits at {{ facts.pit_swing|f1 }}
+(z = {{ facts.pit_z|f2 }}) - a <em>larger</em> swing than average, the opposite of what traveling fans would produce.
+San Francisco is at {{ facts.sf_swing|f1 }} (z = {{ facts.sf_z|f2 }}), smaller than average but within noise.
+Dallas is at z = {{ facts.dal_z|f2 }}, Green Bay z = {{ facts.gb_z|f2 }}, the Raiders z = {{ facts.oak_z|f2 }}.</p>
+
+<h2>2000-2025</h2>
+<p>Resale markets and national fan bases are more of a modern story, so here is the same table for the last
+twenty-six seasons. Standard errors are larger with half the games. Pittsburgh z = {{ facts.pit_z_modern|f2 }},
+San Francisco z = {{ facts.sf_z_modern|f2 }}, New Orleans z = {{ facts.no_z_modern|f2 }}.</p>
+{{ tables.franchise_swing_2000_2025 }}
+
+<h2>1970-1999</h2>
+{{ tables.franchise_swing_1970_1999 }}
+{% endblock %}

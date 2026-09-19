@@ -418,7 +418,25 @@ def render_all(out_dir: Path = OUT_DIR):
         {"slug": slug, "title": title, "description": desc} for slug, title, desc in DATA_FILES
     ])
 
+    build_studies(out_dir)
     print(f"Site generated at {out_dir} ({len(seasons)} season pages, {len(sb_table)} Super Bowl pages, {len(QUERY_META)} query pages)")
+
+
+# Side studies live in studies/<name>/ with their own src/, data/, tests/ and
+# templates, and publish as a sub-site at /<name>/ of this site. Each one's
+# site generator exposes render_all(out_dir).
+STUDIES = [("home-field-advantage", "hfa_site")]
+
+
+def build_studies(out_dir: Path) -> None:
+    import importlib.util
+
+    for name, module in STUDIES:
+        src = REPO / "studies" / name / "src"
+        spec = importlib.util.spec_from_file_location(module, src / f"{module}.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        mod.render_all(out_dir / name)
 
 
 if __name__ == "__main__":

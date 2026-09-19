@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block page_title %}Playoff race{% endblock %}
+{% block content %}
+<h1>Do teams out of the race lose their home edge?</h1>
+<p class="lede">The resale-market hypothesis, tested the careful way - and a worked example of the trap the careless
+way falls into.</p>
+
+<h2>The hypothesis</h2>
+<p>Once a team is out of the playoff picture, its season-ticket holders have less reason to go and more reason to
+sell. Visiting fans buy those seats. The stadium is still full, but it is no longer the home team's crowd, and the
+home edge should shrink. If that is true, home-field advantage in late-season games hosted by eliminated teams should
+be measurably smaller than in games hosted by teams still fighting for a spot.</p>
+
+<h2>The trap</h2>
+<p>The obvious test is to label each late-season game by the home team's situation that week and average the adjusted
+margins. Here is what that produces:</p>
+{{ tables.naive }}
+<p>Read naively, eliminated hosts enjoy nearly twice the home edge of contenders - {{ facts.naive_elim|f1 }} points
+against {{ facts.naive_alive|f1 }}. That is not a home-field effect. It is selection. A team is "eliminated" because
+it lost a lot of games earlier in the season, and its full-season rating averages those losses in. Compared to that
+rating, its late-season games look good almost by construction: the bad games that defined the label are the same
+games dragging down the yardstick it's measured against. The effect shows up for eliminated teams on the road, too,
+which is how you know it isn't about the stadium. Any analysis that groups games by a team's record and compares them
+to a rating built from that record has this problem.</p>
+
+<h2>The fix</h2>
+<p>Two changes remove the contamination. First, each team's situation is <strong>frozen entering the window</strong>
+being studied - the final three weeks, or the final third of the season - so the label depends only on games before
+the window. Second, the ratings used to set expectation are <strong>fit on the window's games alone</strong>, so they
+contain no information about the earlier results that produced the label. The residuals are then independent of the
+label, and their average over any group of games is an unbiased estimate of that group's home-field advantage.</p>
+<p>One thing scores cannot do, even then. A rating model spreads any team-specific home effect across both of that
+team's roles: if eliminated hosts really had a smaller edge, the fit would lower those teams' ratings a little and
+the shortfall would appear half in their home games and half in their road games. The "as host" and "as visitor"
+columns below are therefore nearly identical by construction and should not be read separately. The cleanly
+identified quantity is the home-field advantage across <em>all games involving</em> teams in a given situation.
+If eliminated hosts were giving up even a point of home edge, that number would be visibly lower for eliminated teams
+than for contenders. That is the test.</p>
+
+<h2>Final three weeks</h2>
+<p>Elimination is common by this point of the season, so the sample is large. Ratings are fit on the last three
+weeks' games alone, which makes the individual team ratings noisy but keeps the group averages unbiased.</p>
+{{ tables.last3 }}
+{{ tables.last3_gb }}
+<p>Games involving eliminated teams: {{ pm(facts.elim_last3, facts.elim_last3_se) }} points of home-field advantage,
+over {{ facts.n_elim_last3|n }} games. Games involving teams still in the race: {{ pm(facts.alive_last3, facts.alive_last3_se) }}.
+By games behind, teams three or more back come in at {{ facts.gb3_last3|f1 }} and teams holding a spot at
+{{ facts.spot_last3|f1 }}. Nothing here separates from anything else by more than about one standard error. The
+home-win percentages differ, of course - eliminated hosts are bad teams and lose more - but that is what the rating
+adjustment is for.</p>
+
+<h3>By era</h3>
+<p>Resale markets are a recent phenomenon, so the hypothesis might hold only recently. It doesn't hold in 2010-2025
+either: eliminated-team games and contender games sit within one standard error of each other.</p>
+{{ tables.last3_era }}
+
+<h2>Final third of the season</h2>
+<p>The wider window, frozen entering the final third. Very few teams are mathematically eliminated that early, so
+the meaningful comparison is between teams three or more games out of a spot and everyone else: {{ facts.longshot_third|f1 }}
+against {{ facts.alive_third|f1 }} for teams in the race.</p>
+{{ tables.third }}
+{{ tables.third_gb }}
+
+<h2>What it means</h2>
+<p>The fans in the seats may well change late in the year for teams going nowhere. If they do, it doesn't reach the
+scoreboard in any amount this much data can detect - and this is a lot of data. Set against the 2020 result on the
+<a href="{{ root }}venues.html">venues page</a>, where removing the crowd entirely removed the home edge, the picture is
+consistent: a stadium full of people helps the home team, and a stadium full of somewhat different people helps it
+about the same amount.</p>
+{% endblock %}

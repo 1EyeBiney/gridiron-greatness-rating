@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block page_title %}Download data{% endblock %}
+{% block content %}
+<h1>Download data</h1>
+<p class="lede">Every table on this site as CSV, plus the game-level file everything is built from.</p>
+<p>All files are regenerated on every build from the scripts in the <a href="{{ repo_url }}">repository</a>.
+The game-level file (games_adjusted.csv) has one row per regular-season game with the adjusted home margin, week
+index, season phase, and each side's playoff situation entering that week. Source data: FiveThirtyEight (MIT
+license) for 1970-1998 and nflverse (CC BY 4.0) for 1999 onward, merged and transformed as described on the
+<a href="{{ root }}methodology.html">methodology page</a>.</p>
+<ul>
+{% for f in files %}
+  <li><a href="{{ f.name }}">{{ f.name }}</a> ({{ f.size_kb }} KB)</li>
+{% endfor %}
+</ul>
+{% endblock %}

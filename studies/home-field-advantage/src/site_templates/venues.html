@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block page_title %}Venues and crowds{% endblock %}
+{% block content %}
+<h1>Venues and crowds</h1>
+<p class="lede">Indoors against outdoors, division rivals against everyone else, and the season with no fans.</p>
+
+<h2>The season with no fans</h2>
+<p>In 2020 the NFL played a full schedule with stadiums empty or nearly so for most of the year. Nothing else about
+the games changed: same teams, same travel, same officials. Home-field advantage fell to almost exactly zero and
+returned the following season. Whatever home field is made of, a large share of it is people.</p>
+{{ tables.covid }}
+
+<h2>Indoors and outdoors</h2>
+<p>Roof information is available from 1999. If the late-season rise in home field were about cold weather, it would
+show up outdoors and not indoors. It shows up in both.</p>
+{{ tables.roof }}
+
+<h2>Division games</h2>
+<p>Home field is worth less against a division opponent than against anyone else, in every part of the season
+({{ facts.div_all|f1 }} points against {{ facts.nondiv_all|f1 }} overall). Familiarity is the usual explanation:
+teams that play twice a year know each other's stadiums, crowds, and habits, and that erodes part of what makes a
+road trip hard. The late-season rise is present in both groups.</p>
+{{ tables.division }}
+{% endblock %}
