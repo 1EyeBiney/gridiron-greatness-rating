@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block page_title %}Mechanism{% endblock %}
+{% block content %}
+<h1>Are drives getting shorter and more explosive?</h1>
+<p class="lede">League-wide trends by season, and whether teams with a higher explosive rate run fewer plays per
+drive.</p>
+
+<h2>League trends by season</h2>
+<p>Explosive rate per play and per drive, plays per drive, seconds per drive, pass rate, the defensive-play rate
+per snap (a sack, forced turnover, or tackle for loss), and turnovers per game, league-wide, 1999-2025.</p>
+{{ tables.mechanism_by_season }}
+
+<h2>Strategy: explosiveness versus drive length</h2>
+<p>Within each era, the correlation across team-seasons between a team's explosive rate per play and its plays per
+drive. A negative correlation would mean more-explosive offenses run fewer plays per drive, consistent with Simms'
+argument that offenses now deliberately trade drive length for big-play upside.</p>
+{{ tables.mechanism_strategy_by_era }}
+{% endblock %}

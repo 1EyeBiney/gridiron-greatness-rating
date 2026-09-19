@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block page_title %}Methodology{% endblock %}
+{% block content %}
+<h1>Methodology</h1>
+<p class="lede">Definitions, data source, and the modelling choices behind every table on this site. This page is
+factual only - it does not draw conclusions about the results.</p>
+
+<h2>The question</h2>
+<p>Turnover differential is the classic single-number explanation for who won an NFL game. The claim tested here is
+that explosive plays now belong alongside it: that the team with more big plays wins, that this reflects a real
+shift in how offenses attack, and that the shift has grown over time. That is broken into four separate,
+testable pieces: association (does explosive-play differential predict the winner as well as turnover
+differential, and has that changed), exchange rate (how many points is each worth, and has the rate moved),
+mechanism (are drives getting shorter and more explosive, and is that a deliberate trade-off), and persistence
+(is explosive-play differential more repeatable than turnover differential, i.e. closer to a skill).</p>
+<p>A caution stated here and in the findings: explosive plays gain yards, and yards become points, so "more big
+plays predicts more wins" is close to a tautology on its own. The informative comparisons are relative (explosive
+plays versus turnovers) and over time (has the balance shifted), not the absolute size of any one coefficient.</p>
+
+<h2>Data source and license</h2>
+<p>Play-by-play data comes from nflverse (nflfastR), 1999-2025, distributed as one Parquet file per season through
+the nflverse-data GitHub releases, under a CC BY 4.0 license. <strong>Raw play-by-play is not committed to this
+repository.</strong> An ingest script downloads each season's file to a local, gitignored directory, aggregates it
+to one row per team-game, and only that aggregate (<code>data/processed/team_game.csv</code>, roughly 14,000 rows)
+is committed. The site and every test in this repository are built from that aggregate and the analysis tables
+derived from it, so no part of the build or test suite re-downloads play-by-play data. The main project's game
+table supplies the True Strength Rating (TSR) used on the <a href="{{ root }}leaderboard.html">leaderboard
+page</a>, joined on season and franchise.</p>
+
+<h2>Definitions</h2>
+<p>Every count below is computed per team-game, on <strong>scrimmage plays</strong>: <code>play_type</code> is pass
+or run, the nflverse <code>play</code> flag is set (excluding penalty-only or no-play rows), and the play is not a
+quarterback kneel or spike.</p>
+<ul>
+  <li><strong>Explosive play</strong>, primary definition: a pass gaining 20 or more yards, or a rush gaining 10 or
+    more. Three sensitivity variants are reported alongside it throughout: 25 yards passing / 15 rushing; 20/20;
+    and an EPA-based definition (any scrimmage play with EPA &gt;= +2.0), which removes part of the yardage
+    tautology since it rewards plays for how much they raised win probability rather than yards alone.</li>
+  <li><strong>Turnover</strong>: an interception or a lost fumble, on any play type including special teams (a
+    turnover on a punt still hands over a possession). A scrimmage-only variant is tracked too. Turnovers are
+    attributed to whichever team actually had the ball when it came loose, not always the team with possession on
+    the play (see the module docstring in <code>xe_metrics.py</code> for the punt-return edge case this matters
+    for).</li>
+  <li><strong>Defensive "play"</strong>: a play credits a team's defense once if it produced at least one of a
+    sack, a forced turnover, or a tackle for loss (so a strip-sack counts once, not twice). The per-snap rate of
+    this is the mechanism metric for whether offenses face more per-play risk than they used to.</li>
+  <li><strong>Drive metrics</strong>: plays per drive and seconds per drive, from the play-by-play drive fields.</li>
+  <li><strong>Differentials</strong> (suffixed <code>_diff</code>) are always team minus opponent within the same
+    game.</li>
+  <li><strong>Garbage time</strong>: every explosive-play and turnover count has a non-garbage-time twin (suffixed
+    <code>_ng</code>), restricted to plays where the offense's win probability was between 5% and 95%. Every
+    headline analysis is run on all plays; the <code>_ng</code> variant is reported alongside as a sensitivity
+    check, not as the default.</li>
+</ul>
+
+<h2>Modelling</h2>
+<p>The association analysis (win ~ explosive differential + turnover differential) and the exchange-rate analysis
+(margin ~ explosive differential + turnover differential) are both fit on <strong>one row per game</strong>: the
+home team's row from the team-game table, for regular-season games only, 1999-2025. Differentials in that row are
+already home-minus-away, so a regression on the home rows alone uses every game exactly once without
+double-counting it from both teams' perspectives.</p>
+<p>Association is a logistic regression of the game winner on both differentials, standardized to z-scores within
+each season so seasons with different raw scales are comparable; ties are dropped for this model, since a binary
+win/loss is undefined for them, and the standardization is computed after dropping ties so the scale matches the
+fit sample. Three versions are fit every time: explosive differential alone, turnover differential alone, and
+both together, each reporting a coefficient, its standard error, log loss, and classification accuracy. The
+exchange-rate analysis is an ordinary least-squares regression of the same idea on raw (unstandardized) units, so
+its coefficients are directly in points: points per explosive play, points per turnover, and their ratio (how many
+explosive plays one turnover is worth), with a delta-method standard error on the ratio. Margin is defined for
+ties, so ties are kept in this model. Both models are fit with a small custom implementation (NumPy IRLS for the
+logistic regression, closed-form least squares for the linear one) rather than a third-party statistics library.</p>
+<p>Persistence is measured by splitting each team-season's games in half by week number (the earlier half getting
+the smaller share when the season length is odd) and correlating the first half's rate against the second half's,
+per team-season, within era. Year-to-year persistence instead correlates a team's full-season rate in one season
+against its rate the following season. Both use a Pearson correlation with a 95% confidence interval from the
+Fisher z-transform.</p>
+
+<h2>Eras</h2>
+<p>Three nine-season blocks spanning the full sample: 1999-2007, 2008-2016, and 2017-2025. They are used
+throughout instead of decades so each era is the same length and the most recent one is complete.</p>
+
+<h2>Limitations</h2>
+<ul>
+  <li>Because explosive plays mechanically produce yards and yards produce points, any measure of "does explosive
+    differential predict wins" carries some of that tautology built in. The comparisons that matter are relative
+    to turnover differential and over time, not the absolute size of a coefficient.</li>
+  <li>nflverse's play-by-play team codes reflect each franchise's <em>current</em> code for its entire history (for
+    example, the 1999 Raiders appear as "LV"). The crosswalk used to normalize team codes to franchise-stable IDs
+    handles this for codes it has seen elsewhere in the data; a handful of early-era rows can still carry an
+    un-normalized code, which shows up as unmatched rows against the main project's team ratings
+    (<code>leaderboard_unmatched.csv</code> on the <a href="{{ root }}data/index.html">data page</a>).</li>
+  <li>The 2026 season, in progress at the time of writing, is excluded from every table and analysis on this
+    site.</li>
+</ul>
+
+<h2>Reproducibility</h2>
+<p>Everything is scripted. The ingest script re-downloads and re-aggregates play-by-play data on request; every
+analysis table and every page on this site is regenerated from <code>data/processed/team_game.csv</code> and the
+tables derived from it. The <a href="{{ repo_url }}">repository</a> has the code; the
+<a href="{{ root }}data/index.html">data page</a> has every table as CSV.</p>
+{% endblock %}

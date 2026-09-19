@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block page_title %}{{ title }}{% endblock %} · Explosive Edge</title>
+<meta name="description" content="{{ description|default('Do explosive plays decide NFL games the way turnovers do? A study of the explosive-play differential, 1999-2025.') }}">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+  <div class="header-inner">
+    <p class="site-name"><a href="{{ root }}index.html">Explosive Edge</a></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="{{ root }}index.html">Findings</a></li>
+        <li><a href="{{ root }}the-shift.html">The shift</a></li>
+        <li><a href="{{ root }}mechanism.html">Mechanism</a></li>
+        <li><a href="{{ root }}skill-or-luck.html">Skill or luck</a></li>
+        <li><a href="{{ root }}head-to-head.html">Head to head</a></li>
+        <li><a href="{{ root }}leaderboard.html">Leaderboard</a></li>
+        <li><a href="{{ root }}methodology.html">Methodology</a></li>
+        <li><a href="{{ root }}what-it-means.html">What it means</a></li>
+        <li><a href="{{ root }}data/index.html">Download data</a></li>
+        <li><a href="{{ root }}{{ main_site }}index.html">Gridiron Greatness Rating</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+<footer>
+  <p>Explosive Edge is a companion study to the
+     <a href="{{ root }}{{ main_site }}index.html">Gridiron Greatness Rating</a>, built from nflverse play-by-play
+     data, 1999-present. Methodology, decisions, and full source are in the
+     <a href="{{ repo_url }}">GitHub repository</a>. Generated {{ generated_date }}.</p>
+</footer>
+</body>
+</html>

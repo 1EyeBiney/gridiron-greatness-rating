@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block page_title %}Skill or luck{% endblock %}
+{% block content %}
+<h1>Is explosive-play differential a skill, or is it noise like turnovers?</h1>
+<p class="lede">Turnover differential is known to be mostly noise from game to game. If explosive-play
+differential is more persistent - a team's rate in the first half of a season predicting its rate in the second
+half - it is closer to a repeatable skill, and a better thing to build a team around.</p>
+
+<h2>Split-half persistence, by era</h2>
+<p>For every team-season, weeks 1 through the midpoint are correlated against the remaining weeks, per metric.
+Margin per game is included as a benchmark others can be measured against.</p>
+{{ tables.persistence_by_era }}
+
+<h2>Split-half persistence, by season</h2>
+{{ tables.persistence_by_season }}
+
+<h2>Year-to-year persistence</h2>
+<p>The same franchise's full-season rate in season <em>s</em> correlated against season <em>s+1</em>, by the era of
+season <em>s</em>.</p>
+{{ tables.persistence_year_to_year }}
+{% endblock %}

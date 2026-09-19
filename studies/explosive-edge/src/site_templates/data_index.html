@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block page_title %}Download data{% endblock %}
+{% block content %}
+<h1>Download data</h1>
+<p class="lede">Every table on this site as CSV, plus the team-game file everything is built from.</p>
+<p>All files are regenerated on every build from the scripts in the <a href="{{ repo_url }}">repository</a>.
+<code>team_game.csv</code> has one row per team per regular- or post-season game, 1999-2025, aggregated from
+nflverse play-by-play data (CC BY 4.0); the raw play-by-play itself is not committed - see the
+<a href="{{ root }}methodology.html">methodology page</a> and the nflverse-data
+<a href="https://github.com/nflverse/nflverse-data/releases">play-by-play release page</a> for the source. Every
+other file here is derived from it.</p>
+<ul>
+{% for f in files %}
+  <li><a href="{{ f.name }}">{{ f.name }}</a> ({{ f.size_kb }} KB)</li>
+{% endfor %}
+</ul>
+{% endblock %}

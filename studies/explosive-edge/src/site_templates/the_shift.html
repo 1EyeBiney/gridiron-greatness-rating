@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block page_title %}The shift{% endblock %}
+{% block content %}
+<h1>Has the balance shifted from turnovers to explosive plays?</h1>
+<p class="lede">Two analyses on the same one-row-per-game sample: which differential predicts the winner better
+(association), and how many points each is worth (exchange rate).</p>
+
+<h2>Association: win ~ explosive differential + turnover differential</h2>
+<p>Both differentials are standardized within season (z-scored) before fitting, so the coefficients are comparable
+across seasons with different raw scales. Three models are fit for every era and season: explosive-play
+differential (EPD) alone, turnover differential (TOD) alone, and both together. Log loss and accuracy are on the
+training sample.</p>
+{{ tables.shift_by_era }}
+{{ tables.shift_by_season }}
+
+<h2>Trend</h2>
+<p>OLS slope of each standardized coefficient (from the "both" model) against season number.</p>
+{{ tables.shift_trend }}
+
+<h2>Sensitivity: does the explosive-play definition matter?</h2>
+<p>The primary definition is a pass gaining 20+ yards or a rush gaining 10+. This repeats the association model for
+three alternative definitions (25/15, 20/20, and an EPA >= 2.0 threshold that removes some of the yardage
+tautology) and for the non-garbage-time variant of each, averaged across seasons.</p>
+{{ tables.shift_sensitivity }}
+
+<h2>Exchange rate: how many points is each worth?</h2>
+<p>OLS of game margin on the two raw (unstandardized) differentials gives points per explosive play and points per
+turnover directly, plus the ratio: how many explosive plays one turnover is worth.</p>
+{{ tables.exchange_by_era }}
+{{ tables.exchange_by_season }}
+{% endblock %}

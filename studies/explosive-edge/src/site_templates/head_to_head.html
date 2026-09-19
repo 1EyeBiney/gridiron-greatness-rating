@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block page_title %}Head to head{% endblock %}
+{% block content %}
+<h1>When the two differentials disagree, which one wins the game?</h1>
+<p class="lede">Games where one team won the explosive-play battle and the other won the turnover battle - the
+bar-argument table, straight from the data.</p>
+
+<h2>By era</h2>
+{{ tables.head_to_head_by_era }}
+
+<h2>By season</h2>
+{{ tables.head_to_head_by_season }}
+
+<h2>Excluding garbage time</h2>
+<p>The same categories, restricted to plays with the offense's win probability between 5% and 95% (excludes plays
+in the primary table that happen when a game is already decided).</p>
+{{ tables.head_to_head_ng_by_era }}
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block page_title %}What It Means{% endblock %}
+{% set s1 = facts.shift_by_era[facts.eras[0]] %}
+{% set s3 = facts.shift_by_era[facts.eras[2]] %}
+{% set x3 = facts.exchange_by_era[facts.eras[2]] %}
+{% set p3 = facts.persistence_by_era[facts.eras[2]] %}
+{% set pa = facts.persistence_by_era.ALL if 'ALL' in facts.persistence_by_era else facts.persistence_by_era[facts.eras[2]] %}
+{% set h1 = facts.head_to_head_by_era[facts.eras[0]] %}
+{% set h3 = facts.head_to_head_by_era[facts.eras[2]] %}
+{% set m0 = facts.mechanism_1999 %}
+{% set m1 = facts.mechanism_2025 %}
+{% set top = facts.leaderboard_top5 %}
+{% block content %}
+<h1>What It Means</h1>
+<p class="lede">Twenty-seven seasons, 1.3 million plays, and a theory from the broadcast booth that turns out to be
+wrong about Sunday and right about the season.</p>
+
+<h2>The theory</h2>
+<p>For as long as anyone has kept the stat, the turnover battle has been the first thing a coach mentions at the
+podium and the first number an analyst reaches for. Give the ball away and you hand the other side a possession;
+do it twice and you have probably lost. Chris Simms' argument is that the modern game has added a second column to
+that ledger. Offenses, he says, have learned that a twelve-play drive is twelve chances for the defense to make a
+play - a sack, a strip, a tipped ball - and so they hunt the explosive play instead: get the chunk, shorten the
+drive, get off the field with points before the defense can get its hands on the ball. If that is how the game is
+now played, then the team with more big plays should be winning, more and more, and the turnover battle should be
+losing some of its grip.</p>
+<p>This study takes that seriously enough to test each piece.</p>
+
+<h2>Sunday still belongs to the turnover</h2>
+<p>Take every regular-season game since 1999 and ask which single number better tells you who won: the difference in
+explosive plays, or the difference in turnovers. It isn't close, and it hasn't gotten close. Knowing only the
+turnover battle picks the winner {{ s3.tod_only_accuracy|pct }} of the time over the last nine seasons. Knowing only the
+explosive battle picks it {{ s3.epd_only_accuracy|pct }} of the time. Put in points, a turnover has been worth about
+{{ (-x3.points_per_turnover)|f1 }} points of final margin and an explosive play about {{ x3.points_per_explosive|f1 }},
+which makes one turnover worth a little over two big plays - and that exchange rate is the same now as it was when
+Kurt Warner was throwing to Isaac Bruce.</p>
+<p>The bar-argument version is blunter. Your team wins the big-play battle and loses the turnover battle. How often
+does it win the game? {{ h1.won_explosive_lost_turnover.win_rate|pct }} of the time in the first nine seasons of the
+data, {{ h3.won_explosive_lost_turnover.win_rate|pct }} in the last nine. Better, a little. Still a loss more often
+than not. If the argument is about who wins <em>this game</em>, the turnover side of the table is still right.</p>
+
+<h2>The mechanism isn't there either</h2>
+<p>The shorter-drive story is the part of the theory that can be checked most directly, and it fails. Drives are
+longer than they were, not shorter: {{ m0.plays_per_drive|f1 }} plays and about {{ (m0.seconds_per_drive/60)|f1 }}
+minutes of clock per possession in 1999, {{ m1.plays_per_drive|f1 }} plays and {{ (m1.seconds_per_drive/60)|f1 }}
+minutes in 2025. The rate at which a defense makes a play - a sack, a takeaway, a tackle behind the line - has fallen
+from {{ m0.def_play_rate_per_snap|pct }} of snaps to {{ m1.def_play_rate_per_snap|pct }}. There is no rising
+per-snap danger for an offense to hurry away from; the modern defense gets its hands on fewer plays, not more. And the
+teams that generate the most explosive plays don't run shorter drives than everyone else. They run slightly longer
+ones. Offenses aren't gambling on the big play to escape the defense. They are moving the ball more efficiently
+across the board, and the big plays come with it.</p>
+<p>What has changed dramatically is the thing the theory was supposed to displace. Turnovers have fallen from
+{{ m0.turnovers_per_game|f1 }} a game to {{ m1.turnovers_per_game|f1 }} - a drop of about forty percent. Quarterbacks
+throw fewer interceptions, ball carriers lose fewer fumbles, and the rules protect the passer. A turnover is worth as
+much as it ever was. There are simply fewer of them, which means the turnover battle is a draw more often, and in a
+draw the big plays decide.</p>
+
+<h2>Where Simms is right, for a reason he didn't give</h2>
+<p>Here is the result that changes the argument. Take every team-season and split it in half. How well does the
+first half predict the second? Margin of victory - the most information-rich number there is - carries over with a
+correlation of about {{ p3.margin_per_game.r|f2 }}. Explosive-play differential carries over at
+{{ p3.explosive_diff_per_game.r|f2 }}. Turnover differential carries over at {{ p3.turnover_diff_per_game.r|f2 }},
+barely above nothing, in every era.</p>
+<p>Read that as a statement about what kind of thing each number is. A team that is winning the turnover battle in
+October has, mostly, been lucky, and its luck will not follow it into December. A team that is winning the big-play
+battle in October is doing something - protecting the quarterback, hitting deep, tackling in space, making the other
+side drive the length of the field - that it will still be doing in December. Turnovers decide games and then
+evaporate. Big plays decide games less often and persist. If you want to know who won on Sunday, count the
+turnovers. If you want to know who is good, count the big plays.</p>
+<p>That shows up when you put this study next to the main site's True Strength Rating, which rates every team-season
+by margin and schedule. Explosive-play differential correlates with a team's rating at about
+{{ facts.tsr_corr_all.r_explosive_diff|f2 }}, and turnover differential at about
+{{ (-facts.tsr_corr_all.r_turnover_diff)|f2 }} - the same - but one of those is a trait and the other is largely a
+record of good fortune. The most explosive team-seasons since 1999 read like a list of teams you remember:
+{% for t in top %}the {{ t.season }} {{ t.franchise }} ({{ t.wins }}-{{ t.losses }}{% if t.ties %}-{{ t.ties }}{% endif %}){% if not loop.last %}, {% endif %}{% endfor %}.
+Three of the five reached a Super Bowl.</p>
+
+<h2>One honest caveat</h2>
+<p>Part of the persistence gap is arithmetic. A team produces about nine explosive plays a game and gives the ball
+away barely more than once, and a rare event is measured with more noise than a common one, so some of "turnovers
+don't repeat" is really "turnovers are rare." Not all of it - the gap is too wide, and it holds year to year as well
+as half to half - but the site says so where it reports the numbers rather than letting the cleaner story stand
+alone. There is a second caveat too, stated on the methodology page: explosive plays are yards, yards are points,
+and so "big plays predict wins" is partly a tautology. Every comparison here is therefore relative - against turnovers,
+and across time - and the result holds under a definition of explosive that uses expected points instead of yards.</p>
+
+<h2>What to take from it</h2>
+<p>The broadcast version of the theory - that big plays have caught turnovers as the thing that decides a game - is
+not supported, and the story about shorter drives and defenses waiting to pounce is backwards. But the instinct
+behind it is sound. The game has fewer turnovers than it used to, so the turnover battle settles fewer games. And
+the explosive play is the better measure of what a team actually is, because it is the one that shows up again next
+week. Coaches who build for it aren't chasing a fad. They are chasing the part of winning that they can keep.</p>
+<p>The tables behind every sentence are one click away: <a href="{{ root }}the-shift.html">the shift</a>,
+<a href="{{ root }}mechanism.html">the mechanism</a>, <a href="{{ root }}skill-or-luck.html">skill or luck</a>,
+<a href="{{ root }}head-to-head.html">head to head</a>, and the <a href="{{ root }}leaderboard.html">leaderboard</a>,
+with every table downloadable from the <a href="{{ root }}data/index.html">data page</a>.</p>
+{% endblock %}

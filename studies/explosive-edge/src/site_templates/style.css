@@ -1,0 +1,313 @@
+/* Gridiron Greatness Rating - site stylesheet.
+   Theme: Minnesota Vikings purple/gold, retro 1970s electric-football
+   tabletop-game skin.
+
+   Accessibility notes (BUILD_PLAN section 10) - unchanged by the retro
+   makeover, checked again after it:
+   - Every color pair below was checked against WCAG contrast math
+     before use (see the session's contrast_check.py) - not eyeballed.
+     Gold is never used for text on light backgrounds or for light text
+     on gold; it fails contrast either way. Purple is never used as an
+     accent/link color on the dark-mode background; it fails there too
+     (gold takes that role in dark mode instead).
+   - Nothing is conveyed by color alone: win/loss, upsets, and
+     strong/weak ratings are always also spelled out in text.
+   - Focus outlines are never removed, and get MORE visible (thicker,
+     higher-contrast gold) against the new purple header, not less.
+   - The retro display font is used only for large headings, never for
+     body text or dense stat tables, which stay in the system font
+     stack for maximum legibility and zero dependency on the font
+     finishing loading. */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root {
+  --text: #1a1a1a;
+  --bg: #ffffff;
+  --muted: #4b4b4b;
+  --border: #8a7a9c;
+  --link: #4F2683;
+  --link-visited: #6b3fa0;
+  --accent-bg: #f3edf9;
+  --table-header-bg: #4F2683;
+  --table-header-text: #ffffff;
+
+  --purple: #4F2683;
+  --purple-dark: #35195a;
+  --gold: #FFC62F;
+  --gold-dark: #e0ab1a;
+  --focus: #ffb300;
+
+  --max-width: 68rem;
+  --font-display: "Anton", Impact, "Arial Narrow Bold", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
+a:focus, button:focus, input:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--purple-dark);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  z-index: 10;
+}
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+/* Header: brushed-metal-ish gradient in Vikings purple, evoking the
+   painted tin electric-football board rather than a flat color fill. */
+header {
+  border-bottom: 4px solid var(--gold);
+  background:
+    repeating-linear-gradient(100deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 6px),
+    linear-gradient(160deg, var(--purple) 0%, var(--purple-dark) 55%, var(--purple) 100%);
+  color: #fff;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+}
+.site-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.site-name a { text-decoration: none; color: #fff; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; margin: 0; padding: 0; }
+nav a { font-weight: 700; color: var(--gold); text-decoration: none; }
+nav a:visited { color: var(--gold); }
+nav a:hover, nav a:focus { text-decoration: underline; }
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  margin-top: 0;
+  color: var(--purple);
+}
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-size: 1.6rem;
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 0.3rem;
+  margin-top: 2.25rem;
+  color: var(--purple);
+}
+h3 { font-size: 1.1rem; }
+
+@media (prefers-color-scheme: dark) {
+  h1, h2 { color: var(--gold); }
+}
+
+.lede { font-size: 1.05rem; color: var(--muted); max-width: 42rem; }
+
+/* Hero image + caption, used on the homepage and the electric-football
+   story page. object-fit keeps a consistent crop on narrow viewports
+   without distorting the image. */
+.hero {
+  margin: 0 0 1.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+}
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 26rem;
+  object-fit: cover;
+}
+.hero figcaption {
+  background: var(--purple-dark);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Smaller decorative accent images scattered between sections. Always
+   marked decorative (empty alt) by the template, never the only way to
+   get information - see each page's actual data table/text for that. */
+.accent-image {
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  max-width: 26rem;
+}
+.accent-image img { display: block; width: 100%; height: auto; }
+.accent-image figcaption {
+  background: var(--accent-bg);
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Tables are wrapped in this scrollable container by every template
+   (BUILD_PLAN section 10: sortable/dense tables must stay usable, and
+   a 13-column stat table cannot just reflow on a phone screen) - native
+   horizontal scroll, keyboard-operable, no JS, the table's own semantics
+   (scope, caption, headers) are untouched inside it. */
+.table-scroll {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+}
+.table-scroll table { margin: 0; border: none; border-radius: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+caption { text-align: left; font-weight: 700; padding: 0.6rem 0.6rem 0.3rem; }
+.table-scroll caption { padding-top: 0.6rem; }
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+th { background: var(--table-header-bg); color: var(--table-header-text); }
+td.num, th.num { text-align: right; }
+tbody tr:nth-child(even) { background: var(--accent-bg); }
+
+/* Dense numeric stat tables (season standings, rankings): keep each
+   cell on one line and let the wrapper scroll horizontally, rather than
+   squeezing "100.0% (3)" onto two lines on a narrow phone screen.
+   Prose tables (methodology glossary, data downloads) are left to wrap
+   normally, since scrolling a paragraph sideways would be worse. */
+.table-scroll.stats th, .table-scroll.stats td { white-space: nowrap; }
+
+.note {
+  background: var(--accent-bg);
+  border-left: 5px solid var(--gold);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.card-grid li {
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: 0.35rem;
+  padding: 0.9rem 1rem;
+  background: var(--accent-bg);
+}
+.card-grid a { font-weight: 700; text-decoration: none; }
+.card-grid a:hover, .card-grid a:focus { text-decoration: underline; }
+
+.matchup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.matchup > div {
+  flex: 1 1 16rem;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  padding: 1rem;
+}
+.matchup .winner { border-width: 3px; border-color: var(--gold); }
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  background: var(--gold);
+  border-radius: 0.2rem;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.4rem;
+}
+
+/* Retro "yard line" divider - a dashed rule standing in for the tin
+   board's hash marks, purely decorative. */
+hr.yard-line {
+  border: none;
+  border-top: 3px dashed var(--gold);
+  margin: 2.5rem 0;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Mobile: most people reaching this site will be on a phone. Tighten
+   spacing and drop the hero's fixed max-height a little so it doesn't
+   dominate a small screen, but nothing here removes information - the
+   scrollable tables (above) are what actually keep the site usable at
+   this width, not this block. */
+@media (max-width: 640px) {
+  .header-inner { padding: 0.6rem 0.75rem; gap: 0.4rem 1rem; }
+  .site-name { font-size: 1.2rem; }
+  nav ul { gap: 0.6rem 0.9rem; font-size: 0.95rem; }
+  main { padding: 1rem 0.75rem 2rem; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.3rem; }
+  .hero img { max-height: 14rem; }
+  th, td { padding: 0.35rem 0.5rem; font-size: 0.92rem; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f2ecf9;
+    --bg: #170b28;
+    --muted: #c9b8dc;
+    --border: #6b5a80;
+    --link: #FFC62F;
+    --link-visited: #e0ab1a;
+    --accent-bg: #2a1645;
+    --table-header-bg: #FFC62F;
+    --table-header-text: #1a1a1a;
+  }
+  /* --gold is unchanged in dark mode, so header/.hero/.accent-image's
+     gold borders (set once, above) already carry over - nothing to
+     override here. */
+}

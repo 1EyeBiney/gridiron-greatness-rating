@@ -425,7 +425,7 @@ def render_all(out_dir: Path = OUT_DIR):
 # Side studies live in studies/<name>/ with their own src/, data/, tests/ and
 # templates, and publish as a sub-site at /<name>/ of this site. Each one's
 # site generator exposes render_all(out_dir).
-STUDIES = [("home-field-advantage", "hfa_site")]
+STUDIES = [("home-field-advantage", "hfa_site"), ("explosive-edge", "xe_site")]
 
 
 def build_studies(out_dir: Path) -> None:

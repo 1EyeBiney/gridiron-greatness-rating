@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block page_title %}Leaderboard{% endblock %}
+{% block content %}
+<h1>The best explosive-play team-seasons, 1999-2025</h1>
+<p class="lede">Ranked by explosive-play differential per game, with record, the main project's True Strength Rating
+(TSR, standardized), and Super Bowl results.</p>
+
+<h2>Top 25 team-seasons</h2>
+{{ tables.leaderboard_top25 }}
+
+<h2>Top 25 offenses</h2>
+{{ tables.leaderboard_top_offenses }}
+
+<h2>Top 25 defenses</h2>
+{{ tables.leaderboard_top_defenses }}
+
+<h2>Correlation with True Strength Rating</h2>
+<p>How well each differential correlates with the main project's season-ending team rating, by era.</p>
+{{ tables.leaderboard_correlations }}
+{% endblock %}

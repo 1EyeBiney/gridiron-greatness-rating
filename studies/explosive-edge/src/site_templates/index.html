@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block page_title %}Findings{% endblock %}
+{% set s1 = facts.shift_by_era[facts.eras[0]] %}
+{% set s3 = facts.shift_by_era[facts.eras[2]] %}
+{% set x3 = facts.exchange_by_era[facts.eras[2]] %}
+{% set p1 = facts.persistence_by_era[facts.eras[0]] %}
+{% set p3 = facts.persistence_by_era[facts.eras[2]] %}
+{% set h1 = facts.head_to_head_by_era[facts.eras[0]] %}
+{% set h3 = facts.head_to_head_by_era[facts.eras[2]] %}
+{% set m0 = facts.mechanism_1999 %}
+{% set m1 = facts.mechanism_2025 %}
+{% block content %}
+<h1>Do big plays decide games now?</h1>
+<p class="lede">{{ facts.n_games|n }} regular-season games, {{ facts.first_season }} to {{ facts.last_season }}, every
+play of them. The claim under test: explosive plays now belong next to turnovers as the thing that decides who wins.</p>
+
+<figure class="hero">
+  <img src="{{ root }}images/action-standover.jpg" width="1000" height="667"
+       alt="Electric football figurines: a purple-and-gold Vikings player stands over a fallen opponent wearing a cheesehead instead of a helmet, on a green tabletop field.">
+  <figcaption>One big play, tabletop edition.</figcaption>
+</figure>
+
+<h2>The short version</h2>
+<ul>
+  <li><strong>Turnovers still decide games.</strong> In every era since 1999, the turnover differential predicts the
+    winner better than the explosive-play differential does. Knowing only the turnover battle gets you
+    {{ s3.tod_only_accuracy|pct }} of winners right in {{ facts.last_era }}; knowing only the explosive battle gets you
+    {{ s3.epd_only_accuracy|pct }}. A turnover is worth about {{ (-x3.points_per_turnover)|f1 }} points of margin and an
+    explosive play about {{ x3.points_per_explosive|f1 }}, so one turnover equals roughly
+    {{ (-x3.exchange_ratio_turnover_to_explosive)|f1 }} big plays. That exchange rate has barely moved in 27 years.</li>
+  <li><strong>Win the big-play battle and lose the turnover battle, and you usually lose.</strong>
+    {{ h1.won_explosive_lost_turnover.win_rate|pct }} of such games in {{ facts.eras[0] }},
+    {{ h3.won_explosive_lost_turnover.win_rate|pct }} in {{ facts.last_era }}. A little better than it was. Still a
+    losing proposition.</li>
+  <li><strong>But big plays decide seasons.</strong> A team's explosive-play differential over the first half of a
+    season predicts its second half with a correlation of {{ p3.explosive_diff_per_game.r|f2 }}
+    ({{ facts.last_era }}). Its turnover differential: {{ p3.turnover_diff_per_game.r|f2 }}. Big plays are a
+    repeatable trait. Turnovers are mostly weather. And explosive differential tracks the main site's True Strength
+    Rating as closely as turnover differential does.</li>
+  <li><strong>The mechanism Simms describes isn't there.</strong> Drives have gotten <em>longer</em>, not shorter:
+    {{ m0.plays_per_drive|f1 }} plays and {{ m0.seconds_per_drive|f0 }} seconds per drive in 1999,
+    {{ m1.plays_per_drive|f1 }} plays and {{ m1.seconds_per_drive|f0 }} seconds in 2025. Defenses make a play (sack,
+    takeaway, or tackle for loss) on {{ m1.def_play_rate_per_snap|pct }} of snaps now, down from
+    {{ m0.def_play_rate_per_snap|pct }}. There is no rising per-snap danger for offenses to hurry away from.</li>
+  <li><strong>What did change is that turnovers are vanishing.</strong> {{ m0.turnovers_per_game|f1 }} per game in 1999,
+    {{ m1.turnovers_per_game|f1 }} in 2025. The turnover battle is a draw more often than it used to be, and when it is,
+    the explosive battle decides.</li>
+</ul>
+
+<hr class="yard-line">
+
+<h2>Who wins the game: turnovers, by a distance</h2>
+{{ tables.shift_by_era }}
+<p>Each row fits three models to every regular-season game of the era: predict the winner from the explosive-play
+differential alone, from the turnover differential alone, and from both. Coefficients are standardized within season
+so a "1.0" means one standard deviation of that differential. The turnover coefficient is larger in every era; the
+explosive coefficient is flat at about {{ s3.both_b_epd|f1 }}. The one drift worth noting is that the turnover
+coefficient has eased from {{ (-s1.both_b_tod)|f2 }} to {{ (-s3.both_b_tod)|f2 }} - the direction Simms describes,
+in an amount that doesn't clear statistical significance on its own. The <a href="{{ root }}the-shift.html">shift page</a>
+has every season, the trend test, and the same result under four different definitions of "explosive."</p>
+
+<h2>Who is good: big plays, because they repeat</h2>
+{{ tables.persistence_by_era }}
+<p>Split every team's season in half and ask how well the first half predicts the second. Margin of victory, the
+benchmark, holds up at about {{ p3.margin_per_game.r|f2 }}. Explosive-play differential holds up at
+{{ p3.explosive_diff_per_game.r|f2 }}. Turnover differential barely holds up at all:
+{{ p3.turnover_diff_per_game.r|f2 }}. That gap is the strongest thing in this study, and it points the way Simms is
+pointing, for a reason he doesn't quite give: not because big plays swing games more than turnovers do (they don't),
+but because a team that makes them will keep making them, while a team that is winning the turnover battle in
+October is mostly getting lucky. Part of that gap is arithmetic - a team has about nine explosive plays a game and
+barely one turnover, so the rarer event is measured with more noise - and the
+<a href="{{ root }}skill-or-luck.html">skill-or-luck page</a> says so. The gap survives the caveat.</p>
+
+<h2>The bar argument</h2>
+{{ tables.head_to_head_by_era }}
+<p>Your team out-gained theirs on big plays but threw two picks. Who won? Usually them:
+{{ facts.head_to_head_by_era.ALL.won_explosive_lost_turnover.win_rate|pct }} for the big-play team over the whole
+period. Win both battles and you win {{ facts.head_to_head_by_era.ALL.won_both.win_rate|pct }} of the time. Win only
+the explosive battle with turnovers even: {{ facts.head_to_head_by_era.ALL.explosive_only.win_rate|pct }}. Win only
+the turnover battle with explosives even: {{ facts.head_to_head_by_era.ALL.turnover_only.win_rate|pct }}. Strip out
+garbage time and the big-play team does a few points better, but it still loses more than it wins. The
+<a href="{{ root }}head-to-head.html">head-to-head page</a> has it by season.</p>
+
+<h2>Where to go from here</h2>
+<p>The <a href="{{ root }}what-it-means.html">What It Means</a> page tells the story without the tables. The
+<a href="{{ root }}mechanism.html">mechanism page</a> has the drive-length and defensive-play trends, the
+<a href="{{ root }}leaderboard.html">leaderboard</a> has the most explosive team-seasons since 1999 next to their True
+Strength Ratings, and the <a href="{{ root }}methodology.html">methodology</a> spells out every definition. Everything
+is downloadable from the <a href="{{ root }}data/index.html">data page</a>.</p>
+{% endblock %}
