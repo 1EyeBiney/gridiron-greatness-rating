@@ -82,3 +82,43 @@ def test_tsr_correlations_are_equal_and_top_five_are_remembered_teams(facts):
     top = facts["leaderboard_top5"]
     assert [(t["franchise"], t["season"]) for t in top] == [("SEA", 2014), ("SF", 2012), ("SF", 2023), ("BAL", 2019), ("PIT", 2001)]
     assert sum(t["reached_super_bowl"] for t in top) == 3
+
+
+def test_competitive_time_shrinks_the_gap_by_about_two_thirds(facts):
+    for era in facts["eras"]:
+        c = facts["competitive_time_by_era"][era]
+        assert abs(c["ng_epd_minus_tod_gap"]) < 0.5 * abs(c["all_epd_minus_tod_gap"])
+        assert abs(c["ng_b_tod"]) > c["ng_b_epd"]            # "the turnover still leads"
+        assert abs(c["ng_b_tod"]) < abs(c["all_b_tod"]) and c["ng_b_epd"] > c["all_b_epd"]
+
+
+def test_regular_season_explosive_edge_predicts_playoff_wins_and_turnover_edge_does_not(facts):
+    assert facts["playoff_prediction_b_epd"] > 1.5 * facts["playoff_prediction_se_epd"]
+    assert abs(facts["playoff_prediction_b_tod"]) < facts["playoff_prediction_se_tod"]
+    assert facts["playoff_prediction_n"] > 250
+    assert facts["postseason_won_explosive_lost_turnover_win_rate"] < 0.4
+    assert abs(facts["super_bowl_median_epd_rank"] - facts["super_bowl_median_tod_rank"]) <= 2  # "a tie"
+
+
+def test_explosiveness_travels_with_the_quarterback(facts):
+    assert facts["qb_continuity_same_qb_r"] > 1.6 * facts["qb_continuity_changed_qb_r"]
+    assert facts["qb_continuity_same_qb_n"] > 400 and facts["qb_continuity_changed_qb_n"] > 250
+    names = [q["qb_name"] for q in facts["qb_career_top3"]]
+    assert names[:2] == ["Lamar Jackson", "Brock Purdy"]   # "two of them ... legs first"
+    assert all(q["rate"] > 0.2 for q in facts["qb_career_top3"])
+
+
+def test_where_the_big_plays_went(facts):
+    assert facts["decomposition_to_rate"] < facts["decomposition_from_rate"]
+    assert facts["decomposition_share_rate_effect"] > 0.8          # "about 90%"
+    assert abs(facts["drive_position_play1_last_era"] - facts["drive_position_play1_first_era"]) < 0.015
+    assert 0.13 < facts["garbage_share_mean"] < 0.18
+
+
+def test_defensive_play_risk_flattens_after_play_three(facts):
+    for suffix in ("first_era", "last_era"):
+        p1, p3, p8 = (facts[f"def_play_rate_play{k}_{suffix}"] for k in ("1", "3", "8plus"))
+        assert p3 > p1 and abs(p8 - p3) < 0.015
+    assert facts["def_play_rate_play1_last_era"] < facts["def_play_rate_play1_first_era"]  # curve shifted down
+    assert facts["points_per_drive_last_era"] > facts["points_per_drive_first_era"]
+    assert abs(facts["p_def_play_per_drive_last_era"] - facts["p_def_play_per_drive_first_era"]) < 0.02

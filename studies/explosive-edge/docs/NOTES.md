@@ -144,3 +144,20 @@ src/xe_analysis_*.py with tests and tables; Fable writes the prose
 changes (Findings, What It Means "Where the big plays went" paragraph)
 and pins claims in test_xe_claims.py. Est. one phase of work. Work on the
 Purdue basketball study starts in the meantime (studies/ folder pattern).
+
+## 2026-09-20 — The six additions built and published
+
+Sonnet moved the exploration into src/xe_analysis_followups.py (13 tables,
+18 tests; xe_site.render_all now runs it) and placed the tables on the
+shift, head-to-head, skill-or-luck, leaderboard and mechanism pages with
+neutral captions. Fable wrote the interpretive prose: Findings bullets
+now carry the competitive-time qualifier ("by less than it first
+appears"), the playoff and QB results, the drive-position curve and the
+2018-2025 decline; What It Means gained a competitive-time paragraph, a
+new section "Where the big plays went", the within-drive defensive curve,
+and a paragraph on playoffs and quarterbacks. Five new claim tests pin
+them (90 study tests). Numbers matched MORNING_REPORT.md within rounding.
+Process note: the first agent run delegated instead of working and had to
+be resent; the second run reported a file race with the stray delegate,
+re-verified, and finished clean - lesson: tell agents explicitly not to
+delegate.

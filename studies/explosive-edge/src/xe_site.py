@@ -16,6 +16,10 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup, escape
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # main build loads this file by path
+import xe_analysis_followups  # noqa: E402
+
 REPO = Path(__file__).resolve().parents[1]
 DATA = REPO / "data" / "processed"
 TEMPLATES_DIR = Path(__file__).resolve().parent / "site_templates"
@@ -135,6 +139,28 @@ def build_facts(t: dict[str, pd.DataFrame]) -> dict:
     h2h_ng_era = _head_to_head_dict(t["head_to_head_ng_by_era"])
     tsr_corr = _era_dict(t["leaderboard_correlations"])
 
+    ct_era = _era_dict(t["competitive_time_logit_by_era"])
+    pp_era = _era_dict(t["playoff_prediction"])
+    pp_all = pp_era.get("ALL", {})
+    hth_post = {row["category"]: row.to_dict() for _, row in t["playoff_head_to_head"].iterrows()}
+    sb = t["super_bowl_ranks"]
+    sb_summary = sb[sb["season"] == "median"].iloc[0].to_dict() if (sb["season"] == "median").any() else {}
+    qb_cont = {row["qb_continuity"]: row.to_dict() for _, row in t["qb_continuity_persistence"].iterrows()}
+    qb_top3 = t["qb_career_explosive_leaders"].head(3).to_dict(orient="records")
+    decomp = t["pass_run_decomposition"].iloc[0].to_dict()
+
+    def _nested(df, val_col, era_col="era", bucket_col="bucket"):
+        out: dict[str, dict] = {}
+        for _, row in df.iterrows():
+            out.setdefault(str(row[era_col]), {})[str(row[bucket_col])] = row[val_col]
+        return out
+
+    drive_pos = _nested(t["drive_position_explosive_rate"], "explosive_rate")
+    garbage_mean = float(t["garbage_share_by_season"]["garbage_share_of_explosives"].mean())
+    defplay = _nested(t["defensive_play_by_drive_position"], "def_play_rate")
+    drive_out = _era_dict(t["drive_outcomes_by_era"])
+    followup_first_era, followup_last_era = ERAS[0], ERAS[-1]
+
     mech = t["mechanism_by_season"].set_index("season")
     mech_1999 = mech.loc[1999].to_dict() if 1999 in mech.index else {}
     mech_2025 = mech.loc[2025].to_dict() if 2025 in mech.index else {}
@@ -169,6 +195,47 @@ def build_facts(t: dict[str, pd.DataFrame]) -> dict:
         "shift_last_era": shift_era.get(last_era, {}),
         "exchange_last_era": exch_era.get(last_era, {}),
         "tsr_corr_all": tsr_corr.get("ALL", {}),
+
+        # -------- follow-up analyses (2026-09-20 overnight exploration) --------
+        "competitive_time_by_era": ct_era,
+        "playoff_prediction_by_era": pp_era,
+        "playoff_prediction_all": pp_all,
+        "playoff_prediction_b_epd": pp_all.get("b_epd"),
+        "playoff_prediction_se_epd": pp_all.get("se_epd"),
+        "playoff_prediction_b_tod": pp_all.get("b_tod"),
+        "playoff_prediction_se_tod": pp_all.get("se_tod"),
+        "playoff_prediction_n": pp_all.get("n_games"),
+        "postseason_won_explosive_lost_turnover_win_rate":
+            hth_post.get("won_explosive_lost_turnover", {}).get("win_rate"),
+        "postseason_won_explosive_lost_turnover_n":
+            hth_post.get("won_explosive_lost_turnover", {}).get("n_games"),
+        "super_bowl_median_epd_rank": sb_summary.get("epd_rank"),
+        "super_bowl_median_tod_rank": sb_summary.get("tod_rank"),
+        "qb_continuity_same_qb_r": qb_cont.get("same_qb", {}).get("correlation"),
+        "qb_continuity_same_qb_n": qb_cont.get("same_qb", {}).get("n_team_seasons"),
+        "qb_continuity_changed_qb_r": qb_cont.get("changed_qb", {}).get("correlation"),
+        "qb_continuity_changed_qb_n": qb_cont.get("changed_qb", {}).get("n_team_seasons"),
+        "qb_career_top3": qb_top3,
+        "decomposition_2018_2025": decomp,
+        "decomposition_from_rate": decomp.get("total_rate_per_play_from"),
+        "decomposition_to_rate": decomp.get("total_rate_per_play_to"),
+        "decomposition_rate_effect": decomp.get("rate_effect_within_type"),
+        "decomposition_mix_effect": decomp.get("mix_effect_pass_rate"),
+        "decomposition_share_rate_effect": decomp.get("share_of_change_that_is_rate_effect"),
+        "drive_position_play1_first_era": drive_pos.get("2010-2017", {}).get("1"),
+        "drive_position_play1_last_era": drive_pos.get("2018-2025", {}).get("1"),
+        "garbage_share_mean": garbage_mean,
+        "def_play_rate_play1_last_era": defplay.get("2017-2025", {}).get("1"),
+        "def_play_rate_play3_last_era": defplay.get("2017-2025", {}).get("3"),
+        "def_play_rate_play8plus_last_era": defplay.get("2017-2025", {}).get("8+"),
+        "def_play_rate_play1_first_era": defplay.get("1999-2007", {}).get("1"),
+        "def_play_rate_play3_first_era": defplay.get("1999-2007", {}).get("3"),
+        "def_play_rate_play8plus_first_era": defplay.get("1999-2007", {}).get("8+"),
+        "drive_outcomes_by_era": drive_out,
+        "points_per_drive_first_era": drive_out.get(followup_first_era, {}).get("points_per_drive"),
+        "points_per_drive_last_era": drive_out.get(followup_last_era, {}).get("points_per_drive"),
+        "p_def_play_per_drive_first_era": drive_out.get(followup_first_era, {}).get("p_at_least_one_def_play_per_drive"),
+        "p_def_play_per_drive_last_era": drive_out.get(followup_last_era, {}).get("p_at_least_one_def_play_per_drive"),
     }
 
 
@@ -319,7 +386,119 @@ TSR_CORR_COLS = [
 ]
 
 
+COMPETITIVE_TIME_COLS = [
+    ("era", "Era", str, False),
+    ("n_games", "Games", n_, True),
+    ("all_b_epd", "All plays: EPD coef.", f2, True),
+    ("all_b_tod", "All plays: TOD coef.", f2, True),
+    ("all_epd_minus_tod_gap", "All plays: EPD − |TOD|", f2, True),
+    ("ng_b_epd", "Competitive time: EPD coef.", f2, True),
+    ("ng_b_tod", "Competitive time: TOD coef.", f2, True),
+    ("ng_epd_minus_tod_gap", "Competitive time: EPD − |TOD|", f2, True),
+]
+
+PLAYOFF_PREDICTION_COLS = [
+    ("era", "Era", str, False),
+    ("n_games", "Playoff games", n_, True),
+    ("b_epd", "Reg.-season EPD diff. coef.", f2, True),
+    ("se_epd", "± SE", f2, True),
+    ("b_tod", "Reg.-season TOD diff. coef.", f2, True),
+    ("se_tod", "± SE", f2, True),
+    ("accuracy", "Accuracy", pct, True),
+]
+
+PLAYOFF_HEAD_TO_HEAD_COLS = [
+    ("category", "Category", cat_label, False),
+    ("n_games", "Playoff games", n_, True),
+    ("win_rate", "Win rate", pct, True),
+]
+
+SUPER_BOWL_RANK_COLS = [
+    ("season", "Season", str, False),
+    ("champion", "Champion", lambda x: "" if pd.isna(x) else str(x), False),
+    ("n_teams", "Teams", n_, True),
+    ("explosive_diff_pg", "Explosive diff. / game", f2, True),
+    ("epd_rank", "EPD rank", n_, True),
+    ("turnover_diff_pg", "Turnover diff. / game", f2, True),
+    ("tod_rank", "TOD rank", n_, True),
+]
+
+QB_CONTINUITY_COLS = [
+    ("qb_continuity", "QB continuity", lambda x: "Same QB" if x == "same_qb" else "Changed QB", False),
+    ("n_team_seasons", "Team-seasons", n_, True),
+    ("correlation", "Year-to-year r", f2, True),
+    ("ci_lo", "95% CI low", f2, True),
+    ("ci_hi", "95% CI high", f2, True),
+]
+
+QB_CAREER_COLS = [
+    ("qb_name", "Quarterback", str, False),
+    ("seasons", "Seasons", n_, True),
+    ("games", "Games", n_, True),
+    ("dropbacks", "Dropbacks", n_, True),
+    ("explosive_pass", "Explosive passes", n_, True),
+    ("rate", "Explosive-pass rate / dropback", pct, True),
+]
+
+QB_SEASON_COLS = [
+    ("qb_name", "Quarterback", str, False),
+    ("season", "Season", lambda x: str(int(x)), False),
+    ("games", "Games", n_, True),
+    ("dropbacks", "Dropbacks", n_, True),
+    ("explosive_pass", "Explosive passes", n_, True),
+    ("rate", "Explosive-pass rate / dropback", pct, True),
+]
+
+PASS_RUN_SEASON_COLS = [
+    ("season", "Season", lambda x: str(int(x)), False),
+    ("pass_rate", "Pass rate", pct, True),
+    ("explosive_pass_rate_per_dropback", "Explosive-pass rate / dropback", pct, True),
+    ("explosive_rush_rate_per_attempt", "Explosive-rush rate / attempt", pct, True),
+    ("rush_share_of_explosives", "Rush share of explosives", pct, True),
+]
+
+PASS_RUN_DECOMP_COLS = [
+    ("from_season", "From season", lambda x: str(int(x)), False),
+    ("to_season", "To season", lambda x: str(int(x)), False),
+    ("total_rate_per_play_from", "Explosive rate / play, from", pct, True),
+    ("total_rate_per_play_to", "Explosive rate / play, to", pct, True),
+    ("total_change", "Total change", pct, True),
+    ("mix_effect_pass_rate", "Mix effect (pass rate)", pct, True),
+    ("rate_effect_within_type", "Rate effect (within type)", pct, True),
+    ("share_of_change_that_is_rate_effect", "Share of change: rate effect", pct, True),
+]
+
+DRIVE_POSITION_COLS = [
+    ("era", "Era", str, False),
+    ("bucket", "Play # in drive", str, False),
+    ("plays", "Plays", n_, True),
+    ("explosive_rate", "Explosive rate", pct, True),
+]
+
+DEFENSIVE_PLAY_POSITION_COLS = [
+    ("era", "Era", str, False),
+    ("bucket", "Play # in drive", str, False),
+    ("plays", "Plays", n_, True),
+    ("def_play_rate", "Defensive-play rate", pct, True),
+]
+
+DRIVE_OUTCOMES_COLS = [
+    ("era", "Era", str, False),
+    ("drives", "Drives", n_, True),
+    ("p_at_least_one_def_play_per_drive", "P(≥1 defensive play)", pct, True),
+    ("points_per_drive", "Points / drive", f2, True),
+    ("plays_per_drive", "Plays / drive", f2, True),
+]
+
+
 def render_all(out_dir: Path = OUT_DIR) -> dict:
+    # Regenerate the follow-up-analysis CSVs (data/processed has no single
+    # existing pipeline entrypoint that chains xe_metrics.run() ->
+    # xe_analysis_shift.run() / xe_analysis_teams.run() -> xe_site -- each
+    # is run by hand -- so this is the one step of the chain that DOES run
+    # automatically on every site build, keeping the follow-up tables from
+    # going stale relative to team_game.csv).
+    xe_analysis_followups.run()
     t = load_tables()
     facts = build_facts(t)
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
@@ -393,6 +572,31 @@ def render_all(out_dir: Path = OUT_DIR) -> dict:
                                                      "Top 25 defenses by fewest explosive plays allowed per game")
     tables["leaderboard_correlations"] = table_html(t["leaderboard_correlations"], TSR_CORR_COLS,
                                                      "Correlation of explosive/turnover differentials with the main project's True Strength Rating, by era")
+
+    tables["competitive_time"] = table_html(t["competitive_time_logit_by_era"], COMPETITIVE_TIME_COLS,
+                                            "Win ~ EPD + TOD, all plays vs competitive time only (win probability 5%-95%), by era")
+    tables["playoff_prediction"] = table_html(t["playoff_prediction"], PLAYOFF_PREDICTION_COLS,
+                                              "Predicting postseason wins from the two teams' regular-season explosive and turnover differentials")
+    tables["playoff_head_to_head"] = table_html(t["playoff_head_to_head"], PLAYOFF_HEAD_TO_HEAD_COLS,
+                                                "Postseason head-to-head: who wins when the explosive and turnover battles disagree")
+    tables["super_bowl_ranks"] = table_html(t["super_bowl_ranks"], SUPER_BOWL_RANK_COLS,
+                                            "Each Super Bowl champion's regular-season rank in explosive and turnover differential")
+    tables["qb_continuity"] = table_html(t["qb_continuity_persistence"], QB_CONTINUITY_COLS,
+                                         "Year-to-year persistence of team explosive-pass rate, by quarterback continuity")
+    tables["qb_career_leaders"] = table_html(t["qb_career_explosive_leaders"], QB_CAREER_COLS,
+                                             "Top 20 quarterbacks by career explosive-pass rate per dropback (min. 1,500 dropbacks as starter)")
+    tables["qb_season_leaders"] = table_html(t["qb_season_explosive_leaders"], QB_SEASON_COLS,
+                                             "Top 15 single seasons by explosive-pass rate per dropback (min. 300 dropbacks)")
+    tables["pass_run_by_season"] = table_html(t["pass_run_explosives_by_season"], PASS_RUN_SEASON_COLS,
+                                              "Explosive-pass and explosive-rush rates by season")
+    tables["pass_run_decomposition"] = table_html(t["pass_run_decomposition"], PASS_RUN_DECOMP_COLS,
+                                                  "Decomposition of the 2018-2025 change in explosive rate per play into a within-type rate effect and a pass-rate mix effect")
+    tables["drive_position"] = table_html(t["drive_position_explosive_rate"], DRIVE_POSITION_COLS,
+                                          "Explosive rate by play number within a drive, 2010-2017 vs 2018-2025")
+    tables["defensive_play_by_position"] = table_html(t["defensive_play_by_drive_position"], DEFENSIVE_PLAY_POSITION_COLS,
+                                                       "Probability a scrimmage play is a defensive play, by play number within a drive, by era")
+    tables["drive_outcomes"] = table_html(t["drive_outcomes_by_era"], DRIVE_OUTCOMES_COLS,
+                                          "Per-drive outcomes by era: chance of a defensive play, points per drive, plays per drive")
 
     render("index.html", out_dir / "index.html", root="", tables=tables)
     render("the_shift.html", out_dir / "the-shift.html", root="", tables=tables)

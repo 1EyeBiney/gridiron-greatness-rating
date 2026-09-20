@@ -15,4 +15,18 @@ bar-argument table, straight from the data.</p>
 <p>The same categories, restricted to plays with the offense's win probability between 5% and 95% (excludes plays
 in the primary table that happen when a game is already decided).</p>
 {{ tables.head_to_head_ng_by_era }}
+
+<h2>Predicting the postseason</h2>
+<p>The table below shows a logistic regression of postseason wins on the two teams' regular-season explosive and
+turnover differentials, pooled and by era.</p>
+{{ tables.playoff_prediction }}
+
+<h2>Postseason head-to-head</h2>
+<p>The table below shows the same head-to-head categories as above, restricted to postseason games.</p>
+{{ tables.playoff_head_to_head }}
+
+<h2>Super Bowl champions' regular-season ranks</h2>
+<p>The table below lists each Super Bowl champion's regular-season rank among that season's teams in explosive
+differential and turnover differential per game.</p>
+{{ tables.super_bowl_ranks }}
 {% endblock %}

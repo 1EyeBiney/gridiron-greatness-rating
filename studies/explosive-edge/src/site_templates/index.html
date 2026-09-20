@@ -9,6 +9,7 @@
 {% set h3 = facts.head_to_head_by_era[facts.eras[2]] %}
 {% set m0 = facts.mechanism_1999 %}
 {% set m1 = facts.mechanism_2025 %}
+{% set ct = facts.competitive_time_by_era[facts.eras[2]] %}
 {% block content %}
 <h1>Do big plays decide games now?</h1>
 <p class="lede">{{ facts.n_games|n }} regular-season games, {{ facts.first_season }} to {{ facts.last_season }}, every
@@ -27,7 +28,11 @@ play of them. The claim under test: explosive plays now belong next to turnovers
     {{ s3.tod_only_accuracy|pct }} of winners right in {{ facts.last_era }}; knowing only the explosive battle gets you
     {{ s3.epd_only_accuracy|pct }}. A turnover is worth about {{ (-x3.points_per_turnover)|f1 }} points of margin and an
     explosive play about {{ x3.points_per_explosive|f1 }}, so one turnover equals roughly
-    {{ (-x3.exchange_ratio_turnover_to_explosive)|f1 }} big plays. That exchange rate has barely moved in 27 years.</li>
+    {{ (-x3.exchange_ratio_turnover_to_explosive)|f1 }} big plays. That exchange rate has barely moved in 27 years.
+    One qualifier: strip out garbage time and the two nearly meet - a standardized turnover coefficient of
+    {{ (-ct.ng_b_tod)|f2 }} against {{ ct.ng_b_epd|f2 }} for explosives, versus {{ (-ct.all_b_tod)|f2 }} and
+    {{ ct.all_b_epd|f2 }} with every play counted. Desperation interceptions by trailing teams do a lot of the
+    turnover's work.</li>
   <li><strong>Win the big-play battle and lose the turnover battle, and you usually lose.</strong>
     {{ h1.won_explosive_lost_turnover.win_rate|pct }} of such games in {{ facts.eras[0] }},
     {{ h3.won_explosive_lost_turnover.win_rate|pct }} in {{ facts.last_era }}. A little better than it was. Still a
@@ -36,20 +41,31 @@ play of them. The claim under test: explosive plays now belong next to turnovers
     season predicts its second half with a correlation of {{ p3.explosive_diff_per_game.r|f2 }}
     ({{ facts.last_era }}). Its turnover differential: {{ p3.turnover_diff_per_game.r|f2 }}. Big plays are a
     repeatable trait. Turnovers are mostly weather. And explosive differential tracks the main site's True Strength
-    Rating as closely as turnover differential does.</li>
+    Rating as closely as turnover differential does. It carries into January, too: a team's regular-season explosive
+    edge predicts its playoff wins (coefficient {{ facts.playoff_prediction_b_epd|f2 }} ± {{ facts.playoff_prediction_se_epd|f2 }}
+    over {{ facts.playoff_prediction_n }} games); its regular-season turnover edge does not
+    ({{ facts.playoff_prediction_b_tod|f2 }} ± {{ facts.playoff_prediction_se_tod|f2 }}). Explosiveness also travels with
+    the quarterback: year-to-year persistence is {{ facts.qb_continuity_same_qb_r|f2 }} when the same starter returns and
+    {{ facts.qb_continuity_changed_qb_r|f2 }} when he doesn't.</li>
   <li><strong>The mechanism Simms describes isn't there.</strong> Drives have gotten <em>longer</em>, not shorter:
     {{ m0.plays_per_drive|f1 }} plays and {{ m0.seconds_per_drive|f0 }} seconds per drive in 1999,
     {{ m1.plays_per_drive|f1 }} plays and {{ m1.seconds_per_drive|f0 }} seconds in 2025. Defenses make a play (sack,
     takeaway, or tackle for loss) on {{ m1.def_play_rate_per_snap|pct }} of snaps now, down from
-    {{ m0.def_play_rate_per_snap|pct }}. There is no rising per-snap danger for offenses to hurry away from.</li>
+    {{ m0.def_play_rate_per_snap|pct }}. Within a drive, the chance of a defensive play rises through the third snap
+    and then goes flat - {{ facts.def_play_rate_play1_last_era|pct }} on play one, {{ facts.def_play_rate_play3_last_era|pct }}
+    on play three, {{ facts.def_play_rate_play8plus_last_era|pct }} on play eight or later - so there is no rising
+    per-snap danger for offenses to hurry away from, and offenses haven't hurried: first-play explosive rate is
+    {{ facts.drive_position_play1_first_era|pct }} in 2010-2017 and {{ facts.drive_position_play1_last_era|pct }} since.</li>
   <li><strong>What did change is that turnovers are vanishing.</strong> {{ m0.turnovers_per_game|f1 }} per game in 1999,
     {{ m1.turnovers_per_game|f1 }} in 2025. The turnover battle is a draw more often than it used to be, and when it is,
-    the explosive battle decides.</li>
+    the explosive battle decides. Big plays themselves peaked in 2018 and have slipped since, and about
+    {{ facts.decomposition_share_rate_effect|pct }} of that slide is fewer explosive passes per dropback, not a shift toward
+    the run.</li>
 </ul>
 
 <hr class="yard-line">
 
-<h2>Who wins the game: turnovers, by a distance</h2>
+<h2>Who wins the game: turnovers, by less than it first appears</h2>
 {{ tables.shift_by_era }}
 <p>Each row fits three models to every regular-season game of the era: predict the winner from the explosive-play
 differential alone, from the turnover differential alone, and from both. Coefficients are standardized within season
@@ -57,7 +73,8 @@ so a "1.0" means one standard deviation of that differential. The turnover coeff
 explosive coefficient is flat at about {{ s3.both_b_epd|f1 }}. The one drift worth noting is that the turnover
 coefficient has eased from {{ (-s1.both_b_tod)|f2 }} to {{ (-s3.both_b_tod)|f2 }} - the direction Simms describes,
 in an amount that doesn't clear statistical significance on its own. The <a href="{{ root }}the-shift.html">shift page</a>
-has every season, the trend test, and the same result under four different definitions of "explosive."</p>
+has every season, the trend test, the same result under four different definitions of "explosive," and the
+competitive-time version, where the gap between the two coefficients shrinks by about two-thirds.</p>
 
 <h2>Who is good: big plays, because they repeat</h2>
 {{ tables.persistence_by_era }}

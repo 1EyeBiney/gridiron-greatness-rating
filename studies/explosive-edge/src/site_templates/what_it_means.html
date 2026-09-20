@@ -10,6 +10,7 @@
 {% set m0 = facts.mechanism_1999 %}
 {% set m1 = facts.mechanism_2025 %}
 {% set top = facts.leaderboard_top5 %}
+{% set ct = facts.competitive_time_by_era[facts.eras[2]] %}
 {% block content %}
 <h1>What It Means</h1>
 <p class="lede">Twenty-seven seasons, 1.3 million plays, and a theory from the broadcast booth that turns out to be
@@ -28,7 +29,7 @@ losing some of its grip.</p>
 
 <h2>Sunday still belongs to the turnover</h2>
 <p>Take every regular-season game since 1999 and ask which single number better tells you who won: the difference in
-explosive plays, or the difference in turnovers. It isn't close, and it hasn't gotten close. Knowing only the
+explosive plays, or the difference in turnovers. On the raw numbers it isn't close, and it hasn't gotten close. Knowing only the
 turnover battle picks the winner {{ s3.tod_only_accuracy|pct }} of the time over the last nine seasons. Knowing only the
 explosive battle picks it {{ s3.epd_only_accuracy|pct }} of the time. Put in points, a turnover has been worth about
 {{ (-x3.points_per_turnover)|f1 }} points of final margin and an explosive play about {{ x3.points_per_explosive|f1 }},
@@ -38,6 +39,24 @@ Kurt Warner was throwing to Isaac Bruce.</p>
 does it win the game? {{ h1.won_explosive_lost_turnover.win_rate|pct }} of the time in the first nine seasons of the
 data, {{ h3.won_explosive_lost_turnover.win_rate|pct }} in the last nine. Better, a little. Still a loss more often
 than not. If the argument is about who wins <em>this game</em>, the turnover side of the table is still right.</p>
+<p>It is right by less than it first appears, though. A good share of the turnover's predictive power comes from the
+fourth quarter of games already decided, when a trailing quarterback throws it up and a defense picks it off. Count
+only competitive snaps - win probability between five and ninety-five percent - and the standardized turnover
+coefficient falls from {{ (-ct.all_b_tod)|f2 }} to {{ (-ct.ng_b_tod)|f2 }} while the explosive coefficient rises from
+{{ ct.all_b_epd|f2 }} to {{ ct.ng_b_epd|f2 }}. The turnover still leads. The margin is about a third of what the raw
+numbers suggest. Simms is closer to right about Sunday than the headline gives him, and the difference is garbage
+time.</p>
+
+<h2>Where the big plays went</h2>
+<p>Something else the recent numbers say that nobody in the booth is saying: the big play is in mild decline.
+Explosive plays peaked in 2018 and have slipped since, from {{ facts.decomposition_from_rate|pct }} of snaps to
+{{ facts.decomposition_to_rate|pct }}. That is not offenses turning to the run - the pass rate has fallen a little, but
+about {{ facts.decomposition_share_rate_effect|pct }} of the decline is fewer explosive passes per dropback. Defenses
+have taken the deep ball away, and offenses have answered with efficiency rather than with more shots. The first play
+of a drive is no more explosive now than it was a decade ago ({{ facts.drive_position_play1_last_era|pct }} against
+{{ facts.drive_position_play1_first_era|pct }}), and the share of big plays that come in garbage time has sat near
+{{ facts.garbage_share_mean|pct }} for twenty-seven years. If the modern offense were hunting the chunk play to shorten
+drives, this is where it would show. It doesn't.</p>
 
 <h2>The mechanism isn't there either</h2>
 <p>The shorter-drive story is the part of the theory that can be checked most directly, and it fails. Drives are
@@ -45,7 +64,13 @@ longer than they were, not shorter: {{ m0.plays_per_drive|f1 }} plays and about 
 minutes of clock per possession in 1999, {{ m1.plays_per_drive|f1 }} plays and {{ (m1.seconds_per_drive/60)|f1 }}
 minutes in 2025. The rate at which a defense makes a play - a sack, a takeaway, a tackle behind the line - has fallen
 from {{ m0.def_play_rate_per_snap|pct }} of snaps to {{ m1.def_play_rate_per_snap|pct }}. There is no rising
-per-snap danger for an offense to hurry away from; the modern defense gets its hands on fewer plays, not more. And the
+per-snap danger for an offense to hurry away from; the modern defense gets its hands on fewer plays, not more. Nor
+does the danger build as a drive goes on. The chance of a defensive play climbs from the first snap to the third -
+{{ facts.def_play_rate_play1_last_era|pct }} to {{ facts.def_play_rate_play3_last_era|pct }}, which is mostly third down -
+and then sits flat through the eighth play and beyond ({{ facts.def_play_rate_play8plus_last_era|pct }}). Meanwhile
+points per drive rose from {{ facts.points_per_drive_first_era|f2 }} to {{ facts.points_per_drive_last_era|f2 }} across
+the eras while the chance a drive suffers at least one defensive play stayed put. Long drives score. They are not
+increasingly dangerous. And the
 teams that generate the most explosive plays don't run shorter drives than everyone else. They run slightly longer
 ones. Offenses aren't gambling on the big play to escape the defense. They are moving the ball more efficiently
 across the board, and the big plays come with it.</p>
@@ -74,6 +99,18 @@ by margin and schedule. Explosive-play differential correlates with a team's rat
 record of good fortune. The most explosive team-seasons since 1999 read like a list of teams you remember:
 {% for t in top %}the {{ t.season }} {{ t.franchise }} ({{ t.wins }}-{{ t.losses }}{% if t.ties %}-{{ t.ties }}{% endif %}){% if not loop.last %}, {% endif %}{% endfor %}.
 Three of the five reached a Super Bowl.</p>
+<p>Two more pieces of evidence point the same way. A team's regular-season big-play edge predicts its playoff wins - a
+standardized coefficient of {{ facts.playoff_prediction_b_epd|f2 }} (± {{ facts.playoff_prediction_se_epd|f2 }}) across
+{{ facts.playoff_prediction_n }} postseason games - while its regular-season turnover edge predicts nothing
+({{ facts.playoff_prediction_b_tod|f2 }} ± {{ facts.playoff_prediction_se_tod|f2 }}). Inside the playoff games
+themselves the turnover battle still rules, even more than in the regular season: win the big plays and lose the
+turnovers in January and you win {{ facts.postseason_won_explosive_lost_turnover_win_rate|pct }} of the time. That is the
+whole thesis in one sentence: the turnovers decide the game in front of you, and the big plays tell you which team
+is likely to be standing there. And the trait has an owner. When a team's starting quarterback returns, its
+explosive-pass rate carries over year to year at {{ facts.qb_continuity_same_qb_r|f2 }}; when the quarterback changes,
+{{ facts.qb_continuity_changed_qb_r|f2 }}. The career leaders in explosive passes per dropback since 1999 are
+{% for q in facts.qb_career_top3 %}{{ q.qb_name }} ({{ q.rate|pct }}){% if not loop.last %}, {% endif %}{% endfor %} -
+two of them quarterbacks who threaten defenses with their legs first.</p>
 
 <h2>One honest caveat</h2>
 <p>Part of the persistence gap is arithmetic. A team produces about nine explosive plays a game and gives the ball

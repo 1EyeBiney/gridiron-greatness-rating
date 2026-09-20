@@ -1,0 +1,2 @@
+from_season,to_season,total_rate_per_play_from,total_rate_per_play_to,total_change,mix_effect_pass_rate,rate_effect_within_type,sum_check,share_of_change_that_is_rate_effect,pass_rate_from,pass_rate_to,explosive_pass_rate_from,explosive_pass_rate_to,explosive_rush_rate_from,explosive_rush_rate_to
+2018,2025,0.10087830153614888,0.09291003522963005,-0.007968266306518826,0.0010092213560677586,-0.00897748766258658,-0.007968266306518822,0.8989435504546476,0.5951066499372647,0.5689262621049755,0.08322792815583102,0.07846696923852749,0.1268205763867369,0.1119718309859155
