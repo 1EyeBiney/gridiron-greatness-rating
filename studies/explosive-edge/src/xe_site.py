@@ -16,9 +16,6 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup, escape
 
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent))  # main build loads this file by path
-import xe_analysis_followups  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 DATA = REPO / "data" / "processed"
@@ -498,7 +495,9 @@ def render_all(out_dir: Path = OUT_DIR) -> dict:
     # is run by hand -- so this is the one step of the chain that DOES run
     # automatically on every site build, keeping the follow-up tables from
     # going stale relative to team_game.csv).
-    xe_analysis_followups.run()
+    # Analyses are NOT run here: the site builds from the committed tables in
+    # data/processed/ (CI has no raw play-by-play). Run src/xe_build.py locally
+    # to regenerate them.
     t = load_tables()
     facts = build_facts(t)
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)

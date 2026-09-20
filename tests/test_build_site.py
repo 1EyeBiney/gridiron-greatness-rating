@@ -133,3 +133,17 @@ def test_every_image_in_the_built_site_has_an_alt_attribute(tmp_path):
                 missing.append(f"{html_file.relative_to(out_dir)}: {tag}")
 
     assert not missing, f"{len(missing)} <img> tag(s) missing alt:\n" + "\n".join(missing[:20])
+
+
+def test_every_page_on_every_study_carries_the_studies_bar(tmp_path):
+    render_all(tmp_path)
+    pages = list(tmp_path.rglob("*.html"))
+    assert len(pages) > 130
+    for page in pages:
+        html = page.read_text(encoding="utf-8")
+        assert 'class="studies-bar"' in html, page
+        assert html.count('aria-current="page"') == 1, page
+    front = (tmp_path / "index.html").read_text(encoding="utf-8")
+    for target in ("rating.html", "home-field-advantage/index.html", "explosive-edge/index.html", "how-it-was-made.html", "electric-football.html"):
+        assert f'href="{target}"' in front, target
+    assert (tmp_path / "home-field-advantage" / "index.html").read_text(encoding="utf-8").count('href="../index.html"') >= 1

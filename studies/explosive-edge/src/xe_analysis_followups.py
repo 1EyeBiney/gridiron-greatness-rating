@@ -21,7 +21,7 @@ import pandas as pd
 REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "data" / "processed"
 PBP_DIR = REPO / "data" / "raw" / "nflverse_pbp"
-GAMES_CSV = Path(r"C:\nbs\gridiron-greatness-rating\studies\home-field-advantage\data\raw\nflverse\games.csv")
+GAMES_CSV = Path(__file__).resolve().parents[2] / "home-field-advantage" / "data" / "raw" / "nflverse" / "games.csv"
 
 SRC = Path(__file__).resolve().parent
 if str(SRC) not in sys.path:
