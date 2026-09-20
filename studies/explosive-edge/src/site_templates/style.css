@@ -25,17 +25,17 @@
   --text: #1a1a1a;
   --bg: #ffffff;
   --muted: #4b4b4b;
-  --border: #8a7a9c;
-  --link: #4F2683;
-  --link-visited: #6b3fa0;
-  --accent-bg: #f3edf9;
-  --table-header-bg: #4F2683;
+  --border: #9c8378;
+  --link: #C40000;
+  --link-visited: #7a1f1f;
+  --accent-bg: #f8efea;
+  --table-header-bg: #C40000;
   --table-header-text: #ffffff;
 
-  --purple: #4F2683;
-  --purple-dark: #35195a;
-  --gold: #FFC62F;
-  --gold-dark: #e0ab1a;
+  --purple: #C40000;
+  --purple-dark: #7a0000;
+  --gold: #FF7900;
+  --gold-dark: #d96400;
   --focus: #ffb300;
 
   --max-width: 68rem;
@@ -297,14 +297,14 @@ footer {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #f2ecf9;
-    --bg: #170b28;
-    --muted: #c9b8dc;
-    --border: #6b5a80;
-    --link: #FFC62F;
-    --link-visited: #e0ab1a;
-    --accent-bg: #2a1645;
-    --table-header-bg: #FFC62F;
+    --text: #f6ede9;
+    --bg: #1c1210;
+    --muted: #d8c7bf;
+    --border: #7a6055;
+    --link: #FF9A3C;
+    --link-visited: #e08a3a;
+    --accent-bg: #2e1d18;
+    --table-header-bg: #FF7900;
     --table-header-text: #1a1a1a;
   }
   /* --gold is unchanged in dark mode, so header/.hero/.accent-image's
