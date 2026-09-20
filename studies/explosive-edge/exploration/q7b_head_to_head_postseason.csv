@@ -1,0 +1,6 @@
+category,n_games,win_rate
+won_both,123,0.8373983739837398
+won_explosive_lost_turnover,98,0.3163265306122449
+explosive_only,62,0.7741935483870968
+turnover_only,22,0.8636363636363636
+both_even,4,

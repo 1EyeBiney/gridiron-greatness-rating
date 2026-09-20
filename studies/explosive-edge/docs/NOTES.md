@@ -114,3 +114,33 @@ says the gap is wide and holds year to year rather than that the intervals
 are disjoint. 67 study tests, 122 main tests. Wired into the main build
 via STUDIES and a card on the main index; published at
 /explosive-edge/ with the rest of the site.
+
+## 2026-09-20 — Overnight exploration and where we left off
+
+Two Sonnet agents ran the seven follow-up questions (~230k tokens total)
+as exploration only; scripts, CSVs and findings are in exploration/,
+with Fable's review and recommendation in exploration/MORNING_REPORT.md.
+Headline additions recommended, none yet built:
+
+1. Competitive-time-only model: turnover-vs-explosive gap shrinks by about
+   two-thirds (2017-25: 1.33 vs 1.16). Soften "by a distance" on Findings;
+   add the q6 table to the shift page.
+2. Regular-season explosive edge predicts playoff wins (+0.23, SE 0.12,
+   n=309); turnover edge does not (-0.02). Add to head-to-head page.
+3. Explosiveness travels with the QB (persistence 0.34 same QB vs 0.18
+   changed; career leaders Lamar Jackson, Brock Purdy 23.3%). Add to
+   skill-or-luck and leaderboard pages.
+4. 2018->2025 decline in big plays is passing efficiency (~90% of the
+   change), not a shift to the run. Mechanism page.
+5. No rise in early-drive shot-taking; garbage share flat at ~15%.
+6. Defensive-play probability rises through play 3 of a drive then goes
+   flat, in every era, and has shifted down. Mechanism page; strongest
+   refutation of the shorter-drive story.
+Not worth adding: team concentration/spread, situational splits, EPA per
+explosive play (all flat).
+
+Plan when we return: one Sonnet pass to move these six analyses into
+src/xe_analysis_*.py with tests and tables; Fable writes the prose
+changes (Findings, What It Means "Where the big plays went" paragraph)
+and pins claims in test_xe_claims.py. Est. one phase of work. Work on the
+Purdue basketball study starts in the meantime (studies/ folder pattern).

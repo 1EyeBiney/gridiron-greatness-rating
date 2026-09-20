@@ -1,0 +1,2 @@
+from_season,to_season,total_rate_per_play_from,total_rate_per_play_to,total_change,mix_effect_pass_rate,rate_effect_within_type,sum_check,pass_rate_from,pass_rate_to,exp_rate_per_dropback_from,exp_rate_per_dropback_to,exp_rate_per_rush_from,exp_rate_per_rush_to
+2018,2025,0.10294855708908407,0.09550408305758781,-0.0074444740314962565,0.0009039978258746574,-0.00834847185737092,-0.0074444740314962635,0.5951066499372647,0.5689262621049755,0.0867067257010331,0.08302651939597673,0.1268205763867369,0.1119718309859155
