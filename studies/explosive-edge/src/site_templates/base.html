@@ -10,6 +10,18 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <header>
+<nav class="studies-bar" aria-label="Gridiron Greatness studies">
+  <div class="header-inner">
+    <p class="studies-brand">Gridiron Greatness</p>
+    <ul>
+      <li><a href="{{ root }}../index.html">Front page</a></li>
+      <li><a href="{{ root }}../rating.html">Greatness Rating</a></li>
+      <li><a href="{{ root }}../home-field-advantage/index.html">Home Field Advantage</a></li>
+      <li><a href="{{ root }}../explosive-edge/index.html" aria-current="page">Explosive Edge</a></li>
+      <li><a href="{{ root }}../how-it-was-made.html">How it was made</a></li>
+    </ul>
+  </div>
+</nav>
   <div class="header-inner">
     <p class="site-name"><a href="{{ root }}index.html">Explosive Edge</a></p>
     <nav aria-label="Primary">
@@ -23,7 +35,6 @@
         <li><a href="{{ root }}methodology.html">Methodology</a></li>
         <li><a href="{{ root }}what-it-means.html">What it means</a></li>
         <li><a href="{{ root }}data/index.html">Download data</a></li>
-        <li><a href="{{ root }}{{ main_site }}index.html">Gridiron Greatness Rating</a></li>
       </ul>
     </nav>
   </div>
@@ -33,7 +44,7 @@
 </main>
 <footer>
   <p>Explosive Edge is a companion study to the
-     <a href="{{ root }}{{ main_site }}index.html">Gridiron Greatness Rating</a>, built from nflverse play-by-play
+     <a href="{{ root }}{{ main_site }}rating.html">Gridiron Greatness Rating</a>, built from nflverse play-by-play
      data, 1999-present. Methodology, decisions, and full source are in the
      <a href="{{ repo_url }}">GitHub repository</a>. Generated {{ generated_date }}.</p>
 </footer>

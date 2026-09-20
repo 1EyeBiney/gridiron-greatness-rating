@@ -251,7 +251,9 @@ def render_all(out_dir: Path = OUT_DIR):
     seasons = sorted(profile["season"].unique().tolist())
 
     # --- index, methodology, electric football story ---
-    render("index.html", out_dir / "index.html", root="")
+    render("hub.html", out_dir / "index.html", root="", studies_current="hub")
+    render("rating.html", out_dir / "rating.html", root="")
+    render("how_it_was_made.html", out_dir / "how-it-was-made.html", root="", studies_current="made")
     render("methodology.html", out_dir / "methodology.html", root="")
     render("electric_football.html", out_dir / "electric-football.html", root="")
     render("why.html", out_dir / "why.html", root="")

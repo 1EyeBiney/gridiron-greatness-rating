@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block page_title %}How It Was Made{% endblock %}
+{% block content %}
+<h1>How It Was Made</h1>
+<p class="lede">One person with the questions and a lifetime of watching football. One AI with the tools. A few days
+of work. This page is about the way that went, because it is a new way to build something like this and the
+method mattered as much as the math.</p>
+
+<h2>The division of labor</h2>
+<p>Brian brought the questions - every one of the studies here started as something he had wondered about for years,
+or heard argued on a broadcast, and wanted settled. He also brought the judgment calls: which teams to feature, what
+the site should look like, when a result felt wrong and needed a second look, what he was and wasn't willing to
+claim. Claude, an AI model made by Anthropic, did the building: finding and checking the data, writing the models and
+the code, running the analyses, drafting the pages, and testing all of it. Neither role would have produced this
+alone. The questions without the tools would have stayed bar arguments. The tools without the questions would have
+produced tables nobody asked for.</p>
+
+<h2>The working rules</h2>
+<p>A handful of rules were set at the start and held throughout. They are why the numbers on these pages can be
+trusted, and they are the part most worth copying.</p>
+<ul>
+  <li><strong>Plan first, in writing.</strong> Each study began as a plan document - the question stated precisely,
+    the data source and its license, the definitions fixed before any analysis ran, the analyses listed, the
+    checkpoints named. The plans are in the repository and were updated as decisions were made, so a reader can see
+    not only what was done but why.</li>
+  <li><strong>Every number is reproducible.</strong> Nothing is typed in by hand. One command rebuilds every table and
+    every page from the raw game files. Raw data is never edited; every transformation is a script. The finished site
+    is not even stored - it is regenerated on every publish.</li>
+  <li><strong>The prose is tested like the code.</strong> A sentence like "the final third of the season is the
+    strongest for home teams in every decade" is a claim about data, and it can go stale or simply be wrong. So every
+    such claim is pinned to the tables by an automated check, and the numbers quoted in the text are inserted from the
+    tables at build time. Those checks caught more than half a dozen confident-sounding errors in first drafts before
+    any of them was published: a "best offense" that was actually second, a "highest in every decade" that was highest
+    in five of six, a franchise named as smallest that was second-smallest.</li>
+  <li><strong>Review before believing.</strong> When results arrived, they were reviewed for the ways an analysis can
+    fool its author. The home-field study's first pass showed eliminated teams gaining home field late in the year - a
+    striking result that turned out to be an artifact of grouping games by a team's own record. The fix, and the
+    wrong version, are both on that site so the next person doesn't fall into the same hole.</li>
+  <li><strong>Ask before acting.</strong> Publishing, fetching a new data source, changing a repository setting -
+    anything outward-facing or hard to reverse - waited for Brian's explicit go-ahead. Sources were checked for license
+    terms before a byte was downloaded, and one candidate dataset was skipped because its terms didn't allow it.</li>
+  <li><strong>Say what the data can't say.</strong> Each study has a page that names its limits. Scores can't separate
+    a traveling fan base from a quiet home crowd. Big plays are yards and yards are points. A rating built across eras
+    says how dominant a team was in its own time, not who would win a time-machine game. Those caveats are on the
+    pages, not in a footnote.</li>
+</ul>
+
+<h2>How the work actually flowed</h2>
+<p>The first study, the rating itself, was built in six planned phases over a couple of days: data, models, era
+normalization, validation, the descriptive scores, and the site. Between phases, Brian switched to a second AI model
+to review the first one's work - a deliberate fresh pair of eyes - and several improvements came out of those reviews,
+including a fix to how one model was tuned that had quietly used data it shouldn't have seen.</p>
+<p>The later studies were built faster, and differently. By then the pattern was established, so the plan document
+for each new study was written to be handed to smaller, more specialized AI agents: one ingested the play-by-play
+data and built the per-game aggregate, two ran the analyses in parallel, one built the site generator. The
+coordinating model reviewed each hand-off. That review caught two real bugs in the big-play study before any analysis
+ran on the data - fumbles on punts charged to the wrong team, and a quirk in how the source labels franchises that
+had left nearly a thousand team-games unmatched. Then it wrote the prose, and the claim checks caught its own
+overstatements in turn.</p>
+<p>The illustrations came from a third tool. The photorealistic figurines on every page were generated in an image
+model, all as follow-up prompts in a single conversation so the style stayed consistent, with opposing teams shown as
+bear heads, lion heads, cheeseheads, cowboy hats, jaguars, horses, and a colonial hat rather than any real team's
+trademark. Brian chose the casts.</p>
+
+<h2>What was harder than expected</h2>
+<p>Not the models. The models are standard, and they are described in plain language on each methodology page. The
+hard parts were the ones that would trip up any careful analyst: an early week of the season that isn't a week, a
+franchise code that changes when a team moves, a strike season that breaks every assumption about a schedule, a
+statistic that looks like a discovery and is really a selection effect. Every one of those is recorded in the
+decision logs in the repository, with the date and what was done about it.</p>
+
+<h2>What was easier than expected</h2>
+<p>Going from a question to a first honest answer. The home-field study went from "I wonder whether this is true" to a
+complete, tested, published site in an afternoon. The big-play study, with a new data source of over a million plays,
+took about the same. That speed is the genuinely new thing here, and it is why the working rules above matter so
+much: when answers come that fast, the discipline that keeps them honest has to be built into the process, because
+there is no time for it to be an afterthought.</p>
+
+<h2>Everything is open</h2>
+<p>The code, the plans, the decision logs, the tests, and every table are in the
+<a href="https://github.com/1EyeBiney/gridiron-greatness-rating">public repository</a>. The game data comes from
+FiveThirtyEight (1970-1998, MIT license) and nflverse (1999-present, CC BY 4.0), with thanks to both. If you find a
+number you think is wrong, the repository is the place to say so - and the chances are good that a test will be
+written for it.</p>
+{% endblock %}

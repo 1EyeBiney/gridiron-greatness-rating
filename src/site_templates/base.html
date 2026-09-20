@@ -10,8 +10,20 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <header>
+<nav class="studies-bar" aria-label="Gridiron Greatness studies">
   <div class="header-inner">
-    <p class="site-name"><a href="{{ root }}index.html">Gridiron Greatness Rating</a></p>
+    <p class="studies-brand">Gridiron Greatness</p>
+    <ul>
+      <li><a href="{{ root }}index.html"{% if studies_current == "hub" %} aria-current="page"{% endif %}>Front page</a></li>
+      <li><a href="{{ root }}rating.html"{% if studies_current != "hub" and studies_current != "made" %} aria-current="page"{% endif %}>Greatness Rating</a></li>
+      <li><a href="{{ root }}home-field-advantage/index.html">Home Field Advantage</a></li>
+      <li><a href="{{ root }}explosive-edge/index.html">Explosive Edge</a></li>
+      <li><a href="{{ root }}how-it-was-made.html"{% if studies_current == "made" %} aria-current="page"{% endif %}>How it was made</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="header-inner">
+    <p class="site-name"><a href="{{ root }}rating.html">Gridiron Greatness Rating</a></p>
     <nav aria-label="Primary">
       <ul>
         <li><a href="{{ root }}why.html">Why this exists</a></li>

@@ -71,6 +71,17 @@ a:focus, button:focus, input:focus { outline: 3px solid var(--focus); outline-of
 
 /* Header: brushed-metal-ish gradient in Vikings purple, evoking the
    painted tin electric-football board rather than a flat color fill. */
+/* Studies bar: the one strip shared by every page of every study, so the
+   three sites read as one. Sits above the study's own header. */
+.hero figcaption a, .accent-image figcaption a { color: inherit; text-decoration: underline; }
+.studies-bar { background: #111; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; }
+.studies-bar .header-inner { padding: 0.35rem 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1rem; }
+.studies-brand { margin: 0; font-family: var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.9rem; color: #fff; }
+.studies-bar ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.15rem 1rem; }
+.studies-bar a { color: #fff; text-decoration: none; opacity: 0.85; padding: 0.15rem 0; border-bottom: 2px solid transparent; }
+.studies-bar a:hover, .studies-bar a:focus { opacity: 1; text-decoration: underline; }
+.studies-bar a[aria-current="page"] { opacity: 1; font-weight: 700; border-bottom-color: var(--gold); }
+
 header {
   border-bottom: 4px solid var(--gold);
   background:

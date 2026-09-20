@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block page_title %}Front page{% endblock %}
+{% block content %}
+<h1>Gridiron Greatness</h1>
+<p class="lede">Three studies, one game table, fifty-six seasons of NFL scores, and the arguments people have over
+pretzels and beer - settled with data where it can be, and left honestly open where it can't.</p>
+
+<figure class="hero">
+  <img src="{{ root }}images/story-hero.jpg" alt="An illustrated toy vignette on a vintage electric football board: purple-and-gold figurines and their comical opponents mid-play under warm living-room light.">
+  <figcaption>Every study here is dressed as a 1970s electric football game. <a href="{{ root }}electric-football.html">Here's why.</a></figcaption>
+</figure>
+
+<h2>The questions</h2>
+<ul class="card-grid">
+  <li><a href="{{ root }}rating.html">Gridiron Greatness Rating</a><br>
+    <strong>How good was every NFL team, really, 1970-2025?</strong> Was the 1985 Bears defense as dominant as it felt?
+    Were the 2025 Patriots a weaker Super Bowl opponent than 14-3 suggests? Why don't the 1990s Cowboys sit at the top?
+    A schedule-adjusted strength rating for all 1,669 team-seasons since the merger, kept separate from a score for what
+    each team actually won. <em>Answer in brief: the 1996 Packers are the most complete team since the merger, the '85
+    Bears are second, and the trophy and the strength are two different things.</em></li>
+  <li><a href="{{ root }}home-field-advantage/index.html">Home Field Advantage</a><br>
+    <strong>How much is home field worth, and does it fade late in the year as eliminated teams' fans sell their seats?</strong>
+    Do some fan bases travel well enough to blunt it? <em>Answer in brief: home field has shrunk from about three points to
+    under two, it does not fade late in the season - it grows - eliminated teams keep their edge, the 2020 no-fans season
+    had none, and no fan base shows up in the scores.</em></li>
+  <li><a href="{{ root }}explosive-edge/index.html">Explosive Edge</a><br>
+    <strong>Do big plays now decide games the way turnovers do?</strong> A broadcast-booth theory tested on every play
+    since 1999. <em>Answer in brief: turnovers still decide games, and the exchange rate hasn't moved. But big plays
+    decide seasons - a team's explosive-play edge repeats from one half of a year to the next, and its turnover luck
+    doesn't.</em></li>
+</ul>
+
+<h2>The stories</h2>
+<ul class="card-grid">
+  <li><a href="{{ root }}what-it-means.html">What the ratings mean</a><br>The greatest teams since the merger, the best ones that never won, the champions nobody saw coming, and the perfect season that isn't at the top.</li>
+  <li><a href="{{ root }}home-field-advantage/what-it-means.html">What home field means</a><br>A hypothesis about resale tickets that turned out to be wrong, and a season with no fans that showed what the crowd is actually worth.</li>
+  <li><a href="{{ root }}explosive-edge/what-it-means.html">What big plays mean</a><br>Wrong about Sunday, right about the season: why the turnover battle still wins the game and the big-play battle tells you who is good.</li>
+  <li><a href="{{ root }}why.html">Why this exists</a><br>A hunch about a Super Bowl matchup, a childhood team, and how you'd even compare 1985 to 2025.</li>
+</ul>
+
+<h2>Behind the scenes</h2>
+<ul class="card-grid">
+  <li><a href="{{ root }}how-it-was-made.html">How it was made</a><br>One person with the questions, one AI with the tools, and a way of working that kept the numbers honest. A short account of a new kind of collaboration.</li>
+  <li><a href="{{ root }}electric-football.html">The electric football story</a><br>Norman Sas, 1947, a vibrating tin field, and why every page here looks the way it does.</li>
+  <li><a href="{{ root }}methodology.html">How the ratings are built</a><br>The model behind True Strength, in plain language, with every decision recorded.</li>
+  <li><a href="{{ root }}data/index.html">Download everything</a><br>Every table on every study as CSV or JSON. Nothing here is a chart you can't read as numbers.</li>
+</ul>
+
+<h2>How the three fit together</h2>
+<p>All three studies stand on the same table of every NFL game since 1970, built once and checked against published
+records. The rating measures teams. The home-field study measures the stadium. The big-play study measures the plays.
+Each one links to the others where they touch - the most explosive team-seasons are shown next to their strength
+ratings, and the home-field numbers use the same kind of schedule adjustment the rating does - and each one says
+plainly what its data can and cannot separate. The strip at the top of every page moves between them.</p>
+{% endblock %}
