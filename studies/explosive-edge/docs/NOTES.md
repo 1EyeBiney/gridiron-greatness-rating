@@ -161,3 +161,48 @@ Process note: the first agent run delegated instead of working and had to
 be resent; the second run reported a file race with the stray delegate,
 re-verified, and finished clean - lesson: tell agents explicitly not to
 delegate.
+
+
+## 2026-09-21 -- Outside review (v1.0) and the response
+
+Brian asked a different AI model to review the live site and reproduce what
+it could. Its findings for this study, and what was done:
+
+1. **QB leaderboard measured the wrong thing.** Label said "explosive-pass
+   rate per dropback"; code divided the TEAM's explosive plays (rushes
+   included) in games the starter started by the team's dropbacks. Rebuilt
+   from play-by-play: explosive completions (20+) by the passer on the play
+   over his own dropbacks (attempts + sacks + scrambles), with an air-yards
+   share (2006+) and a separate QB-rushing column; team explosiveness stays
+   its own table. Purdy: 23.3% on the old measure (second) -> 11.9% on the
+   corrected one and FIRST (career, min 1,500 dropbacks); his 2023 (14.8%)
+   is the best single season. Garoppolo, Goff, Warner, Love follow.
+2. **Join dropped 894 team-games.** Schedule file uses STL/SD/OAK, pbp uses
+   LAR/LAC/LV (current codes for all seasons). Joined on franchise via the
+   crosswalk; coverage now 13,928 of 13,928 (qb_join_coverage.csv, tested).
+3. **"Travels with the QB" overstated.** Continuity split re-run on the
+   pass-only rate with the full join: same starter r = 0.24 (n 514),
+   changed r = 0.13 (n 315); the 95% intervals overlap. Prose now says
+   "persists more with the same starter; association, not attribution"
+   and names the missing four-way (old/new team x before/after) design.
+   Site fact `qb_continuity_ci_overlap` gates the overlap sentence.
+4. **Rarity vs skill quantified.** New reliability_decomposition.csv:
+   between-team variance of half-season differentials minus Poisson
+   counting noise. 2017-2025: noise-only reliability 0.45 (explosive) vs
+   0.33 (turnovers); observed 0.42 vs 0.18. Rarity explains ~46% of the
+   persistence gap; the rest is within-season drift in turnover
+   differential. Reported on skill-or-luck.html and in What It Means.
+5. **Explaining vs predicting; "no effect".** Methodology limitations now
+   distinguish the in-sample game regressions from the one forecast
+   (regular season -> playoffs); "predicts nothing" replaced with the
+   coefficient's +/-2 SE range (-0.26 to +0.21 for turnovers).
+6. **EPA mislabelled as win probability.** Fixed; EPA is expected points
+   added, WPA is a different field; the EPA threshold softens the yardage
+   tautology rather than removing it.
+
+Deferred, listed as future work: the four-way QB-move study (also relaxing
+the 8-starts rule); separating interceptions / fumbles / recoveries in the
+reliability split; and the reviewer's proposed headline question, whether
+explosiveness adds predictive value for FUTURE results beyond team
+strength, opponents and ordinary efficiency (a walk-forward test against
+TSR is the natural design). Tests: 98 study tests after the change.

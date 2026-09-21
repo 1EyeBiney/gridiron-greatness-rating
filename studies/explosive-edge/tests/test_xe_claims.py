@@ -100,12 +100,29 @@ def test_regular_season_explosive_edge_predicts_playoff_wins_and_turnover_edge_d
     assert abs(facts["super_bowl_median_epd_rank"] - facts["super_bowl_median_tod_rank"]) <= 2  # "a tie"
 
 
-def test_explosiveness_travels_with_the_quarterback(facts):
-    assert facts["qb_continuity_same_qb_r"] > 1.6 * facts["qb_continuity_changed_qb_r"]
+def test_explosive_passing_persists_more_with_the_same_quarterback(facts):
+    # "persists more when the same quarterback returns" - an association, stated as such
+    assert facts["qb_continuity_same_qb_r"] > facts["qb_continuity_changed_qb_r"]
     assert facts["qb_continuity_same_qb_n"] > 400 and facts["qb_continuity_changed_qb_n"] > 250
-    names = [q["qb_name"] for q in facts["qb_career_top3"]]
-    assert names[:2] == ["Lamar Jackson", "Brock Purdy"]   # "two of them ... legs first"
-    assert all(q["rate"] > 0.2 for q in facts["qb_career_top3"])
+    assert isinstance(facts["qb_continuity_ci_overlap"], bool)
+    # the corrected measure is a pass-only rate: explosive completions per own dropback, well under 20%
+    assert all(0.05 < q["rate"] < 0.2 for q in facts["qb_career_top3"])
+    assert 0.05 < facts["qb_top_season"]["rate"] < 0.25
+    # the join now covers every regular-season team-game
+    assert facts["qb_join_unmatched"] == 0 and facts["qb_join_team_games"] > 13000
+
+
+def test_rarity_explains_part_but_not_all_of_the_persistence_gap(facts):
+    # counting noise alone would leave turnovers repeating well above what is observed
+    assert facts["rel_turnover_implied"] > facts["rel_turnover_observed"] + 0.1
+    # explosive differential sits close to its noise-only ceiling
+    assert abs(facts["rel_explosive_implied"] - facts["rel_explosive_observed"]) < 0.08
+    # "roughly N percent of the gap": between a quarter and three quarters
+    assert 0.25 < facts["rel_gap_share_from_rarity"] < 0.75
+
+
+def test_turnover_playoff_coefficient_range_straddles_zero(facts):
+    assert facts["playoff_prediction_tod_lower"] < 0 < facts["playoff_prediction_tod_upper"]
 
 
 def test_where_the_big_plays_went(facts):

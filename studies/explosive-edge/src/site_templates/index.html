@@ -44,9 +44,13 @@ play of them. The claim under test: explosive plays now belong next to turnovers
     Rating as closely as turnover differential does. It carries into January, too: a team's regular-season explosive
     edge predicts its playoff wins (coefficient {{ facts.playoff_prediction_b_epd|f2 }} ± {{ facts.playoff_prediction_se_epd|f2 }}
     over {{ facts.playoff_prediction_n }} games); its regular-season turnover edge does not
-    ({{ facts.playoff_prediction_b_tod|f2 }} ± {{ facts.playoff_prediction_se_tod|f2 }}). Explosiveness also travels with
-    the quarterback: year-to-year persistence is {{ facts.qb_continuity_same_qb_r|f2 }} when the same starter returns and
-    {{ facts.qb_continuity_changed_qb_r|f2 }} when he doesn't.</li>
+    ({{ facts.playoff_prediction_b_tod|f2 }} ± {{ facts.playoff_prediction_se_tod|f2 }}; anything from
+    {{ facts.playoff_prediction_tod_lower|f2 }} to {{ facts.playoff_prediction_tod_upper|f2 }} is still compatible with the
+    data, so this is "no detectable effect," not "no effect"). Explosive passing also persists more when the same
+    quarterback returns: year-to-year {{ facts.qb_continuity_same_qb_r|f2 }} with the same starter,
+    {{ facts.qb_continuity_changed_qb_r|f2 }} with a new one{% if facts.qb_continuity_ci_overlap %} (the two ranges
+    overlap){% endif %}. How much of that is the quarterback himself rather than the coordinator, receivers and scheme
+    he tends to keep is not settled here.</li>
   <li><strong>The mechanism Simms describes isn't there.</strong> Drives have gotten <em>longer</em>, not shorter:
     {{ m0.plays_per_drive|f1 }} plays and {{ m0.seconds_per_drive|f0 }} seconds per drive in 1999,
     {{ m1.plays_per_drive|f1 }} plays and {{ m1.seconds_per_drive|f0 }} seconds in 2025. Defenses make a play (sack,

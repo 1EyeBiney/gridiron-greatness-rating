@@ -144,6 +144,13 @@ def build_facts(t: dict[str, pd.DataFrame]) -> dict:
     sb_summary = sb[sb["season"] == "median"].iloc[0].to_dict() if (sb["season"] == "median").any() else {}
     qb_cont = {row["qb_continuity"]: row.to_dict() for _, row in t["qb_continuity_persistence"].iterrows()}
     qb_top3 = t["qb_career_explosive_leaders"].head(3).to_dict(orient="records")
+    qb_top1_season = t["qb_season_explosive_leaders"].iloc[0].to_dict()
+    qb_join = t["qb_join_coverage"].iloc[0].to_dict() if "qb_join_coverage" in t else {}
+    rel = {(r["era"], r["metric"]): r.to_dict() for _, r in t["reliability_decomposition"].iterrows()} \
+        if "reliability_decomposition" in t else {}
+    last_era_label = "2017-2025"
+    rel_exp = rel.get((last_era_label, "explosive_diff_per_game"), {})
+    rel_tod = rel.get((last_era_label, "turnover_diff_per_game"), {})
     decomp = t["pass_run_decomposition"].iloc[0].to_dict()
 
     def _nested(df, val_col, era_col="era", bucket_col="bucket"):
@@ -212,7 +219,29 @@ def build_facts(t: dict[str, pd.DataFrame]) -> dict:
         "qb_continuity_same_qb_n": qb_cont.get("same_qb", {}).get("n_team_seasons"),
         "qb_continuity_changed_qb_r": qb_cont.get("changed_qb", {}).get("correlation"),
         "qb_continuity_changed_qb_n": qb_cont.get("changed_qb", {}).get("n_team_seasons"),
+        "qb_continuity_same_qb_ci_lo": qb_cont.get("same_qb", {}).get("ci_lo"),
+        "qb_continuity_changed_qb_ci_hi": qb_cont.get("changed_qb", {}).get("ci_hi"),
+        # do the two groups' 95% intervals overlap? if so the gap itself is not firmly established
+        "qb_continuity_ci_overlap": (qb_cont.get("same_qb", {}).get("ci_lo", 0) or 0)
+                                    < (qb_cont.get("changed_qb", {}).get("ci_hi", 0) or 0),
         "qb_career_top3": qb_top3,
+        "qb_top_season": qb_top1_season,
+        "qb_join_team_games": qb_join.get("team_games"),
+        "qb_join_unmatched": qb_join.get("unmatched"),
+        "qb_join_unmatched_v1": 894,        # what the raw team-code join dropped, for the correction note
+        # rarity vs skill (last era): what counting noise alone would leave
+        "rel_explosive_implied": rel_exp.get("implied_reliability"),
+        "rel_explosive_observed": rel_exp.get("observed_split_half_r"),
+        "rel_turnover_implied": rel_tod.get("implied_reliability"),
+        "rel_turnover_observed": rel_tod.get("observed_split_half_r"),
+        "rel_gap_share_from_rarity": (
+            ((rel_exp.get("implied_reliability") or 0) - (rel_tod.get("implied_reliability") or 0))
+            / ((rel_exp.get("observed_split_half_r") or 1) - (rel_tod.get("observed_split_half_r") or 0))
+            if rel_exp and rel_tod else None),
+        "playoff_prediction_tod_upper": (
+            (pp_all.get("b_tod") or 0) + 2 * (pp_all.get("se_tod") or 0)) if pp_all else None,
+        "playoff_prediction_tod_lower": (
+            (pp_all.get("b_tod") or 0) - 2 * (pp_all.get("se_tod") or 0)) if pp_all else None,
         "decomposition_2018_2025": decomp,
         "decomposition_from_rate": decomp.get("total_rate_per_play_from"),
         "decomposition_to_rate": decomp.get("total_rate_per_play_to"),
@@ -428,22 +457,37 @@ QB_CONTINUITY_COLS = [
     ("ci_hi", "95% CI high", f2, True),
 ]
 
+_QB_MEASURE_COLS = [
+    ("dropbacks", "Own dropbacks", n_, True),
+    ("explosive_pass", "Explosive completions (20+)", n_, True),
+    ("rate", "Explosive completions / dropback", pct, True),
+    ("air_share", "Share 20+ in the air (2006 on)", pct, True),
+    ("qb_rushes", "QB rushes", n_, True),
+    ("explosive_rush", "Explosive QB rushes (10+)", n_, True),
+    ("rush_rate", "Explosive rate / QB rush", pct, True),
+]
+
 QB_CAREER_COLS = [
     ("qb_name", "Quarterback", str, False),
     ("seasons", "Seasons", n_, True),
     ("games", "Games", n_, True),
-    ("dropbacks", "Dropbacks", n_, True),
-    ("explosive_pass", "Explosive passes", n_, True),
-    ("rate", "Explosive-pass rate / dropback", pct, True),
-]
+] + _QB_MEASURE_COLS
 
 QB_SEASON_COLS = [
     ("qb_name", "Quarterback", str, False),
     ("season", "Season", lambda x: str(int(x)), False),
     ("games", "Games", n_, True),
-    ("dropbacks", "Dropbacks", n_, True),
-    ("explosive_pass", "Explosive passes", n_, True),
-    ("rate", "Explosive-pass rate / dropback", pct, True),
+] + _QB_MEASURE_COLS
+
+RELIABILITY_COLS = [
+    ("era", "Era", str, False),
+    ("metric", "Metric", lambda x: {"explosive_diff_per_game": "Explosive diff. / game",
+                                    "turnover_diff_per_game": "Turnover diff. / game"}.get(x, x), False),
+    ("mean_per_game", "Mean per game", f2, True),
+    ("observed_var", "Between-team variance (half-seasons)", f2, True),
+    ("poisson_noise_var", "Counting-noise variance", f2, True),
+    ("implied_reliability", "Reliability if noise were the only problem", f2, True),
+    ("observed_split_half_r", "Observed split-half r", f2, True),
 ]
 
 PASS_RUN_SEASON_COLS = [
@@ -488,6 +532,36 @@ DRIVE_OUTCOMES_COLS = [
 ]
 
 
+def _reset_output_dir(out_dir) -> None:
+    """Empty `out_dir` (creating it if needed) without insisting that every
+    folder disappear. On Windows another process (Explorer, the search
+    indexer, an antivirus scan of freshly written images) can hold a folder
+    handle that makes os.rmdir fail long after its files are gone; such a
+    folder is left empty and reused, which is all the build needs. Files
+    are retried briefly because their locks are short-lived."""
+    import os
+    import time
+    out_dir = Path(out_dir)
+    if out_dir.exists():
+        for root, dirs, files in os.walk(out_dir, topdown=False):
+            for name in files:
+                path = os.path.join(root, name)
+                for attempt in range(20):
+                    try:
+                        os.remove(path)
+                        break
+                    except PermissionError:
+                        if attempt == 19:
+                            raise
+                        time.sleep(0.25)
+            for name in dirs:
+                try:
+                    os.rmdir(os.path.join(root, name))
+                except OSError:
+                    pass                      # held open by someone else; it is empty, reuse it
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+
 def render_all(out_dir: Path = OUT_DIR) -> dict:
     # Regenerate the follow-up-analysis CSVs (data/processed has no single
     # existing pipeline entrypoint that chains xe_metrics.run() ->
@@ -505,12 +579,11 @@ def render_all(out_dir: Path = OUT_DIR) -> dict:
                         "pct": pct, "n": n_})
     env.globals.update({"pm": pm})
 
-    if out_dir.exists():
-        shutil.rmtree(out_dir)
-    (out_dir / "static").mkdir(parents=True)
-    (out_dir / "data").mkdir()
+    _reset_output_dir(out_dir)
+    (out_dir / "static").mkdir(parents=True, exist_ok=True)
+    (out_dir / "data").mkdir(exist_ok=True)
     shutil.copy(TEMPLATES_DIR / "style.css", out_dir / "static" / "style.css")
-    shutil.copytree(TEMPLATES_DIR / "images", out_dir / "images")
+    shutil.copytree(TEMPLATES_DIR / "images", out_dir / "images", dirs_exist_ok=True)
 
     common = {"generated_date": date.today().isoformat(), "repo_url": REPO_URL, "main_site": MAIN_SITE, "facts": facts}
 
@@ -581,11 +654,14 @@ def render_all(out_dir: Path = OUT_DIR) -> dict:
     tables["super_bowl_ranks"] = table_html(t["super_bowl_ranks"], SUPER_BOWL_RANK_COLS,
                                             "Each Super Bowl champion's regular-season rank in explosive and turnover differential")
     tables["qb_continuity"] = table_html(t["qb_continuity_persistence"], QB_CONTINUITY_COLS,
-                                         "Year-to-year persistence of team explosive-pass rate, by quarterback continuity")
+                                         "Year-to-year persistence of team explosive-pass rate (explosive completions per dropback), by quarterback continuity")
     tables["qb_career_leaders"] = table_html(t["qb_career_explosive_leaders"], QB_CAREER_COLS,
-                                             "Top 20 quarterbacks by career explosive-pass rate per dropback (min. 1,500 dropbacks as starter)")
+                                             "Top 20 quarterbacks by career explosive completions per own dropback, regular season 1999-2025 (min. 1,500 dropbacks)")
     tables["qb_season_leaders"] = table_html(t["qb_season_explosive_leaders"], QB_SEASON_COLS,
-                                             "Top 15 single seasons by explosive-pass rate per dropback (min. 300 dropbacks)")
+                                             "Top 15 single seasons by explosive completions per own dropback (min. 300 dropbacks)")
+    if "reliability_decomposition" in t:
+        tables["reliability"] = table_html(t["reliability_decomposition"], RELIABILITY_COLS,
+                                           "How much of each metric's between-team spread is counting noise, by era")
     tables["pass_run_by_season"] = table_html(t["pass_run_explosives_by_season"], PASS_RUN_SEASON_COLS,
                                               "Explosive-pass and explosive-rush rates by season")
     tables["pass_run_decomposition"] = table_html(t["pass_run_decomposition"], PASS_RUN_DECOMP_COLS,

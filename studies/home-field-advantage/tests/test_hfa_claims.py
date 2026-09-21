@@ -50,6 +50,16 @@ def test_week_one_is_among_the_two_weakest_weeks_since_1999(facts):
     assert 1 in facts["weakest_weeks"] and len(facts["weakest_weeks"]) == 2
 
 
+def test_2019_was_also_near_zero_and_the_prose_says_so(facts):
+    # "home field in 2019, with every stadium full, was ... a hair below zero"
+    assert -0.5 < facts["hfa_2019"] < 0
+    assert facts["hfa_2019"] < facts["se_2019"]
+    # "measured to about ±0.8 points ... a point per road game would still be hiding inside the noise"
+    assert 0.7 < facts["swing_se_median"] < 1.0
+    # "Denver's swing" is quoted as larger than the league line
+    assert facts["den_swing"] > facts["swing_league"] and abs(facts["den_z"]) < 2
+
+
 def test_2020_is_the_lowest_season_in_its_window_and_near_zero(facts):
     assert abs(facts["hfa_2020"]) < 0.5
     assert facts["hfa_2020"] < facts["hfa_2015_19"] - 2 * facts["se_2020"] * 0.9

@@ -40,4 +40,20 @@ San Francisco z = {{ facts.sf_z_modern|f2 }}, New Orleans z = {{ facts.no_z_mode
 
 <h2>1970-1999</h2>
 {{ tables.franchise_swing_1970_1999 }}
+
+<h2>What the swing is not</h2>
+<p>The swing is a franchise's home results minus its road results, both against expectation, pooled across every season
+in the window. It is a fair way to ask whether any team's home/road split is unusual. It is not an estimate of what a
+stadium is worth. Denver's {{ facts.den_swing|f1 }}-point swing (z = {{ facts.den_z|f2 }}) says the Broncos have played
+about {{ (facts.den_swing / 2)|f1 }} points better than expected at home and about the same worse on the road, across
+two stadiums and fifty-five seasons; it does not say Mile High adds {{ facts.den_swing|f1 }} points, or any number.</p>
+<p>A venue study would be built differently: one effect per stadium and era rather than one per franchise, estimated
+alongside team strength with small samples pulled toward the league average, allowing for travel distance, rest,
+altitude, weather and roof, and checked for whether a stadium's estimated edge persists into seasons it was not fit on.
+It would report a range for each venue and test whether the venues differ at all before ranking them. Even then it would
+answer "which venues carry an extra edge," not "which fans cause it"; the second needs attendance, occupancy or
+visiting-fan measures this project does not have, and attendance itself follows winning.</p>
+<p>How much could still be hiding here? Each swing is measured to about ±{{ facts.swing_se_median|f1 }} points, so a
+franchise whose fans were worth a point a game on the road would sit only about a standard error below the league line,
+and would not be picked out by this table. "Nothing detectable" is the finding; "nothing" is not.</p>
 {% endblock %}

@@ -25,11 +25,22 @@
 {{ tables.leaderboard_correlations }}
 
 <h2>Career explosive-pass-rate leaders</h2>
-<p>The table below lists the top 20 quarterbacks by explosive-pass rate per dropback as a starter, minimum 1,500
-career dropbacks.</p>
+<p>The measure is the quarterback's <strong>own</strong> completions of 20 or more yards divided by his
+<strong>own</strong> dropbacks: pass attempts, sacks taken, and scrambles, regular season 1999-2025, credited play by
+play to the passer on the field rather than to whoever started the game. Two companion columns say where the yards
+came from and what the same player did as a runner: the share of his explosive completions that travelled 20 or more
+yards in the air (the rest were caught short and run; air yards exist from 2006), and his explosive rate on his own rushes (scrambles and
+designed runs, 10 or more yards). Team-level explosiveness, all explosive plays over all scrimmage plays, is the
+offense table above; the three measures are kept apart on purpose.</p>
+<p class="note">Correction. The first version of this table, published in September 2026, labelled itself the same way
+but was computed differently: every explosive play his team produced in games he started, runs included, divided by
+the team's dropbacks in those games. An outside reviewer reproduced the published numbers and showed the label was
+wrong. That version also silently dropped {{ facts.qb_join_unmatched_v1 }} Rams, Chargers and Raiders team-games
+through a team-code mismatch in the join to the schedule file; the join now matches every regular-season team-game
+({{ facts.qb_join_team_games|n }} of {{ facts.qb_join_team_games|n }}).</p>
 {{ tables.qb_career_leaders }}
 
 <h2>Single-season explosive-pass-rate leaders</h2>
-<p>The table below lists the top 15 single seasons by explosive-pass rate per dropback, minimum 300 dropbacks.</p>
+<p>The same measure for single seasons, minimum 300 dropbacks.</p>
 {{ tables.qb_season_leaders }}
 {% endblock %}

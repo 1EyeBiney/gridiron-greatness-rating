@@ -101,25 +101,41 @@ record of good fortune. The most explosive team-seasons since 1999 read like a l
 Three of the five reached a Super Bowl.</p>
 <p>Two more pieces of evidence point the same way. A team's regular-season big-play edge predicts its playoff wins - a
 standardized coefficient of {{ facts.playoff_prediction_b_epd|f2 }} (± {{ facts.playoff_prediction_se_epd|f2 }}) across
-{{ facts.playoff_prediction_n }} postseason games - while its regular-season turnover edge predicts nothing
-({{ facts.playoff_prediction_b_tod|f2 }} ± {{ facts.playoff_prediction_se_tod|f2 }}). Inside the playoff games
+{{ facts.playoff_prediction_n }} postseason games - while its regular-season turnover edge shows no detectable effect
+({{ facts.playoff_prediction_b_tod|f2 }} ± {{ facts.playoff_prediction_se_tod|f2 }}; a modest effect either way would
+still fit {{ facts.playoff_prediction_n }} games). Inside the playoff games
 themselves the turnover battle still rules, even more than in the regular season: win the big plays and lose the
 turnovers in January and you win {{ facts.postseason_won_explosive_lost_turnover_win_rate|pct }} of the time. That is the
 whole thesis in one sentence: the turnovers decide the game in front of you, and the big plays tell you which team
-is likely to be standing there. And the trait has an owner. When a team's starting quarterback returns, its
-explosive-pass rate carries over year to year at {{ facts.qb_continuity_same_qb_r|f2 }}; when the quarterback changes,
-{{ facts.qb_continuity_changed_qb_r|f2 }}. The career leaders in explosive passes per dropback since 1999 are
-{% for q in facts.qb_career_top3 %}{{ q.qb_name }} ({{ q.rate|pct }}){% if not loop.last %}, {% endif %}{% endfor %} -
-two of them quarterbacks who threaten defenses with their legs first.</p>
+is likely to be standing there.</p>
+<p>Does the trait have an owner? Partly, and less cleanly than the first version of this page said. When a team's
+starting quarterback returns, its explosive-pass rate carries over year to year at {{ facts.qb_continuity_same_qb_r|f2 }};
+when the quarterback changes, {{ facts.qb_continuity_changed_qb_r|f2 }}{% if facts.qb_continuity_ci_overlap %}, and the
+two ranges overlap, so even that gap is suggestive rather than settled{% endif %}. That is consistent with the passer
+carrying some of it. It is also consistent with the coordinator, the receivers and the scheme he keeps carrying it, and with
+the plain fact that quarterbacks whose offenses produce big plays are the ones who keep their jobs. Keeping or
+changing a quarterback is not a coin flip, and this study has not done the four-way before-and-after comparison
+(old team and new team, before and after the move) that would be needed to separate the man from the machine. The
+career leaders in explosive completions per dropback since 1999, the passer's own throws over his own dropbacks, are
+{% for q in facts.qb_career_top3 %}{{ q.qb_name }} ({{ q.rate|pct }}){% if not loop.last %}, {% endif %}{% endfor %}.
+The best single season is {{ facts.qb_top_season.qb_name }}'s {{ facts.qb_top_season.season|int }}
+({{ facts.qb_top_season.rate|pct }}). Read the leaderboard's correction note before quoting either list: the first
+published version credited each starter with his whole team's explosive plays, runs included.</p>
 
 <h2>One honest caveat</h2>
 <p>Part of the persistence gap is arithmetic. A team produces about nine explosive plays a game and gives the ball
 away barely more than once, and a rare event is measured with more noise than a common one, so some of "turnovers
-don't repeat" is really "turnovers are rare." Not all of it - the gap is too wide, and it holds year to year as well
-as half to half - but the site says so where it reports the numbers rather than letting the cleaner story stand
-alone. There is a second caveat too, stated on the methodology page: explosive plays are yards, yards are points,
-and so "big plays predict wins" is partly a tautology. Every comparison here is therefore relative - against turnovers,
-and across time - and the result holds under a definition of explosive that uses expected points instead of yards.</p>
+don't repeat" is really "turnovers are rare." The <a href="{{ root }}skill-or-luck.html">skill-or-luck page</a> now puts
+a number on "some": if the only thing separating teams were counting noise around fixed rates, turnover differential
+would still repeat half-season to half-season at about {{ facts.rel_turnover_implied|f2 }} and explosive differential
+at about {{ facts.rel_explosive_implied|f2 }}. The observed figures are {{ facts.rel_turnover_observed|f2 }} and
+{{ facts.rel_explosive_observed|f2 }}. Rarity accounts for roughly {{ (facts.rel_gap_share_from_rarity * 100)|f0 }}
+percent of the gap between the two; the rest is turnover differential moving within a season in ways that do not carry
+over, which is what "luck" looks like in a table. There is a second caveat too, stated on the methodology page:
+explosive plays are yards, yards are points, and so "big plays predict wins" is partly a tautology. Every comparison
+here is therefore relative - against turnovers, and across time - and the result holds under a definition of explosive
+that uses expected points instead of yards. And every regression on this site describes games already played; the one
+forward-looking test, regular-season edge against playoff results, is the only place a forecast is claimed.</p>
 
 <h2>What to take from it</h2>
 <p>The broadcast version of the theory - that big plays have caught turnovers as the thing that decides a game - is

@@ -19,8 +19,29 @@ Margin per game is included as a benchmark others can be measured against.</p>
 season <em>s</em>.</p>
 {{ tables.persistence_year_to_year }}
 
+<h2>Rarity or skill?</h2>
+<p>A rare event is measured with more noise than a common one, so a lower split-half correlation for turnovers could
+mean nothing more than that turnovers are rare. The table below tests that. For each era it takes the between-team
+variance of half-season differentials and subtracts the variance that counting noise alone would produce if every
+team's rates were fixed (Poisson for and against, over the games in a half). What is left is the share of the spread
+that could be repeatable, which is also the split-half correlation a noise-only world would show. Set beside the
+observed correlation, it says how much of the gap between the two metrics is arithmetic and how much is not.</p>
+{{ tables.reliability }}
+<p>In {{ facts.last_era }}, counting noise alone would leave turnover differential repeating at about
+{{ facts.rel_turnover_implied|f2 }} and explosive differential at about {{ facts.rel_explosive_implied|f2 }}. Explosive
+differential's observed {{ facts.rel_explosive_observed|f2 }} is close to that ceiling; turnover differential's observed
+{{ facts.rel_turnover_observed|f2 }} is well below its own. So rarity explains part of the gap, about
+{{ (facts.rel_gap_share_from_rarity * 100)|f0 }} percent of it, and the remainder is turnover differential varying
+within a season in ways that do not carry over. Interceptions, fumbles and fumble recoveries are pooled here; a finer
+split is future work.</p>
+
 <h2>Quarterback continuity</h2>
-<p>The table below shows the same year-to-year persistence of team explosive-pass rate, split by whether the
-team's primary starting quarterback stayed the same or changed.</p>
+<p>The table below shows the same year-to-year persistence of team explosive-pass rate (explosive completions of 20 or
+more yards per team dropback), split by whether the team's primary starting quarterback stayed the same or changed.
+This is an association, not an attribution: a team that keeps its quarterback usually keeps its coordinator,
+receivers and scheme too, and quarterbacks who produce are the ones who are kept.{% if facts.qb_continuity_ci_overlap %}
+The two confidence intervals overlap ({{ facts.qb_continuity_same_qb_ci_lo|f2 }} at the bottom of the same-quarterback
+range against {{ facts.qb_continuity_changed_qb_ci_hi|f2 }} at the top of the changed-quarterback range), so the gap
+between them is suggestive rather than established.{% endif %}</p>
 {{ tables.qb_continuity }}
 {% endblock %}

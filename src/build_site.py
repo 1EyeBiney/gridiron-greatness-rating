@@ -223,18 +223,47 @@ def build_super_bowls_table(sb: pd.DataFrame, profile: pd.DataFrame) -> pd.DataF
     return pd.DataFrame(rows).sort_values("season", ascending=False)
 
 
-def render_all(out_dir: Path = OUT_DIR):
+def _reset_output_dir(out_dir) -> None:
+    """Empty `out_dir` (creating it if needed) without insisting that every
+    folder disappear. On Windows another process (Explorer, the search
+    indexer, an antivirus scan of freshly written images) can hold a folder
+    handle that makes os.rmdir fail long after its files are gone; such a
+    folder is left empty and reused, which is all the build needs. Files
+    are retried briefly because their locks are short-lived."""
+    import os
+    import time
+    out_dir = Path(out_dir)
     if out_dir.exists():
-        shutil.rmtree(out_dir)
-    out_dir.mkdir(parents=True)
-    (out_dir / "static").mkdir()
-    (out_dir / "seasons").mkdir()
-    (out_dir / "super-bowls").mkdir()
-    (out_dir / "queries").mkdir()
-    (out_dir / "data").mkdir()
+        for root, dirs, files in os.walk(out_dir, topdown=False):
+            for name in files:
+                path = os.path.join(root, name)
+                for attempt in range(20):
+                    try:
+                        os.remove(path)
+                        break
+                    except PermissionError:
+                        if attempt == 19:
+                            raise
+                        time.sleep(0.25)
+            for name in dirs:
+                try:
+                    os.rmdir(os.path.join(root, name))
+                except OSError:
+                    pass                      # held open by someone else; it is empty, reuse it
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+
+def render_all(out_dir: Path = OUT_DIR):
+    _reset_output_dir(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "static").mkdir(exist_ok=True)
+    (out_dir / "seasons").mkdir(exist_ok=True)
+    (out_dir / "super-bowls").mkdir(exist_ok=True)
+    (out_dir / "queries").mkdir(exist_ok=True)
+    (out_dir / "data").mkdir(exist_ok=True)
 
     shutil.copy(TEMPLATES_DIR / "style.css", out_dir / "static" / "style.css")
-    shutil.copytree(TEMPLATES_DIR / "images", out_dir / "images")
+    shutil.copytree(TEMPLATES_DIR / "images", out_dir / "images", dirs_exist_ok=True)
 
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
     generated_date = date.today().isoformat()

@@ -115,3 +115,33 @@ from the tables at render time and cannot drift.
 - The big-play-versus-turnover question is a separate study needing
   nflverse play-by-play (1999+, CC BY 4.0). Not started; needs Brian's OK
   for the fetch.
+
+
+## 2026-09-21 -- Outside review (v1.0) and the response
+
+An AI review Brian commissioned made three points about this study; all
+three were right and are now on the site.
+
+1. **2020 was oversold.** The venues page said "nothing else changed" and
+   the story page called 2020 "the season that proved the crowd matters".
+   Our own by_season.csv has 2019 at -0.07 +/- 0.74 with full stadiums, so
+   a single near-zero season is not remarkable; 2020 also had no preseason,
+   restricted practice, and attendance limits that varied by city and
+   month. Prose now: consistent with a crowd effect, suggestive, not proof;
+   the missing test (within-2020 games by attendance limit, allowing for
+   venue and team) is named. New facts hfa_2019 / se_2019; claim test.
+2. **Swing is not a venue estimate.** Denver's 6.5-point swing is home
+   minus road across two stadiums and 55 seasons, not "Mile High is worth
+   6.5". New "What the swing is not" section on franchises.html with the
+   recipe for a real venue study (stadium x era effects, shrinkage,
+   travel/rest/altitude/roof, out-of-sample persistence, uncertainty) and
+   the fan-vs-venue distinction. New facts den_swing / den_z.
+3. **"No fan base shows up" -> "nothing detectable".** Each swing is
+   measured to about +/-0.82 points (median SE), so a road effect of ~1
+   point per game would sit inside the noise. Stated on index, story and
+   franchise pages; new fact swing_se_median.
+4. **Elimination labels are approximate.** Conference-wide point totals,
+   no tiebreakers or division races. Methodology and the two pages that
+   lean on the label now say so.
+
+Tests: 32 after the change (was 31).

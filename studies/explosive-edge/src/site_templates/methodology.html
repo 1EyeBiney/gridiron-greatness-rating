@@ -34,8 +34,10 @@ quarterback kneel or spike.</p>
 <ul>
   <li><strong>Explosive play</strong>, primary definition: a pass gaining 20 or more yards, or a rush gaining 10 or
     more. Three sensitivity variants are reported alongside it throughout: 25 yards passing / 15 rushing; 20/20;
-    and an EPA-based definition (any scrimmage play with EPA &gt;= +2.0), which removes part of the yardage
-    tautology since it rewards plays for how much they raised win probability rather than yards alone.</li>
+    and an EPA-based definition (any scrimmage play with EPA &gt;= +2.0). EPA is expected points added: how much the
+    play moved the offense's expected score on that drive. It is not win probability added (WPA). The EPA variant
+    removes the fixed yardage threshold and rewards a play for what it was worth in the situation, but expected points
+    are still built from field position and yards, so it softens the yardage tautology rather than removing it.</li>
   <li><strong>Turnover</strong>: an interception or a lost fumble, on any play type including special teams (a
     turnover on a punt still hands over a possession). A scrimmage-only variant is tracked too. Turnovers are
     attributed to whichever team actually had the ball when it came loose, not always the team with possession on
@@ -79,11 +81,34 @@ Fisher z-transform.</p>
 <p>Three nine-season blocks spanning the full sample: 1999-2007, 2008-2016, and 2017-2025. They are used
 throughout instead of decades so each era is the same length and the most recent one is complete.</p>
 
+<h2>Quarterback measures</h2>
+<p>Three separate things are reported and never mixed. <strong>Passing explosiveness</strong> is a quarterback's own
+completions of 20 or more yards divided by his own dropbacks (pass attempts, sacks taken, and scrambles), credited play
+by play from the play-by-play file's passer and rusher fields, regular season only; a companion column gives the share
+of those completions that travelled 20 or more yards in the air. <strong>Quarterback rushing explosiveness</strong> is
+his scrambles and designed runs gaining 10 or more yards per such rush. <strong>Team offensive explosiveness</strong>
+is every explosive play over every scrimmage play, on the leaderboard page. The <strong>continuity</strong> split uses
+the schedule file's starting quarterback per game, joined on franchise rather than team code (the play-by-play carries
+each franchise's current code for its whole history; the schedule file carries the code of the day). The first
+published version of the leaderboard credited each starter with his team's whole-game explosive total, runs included,
+and dropped 894 Rams, Chargers and Raiders team-games in that join; both were found by an outside reviewer and are
+corrected here.</p>
+
 <h2>Limitations</h2>
 <ul>
   <li>Because explosive plays mechanically produce yards and yards produce points, any measure of "does explosive
     differential predict wins" carries some of that tautology built in. The comparisons that matter are relative
     to turnover differential and over time, not the absolute size of a coefficient.</li>
+  <li>The game-level regressions explain games that have already been played: the explosive plays and turnovers in
+    them are part of how the final score happened. They are descriptions, fitted and reported on the same sample,
+    not forecasts. The one forward-looking test on the site is the regular-season-to-playoffs regression, which uses
+    only information available before the postseason began.</li>
+  <li>"No detectable effect" is not "no effect." Where a coefficient is reported as indistinguishable from zero, the
+    standard error beside it gives the range of effects the data still allow.</li>
+  <li>The quarterback-continuity split is an association. Keeping or changing a quarterback is not randomly
+    assigned, and a team that keeps one usually keeps its scheme and receivers too. Separating the passer's share
+    would need the four-way comparison (departing and receiving team, before and after each move) that this study
+    has not built.</li>
   <li>nflverse's play-by-play team codes reflect each franchise's <em>current</em> code for its entire history (for
     example, the 1999 Raiders appear as "LV"). The crosswalk used to normalize team codes to franchise-stable IDs
     handles this for codes it has seen elsewhere in the data; a handful of early-era rows can still carry an

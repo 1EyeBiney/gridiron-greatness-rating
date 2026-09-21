@@ -16,7 +16,8 @@ out of the race.</p>
 points in the first third of a season and {{ facts.hfa_late|f1 }} in the last third, and that ordering holds in
 {{ facts.n_decades_late_highest }} of {{ facts.n_decades }} decades with the other a dead heat. The final week alone -
 the week of resting starters, meaningless games and the emptiest upper decks - is worth {{ facts.final_week|f1 }}.
-Games involving teams that were already eliminated carry as much home field as games between contenders. The
+Games involving teams that were already eliminated - by an approximate label built from conference standings,
+ignoring tiebreakers and division races - carry as much home field as games between contenders. The
 stadium may look different in December. The scoreboard doesn't notice.</p>
 
 <h2>What did change</h2>
@@ -33,16 +34,21 @@ into a false start on third-and-short. Every one of those pushes the same direct
 pulled out of a final score. What can be said is that the number has fallen by more than a point, that the fall is far
 too large to be noise, and that nothing in the last five seasons suggests it is coming back.</p>
 
-<h2>The season that proved the crowd matters</h2>
-<p>If the resale hypothesis is wrong, is the crowd irrelevant? The league ran that experiment in 2020 without meaning
-to. Same teams, same travel, same officials, and for most of the season nobody in the seats. Home-field advantage
-that year was {{ facts.hfa_2020|f1 }} points. Not small. Gone. Home teams won exactly half their games. The next season
-the fans came back and so did the edge, at {{ facts.hfa_2021_25|f1 }} points over 2021-2025.</p>
-<p>Put those two results side by side and the picture sharpens. A stadium full of people is worth roughly two points to
-the home team. A stadium full of somewhat different people - more visitors, fewer regulars, quieter in the fourth
-quarter of a lost season - is worth about the same. Whatever the crowd does for the home side, it seems to do it by
-being there, not by being loyal. That is a less romantic conclusion than the one we set out to test. It is also the one
-the data support.</p>
+<h2>The season with no fans</h2>
+<p>If the resale hypothesis is wrong, is the crowd irrelevant? The league came close to running that experiment in
+2020. For most of the season nobody was in the seats, and home-field advantage that year was {{ facts.hfa_2020|f1 }}
+points: home teams won half their games. The next season the fans came back and so did the edge, at
+{{ facts.hfa_2021_25|f1 }} points over 2021-2025.</p>
+<p>The first version of this page called that proof. It isn't, and the reason is in this study's own table. Home field
+in 2019, with every stadium full, was {{ facts.hfa_2019|f1 }} points, a hair below zero, the year before the pandemic.
+One near-zero season among fifty-six is not remarkable; two in a row, one of them empty, is suggestive and no more. And
+2020 was not a clean experiment: there was no preseason, practice was restricted, and attendance limits differed by
+city and changed through the year, none of it assigned at random. The most that can be said is that the empty season
+is consistent with the crowd being a large part of home field, and that a real test would compare games under
+different attendance limits within 2020, allowing for venue and team. That test is not on this site.</p>
+<p>What the playoff-race result adds is narrower and firmer: a stadium full of somewhat different people - more
+visitors, fewer regulars, quieter in a lost season - produces the same home edge as a stadium full of the faithful.
+Whatever the crowd does, it does not seem to depend on who, exactly, is in the seats.</p>
 
 <h2>Why the obvious test gives the wrong answer</h2>
 <p>There is a reason this question hasn't been settled by someone with a spreadsheet and an afternoon. The obvious
@@ -62,7 +68,7 @@ the one most people would produce.</p>
 fans, Raiders fans in their day, 49ers fans across the West. If a visiting fan base can turn a road stadium half gold,
 the home team's edge should shrink when those teams visit - which would show up as a smaller-than-usual gap between how
 those teams play at home and how they play on the road.</p>
-<p>It doesn't show up. The league-average gap is {{ facts.swing_league|f1 }} points. Pittsburgh's is
+<p>Nothing detectable shows up. The league-average gap is {{ facts.swing_league|f1 }} points. Pittsburgh's is
 {{ facts.pit_swing|f1 }} - <em>larger</em> than average. The Steelers, for all the towels in the visiting sections, have
 been a noticeably better team at Three Rivers and Heinz Field than anywhere else, which is the opposite of what
 traveling fans would produce. San Francisco's gap is {{ facts.sf_swing|f1 }}, a little smaller than average, but no
@@ -73,14 +79,23 @@ expect if every team were exactly the same. {{ facts.swing_max_team }} has the l
 <p>Here too there is a limit to what scores can say. A team whose fans travel well and a team whose home crowd is
 quiet would look identical in this test: both play about as well away as at home. Separating them would take
 attendance figures or ticket-market data, and this study doesn't have them. What it can say is that if any fan base
-is worth points on the road, the effect is smaller than fifty-five seasons of scores can detect. Traveling fans are
-real. They are on television every week. They are not, as far as the scoreboard is concerned, worth a field goal.</p>
+is worth points on the road, the effect is smaller than fifty-five seasons of scores can detect: a franchise's swing is
+measured to about ±{{ facts.swing_se_median|f1 }} points, so a road effect of up to roughly a point per game would still
+be hiding inside the noise for most teams. Traveling fans are real. They are on television every week. They are not, as
+far as the scoreboard can tell, worth a field goal, and this study cannot rule out that they are worth a point.</p>
+<p>One more distinction. The swing is not the value of a stadium. Denver's {{ facts.den_swing|f1 }}-point swing is how
+much better the Broncos have played at home than away, pooled across fifty-five seasons and two buildings; it is not an
+estimate that Mile High adds {{ facts.den_swing|f1 }} points, or any particular number. A venue study would split
+stadiums and eras, pull small samples toward the league average, allow for travel, rest, altitude and roof, and check
+whether a venue's edge persists into later seasons before naming a winner. Whether a stadium is worth extra is a
+question scores can address that way; whether its fans are the reason is one they cannot.</p>
 
 <h2>What to take from it</h2>
 <p>Home field is smaller than it used to be and shows no sign of recovering. It is not eroded by the calendar, by
-elimination, or by the visiting fans in section 340. It is eroded by everything that has made the NFL a more
-controlled, more professional, more evenly officiated league, and it can be switched off entirely by taking the people
-out of the building. That is a cleaner story than the one about resale markets, and it has the advantage of being true.
+elimination, or by the visiting fans in section 340, as far as scores can tell. It is eroded by everything that has
+made the NFL a more controlled, more professional, more evenly officiated league, and the one season played without
+people in the building is consistent with the crowd being most of what is left. That is a cleaner story than the one
+about resale markets, and it is stated here with the uncertainty it deserves.
 The tables behind every sentence here are one click away: <a href="{{ root }}season-and-week.html">by season and week</a>,
 <a href="{{ root }}playoff-race.html">by playoff race</a>, <a href="{{ root }}venues.html">by venue</a>, and
 <a href="{{ root }}franchises.html">by franchise</a>, with everything downloadable from the

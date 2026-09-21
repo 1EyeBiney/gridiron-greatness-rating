@@ -82,4 +82,18 @@ there is no time for it to be an afterthought.</p>
 FiveThirtyEight (1970-1998, MIT license) and nflverse (1999-present, CC BY 4.0), with thanks to both. If you find a
 number you think is wrong, the repository is the place to say so - and the chances are good that a test will be
 written for it.</p>
+
+<h2>An outside review</h2>
+<p>After the three studies went live, Brian asked a different AI model to review the whole site as a statistically
+minded reader would and to reproduce what it could from the published tables and code. It found two real bugs in the
+big-play study's quarterback section: the leaderboard's measure did not match its label (it credited each starter with
+his team's whole-game explosive plays, runs included), and a team-code mismatch had silently dropped 894 Rams,
+Chargers and Raiders team-games from the join. It also argued, correctly, that several conclusions had run ahead of
+their evidence: that explosiveness "travels with the quarterback," that the empty stadiums of 2020 proved the crowd is
+the mechanism of home field (home field had already been near zero in 2019), and that "no effect" had been written
+where "no detectable effect" was what the data supported. Every point was checked against the data and code and
+addressed the same day: the quarterback measure was rebuilt play by play from the passer on the field, the join
+fixed, a quantified rarity-versus-skill decomposition added, and the prose softened where it needed to be, with the
+corrections stated on the pages they affect rather than quietly overwritten. The review is kept in the repository.
+The rule it reinforced is the one the project started with: the story has to stay behind the measurement.</p>
 {% endblock %}

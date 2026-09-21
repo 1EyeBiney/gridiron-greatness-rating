@@ -39,7 +39,11 @@ then contain no information about the results that defined the label, and their 
 "Eliminated" means the team cannot reach the current point total of the last team holding a playoff spot in its
 conference; "clinched" means no more than that many other teams can still match its total; "3+ games back" is three
 or more games behind that last spot; everyone else is "in the race". Playoff spots per conference follow the real
-format: four through 1977, five through 1989, six through 2019, seven since 2020.</p>
+format: four through 1977, five through 1989, six through 2019, seven since 2020. These are approximate contention
+categories, not mathematical elimination: the rule works from conference-wide point totals and ignores division titles
+and tiebreakers, so a team labelled "eliminated" is one that could no longer catch the last wild-card total, and a
+few teams still alive through a division race or a tiebreaker will be mislabelled. The categories are meant to sort
+games by how much they mattered to the people in the seats, which is what the resale hypothesis is about.</p>
 
 <h2>Care point two: what a rating model can and cannot separate</h2>
 <p>Suppose eliminated hosts really did have a smaller home edge. The fit has no separate term for that, so it does the
@@ -54,6 +58,13 @@ its cause is not. Separating the two would take attendance or ticket-market data
 
 <h2>Care point three: what the numbers can't tell you</h2>
 <ul>
+  <li>The 2020 season is a natural experiment, not a controlled one. Home field was already near zero in 2019
+    ({{ pm(facts.hfa_2019, facts.se_2019) }}), the 2020 preseason was cancelled and practice restricted, and attendance
+    limits varied by city and month. The near-zero 2020 figure is consistent with a crowd effect and is reported as
+    suggestive. A within-2020 comparison of games under different attendance limits, allowing for venue and team, has
+    not been done here.</li>
+  <li>A franchise's home/road swing is not a venue estimate, and "no franchise is significantly unusual" means no
+    effect larger than roughly a point per road game is detectable, not that none exists. See the franchise page.</li>
   <li>The decline across decades is well outside sampling error, but its causes (travel, recovery, replay review,
     stadium economics, rule changes) are not separable from scores.</li>
   <li>A single season's home-field advantage has a standard error near 0.8 points. Season-to-season wiggles are mostly

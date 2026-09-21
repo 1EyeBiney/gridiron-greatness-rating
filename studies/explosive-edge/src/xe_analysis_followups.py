@@ -235,18 +235,39 @@ def load_games() -> pd.DataFrame:
     ])
 
 
-def build_qb_team_game(team_game: pd.DataFrame, games: pd.DataFrame) -> pd.DataFrame:
+def build_qb_team_game(team_game: pd.DataFrame, games: pd.DataFrame,
+                       team_pass: pd.DataFrame | None = None) -> pd.DataFrame:
     """One row per team-game (REG only) with the starting QB attached, by
     joining the home-field-advantage study's games.csv (which carries
-    per-game starting QBs; the explosive-edge pbp does not)."""
+    per-game starting QBs; the explosive-edge pbp does not).
+
+    The join is on (game_id, franchise): the schedule file uses the code a
+    team wore that season (STL, SD, OAK) while the play-by-play uses each
+    franchise's current code for its whole history (LA, LAC, LV). Joining
+    on the raw code silently dropped 894 Rams / Chargers / Raiders
+    team-games in v1.0; an outside review caught it.
+
+    `team_pass` (optional) is the per-team-game pass-only explosive count
+    from team_pass_from_passer_plays(); when given, explosive_pass_rate is
+    explosive completions of 20+ yards per team dropback. Without it the
+    function uses an `explosive_pass` column already on team_game, or
+    falls back to the mixed pass/rush count (aggregate-only use)."""
     reg = team_game[team_game["game_type"] == "REG"].copy()
-    home_qb = games[["game_id", "home_team", "home_qb_id", "home_qb_name"]].rename(
-        columns={"home_team": "team", "home_qb_id": "qb_id", "home_qb_name": "qb_name"})
-    away_qb = games[["game_id", "away_team", "away_qb_id", "away_qb_name"]].rename(
-        columns={"away_team": "team", "away_qb_id": "qb_id", "away_qb_name": "qb_name"})
+    g = games.copy()
+    g["home_franchise"] = xm.to_franchise(g["home_team"], g["season"])
+    g["away_franchise"] = xm.to_franchise(g["away_team"], g["season"])
+    home_qb = g[["game_id", "home_franchise", "home_qb_id", "home_qb_name"]].rename(
+        columns={"home_franchise": "franchise", "home_qb_id": "qb_id", "home_qb_name": "qb_name"})
+    away_qb = g[["game_id", "away_franchise", "away_qb_id", "away_qb_name"]].rename(
+        columns={"away_franchise": "franchise", "away_qb_id": "qb_id", "away_qb_name": "qb_name"})
     qb_long = pd.concat([home_qb, away_qb], ignore_index=True)
-    out = reg.merge(qb_long, on=["game_id", "team"], how="left")
-    out["explosive_pass_rate"] = np.where(out["dropbacks"] > 0, out["explosive_20_10"] / out["dropbacks"], np.nan)
+    out = reg.merge(qb_long, on=["game_id", "franchise"], how="left")
+    if team_pass is not None:
+        out = out.drop(columns=[c for c in ("explosive_pass",) if c in out.columns])
+        out = out.merge(team_pass[["game_id", "franchise", "explosive_pass"]], on=["game_id", "franchise"], how="left")
+    elif "explosive_pass" not in out.columns:
+        out["explosive_pass"] = out["explosive_20_10"]
+    out["explosive_pass_rate"] = np.where(out["dropbacks"] > 0, out["explosive_pass"] / out["dropbacks"], np.nan)
     return out
 
 
@@ -260,15 +281,18 @@ def _fisher_ci(r: float, n: int, alpha: float = 0.05) -> tuple[float, float]:
 
 
 def qb_continuity_persistence(qtg: pd.DataFrame) -> pd.DataFrame:
-    """Year-to-year correlation of team explosive-pass rate per dropback,
-    split by whether the primary starting QB (most starts that
-    team-season) stayed the same team-to-team-season vs changed."""
+    """Year-to-year correlation of team explosive-pass rate per dropback
+    (explosive completions of 20+ yards / team dropbacks), split by whether
+    the primary starting QB (most starts that team-season) stayed the same
+    team-season to team-season vs changed. This is an association: teams
+    that keep a quarterback also tend to keep a coordinator, receivers and
+    a scheme, and quarterbacks who produce tend to keep their jobs."""
     reg = qtg.dropna(subset=["qb_id"]).copy()
     starts = reg.groupby(["franchise", "season", "qb_id"], as_index=False)["game_id"].count().rename(
         columns={"game_id": "n_starts"})
     primary = starts.sort_values("n_starts", ascending=False).drop_duplicates(["franchise", "season"])
     ts = reg.groupby(["franchise", "season"], as_index=False).agg(
-        dropbacks=("dropbacks", "sum"), explosive_pass=("explosive_20_10", "sum"))
+        dropbacks=("dropbacks", "sum"), explosive_pass=("explosive_pass", "sum"))
     ts["explosive_pass_rate"] = ts["explosive_pass"] / ts["dropbacks"]
     ts = ts.merge(primary[["franchise", "season", "qb_id"]], on=["franchise", "season"], how="left")
     ts = ts.sort_values(["franchise", "season"])
@@ -287,23 +311,175 @@ def qb_continuity_persistence(qtg: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def qb_career_explosive_leaders(qtg: pd.DataFrame, min_dropbacks: int = 1500, top: int = 20) -> pd.DataFrame:
-    reg = qtg.dropna(subset=["qb_id"]).copy()
-    career = reg.groupby(["qb_id", "qb_name"], as_index=False).agg(
-        dropbacks=("dropbacks", "sum"), explosive_pass=("explosive_20_10", "sum"),
-        games=("game_id", "count"), seasons=("season", "nunique"))
-    career["rate"] = career["explosive_pass"] / career["dropbacks"]
-    return career[career["dropbacks"] >= min_dropbacks].sort_values("rate", ascending=False).head(top).reset_index(drop=True)[
-        ["qb_name", "seasons", "games", "dropbacks", "explosive_pass", "rate"]]
+# ---- per-passer attribution from play-by-play -------------------------
+
+QB_PLAY_COLS = [
+    "game_id", "season", "season_type", "game_type", "posteam", "play_type", "play", "qb_kneel", "qb_spike",
+    "yards_gained", "qb_dropback", "qb_scramble", "sack", "complete_pass", "rush_attempt", "air_yards",
+    "passer_player_id", "passer_player_name", "rusher_player_id", "rusher_player_name",
+]
 
 
-def qb_season_explosive_leaders(qtg: pd.DataFrame, min_dropbacks: int = 300, top: int = 15) -> pd.DataFrame:
-    reg = qtg.dropna(subset=["qb_id"]).copy()
-    season = reg.groupby(["qb_id", "qb_name", "season"], as_index=False).agg(
-        dropbacks=("dropbacks", "sum"), explosive_pass=("explosive_20_10", "sum"), games=("game_id", "count"))
-    season["rate"] = season["explosive_pass"] / season["dropbacks"]
-    return season[season["dropbacks"] >= min_dropbacks].sort_values("rate", ascending=False).head(top).reset_index(drop=True)[
-        ["qb_name", "season", "games", "dropbacks", "explosive_pass", "rate"]]
+def passer_plays(pbp: pd.DataFrame) -> pd.DataFrame:
+    """Per (season, game, posteam, quarterback) counts, crediting each play
+    to the quarterback who was actually on it:
+
+      dropbacks           qb_dropback plays: pass attempts and sacks (passer_player_id)
+                          plus scrambles (qb_scramble, rusher_player_id)
+      explosive_pass      completions of 20+ yards thrown by that passer
+      explosive_pass_air  ...of which the ball travelled 20+ yards in the air
+      qb_rushes           scrambles plus designed runs by that quarterback
+      explosive_rush      those rushes gaining 10+ yards
+
+    A quarterback here is anyone with a dropback in the game; his designed
+    runs are the run plays where he is the rusher. Regular season only,
+    scrimmage plays only (same mask as the team aggregate)."""
+    pbp = pbp.copy()
+    pbp["game_type"] = xm._game_type_series(pbp)
+    pbp = pbp[pbp["game_type"] == "REG"]
+    d = pbp[xm._scrimmage_mask(pbp)].copy()
+    dropback = xm._bool(d, "qb_dropback")
+    scramble = xm._bool(d, "qb_scramble")
+    complete = xm._bool(d, "complete_pass")
+    has_passer = d["passer_player_id"].notna()
+    d["qb_id"] = d["passer_player_id"].where(has_passer, d["rusher_player_id"].where(scramble))
+    d["qb_name"] = d["passer_player_name"].where(has_passer, d["rusher_player_name"].where(scramble))
+    d["is_dropback"] = (dropback & d["qb_id"].notna()).astype(int)
+    d["explosive_pass"] = (complete & (d["yards_gained"] >= 20) & has_passer).astype(int)
+    # air yards exist from 2006; before that the split is unknown, not zero
+    d["explosive_pass_air"] = ((d["explosive_pass"] == 1) & (d["air_yards"] >= 20)).astype(int)
+    d["explosive_pass_air_known"] = ((d["explosive_pass"] == 1) & d["air_yards"].notna()).astype(int)
+    keys = ["season", "game_id", "posteam", "qb_id"]
+    with_qb = d[d["qb_id"].notna()]
+    qb_rows = with_qb.groupby(keys, as_index=False).agg(
+        dropbacks=("is_dropback", "sum"), explosive_pass=("explosive_pass", "sum"),
+        explosive_pass_air=("explosive_pass_air", "sum"), explosive_pass_air_known=("explosive_pass_air_known", "sum"))
+    names = (with_qb.groupby("qb_id")["qb_name"].agg(lambda s: s.value_counts().index[0])
+             .rename("qb_name").reset_index())
+    is_run = (d["play_type"] == "run") & d["rusher_player_id"].notna()
+    runs = d.loc[is_run, ["season", "game_id", "posteam", "rusher_player_id", "yards_gained"]].rename(
+        columns={"rusher_player_id": "qb_id"})
+    runs = runs.merge(qb_rows[keys], on=keys)          # keep runs by someone who dropped back in that game
+    runs["explosive_rush"] = (runs["yards_gained"] >= 10).astype(int)
+    rush_rows = runs.groupby(keys, as_index=False).agg(
+        qb_rushes=("explosive_rush", "size"), explosive_rush=("explosive_rush", "sum"))
+    out = qb_rows.merge(rush_rows, on=keys, how="left")
+    out[["qb_rushes", "explosive_rush"]] = out[["qb_rushes", "explosive_rush"]].fillna(0).astype(int)
+    out = out.merge(names, on="qb_id", how="left")
+    out["franchise"] = xm.to_franchise(out["posteam"], out["season"])
+    return out
+
+
+def team_pass_from_passer_plays(qp: pd.DataFrame) -> pd.DataFrame:
+    """Per team-game explosive completions of 20+ yards (all passers)."""
+    return qp.groupby(["season", "game_id", "franchise"], as_index=False).agg(
+        explosive_pass=("explosive_pass", "sum"), passer_dropbacks=("dropbacks", "sum"))
+
+
+def qb_play_tables(seasons: list[int] | None = None) -> pd.DataFrame:
+    seasons = seasons or _pbp_seasons()
+    parts = [passer_plays(_load_season_pbp(season, QB_PLAY_COLS)) for season in seasons]
+    return pd.concat(parts, ignore_index=True)
+
+
+def _qb_leaders(qp: pd.DataFrame, min_dropbacks: int, top: int, keys: list[str]) -> pd.DataFrame:
+    """Group by player id (names are spelled 'T.Green' in some seasons and
+    'T. Green' in others); the name shown is the one used most often."""
+    qp = qp.copy()
+    qp["qb_name"] = qp["qb_name"].str.replace(". ", ".", regex=False)
+    name = qp.groupby("qb_id")["qb_name"].agg(lambda s: s.value_counts().index[0])
+    keys = [k for k in keys if k != "qb_name"]
+    agg = qp.groupby(keys, as_index=False).agg(
+        games=("game_id", "nunique"), seasons=("season", "nunique"),
+        dropbacks=("dropbacks", "sum"), explosive_pass=("explosive_pass", "sum"),
+        explosive_pass_air=("explosive_pass_air", "sum"), explosive_pass_air_known=("explosive_pass_air_known", "sum"),
+        qb_rushes=("qb_rushes", "sum"), explosive_rush=("explosive_rush", "sum"))
+    agg["qb_name"] = agg["qb_id"].map(name)
+    agg["rate"] = agg["explosive_pass"] / agg["dropbacks"]
+    agg["air_share"] = np.where(agg["explosive_pass_air_known"] > 0,
+                                agg["explosive_pass_air"] / agg["explosive_pass_air_known"].replace(0, np.nan), np.nan)
+    agg["rush_rate"] = np.where(agg["qb_rushes"] > 0, agg["explosive_rush"] / agg["qb_rushes"], np.nan)
+    return (agg[agg["dropbacks"] >= min_dropbacks].sort_values("rate", ascending=False)
+            .head(top).reset_index(drop=True))
+
+
+QB_LEADER_COLS = ["dropbacks", "explosive_pass", "rate", "air_share", "qb_rushes", "explosive_rush", "rush_rate"]
+
+
+def qb_full_names(games: pd.DataFrame) -> dict[str, str]:
+    """Player id -> full name, from the schedule file's starting-QB columns
+    (the play-by-play only carries 'B.Purdy'-style abbreviations). Both
+    files use the same GSIS ids."""
+    pairs = pd.concat([games[["home_qb_id", "home_qb_name"]].set_axis(["qb_id", "name"], axis=1),
+                       games[["away_qb_id", "away_qb_name"]].set_axis(["qb_id", "name"], axis=1)]).dropna()
+    return pairs.groupby("qb_id")["name"].agg(lambda s: s.value_counts().index[0]).to_dict()
+
+
+def _with_full_names(out: pd.DataFrame, names: dict[str, str] | None) -> pd.DataFrame:
+    if names:
+        out["qb_name"] = out["qb_id"].map(names).fillna(out["qb_name"])
+    return out
+
+
+def qb_career_explosive_leaders(qp: pd.DataFrame, min_dropbacks: int = 1500, top: int = 20,
+                                names: dict[str, str] | None = None) -> pd.DataFrame:
+    """Career explosive-pass rate: the passer's own explosive completions
+    (20+ yards) per his own dropbacks, regular season 1999-2025."""
+    out = _with_full_names(_qb_leaders(qp, min_dropbacks, top, ["qb_id", "qb_name"]), names)
+    return out[["qb_name", "seasons", "games"] + QB_LEADER_COLS]
+
+
+def qb_season_explosive_leaders(qp: pd.DataFrame, min_dropbacks: int = 300, top: int = 15,
+                                names: dict[str, str] | None = None) -> pd.DataFrame:
+    out = _with_full_names(_qb_leaders(qp, min_dropbacks, top, ["qb_id", "qb_name", "season"]), names)
+    return out[["qb_name", "season", "games"] + QB_LEADER_COLS]
+
+
+# ===================================================================
+# 3b. Rarity vs skill: how much of the persistence gap is counting noise
+# ===================================================================
+
+
+def reliability_decomposition(team_game: pd.DataFrame) -> pd.DataFrame:
+    """For each era and metric (explosive differential per game, turnover
+    differential per game), split the between-team variance of half-season
+    per-game rates into counting noise and the rest.
+
+    If a team's for and against counts were Poisson with fixed rates, the
+    sampling variance of its per-game differential over G games would be
+    (mean_for + mean_against) / G. Subtracting that from the observed
+    between-team variance of half-season differentials leaves the variance
+    of true (repeatable) differences; their ratio is the reliability, which
+    is also the split-half correlation a world of fixed rates plus counting
+    noise would produce. Setting it beside the observed split-half r says
+    how much of "turnovers don't repeat" is just "turnovers are rare"."""
+    from xe_analysis_teams import team_season_splits, persistence_by_era  # noqa: E402
+    reg = team_game[team_game["game_type"] == "REG"].copy()
+    reg["era"] = era_of(reg["season"])
+    splits = team_season_splits(reg)
+    if "era" not in splits.columns:
+        splits["era"] = era_of(splits["season"])
+    obs = persistence_by_era(splits).set_index(["era", "metric"])
+    rows = []
+    for era, e in reg.groupby("era"):
+        games_per_half = e.groupby(["franchise", "season"])["game_id"].count().mean() / 2
+        s = splits[splits["era"] == era]
+        for metric, count_col in (("explosive_diff_per_game", "explosive_20_10"),
+                                  ("turnover_diff_per_game", "turnovers")):
+            lam = float(e[count_col].mean())              # per game, for; against has the same league mean
+            noise_var = 2 * lam / games_per_half
+            col1, col2 = f"{metric}_first", f"{metric}_second"
+            obs_var = float(pd.concat([s[col1], s[col2]]).var())
+            true_var = max(obs_var - noise_var, 0.0)
+            rows.append({"era": era, "metric": metric, "mean_per_game": lam,
+                         "games_per_half": games_per_half, "observed_var": obs_var,
+                         "poisson_noise_var": noise_var, "true_var": true_var,
+                         "implied_reliability": true_var / obs_var if obs_var > 0 else np.nan,
+                         "observed_split_half_r": float(obs.loc[(era, metric), "r"]) if (era, metric) in obs.index else np.nan})
+    out = pd.DataFrame(rows)
+    order = {e[0]: i for i, e in enumerate(ERAS)}
+    out["_o"] = out["era"].map(order).fillna(99)
+    return out.sort_values(["_o", "metric"]).drop(columns="_o").reset_index(drop=True)
 
 
 # ===================================================================
@@ -586,11 +762,21 @@ def run() -> dict:
     tables["playoff_head_to_head"] = playoff_head_to_head(tg)
     tables["super_bowl_ranks"] = super_bowl_ranks(tg, team_season)
 
-    # 3. QB continuity
-    qtg = build_qb_team_game(tg, games)
+    # 3. Quarterbacks: per-passer attribution from play-by-play; team-level
+    #    continuity from the schedule file's starters
+    qp = qb_play_tables()
+    team_pass = team_pass_from_passer_plays(qp)
+    qtg = build_qb_team_game(tg, games, team_pass)
     tables["qb_continuity_persistence"] = qb_continuity_persistence(qtg)
-    tables["qb_career_explosive_leaders"] = qb_career_explosive_leaders(qtg)
-    tables["qb_season_explosive_leaders"] = qb_season_explosive_leaders(qtg)
+    names = qb_full_names(games)
+    tables["qb_career_explosive_leaders"] = qb_career_explosive_leaders(qp, names=names)
+    tables["qb_season_explosive_leaders"] = qb_season_explosive_leaders(qp, names=names)
+    tables["qb_join_coverage"] = pd.DataFrame([{
+        "team_games": int(len(qtg)), "matched": int(qtg["qb_id"].notna().sum()),
+        "unmatched": int(qtg["qb_id"].isna().sum())}])
+
+    # 3b. Rarity vs skill
+    tables["reliability_decomposition"] = reliability_decomposition(tg)
 
     # 4. Pass/run decomposition
     pr_season = pass_run_explosives_by_season()

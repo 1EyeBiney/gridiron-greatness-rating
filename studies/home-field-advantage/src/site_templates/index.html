@@ -25,15 +25,19 @@ how many points is playing at home worth, and does that number fade as the seaso
     {{ facts.late_shortfall_max|f2 }} points, a tie{% endif %}. The final week of the season alone comes in at
     {{ facts.final_week|f1 }}.</li>
   <li><strong>Teams out of the playoff race do not lose their home edge.</strong> In the final three weeks, games
-    involving a team that had already been eliminated carry a home-field advantage of {{ facts.elim_last3|f1 }} points;
+    involving a team already eliminated (by an approximate label built from conference standings, ignoring tiebreakers
+    and division races) carry a home-field advantage of {{ facts.elim_last3|f1 }} points;
     games involving a team still in the race carry {{ facts.alive_last3|f1 }}. That gap is well inside the noise.
     Sorted by games behind the last playoff spot, the pattern is flat.</li>
-  <li><strong>Crowds are the mechanism, though.</strong> The 2020 season, played in mostly empty stadiums, is the
-    one season in the sample with essentially no home-field advantage: {{ facts.hfa_2020|f1 }} points, against
-    {{ facts.hfa_2015_19|f1 }} in the five seasons before and {{ facts.hfa_2021_25|f1 }} in the five after.</li>
-  <li><strong>No franchise's fans travel well enough to show up in the scores.</strong> Every team's home/road
-    swing sits within about two standard errors of the league average. The Steelers, the fan base most often credited
-    with taking over road stadiums, have one of the <em>larger</em> swings, not one of the smaller ones.</li>
+  <li><strong>The season without crowds points at people as the mechanism, but does not prove it.</strong> The 2020
+    season, played in mostly empty stadiums, had essentially no home-field advantage: {{ facts.hfa_2020|f1 }} points,
+    against {{ facts.hfa_2015_19|f1 }} in the five seasons before and {{ facts.hfa_2021_25|f1 }} in the five after. But
+    2019, with full stadiums, was {{ facts.hfa_2019|f1 }}, and 2020 also had no preseason and restricted practice, so
+    the empty season is consistent with a crowd effect rather than a demonstration of one.</li>
+  <li><strong>No franchise's fans travel well enough to show up detectably in the scores.</strong> Every team's
+    home/road swing sits within about two standard errors of the league average, which still leaves room for road
+    effects of up to about a point per game. The Steelers, the fan base most often credited with taking over road
+    stadiums, have one of the <em>larger</em> swings, not one of the smaller ones.</li>
 </ul>
 
 <hr class="yard-line">
@@ -89,11 +93,15 @@ stadiums were costing eliminated hosts even a point, that number would move. It 
 
 <h2>Then what does the crowd do?</h2>
 {{ tables.covid }}
-<p>Plenty, apparently. The 2020 season is the closest thing to a controlled experiment the league has ever run:
-same teams, same travel, same officials, nearly no fans. Home-field advantage fell to {{ pm(facts.hfa_2020, facts.se_2020) }}
-points and home teams won half their games. It came back the next year. Fans in the building are a real part of
-home field. What the playoff-race result says is that the mix of fans in a nearly full stadium late in the year
-doesn't measurably change it - which is different from having no fans at all.</p>
+<p>Probably a lot, but the evidence is weaker than it looks. The 2020 season is the closest thing to a natural
+experiment the league has run: nearly no fans, and home-field advantage fell to {{ pm(facts.hfa_2020, facts.se_2020) }}
+points with home teams winning half their games. It came back the next year. Two things temper that. Home field in
+2019, with full stadiums, was already {{ pm(facts.hfa_2019, facts.se_2019) }}. And 2020 changed more than attendance:
+no preseason, restricted practice, and attendance limits that varied by city and by month rather than being assigned
+at random. The empty season is consistent with fans being a large part of home field; a real test would compare games
+under different attendance limits within 2020, allowing for venue and team, and this study has not done it. What the
+playoff-race result says is narrower: the mix of fans in a nearly full stadium late in the year doesn't measurably
+change the edge.</p>
 
 <h2>Do some fan bases travel well enough to matter?</h2>
 <p>The question was whether teams like the Steelers or 49ers, whose fans famously show up in road stadiums, blunt
@@ -107,7 +115,10 @@ average - about what chance alone would produce. Pittsburgh's swing is {{ facts.
 larger than average. San Francisco's is {{ facts.sf_swing|f1 }} (z = {{ facts.sf_z|f2 }}), a little smaller than
 average but nowhere near significant. Dallas (z = {{ facts.dal_z|f2 }}), Green Bay (z = {{ facts.gb_z|f2 }}), and the
 Raiders (z = {{ facts.oak_z|f2 }}) are unremarkable. Traveling fans are real and visible on television. Their effect
-on the scoreboard, if there is one, is smaller than fifty-five seasons of scores can detect.</p>
+on the scoreboard, if there is one, is smaller than fifty-five seasons of scores can detect, which for most franchises
+means smaller than about a point per road game (each swing carries a standard error near
+{{ facts.swing_se_median|f1 }} points). The swing is also not an estimate of what any stadium is worth; the
+<a href="{{ root }}franchises.html">franchise page</a> draws that distinction.</p>
 
 <h2>About the current season</h2>
 <p class="note">Through week {{ facts.current.weeks }} of the {{ facts.current.season }} season, home teams are

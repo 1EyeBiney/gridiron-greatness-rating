@@ -163,6 +163,10 @@ def build_facts(t: dict[str, pd.DataFrame]) -> dict:
         "covid": covid,
         "hfa_2020": covid.loc["2020 (limited or no fans)", "hfa"], "se_2020": covid.loc["2020 (limited or no fans)", "hfa_se"],
         "hfa_2015_19": covid.loc["2015-2019", "hfa"], "hfa_2021_25": covid.loc["2021-2025", "hfa"],
+        "hfa_2019": seasons.loc[2019, "hfa"], "se_2019": seasons.loc[2019, "hfa_se"],
+        # how precisely a franchise swing is measured, and the Denver example used on the franchise page
+        "swing_se_median": float(sw["swing_se"].median()),
+        "den_swing": sw.loc["DEN", "swing"], "den_z": sw.loc["DEN", "z"],
         "last3": last3, "last3_gb": last3_gb, "third": third, "naive": naive,
         "elim_last3": last3.loc["eliminated", "hfa_all"], "elim_last3_se": last3.loc["eliminated", "hfa_all_se"],
         "alive_last3": last3.loc["alive", "hfa_all"], "alive_last3_se": last3.loc["alive", "hfa_all_se"],
@@ -196,6 +200,36 @@ def build_facts(t: dict[str, pd.DataFrame]) -> dict:
 # ----------------------------------------------------------------- render
 
 
+def _reset_output_dir(out_dir) -> None:
+    """Empty `out_dir` (creating it if needed) without insisting that every
+    folder disappear. On Windows another process (Explorer, the search
+    indexer, an antivirus scan of freshly written images) can hold a folder
+    handle that makes os.rmdir fail long after its files are gone; such a
+    folder is left empty and reused, which is all the build needs. Files
+    are retried briefly because their locks are short-lived."""
+    import os
+    import time
+    out_dir = Path(out_dir)
+    if out_dir.exists():
+        for root, dirs, files in os.walk(out_dir, topdown=False):
+            for name in files:
+                path = os.path.join(root, name)
+                for attempt in range(20):
+                    try:
+                        os.remove(path)
+                        break
+                    except PermissionError:
+                        if attempt == 19:
+                            raise
+                        time.sleep(0.25)
+            for name in dirs:
+                try:
+                    os.rmdir(os.path.join(root, name))
+                except OSError:
+                    pass                      # held open by someone else; it is empty, reuse it
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+
 def render_all(out_dir: Path = OUT_DIR) -> dict:
     t = load_tables()
     facts = build_facts(t)
@@ -203,12 +237,11 @@ def render_all(out_dir: Path = OUT_DIR) -> dict:
     env.filters.update({"f1": f1, "f2": f2, "pct": pct, "n": n_})
     env.globals.update({"pm": pm})
 
-    if out_dir.exists():
-        shutil.rmtree(out_dir)
-    (out_dir / "static").mkdir(parents=True)
-    (out_dir / "data").mkdir()
+    _reset_output_dir(out_dir)
+    (out_dir / "static").mkdir(parents=True, exist_ok=True)
+    (out_dir / "data").mkdir(exist_ok=True)
     shutil.copy(TEMPLATES_DIR / "style.css", out_dir / "static" / "style.css")
-    shutil.copytree(TEMPLATES_DIR / "images", out_dir / "images")
+    shutil.copytree(TEMPLATES_DIR / "images", out_dir / "images", dirs_exist_ok=True)
 
     common = {"generated_date": date.today().isoformat(), "repo_url": REPO_URL, "main_site": MAIN_SITE, "facts": facts}
 

@@ -8,6 +8,18 @@ this directory.
 
 ## Q5. Explosive plays and the quarterback
 
+> **Superseded (2026-09-21).** The quarterback numbers below were computed
+> with a measure that did not match its label: every explosive play the
+> TEAM produced in games the quarterback started (rushes included) divided
+> by the team's dropbacks, and the join to the schedule file dropped 894
+> Rams / Chargers / Raiders team-games through a team-code mismatch (not
+> "thinner QB-id backfill" as the caveat below guessed). Both were found by
+> an outside review. The production tables (`src/xe_analysis_followups.py`,
+> data/processed/qb_*.csv) now credit explosive completions to the passer
+> on the field over his own dropbacks and join on franchise. The
+> before/after movement analysis in (a) has not been redone and should be
+> read as a sketch only. This file is kept as the record of the exploration.
+
 **One-sentence answer:** explosiveness travels with the quarterback more
 than it stays with the team, but the samples are small and the signal is
 noisy in both directions — treat this as suggestive, not conclusive.
