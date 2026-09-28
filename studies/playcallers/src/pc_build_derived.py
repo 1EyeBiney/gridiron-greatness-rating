@@ -146,6 +146,14 @@ def main():
     stints_path = STUDY / "data" / "processed" / "staff_stints.csv"
     stints = pd.read_csv(stints_path, dtype={"season": int})
 
+    # footnote daggers and similar marks sometimes survive extraction ("Sean Payton\ufffd"),
+    # and "Name, Jr." / "Name Jr." are the same person
+    def _clean(name):
+        if not isinstance(name, str):
+            return name
+        name = re.sub(r"[^A-Za-z.\)']+$", "", name)
+        return re.sub(r",\s*(Jr|Sr)\.", r" \g<1>.", name).strip()
+    stints["person"] = stints["person"].map(_clean)
     people = stints["person"].dropna().tolist()
     rename_map, alias_rows = build_aliases(people)
     doubtful = find_doubtful_pairs(people)

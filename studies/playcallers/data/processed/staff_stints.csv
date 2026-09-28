@@ -117,7 +117,7 @@ season,franchise,role,person,order_in_season,n_holders_that_season,is_co_holder,
 2012,LAC,DC,John Pagano,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_San_Diego_Chargers_season
 2012,LAR,HC,Jeff Fisher,1,1,False,False,,both,https://en.wikipedia.org/wiki/2012_St._Louis_Rams_season
 2012,LAR,OC,Brian Schottenheimer,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_St._Louis_Rams_season
-2012,LAR,DC,Gregg Williams†,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_St._Louis_Rams_season
+2012,LAR,DC,Gregg Williams,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_St._Louis_Rams_season
 2012,MIA,HC,Joe Philbin,1,1,False,False,,both,https://en.wikipedia.org/wiki/2012_Miami_Dolphins_season
 2012,MIA,OC,Mike Sherman,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_Miami_Dolphins_season
 2012,MIA,DC,Kevin Coyle,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_Miami_Dolphins_season
@@ -130,8 +130,8 @@ season,franchise,role,person,order_in_season,n_holders_that_season,is_co_holder,
 2012,NO,HC,Sean Payton,1,4,False,False,suspended entire season,infobox,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
 2012,NO,HC,Joe Vitt,2,4,False,True,"Interim, games 7–16",infobox,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
 2012,NO,HC,Aaron Kromer,3,4,False,True,"Interim, games 1–6",infobox,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
-2012,NO,HC,Sean Payton†,4,4,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
-2012,NO,OC,"Pete Carmichael, Jr.",1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
+2012,NO,HC,Sean Payton,4,4,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
+2012,NO,OC,Pete Carmichael Jr.,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
 2012,NO,DC,Steve Spagnuolo,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_New_Orleans_Saints_season
 2012,NYG,HC,Tom Coughlin,1,1,False,False,,both,https://en.wikipedia.org/wiki/2012_New_York_Giants_season
 2012,NYG,OC,Kevin Gilbride,1,1,False,False,,staff_section,https://en.wikipedia.org/wiki/2012_New_York_Giants_season

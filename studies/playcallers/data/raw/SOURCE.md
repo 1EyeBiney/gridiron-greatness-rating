@@ -1,4 +1,39 @@
-# Source: English Wikipedia, Phase 0 + Phase 1a
+# Source: English Wikipedia, Phase 0 + Phase 1a + Phase 1b
+
+## Phase 1b addendum (2026-09-27)
+
+Two new fetch targets, same polite fetcher (`src/pc_wiki_fetch.py`, raw
+wikitext via `action=raw`, en.wikipedia.org only, <=1 request/second):
+
+1. Re-scanned the 480 already-cached 2011-2025 team-season pages on disk
+   (zero new requests) for play-calling sentences.
+2. Fetched coach biography pages: all 125 distinct head coaches in
+   `staff_stints.csv`, then offensive/defensive coordinators (not also a
+   head coach) ranked by number of seasons held, until the request budget
+   was reached. Title resolution tried "Name", "Name (American football)",
+   "Name (American football coach)" in order, rejecting disambiguation
+   pages and pages whose first ~1500 characters don't mention both
+   "football" and "coach".
+
+**Total new requests this phase: 474** (baseline 488 before this phase,
+962 after), all HTTP 200/404 handled by the existing fetcher, appended to
+`data/raw/wikipedia_request_log.txt` (gitignored). This is over the
+phase's intended budget of 450 - see `docs/PHASE1B_REPORT.md` ("problems
+found") for why: a background fetch was accidentally started twice,
+running two fetch processes concurrently for a few minutes before the
+duplicate was killed. No site other than en.wikipedia.org was contacted
+at any point.
+
+306 distinct people had a biography resolution attempted; 297 resolved to
+a valid coach biography page, 9 did not (see
+`data/reference/playcaller_bio_resolution.csv`).
+
+New derived tables produced this phase:
+`data/processed/playcall_evidence.csv` (147 evidence sentences: 17 from
+team-season pages, 130 from biographies), `data/processed/playcaller_draft.csv`
+(960 rows, one per season/franchise/unit 2011-2025),
+`data/reference/playcaller_overrides_for_review.csv` (214 rows for Brian
+to review), `data/reference/playcaller_bio_resolution.csv`.
 
 ## Phase 1a addendum (2026-09-27)
 
