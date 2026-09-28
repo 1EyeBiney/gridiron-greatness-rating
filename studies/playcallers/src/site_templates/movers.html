@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block page_title %}Movers{% endblock %}
+{% block content %}
+<h1>Movers: what happens when a play-caller changes teams</h1>
+<p class="lede">For every tracked move, the unit's rating at the old team (with him, then after he left) and at the
+new team (before him, then with him), plus the two changes those numbers imply, compared against
+regression-to-the-mean baselines by starting tercile.</p>
+
+<h2>Summary</h2>
+{{ tables.moves_summary }}
+<p>Reading this: an offense hiring a new play-caller improves by about
+{{ facts.moves_summary.get(('offense','arrival_change'), {}).get('mean')|f2 }} z on average, but a team in the
+bottom performance tercile improves by roughly
+{{ facts.moves_summary.get(('offense','baseline_tercile_low'), {}).get('mean')|f2 }} z on
+average <em>regardless of who they hire</em> — most of the arrival bump is associated with, not proven to be caused
+by, the new hire himself. See <a href="{{ root }}methodology.html">Methodology</a> for the full baseline comparison
+and its caveats.</p>
+
+<h2>Every tracked move</h2>
+{{ tables.moves_full }}
+{% endblock %}

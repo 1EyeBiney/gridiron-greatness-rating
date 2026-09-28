@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block page_title %}Findings{% endblock %}
+{% set o = facts.top10_offense %}
+{% set d = facts.top10_defense %}
+{% set bj = facts.ben_johnson %}
+{% set mm = facts.mike_macdonald %}
+{% set ms = facts.moves_summary %}
+{% set vc = facts.variance_components %}
+{% block content %}
+<h1>The Playcallers</h1>
+<p class="lede">Every NFL offense and defense from {{ facts.first_season }} to {{ facts.last_season }}, scored against
+the opponents it faced and credited to the man believed to have called its plays, then followed from job to job.</p>
+
+<div class="note">
+<p><strong>Who called the plays is this study's best guess, and it is labelled as a guess everywhere.</strong> No public
+record says who called plays for each team in each season. The starting point is the coordinator's title; head coaches
+believed to call their own plays are substituted, and marked unverified. The
+<a href="{{ root }}who-called-plays.html">Who called plays</a> page shows the guess for every team and season so that
+anyone who knows better can check it.</p>
+</div>
+
+<h2>The short version</h2>
+<ul>
+  <li><strong>The best offensive record belongs to {{ o[0].person }}.</strong> His {{ o[0].seasons }} rated seasons
+    ({{ o[0].first_season }}-{{ o[0].last_season }}) average {{ o[0].mean_z_epa|f2 }} standard deviations better than
+    the league, for a career rating of {{ o[0].rating|f2 }}. Then {{ o[1].person }} ({{ o[1].rating|f2 }}),
+    {{ o[2].person }} ({{ o[2].rating|f2 }}), {{ o[3].person }} ({{ o[3].rating|f2 }}) and {{ o[4].person }}
+    ({{ o[4].rating|f2 }}). Read the names and you can name the quarterbacks.</li>
+  <li><strong>That is the study's main caution.</strong> A model that knows only the quarterback predicts an offense
+    about as well as one that knows the quarterback and the play caller
+    ({{ facts.qb_model_qb_only_mse|f3 }} against {{ facts.qb_model_crossed_mse|f3 }} error; lower is better). Knowing
+    only the play caller does worse ({{ facts.qb_model_caller_only_mse|f3 }}). The play caller's separate
+    contribution is small and hard to measure. The <a href="{{ root }}qb-adjusted.html">quarterback-adjusted list</a>
+    is the attempt.</li>
+  <li><strong>The best defensive record belongs to {{ d[0].person }}</strong> ({{ d[0].rating|f2 }} over
+    {{ d[0].seasons }} seasons), then {{ d[1].person }}, {{ d[2].person }}, {{ d[3].person }} and {{ d[4].person }}.
+    Defense is noisier: it takes about {{ vc.defense.seasons_for_half_weight|f0 }} seasons before a defensive record
+    counts for as much as the league average, against about {{ vc.offense.seasons_for_half_weight|f0 }} on offense.</li>
+  <li><strong>Ben Johnson and Mike Macdonald are as good as they looked.</strong> Johnson's {{ bj.seasons }} seasons
+    average {{ bj.mean_z_epa|f2 }}, which ranks {{ bj.rank_in_unit|f0 }} among offensive callers once the short record
+    is allowed for. Macdonald's {{ mm.seasons }} seasons average {{ mm.mean_z_epa|f2 }}, and he ranks
+    {{ mm.rank_in_unit|f0 }} on defense. Both have done it with two teams.</li>
+  <li><strong>A new play caller is mostly a bad team getting better anyway.</strong> Offenses improved by
+    {{ ms[('offense','arrival_change')].mean|f2 }} on average when a new caller arrived. Offenses in the bottom third of
+    the league improved by {{ ms[('offense','baseline_tercile_low')].mean|f2 }} the next season whoever called the
+    plays. Offenses fell by {{ (-ms[('offense','departure_change')].mean)|f2 }} after losing a caller; offenses in the
+    top third fell by {{ (-ms[('offense','baseline_tercile_high')].mean)|f2 }} regardless.</li>
+  <li><strong>Coaching trees.</strong> Counting only coordinators who became head coaches afterwards,
+    {{ facts.top_coaching_trees[0].mentor }} and {{ facts.top_coaching_trees[1].mentor }} lead with
+    {{ facts.top_coaching_trees[0].n_became_head_coach }} each.</li>
+</ul>
+
+<hr class="yard-line">
+
+<h2>Top 10 offensive play callers</h2>
+{{ tables.offense_ranked }}
+<p>The score is efficiency per play (expected points added), adjusted for the defenses faced and standardized within
+each season, so 1.0 means one standard deviation better than the league that year. The career rating pulls a short
+record toward zero. The last column says how much of a career rests on guessed assignments.
+<a href="{{ root }}offense.html">Full offense list</a>.</p>
+
+<h2>Top 10 defensive play callers</h2>
+{{ tables.defense_ranked }}
+<p><a href="{{ root }}defense.html">Full defense list</a>.</p>
+
+<h2>What was and was not rated</h2>
+<p>{{ facts.n_unit_seasons|n }} offenses and defenses were considered. {{ facts.n_rated|n }} are rated.
+{{ facts.n_excluded|n }} are left out: seasons with a mid-season change of coach or coordinator, seasons where two
+men are named, and seasons where no coordinator is listed and nothing else identifies a caller. Of the rated ones,
+{{ facts.basis_counts.get('default_coordinator', 0)|n }} credit the coordinator by title,
+{{ facts.basis_counts.get('model_knowledge_unverified', 0)|n }} credit a head coach believed to call his own plays,
+{{ facts.basis_counts.get('continuity_guess', 0)|n }} are filled from the seasons on either side, and
+{{ facts.basis_counts.get('evidence_wikipedia', 0)|n }} rests on a sentence in Wikipedia.</p>
+
+<h2>Where to go from here</h2>
+<p><a href="{{ root }}what-it-means.html">What it means</a> tells the story without tables.
+<a href="{{ root }}movers.html">Movers</a> follows every caller who changed teams.
+<a href="{{ root }}coaching-trees.html">Coaching trees</a> lists who worked for whom.
+<a href="{{ root }}methodology.html">Methodology</a> has the arithmetic and the limits, and everything can be
+downloaded from the <a href="{{ root }}data/index.html">data page</a>.</p>
+{% endblock %}

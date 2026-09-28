@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_title %}Defense{% endblock %}
+{% block content %}
+<h1>Defensive play-callers</h1>
+<p class="lede">Career ranking of defensive play-callers by shrunk rating, 1999-2025. Defensive results are noisier
+than offensive ones (see <a href="{{ root }}methodology.html">Methodology</a>), so defensive careers are pulled
+toward the mean more strongly for the same number of seasons.</p>
+{{ tables.defense_ranked }}
+<h2>Fewer than three seasons</h2>
+<p>Too little evidence to rank with confidence. Sorted by rating.</p>
+{{ tables.defense_unranked }}
+{% endblock %}

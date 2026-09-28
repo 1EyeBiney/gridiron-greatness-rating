@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_title %}Download data{% endblock %}
+{% block content %}
+<h1>Download data</h1>
+<p class="lede">Every table used to build this site, as CSV, regenerated on every build from the scripts in the
+<a href="{{ repo_url }}">repository</a>.</p>
+<ul>
+{% for f in files %}
+  <li><a href="{{ f.name }}">{{ f.name }}</a> ({{ f.size_kb }} KB) — {{ f.description }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

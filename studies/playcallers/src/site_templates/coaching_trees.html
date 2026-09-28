@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block page_title %}Coaching trees{% endblock %}
+{% block content %}
+<h1>Coaching trees</h1>
+<p class="lede">A mentor-to-protege edge exists whenever the protege was a coordinator while the mentor was head
+coach of the same team. Mentors below have at least two distinct coordinators; "later head coaches" counts only
+coordinators whose own head-coaching seasons came after their first season under that mentor (an earlier
+head-coaching stint elsewhere is counted separately, under "already head coach").</p>
+{{ tables.coaching_trees }}
+<div class="note">
+<p>Caveats: interim head-coaching stints count as both mentors and proteges; head-coaching jobs before 2011 are
+outside this data, so "already a head coach" is an undercount; and the tree sees only coordinator and head-coach
+titles, not position coaches, so most of any real coaching tree is invisible here.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block page_title %}What it means{% endblock %}
+{% set o = facts.top10_offense %}
+{% set d = facts.top10_defense %}
+{% set bj = facts.ben_johnson %}
+{% set mm = facts.mike_macdonald %}
+{% set ms = facts.moves_summary %}
+{% set vc = facts.variance_components %}
+{% block content %}
+<h1>What it means</h1>
+<p class="lede">Twenty-seven seasons of play callers, followed from sideline to sideline, and an honest account of how
+much a number can say about the man holding the laminated card.</p>
+
+<h2>The question</h2>
+<p>A coordinator leaves and the offense is never quite the same. A defensive coach takes a head job and within a year
+his new team is playing the defense his old team played. Fans notice these things, and they are usually right to.
+Ben Johnson ran Detroit's offense for three seasons and then went to Chicago. Mike Macdonald ran Baltimore's defense
+and then went to Seattle. The idea behind this study is simple: if play calling is a skill a man owns, it should
+travel with him, and a career of results should add up to a record.</p>
+
+<h2>What the records say</h2>
+<p>On offense the best record of the last twenty-seven seasons is {{ o[0].person }}'s: {{ o[0].seasons }} rated seasons
+averaging {{ o[0].mean_z_epa|f2 }} standard deviations better than the league. Behind him come {{ o[1].person }},
+{{ o[2].person }}, {{ o[3].person }} and {{ o[4].person }}. It is a list of good coaches. It is also, unmistakably,
+a list of men who worked with Peyton Manning, Tom Brady, Drew Brees and Patrick Mahomes, and of one who had Priest
+Holmes and Trent Green at their best.</p>
+<p>On defense the list is {{ d[0].person }}, {{ d[1].person }}, {{ d[2].person }}, {{ d[3].person }} and
+{{ d[4].person }}. These are the Ravens and Jets defenses, the 2000 Ravens, the Tampa defenses that gave a scheme its
+name, and Jim Johnson's Eagles among them. Anyone who watched those teams would have written much the same list from
+memory, which is the first thing to ask of a measure like this.</p>
+
+<h2>Johnson and Macdonald</h2>
+<p>Both men hold up. Johnson's {{ bj.seasons }} seasons average {{ bj.mean_z_epa|f2 }}, among the highest of any
+offensive caller with three or more seasons, and his best was {{ bj.best_season }}. Macdonald's {{ mm.seasons }}
+seasons average {{ mm.mean_z_epa|f2 }}, and his best was {{ mm.best_season }}. Each has now produced a good unit for
+two different teams with two different rosters, which is the pattern the study was built to look for.</p>
+<p>Their career ratings, {{ bj.rating|f2 }} and {{ mm.rating|f2 }}, are lower than their averages because four seasons
+is not many. The rating pulls every short record toward the league average, and it pulls defenses harder than
+offenses. Johnson ranks {{ bj.rank_in_unit|f0 }} on offense and Macdonald {{ mm.rank_in_unit|f0 }} on defense. If
+they keep this up, the ratings will rise without the averages having to.</p>
+
+<h2>The quarterback in the room</h2>
+<p>The hardest result in the study is this one. Take every offense and try to predict how good it was from who called
+the plays and who played quarterback. A model that knows only the quarterback does about as well as one that knows
+both ({{ facts.qb_model_qb_only_mse|f3 }} against {{ facts.qb_model_crossed_mse|f3 }}). A model that knows only the
+play caller does clearly worse ({{ facts.qb_model_caller_only_mse|f3 }}). Most of what an offensive play caller's
+record measures is the quarterback he had.</p>
+<p>That does not make the play caller irrelevant. It means scores cannot easily tell the two apart, because great
+quarterbacks and respected play callers tend to stay together. The <a href="{{ root }}qb-adjusted.html">quarterback-adjusted
+list</a> rewards callers who produced with several different quarterbacks, and it moves Mike Shanahan and Greg Roman
+up and quarterbacks' long-time partners down. It is the fairer list and the less certain one.</p>
+
+<h2>What happens when they move</h2>
+<p>When a new offensive play caller arrives, the offense improves by {{ ms[('offense','arrival_change')].mean|f2 }} on
+average. That sounds like proof until it is set beside what bad offenses do anyway: those in the bottom third of the
+league improve by {{ ms[('offense','baseline_tercile_low')].mean|f2 }} the following season, new caller or not. Teams
+change play callers when things have gone badly, and things that have gone badly tend to get better.</p>
+<p>The same holds in reverse. Offenses decline by {{ (-ms[('offense','departure_change')].mean)|f2 }} after losing a
+caller, and offenses in the top third decline by {{ (-ms[('offense','baseline_tercile_high')].mean)|f2 }} on their
+own. Detroit's offense after Johnson fits the pattern, and so would most very good offenses the year after a career
+season. The individual cases on the <a href="{{ root }}movers.html">movers page</a> are more interesting than the
+averages, and they are there to be read one at a time.</p>
+
+<h2>Where the numbers stop</h2>
+<p>Three limits are worth carrying. First, who called the plays is a guess for a large share of seasons, and the
+older the season the shakier the guess; every table says how much of a career rests on guesses. Second, a play
+caller's record includes everything about his team that he did not control: the quarterback, the line, injuries, and
+on defense the offense that kept handing him short fields. Third, {{ facts.n_excluded|n }} offenses and defenses are
+left out because the caller changed during the season or could not be identified, and some of those seasons would
+change a career.</p>
+<p>What survives those limits is modest and, we think, real: records that match what people who watched remember,
+two young coaches whose results have travelled, and a clear warning about how much credit the man with the card
+should get when the man under center is one of the best who ever played.</p>
+{% endblock %}

@@ -144,6 +144,6 @@ def test_every_page_on_every_study_carries_the_studies_bar(tmp_path):
         assert 'class="studies-bar"' in html, page
         assert html.count('aria-current="page"') == 1, page
     front = (tmp_path / "index.html").read_text(encoding="utf-8")
-    for target in ("rating.html", "home-field-advantage/index.html", "explosive-edge/index.html", "how-it-was-made.html", "electric-football.html"):
+    for target in ("rating.html", "home-field-advantage/index.html", "explosive-edge/index.html", "playcallers/index.html", "how-it-was-made.html", "electric-football.html"):
         assert f'href="{target}"' in front, target
     assert (tmp_path / "home-field-advantage" / "index.html").read_text(encoding="utf-8").count('href="../index.html"') >= 1

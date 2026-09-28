@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block page_title %}Offense{% endblock %}
+{% block content %}
+<h1>Offensive play-callers</h1>
+<p class="lede">Career ranking of offensive play-callers by shrunk rating, 1999-2025. "Average score" is the raw
+career-average opponent-adjusted EPA z; "career rating" pulls that average toward the league mean by an amount that
+depends on the number of seasons (see <a href="{{ root }}methodology.html">Methodology</a>); "±" is its standard
+error.</p>
+{{ tables.offense_ranked }}
+<h2>Fewer than three seasons</h2>
+<p>Too little evidence to rank with confidence. Sorted by rating (unshrunk relative to the ranked list above, since
+these careers are too short for the shrinkage estimate to be reliable either).</p>
+{{ tables.offense_unranked }}
+{% endblock %}

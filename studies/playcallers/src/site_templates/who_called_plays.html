@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_title %}Who called plays{% endblock %}
+{% block content %}
+<h1>Who called plays</h1>
+<p class="lede"><strong>Every row below is this study's best guess</strong>, not a confirmed fact, and each one is
+labelled with its basis: stated on Wikipedia, the titled coordinator by default, a guess from adjacent seasons, an
+unverified general-knowledge guess, or "no coordinator listed" (a team-season the ratings do not use). "Flags" marks
+a mid-season change in that unit's play-caller.</p>
+
+<nav aria-label="Jump to franchise">
+<ul class="jump-list">
+{% for fr in franchises %}
+  <li><a href="#{{ fr }}">{{ fr }}</a></li>
+{% endfor %}
+</ul>
+</nav>
+
+{% for fr in franchises %}
+<h2 id="{{ fr }}">{{ fr }}</h2>
+{{ who_tables[fr] }}
+{% endfor %}
+{% endblock %}

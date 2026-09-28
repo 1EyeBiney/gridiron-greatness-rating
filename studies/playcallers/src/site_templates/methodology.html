@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block page_title %}Methodology{% endblock %}
+{% block content %}
+<h1>Methodology</h1>
+
+<h2>Unit ratings</h2>
+<p>For every regular-season game 1999-2025, each team's offensive efficiency (EPA per play, explosive-play rate,
+yards per play) and its opponent's same numbers are used to fit one model per season and per metric: every team gets
+an offense number and a defense number, and a team-game's result is explained as "your offense number, minus your
+opponent's defense number, plus a small home-field bump." A small ridge penalty keeps the numbers stable when a team
+has an unusual schedule. Offense and defense numbers are converted to z-scores within season, so 0 always means
+league-average that year, and defense is flipped in sign so that, like offense, higher is always better.</p>
+
+<h2>Assigning a play-caller</h2>
+<p>Every included team-season-unit is credited to a person: by default the titled coordinator, or the head coach
+where the evidence says he calls the plays himself. Of {{ facts.n_unit_seasons|n }} team-season-units considered,
+{{ facts.n_rated|n }} were used; {{ facts.n_excluded|n }} were excluded outright for a mid-season change, more than
+one named play-caller, or no titled coordinator ({{ facts.n_coordinator_gaps|n }} team-season-units have no
+coordinator listed at all).</p>
+
+<h2>Shrinkage and the variance components</h2>
+<p>A person who calls plays for several seasons gets an average rating, but that average is pulled toward the league
+mean by an amount that depends on how many seasons of evidence he has, and on how much teams vary year to year
+versus how much people vary from each other — a formula version of "regression to the mean," fit separately by
+unit:</p>
+<table>
+<caption>Variance components by unit</caption>
+<thead><tr><th scope="col">Unit</th><th scope="col" class="num">Within-person variance (σ²)</th>
+<th scope="col" class="num">Between-person variance (τ²)</th><th scope="col" class="num">Seasons for half weight</th></tr></thead>
+<tbody>
+{% for unit, row in facts.variance_components.items() %}
+<tr><th scope="row">{{ unit }}</th><td class="num">{{ row.sigma2|f2 }}</td><td class="num">{{ row.tau2|f2 }}</td>
+<td class="num">{{ row.seasons_for_half_weight|f1 }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+<p>"Seasons for half weight" is σ²/τ²: the number of seasons at which a person's raw average gets 50% weight and the
+league mean gets the other 50%. Offensive callers reach that point around
+{{ facts.variance_components.get('offense', {}).get('seasons_for_half_weight')|f1 }} seasons; defensive callers need
+about {{ facts.variance_components.get('defense', {}).get('seasons_for_half_weight')|f1 }} — defensive results are
+noisier relative to how much defensive coordinators actually differ from each other.</p>
+
+<h2>Quarterback-adjusted model</h2>
+<p>A crossed model splits each offensive team-season's EPA into a caller effect and a primary-quarterback effect at
+the same time, with both ridge penalties chosen by leave-one-season-out cross-validation. That crossed model's
+error ({{ facts.qb_model_crossed_mse|f3 }}) beats a caller-only model ({{ facts.qb_model_caller_only_mse|f3 }}) but
+is close to a QB-only model ({{ facts.qb_model_qb_only_mse|f3 }}): knowing the quarterback predicts next season's
+offense about as well as knowing the caller does, so a real share of "caller signal" may be "which quarterback he
+happened to have."</p>
+
+<h2>Moves and the regression-to-the-mean baseline</h2>
+<p>For every tracked move, the unit's rating at the old team (with him, then after) and the new team (before, then
+with him) give an arrival and a departure change. Those are compared against a baseline built the same way but for
+all unit-seasons, split into terciles by the team's rating the year before the change — the fairest available
+comparison, since teams that hire or fire a play-caller are rarely average teams to begin with.</p>
+
+<h2>Coaching trees</h2>
+<p>Built only from the staff table: a mentor → protege edge exists whenever the protege was a coordinator while the
+mentor was head coach of the same team. A protege counts as a later head coach only if his own head-coaching seasons
+came after his first season under that mentor.</p>
+
+<h2>Sources and licences</h2>
+<ul>
+<li>Play-by-play, 1999-2025: nflverse (CC BY 4.0).</li>
+<li>Coordinators, head coaches, and mid-season changes: Wikipedia team-season pages and biography pages (CC BY-SA 4.0).</li>
+</ul>
+<p>Team-season pages name most coordinators. Where a page names nobody, the gap was filled from the coaching
+history in the coach's own Wikipedia biography, and only when that biography lists the team, the years and the title.
+The two sources were compared wherever both name a coordinator: they agree in {{ facts.bio_agree_n|n }} of
+{{ facts.bio_checked_n|n }} cases ({{ (100 * facts.bio_agree_n / facts.bio_checked_n)|f1 }} percent), and the
+disagreements are mostly mid-season changes. {{ facts.n_coordinator_gaps|n }} offenses and defenses still have no
+coordinator listed. If the same man held the job in the seasons on either side he is assumed to have held it in
+between, and the season is marked as a guess; otherwise the head coach is shown as a placeholder and the season is
+left out of the ratings.</p>
+
+<h2>What is excluded</h2>
+<p>Excluded from the ratings: mid-season coaching changes, team-seasons naming more than one play-caller, and
+team-seasons with no titled coordinator and no override naming someone else (their default is the head coach, but
+they are not counted). Season pages and per-play evidence beyond the team-season level are not published on this
+site.</p>
+
+<h2>Limitations</h2>
+<ul>
+<li>Play calling cannot be separated from players or head coach by scores alone. Every rating here is associated
+with a person and a team-season, not proven to be caused by his decisions.</li>
+<li>Many play-caller assignments are unverified guesses, not Wikipedia-sourced facts — several well-known names are
+100% unverified basis despite being obviously correct, and some lesser-known rows may rest on a default that turns
+out to be wrong.</li>
+<li>Defensive results are noisier than offensive ones; defensive rankings should be read with wider margins in mind.</li>
+<li>Small samples dominate the person-level lists. A 3-season rating and its standard error should not be read as a
+settled verdict.</li>
+<li>Mid-season changes were excluded outright, so some real, sometimes informative in-season coaching changes are
+invisible to every table on this site.</li>
+<li>The underlying metrics (EPA, explosive rate, yards per play, and the points that follow) reflect much more than
+play calling — offensive line, secondary, injuries, turnover luck, and opposing talent all flow through the same box
+score. The opponent adjustment controls for schedule strength, not for any of this.</li>
+<li>The moves analysis is a small, noisy sample set against baselines that are themselves imprecise.</li>
+</ul>
+<p>Everything on this site is offered as "associated with," never "caused."</p>
+{% endblock %}

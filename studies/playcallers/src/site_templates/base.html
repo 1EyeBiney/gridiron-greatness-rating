@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block page_title %}{{ title }}{% endblock %} · Explosive Edge</title>
-<meta name="description" content="{{ description|default('Do explosive plays decide NFL games the way turnovers do? A study of the explosive-play differential, 1999-2025.') }}">
+<title>{% block page_title %}{{ title }}{% endblock %} · The Playcallers</title>
+<meta name="description" content="{{ description|default('Rating the people who call plays in the NFL, offense and defense, 1999-2025.') }}">
 <link rel="stylesheet" href="{{ root }}static/style.css">
 </head>
 <body>
@@ -17,24 +17,25 @@
       <li><a href="{{ root }}../index.html">Front page</a></li>
       <li><a href="{{ root }}../rating.html">Greatness Rating</a></li>
       <li><a href="{{ root }}../home-field-advantage/index.html">Home Field Advantage</a></li>
-      <li><a href="{{ root }}../explosive-edge/index.html" aria-current="page">Explosive Edge</a></li>
-      <li><a href="{{ root }}../playcallers/index.html">The Playcallers</a></li>
+      <li><a href="{{ root }}../explosive-edge/index.html">Explosive Edge</a></li>
+      <li><a href="{{ root }}../playcallers/index.html" aria-current="page">The Playcallers</a></li>
       <li><a href="{{ root }}../how-it-was-made.html">How it was made</a></li>
     </ul>
   </div>
 </nav>
   <div class="header-inner">
-    <p class="site-name"><a href="{{ root }}index.html">Explosive Edge</a></p>
+    <p class="site-name"><a href="{{ root }}index.html">The Playcallers</a></p>
     <nav aria-label="Primary">
       <ul>
         <li><a href="{{ root }}index.html">Findings</a></li>
-        <li><a href="{{ root }}the-shift.html">The shift</a></li>
-        <li><a href="{{ root }}mechanism.html">Mechanism</a></li>
-        <li><a href="{{ root }}skill-or-luck.html">Skill or luck</a></li>
-        <li><a href="{{ root }}head-to-head.html">Head to head</a></li>
-        <li><a href="{{ root }}leaderboard.html">Leaderboard</a></li>
-        <li><a href="{{ root }}methodology.html">Methodology</a></li>
+        <li><a href="{{ root }}offense.html">Offense</a></li>
+        <li><a href="{{ root }}defense.html">Defense</a></li>
+        <li><a href="{{ root }}qb-adjusted.html">Quarterback-adjusted</a></li>
+        <li><a href="{{ root }}movers.html">Movers</a></li>
+        <li><a href="{{ root }}coaching-trees.html">Coaching trees</a></li>
+        <li><a href="{{ root }}who-called-plays.html">Who called plays</a></li>
         <li><a href="{{ root }}what-it-means.html">What it means</a></li>
+        <li><a href="{{ root }}methodology.html">Methodology</a></li>
         <li><a href="{{ root }}data/index.html">Download data</a></li>
         <li><a href="{{ root }}{{ main_site }}electric-football.html">Electric Football</a></li>
       </ul>
@@ -45,10 +46,11 @@
 {% block content %}{% endblock %}
 </main>
 <footer>
-  <p>Explosive Edge is a companion study to the
+  <p>The Playcallers is a companion study to the
      <a href="{{ root }}{{ main_site }}rating.html">Gridiron Greatness Rating</a>, built from nflverse play-by-play
-     data, 1999-present. Methodology, decisions, and full source are in the
-     <a href="{{ repo_url }}">GitHub repository</a>. Generated {{ generated_date }}.</p>
+     data and Wikipedia team-season staff pages, 1999-2025. Who called plays for a given team-season is this
+     study's best guess, labelled with its source and confidence everywhere it appears. Methodology, decisions, and
+     full source are in the <a href="{{ repo_url }}">GitHub repository</a>. Generated {{ generated_date }}.</p>
 </footer>
 </body>
 </html>

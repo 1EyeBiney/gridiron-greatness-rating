@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_title %}Quarterback-adjusted{% endblock %}
+{% block content %}
+<h1>Quarterback-adjusted offensive ratings</h1>
+<p class="lede">A crossed model splits each team-season's offensive EPA into a play-caller effect and a primary-QB
+effect at the same time, so a caller who only ever worked with one great quarterback (or vice versa) is not simply
+credited with that quarterback's play.</p>
+
+<h2>Cross-validation: does the adjustment earn its keep?</h2>
+<p>Leave-one-season-out cross-validated mean squared error for three models: the crossed caller/QB model, a
+caller-only model, and a QB-only model. Lower is better.</p>
+{{ tables.qb_model_cv }}
+<p>The crossed model's cross-validated error ({{ facts.qb_model_crossed_mse|f3 }}) beats the caller-only model
+({{ facts.qb_model_caller_only_mse|f3 }}) but is close to the QB-only model
+({{ facts.qb_model_qb_only_mse|f3 }}) — across this dataset, knowing the quarterback predicts next season's
+offensive EPA about as well as knowing the caller does. This is a caution about the whole exercise: a real share of
+what looks like caller signal in the unadjusted ranking may be which quarterback he happened to have.</p>
+
+<h2>Top 40 by quarterback-adjusted rating</h2>
+<p>"Unadjusted-list rank" is the same person's rank on the plain <a href="{{ root }}offense.html">Offense</a> list
+(3+ seasons), for comparison.</p>
+{{ tables.qb_adjusted_top40 }}
+
+{% if tables.qb_effects_top20 %}
+<h2>Top 20 quarterback effects</h2>
+<p>The per-quarterback effect estimated jointly with the caller effect above — the recognisable-name sanity check for
+the model.</p>
+{{ tables.qb_effects_top20 }}
+{% endif %}
+{% endblock %}
