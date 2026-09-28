@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block page_title %}{{ case.person }}{% endblock %}
+{% block content %}
+<p><a href="{{ root }}case-files/index.html">Case files</a></p>
+<h1>{{ case.person }}</h1>
+<p class="lede">{{ case.category }}. {{ case.verdict_text }}</p>
+
+{% for para in case.body_text %}
+<p>{{ para }}</p>
+{% endfor %}
+
+<h2>The record at a glance</h2>
+<ul>
+  <li>Career rank among {{ case.unit }} play callers with three or more seasons:
+    {% if k.career.rank %}{{ k.career.rank }} of {{ k.n_ranked }}{% else %}not ranked (fewer than three seasons){% endif %}.</li>
+  <li>Rated seasons: {{ k.career.seasons }}. Average score {{ k.career.mean|f2 }}; career rating
+    {{ k.career.rating|f2 }} plus or minus {{ k.career.se|f2 }}.</li>
+  {% if k.recent.rank %}<li>Since {{ k.recent_from }}: average {{ k.recent.mean|f2 }} over {{ k.recent.n }} seasons,
+    {{ k.recent.rank }} of the {{ k.recent.of }} callers with at least {{ k.recent_min }} seasons in that span.</li>{% endif %}
+  {% if k.qb_rank %}<li>Quarterback-adjusted rank: {{ k.qb_rank }} of {{ k.n_ranked }}, with {{ k.n_qbs }} different
+    primary quarterbacks.</li>{% endif %}
+  <li>Share of his seasons where the play caller is a guess: {{ k.career.share_unverified|pct }}.</li>
+</ul>
+
+<h2>Stop by stop</h2>
+{{ stops_table }}
+
+<h2>Season by season</h2>
+{{ seasons_table }}
+
+{% if k.excluded %}
+<h2>Seasons left out</h2>
+<p>These seasons name him but are not rated, because the coach or coordinator changed during the season, more than one
+man is named, or no coordinator is listed.</p>
+<ul>
+{% for e in k.excluded %}  <li>{{ e.season }} {{ e.team }}: {{ e.reason_text }}</li>
+{% endfor %}</ul>
+{% endif %}
+
+<p><a href="{{ root }}case-files/index.html">All case files</a></p>
+{% endblock %}

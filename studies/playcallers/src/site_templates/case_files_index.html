@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block page_title %}Case files{% endblock %}
+{% block content %}
+<h1>Case files</h1>
+<p class="lede">A career rank is one number. For some coaches it needs explaining: the reputation is better than the
+rank, or the rank rests on one team, or on one quarterback. Each file shows the record stop by stop and says what it
+does and does not support.</p>
+
+<div class="note">
+<p>Scores are efficiency per play against the opponents faced, standardized within each season: zero is league
+average and 1.0 is one standard deviation better. Regular season only. Who called the plays is this study's best
+guess, and each season's table says how the guess was made.</p>
+</div>
+
+{% for category, group in cases|groupby("category_order") %}
+<h2>{{ group[0].category }}</h2>
+<ul class="card-grid">
+{% for c in group %}
+  <li><a href="{{ root }}case-files/{{ c.slug }}.html">{{ c.person }}</a> <span class="badge">{{ c.unit|capitalize }}</span><br>
+    {{ c.verdict_text }}</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+<p>Think someone belongs here? The full lists are on the <a href="{{ root }}offense.html">offense</a> and
+<a href="{{ root }}defense.html">defense</a> pages, and every season's record can be downloaded from the
+<a href="{{ root }}data/index.html">data page</a>.</p>
+{% endblock %}

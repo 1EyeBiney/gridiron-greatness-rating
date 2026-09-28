@@ -368,6 +368,60 @@ def _who_called_plays_tables(draft: pd.DataFrame) -> dict[str, Markup]:
     return tables
 
 
+REASON_TEXT = {
+    "midseason_change": "the head coach or coordinator changed during the season",
+    "multiple_playcallers": "more than one play caller is named",
+    "no_coordinator_listed": "no coordinator is listed",
+    "no_proposed_playcaller": "no play caller could be identified",
+}
+
+CASE_STOP_COLS = [
+    ("team", "Team", s_, False), ("span", "Seasons", s_, False), ("n", "Rated seasons", n_, True),
+    ("mean", "Average score", f2, True), ("qbs", "Primary quarterbacks", s_, False),
+]
+CASE_SEASON_COLS = [
+    ("season", "Season", lambda x: str(int(x)), False), ("team", "Team", s_, False),
+    ("primary_qb_name", "Primary quarterback", s_, False),
+    ("z_epa", "Score (efficiency per play)", f2, True), ("z_explosive", "Explosive plays", f2, True),
+    ("z_ypp", "Yards per play", f2, True), ("basis_text", "How the play caller was decided", s_, False),
+]
+
+
+def ordinal(n) -> str:
+    n = int(n)
+    suffix = "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+    return f"{n}{suffix}"
+
+
+def build_case_pages(t: dict, env) -> list[dict]:
+    """Render each case file's prose (numbers injected from its own facts)
+    and its two tables. Returns the cases ready for the templates."""
+    import pc_case_files as cf
+    order = [cf.PROMPTED, cf.BETTER, cf.REPUTATION, cf.ONE_STOP, cf.QUARTERBACK, cf.TRAVELLED]
+    cases = []
+    for case in cf.build_cases(t):
+        k = case["k"]
+        unit = case["unit"]
+        text = lambda src: str(env.from_string(src).render(k=k))          # noqa: E731
+        stops = pd.DataFrame([{"team": r["team"], "span": f"{r['first']}-{r['last']}" if r["last"] > r["first"] else str(r["first"]),
+                               "n": r["n"], "mean": r["mean"], "qbs": ", ".join(r["qbs"])} for r in k["runs"]])
+        seasons = k["seasons_table"].copy()
+        seasons["team"] = seasons["franchise"].map(cf.TEAM_NAMES).fillna(seasons["franchise"])
+        seasons["basis_text"] = seasons["basis"].map(basis_label)
+        drop_qb = (lambda cols: [c for c in cols if c[0] not in ("primary_qb_name", "qbs")]) if unit == "defense" else (lambda cols: cols)
+        for e in k["excluded"]:
+            e["team"] = cf.TEAM_NAMES.get(e["franchise"], e["franchise"])
+            e["reason_text"] = "; ".join(REASON_TEXT.get(x, x) for x in str(e["reason"]).split(";"))
+        cases.append({
+            **case, "category_order": order.index(case["category"]),
+            "verdict_text": text(case["verdict"]), "body_text": [text(p) for p in case["body"]],
+            "stops_table": table_html(stops, drop_qb(CASE_STOP_COLS), f"{case['person']}: {unit} record by stop"),
+            "seasons_table": table_html(seasons, drop_qb(CASE_SEASON_COLS),
+                                        f"{case['person']}: every rated {unit} season", row_header="season"),
+        })
+    return cases
+
+
 def render_all(out_dir: Path = OUT_DIR) -> dict:
     # The site builds only from the committed CSVs in data/processed and
     # data/reference. No analysis runs at render time; the pipeline scripts
@@ -377,7 +431,10 @@ def render_all(out_dir: Path = OUT_DIR) -> dict:
     facts = build_facts(t)
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
     env.filters.update({"f0": lambda x: "-" if pd.isna(x) else f"{x:.0f}", "f1": f1, "f2": f2, "f3": f3,
-                        "pct": pct, "n": n_})
+                        "pct": pct, "n": n_, "ordinal": ordinal})
+    cases = build_case_pages(t, env)
+    facts["n_case_files"] = len(cases)
+    facts["cases"] = {c["slug"]: c["k"] for c in cases}
 
     _reset_output_dir(out_dir)
     (out_dir / "static").mkdir(parents=True, exist_ok=True)
@@ -457,6 +514,10 @@ def render_all(out_dir: Path = OUT_DIR) -> dict:
     render("what_it_means.html", out_dir / "what-it-means.html", root="")
     render("methodology.html", out_dir / "methodology.html", root="")
     render("data_index.html", out_dir / "data" / "index.html", root="../", files=files)
+    render("case_files_index.html", out_dir / "case-files" / "index.html", root="../", cases=cases)
+    for case in cases:
+        render("case_file.html", out_dir / "case-files" / f"{case['slug']}.html", root="../", case=case, k=case["k"],
+               stops_table=case["stops_table"], seasons_table=case["seasons_table"])
 
     return facts
 
