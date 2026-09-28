@@ -110,6 +110,58 @@ def expand_ubl(s: str) -> str:
     return UBL_RE.sub(repl, s)
 
 
+AND_SPLIT_RE = re.compile(
+    r"^([A-Z][\w.\'\-]*(?: [A-Z][\w.\'\-]*)+)\s+and\s+([A-Z][\w.\'\-]*(?: [A-Z][\w.\'\-]*)+)$"
+)
+
+
+def split_name_segments_detailed(raw: str) -> list[dict]:
+    """Like split_name_segments, but keeps annotations instead of dropping
+    them, and splits "X and Y" prose (co-coordinators written as a sentence
+    rather than a <br>/pipe-separated list) into two co-holder entries.
+
+    Returns a list of {"name": str, "note": str, "co_holder": bool}. `note`
+    is the raw annotation text found for that segment (parentheticals,
+    text after a semicolon), joined with " | " if there is more than one.
+    `co_holder` is True when two names came from splitting a single "X and
+    Y" segment (they held the role at the same time, not one after another).
+    """
+    cleaned = strip_wiki_markup(raw)
+    segments = [seg.strip() for seg in cleaned.split("|") if seg.strip()]
+    out: list[dict] = []
+    for seg in segments:
+        # pull off parenthetical(s) and any trailing "; ..." as notes, but
+        # keep them instead of discarding
+        notes = []
+        for pm in re.finditer(r"\(([^()]*)\)", seg):
+            notes.append(pm.group(1).strip())
+        name_part = re.sub(r"\(.*?\)", "", seg).strip()
+        if ";" in name_part:
+            head, _, tail = name_part.partition(";")
+            tail = tail.strip()
+            if tail:
+                notes.append(tail)
+            name_part = head.strip()
+        name_part = name_part.rstrip(",").strip()
+        if not name_part:
+            continue
+        if name_part[0].islower():
+            # an annotation-only segment (leftover italic text), not a name;
+            # fold it into the previous entry's note instead of dropping it
+            if out:
+                out[-1]["note"] = " | ".join([n for n in [out[-1]["note"], name_part] if n])
+            continue
+        m = AND_SPLIT_RE.match(name_part)
+        if m:
+            a, b = m.group(1).strip(), m.group(2).strip()
+            note = " | ".join(notes)
+            out.append({"name": a, "note": note, "co_holder": True})
+            out.append({"name": b, "note": note, "co_holder": True})
+        else:
+            out.append({"name": name_part, "note": " | ".join(notes), "co_holder": False})
+    return out
+
+
 def split_name_segments(raw: str) -> list[str]:
     """Split a raw infobox/staff field on '<br>' (already turned into ' | '
     by strip_wiki_markup) and on literal ' | ' if present in source. Each
@@ -266,12 +318,169 @@ def parse_staff_fields(block: str) -> dict[str, list[str]]:
 
 
 def build_team_wiki_names() -> dict[str, str]:
-    path = STUDY / "data" / "reference" / "team_wiki_names.csv"
-    mapping = {}
-    with open(path, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            mapping[row["franchise"]] = row["wiki_team_name"]
+    """Back-compat: single-era mapping, using each franchise's row whose
+    valid range covers the highest season present (i.e. its current name),
+    for callers that only need one name (there are none left after Phase
+    1a, kept only in case older tooling imports this)."""
+    rows = load_team_wiki_names_seasonal()
+    mapping: dict[str, str] = {}
+    for r in rows:
+        mapping[r["franchise"]] = r["wiki_team_name"]  # last row wins == latest era
     return mapping
+
+
+def load_team_wiki_names_seasonal() -> list[dict]:
+    path = STUDY / "data" / "reference" / "team_wiki_names.csv"
+    with open(path, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def wiki_name_for_season(franchise: str, season: int, rows: list[dict]) -> str | None:
+    for r in rows:
+        if r["franchise"] != franchise:
+            continue
+        lo, hi = int(r["valid_from_season"]), int(r["valid_to_season"])
+        if lo <= season <= hi:
+            return r["wiki_team_name"]
+    return None
+
+
+def merge_union(infobox_segs: list[dict], staff_segs: list[dict]) -> list[dict]:
+    """Union of infobox and staff-section segments for one role, in page
+    order: infobox entries first (in their order), then any staff-section
+    entry whose last name isn't already present. Each output entry gets a
+    `source` of "infobox", "staff_section", or "both" (name appears, by
+    last name, in both lists - notes from both sides are combined)."""
+
+    _suffix_re = re.compile(r"^(Jr\.?|Sr\.?|II|III|IV)$", re.IGNORECASE)
+
+    def lastname(n):
+        parts = [p.rstrip(",") for p in n.split()]
+        while parts and _suffix_re.match(parts[-1]):
+            parts.pop()
+        return parts[-1].lower() if parts else n.lower()
+
+    out = []
+    seen = {}
+    for seg in infobox_segs:
+        key = lastname(seg["name"])
+        entry = dict(seg, source="infobox")
+        out.append(entry)
+        seen[key] = entry
+    for seg in staff_segs:
+        key = lastname(seg["name"])
+        if key in seen:
+            existing = seen[key]
+            existing["source"] = "both"
+            if seg["note"] and seg["note"] not in (existing["note"] or ""):
+                existing["note"] = " | ".join([n for n in [existing["note"], seg["note"]] if n])
+        else:
+            entry = dict(seg, source="staff_section")
+            out.append(entry)
+            seen[key] = entry
+    return out
+
+
+def extract_team_season_v2(season: int, franchise: str, wiki_team_name: str) -> tuple[dict, dict]:
+    """Union-based extraction for the 2011-2025 stints table. Returns
+    (row_for_staff_by_season_csv, role_segments) where role_segments is
+    {role: [merged segment dicts]} for the stints builder."""
+    title = f"{season} {wiki_team_name} season"
+    fetched = fetch_wikitext(title)
+    row = {
+        "season": season, "franchise": franchise, "wiki_title": title,
+        "wiki_url": "", "head_coach": "", "offensive_coordinator": "",
+        "defensive_coordinator": "", "n_hc": 0, "n_oc": 0, "n_dc": 0,
+        "source_field": "none", "raw_note": "",
+    }
+    role_segments: dict[str, list[dict]] = {r: [] for r in ROLES}
+    if fetched is None:
+        row["raw_note"] = "PAGE NOT FOUND (404)"
+        return row, role_segments
+    wikitext, url = fetched
+    row["wiki_url"] = url
+
+    infobox_block = extract_infobox_block(wikitext)
+    infobox_fields = parse_infobox_fields(infobox_block) if infobox_block else {}
+    staff_block = extract_staff_block(wikitext)
+    staff_fields = parse_staff_fields(staff_block) if staff_block else {}
+
+    raw_notes = []
+    sources_used = set()
+    for role in ROLES:
+        infobox_raw = infobox_fields.get(role)
+        infobox_segs = split_name_segments_detailed(infobox_raw) if infobox_raw else []
+        staff_raw_list = staff_fields.get(role, [])
+        staff_segs = []
+        for raw in staff_raw_list:
+            staff_segs.extend(split_name_segments_detailed(raw))
+
+        merged = merge_union(infobox_segs, staff_segs)
+        role_segments[role] = merged
+        for seg in merged:
+            sources_used.add(seg["source"])
+
+        col = {"head_coach": "head_coach", "offensive_coordinator": "offensive_coordinator",
+               "defensive_coordinator": "defensive_coordinator"}[role]
+        row[col] = " | ".join(seg["name"] for seg in merged)
+        row[f"n_{'hc' if role == 'head_coach' else ('oc' if role == 'offensive_coordinator' else 'dc')}"] = len(merged)
+        if infobox_raw:
+            raw_notes.append(f"{role} infobox raw: {infobox_raw.strip()[:200]}")
+        if staff_raw_list:
+            raw_notes.append(f"{role} staff raw: {' ; '.join(staff_raw_list)[:200]}")
+
+    if sources_used == {"infobox"}:
+        row["source_field"] = "infobox"
+    elif sources_used == {"staff_section"}:
+        row["source_field"] = "staff_section"
+    elif sources_used:
+        row["source_field"] = "both" if len(sources_used) > 1 else next(iter(sources_used))
+    else:
+        row["source_field"] = "none"
+    row["raw_note"] = " || ".join(raw_notes)
+    return row, role_segments
+
+
+def run_v2(seasons: list[int]) -> tuple[list[dict], list[dict]]:
+    """Returns (staff_by_season_rows, stint_rows) for the given seasons,
+    across all franchises, using the season-aware team-name table."""
+    name_rows = load_team_wiki_names_seasonal()
+    franchises = sorted({r["franchise"] for r in name_rows})
+    staff_rows = []
+    stint_rows = []
+    for season in seasons:
+        for franchise in franchises:
+            wiki_name = wiki_name_for_season(franchise, season, name_rows)
+            if wiki_name is None:
+                staff_rows.append({
+                    "season": season, "franchise": franchise, "wiki_title": "",
+                    "wiki_url": "", "head_coach": "", "offensive_coordinator": "",
+                    "defensive_coordinator": "", "n_hc": 0, "n_oc": 0, "n_dc": 0,
+                    "source_field": "none", "raw_note": "NO WIKI NAME MAPPED FOR THIS SEASON",
+                })
+                continue
+            row, role_segments = extract_team_season_v2(season, franchise, wiki_name)
+            staff_rows.append(row)
+            for role, segs in role_segments.items():
+                n = len(segs)
+                for i, seg in enumerate(segs):
+                    stint_rows.append({
+                        "season": season, "franchise": franchise, "role": ROLE_ABBR[role],
+                        "person": seg["name"], "order_in_season": i + 1,
+                        "n_holders_that_season": n,
+                        "is_co_holder": seg["co_holder"],
+                        "is_interim": _is_interim(seg["note"]),
+                        "note": seg["note"], "source": seg["source"],
+                        "wiki_url": row["wiki_url"],
+                    })
+    return staff_rows, stint_rows
+
+
+ROLE_ABBR = {"head_coach": "HC", "offensive_coordinator": "OC", "defensive_coordinator": "DC"}
+
+
+def _is_interim(note: str) -> bool:
+    return bool(note) and "interim" in note.lower()
 
 
 def extract_team_season(season: int, franchise: str, wiki_team_name: str) -> dict:
@@ -371,14 +580,40 @@ def write_csv(rows: list[dict], path: Path) -> None:
             w.writerow({k: r.get(k, "") for k in OUT_COLUMNS})
 
 
+STINT_COLUMNS = [
+    "season", "franchise", "role", "person", "order_in_season",
+    "n_holders_that_season", "is_co_holder", "is_interim", "note",
+    "source", "wiki_url",
+]
+
+
+def write_stints_csv(rows: list[dict], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=STINT_COLUMNS)
+        w.writeheader()
+        for r in rows:
+            w.writerow({k: r.get(k, "") for k in STINT_COLUMNS})
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seasons", nargs="+", type=int, default=[2022, 2023, 2024])
+    ap.add_argument("--mode", choices=["phase0", "full"], default="phase0")
     args = ap.parse_args()
-    rows = run(args.seasons)
-    out_path = STUDY / "data" / "processed" / "staff_phase0.csv"
-    write_csv(rows, out_path)
-    print(f"wrote {out_path} ({len(rows)} rows)")
+    if args.mode == "phase0":
+        rows = run(args.seasons)
+        out_path = STUDY / "data" / "processed" / "staff_phase0.csv"
+        write_csv(rows, out_path)
+        print(f"wrote {out_path} ({len(rows)} rows)")
+    else:
+        staff_rows, stint_rows = run_v2(args.seasons)
+        staff_path = STUDY / "data" / "processed" / "staff_by_season.csv"
+        stints_path = STUDY / "data" / "processed" / "staff_stints.csv"
+        write_csv(staff_rows, staff_path)
+        write_stints_csv(stint_rows, stints_path)
+        print(f"wrote {staff_path} ({len(staff_rows)} rows)")
+        print(f"wrote {stints_path} ({len(stint_rows)} rows)")
 
 
 if __name__ == "__main__":

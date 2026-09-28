@@ -1,4 +1,35 @@
-# Source: English Wikipedia, Phase 0
+# Source: English Wikipedia, Phase 0 + Phase 1a
+
+## Phase 1a addendum (2026-09-27)
+
+Extended the same fetch (raw wikitext, `action=raw`, same polite fetcher and
+User-Agent) to all 32 franchises for seasons 2011-2025 (480 team-season
+pages total). Seasons 2022-2024 reused the Phase 0 cache (no re-fetch);
+2011-2021 and 2025 were newly fetched (384 new requests). Team names for
+seasons that pre-date a franchise's current identity were resolved through
+the season-aware `data/reference/team_wiki_names.csv` (St. Louis Rams
+2011-2015 / Los Angeles Rams 2016-2025; San Diego Chargers 2011-2016 /
+Los Angeles Chargers 2017-2025; Oakland Raiders 2011-2019 / Las Vegas
+Raiders 2020-2025; Washington Redskins 2011-2019 / Washington Football
+Team 2020-2021 / Washington Commanders 2022-2025) - every one of these
+page titles resolved (HTTP 200; no 404s in this run).
+
+**Total requests this run: 384**, all HTTP 200, appended to
+`data/raw/wikipedia_request_log.txt` (gitignored). Combined with Phase 0's
+108 requests, the cumulative log for this study now has 488 lines. No
+site other than en.wikipedia.org was contacted; rate stayed at <=1
+request/second throughout (enforced by `src/pc_wiki_fetch.py`).
+
+New derived tables produced this phase (all copied from fetched pages,
+same no-outside-knowledge rule as Phase 0):
+`data/processed/staff_by_season.csv`, `data/processed/staff_stints.csv`,
+`data/processed/staff_headcoach_check.csv`,
+`data/processed/coordinator_moves.csv`,
+`data/processed/coordinator_to_headcoach.csv`,
+`data/reference/person_aliases.csv`,
+`data/reference/person_doubtful_pairs.csv`. `data/processed/staff_phase0.csv`
+and `staff_phase0_headcoach_check.csv` are untouched from Phase 0.
+
 
 **Fetched:** 2026-09-27
 **Fetched by:** Claude Sonnet 5 (Phase 0 subagent), on behalf of Brian Clark (1eyebiney@gmail.com)

@@ -87,8 +87,13 @@ def build_check(staff_path: Path) -> pd.DataFrame:
 
 
 def main():
-    staff_path = STUDY / "data" / "processed" / "staff_phase0.csv"
-    out_path = STUDY / "data" / "processed" / "staff_phase0_headcoach_check.csv"
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--staff-path", default=str(STUDY / "data" / "processed" / "staff_phase0.csv"))
+    ap.add_argument("--out", default=str(STUDY / "data" / "processed" / "staff_phase0_headcoach_check.csv"))
+    args = ap.parse_args()
+    staff_path = Path(args.staff_path)
+    out_path = Path(args.out)
     df = build_check(staff_path)
     df.to_csv(out_path, index=False)
     n_match = df["match"].sum()

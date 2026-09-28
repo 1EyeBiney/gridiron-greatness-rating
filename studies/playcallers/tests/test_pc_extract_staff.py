@@ -190,6 +190,77 @@ def test_strip_wiki_markup_removes_refs_and_links():
     assert pcs.strip_wiki_markup(raw).strip() == "Ben Johnson"
 
 
+# ---------------------------------------------- detailed segments (union/notes)
+
+
+def test_detailed_segments_keeps_annotation_as_note_not_dropped():
+    segs = pcs.split_name_segments_detailed("[[Jack Del Rio]] (fired)|[[Ron Rivera]] (interim)")
+    names = [s["name"] for s in segs]
+    assert names == ["Jack Del Rio", "Ron Rivera"]
+    assert segs[0]["note"] == "fired"
+    assert segs[1]["note"] == "interim"
+    assert pcs._is_interim(segs[1]["note"])
+    assert not pcs._is_interim(segs[0]["note"])
+
+
+def test_detailed_segments_splits_and_prose_as_co_holders():
+    segs = pcs.split_name_segments_detailed("Ryan Nielsen and Kris Richard")
+    names = [s["name"] for s in segs]
+    assert names == ["Ryan Nielsen", "Kris Richard"]
+    assert segs[0]["co_holder"] is True
+    assert segs[1]["co_holder"] is True
+
+
+def test_detailed_segments_single_name_not_co_holder():
+    segs = pcs.split_name_segments_detailed("[[Aaron Glenn]]")
+    assert len(segs) == 1
+    assert segs[0]["co_holder"] is False
+
+
+def test_detailed_segments_captures_week_range_annotation():
+    segs = pcs.split_name_segments_detailed("Matt Canada (weeks 1-11)|Eddie Faulkner (weeks 12-18)")
+    assert [s["name"] for s in segs] == ["Matt Canada", "Eddie Faulkner"]
+    assert segs[0]["note"] == "weeks 1-11"
+    assert segs[1]["note"] == "weeks 12-18"
+
+
+def test_merge_union_takes_union_in_page_order_and_tags_source():
+    infobox_segs = pcs.split_name_segments_detailed("[[Matt Canada]]")
+    staff_segs = pcs.split_name_segments_detailed("Matt Canada (fired after Week 11)|Eddie Faulkner")
+    merged = pcs.merge_union(infobox_segs, staff_segs)
+    names = [m["name"] for m in merged]
+    assert names == ["Matt Canada", "Eddie Faulkner"]
+    assert merged[0]["source"] == "both"
+    assert merged[1]["source"] == "staff_section"
+    # the PIT 2023 OC gap the Phase 0 report flagged: infobox-only would
+    # have dropped Eddie Faulkner - the union must keep him.
+    assert any("Faulkner" in n for n in names)
+
+
+def test_merge_union_infobox_only_and_staff_only():
+    infobox_segs = pcs.split_name_segments_detailed("[[Dan Campbell]]")
+    merged = pcs.merge_union(infobox_segs, [])
+    assert merged[0]["source"] == "infobox"
+    merged2 = pcs.merge_union([], pcs.split_name_segments_detailed("[[Dan Campbell]]"))
+    assert merged2[0]["source"] == "staff_section"
+
+
+# ---------------------------------------------- season-aware team names
+
+
+def test_wiki_name_for_season_switches_at_relocation_year():
+    rows = pcs.load_team_wiki_names_seasonal()
+    assert pcs.wiki_name_for_season("LAR", 2015, rows) == "St. Louis Rams"
+    assert pcs.wiki_name_for_season("LAR", 2016, rows) == "Los Angeles Rams"
+    assert pcs.wiki_name_for_season("LAC", 2016, rows) == "San Diego Chargers"
+    assert pcs.wiki_name_for_season("LAC", 2017, rows) == "Los Angeles Chargers"
+    assert pcs.wiki_name_for_season("OAK", 2019, rows) == "Oakland Raiders"
+    assert pcs.wiki_name_for_season("OAK", 2020, rows) == "Las Vegas Raiders"
+    assert pcs.wiki_name_for_season("WSH", 2019, rows) == "Washington Redskins"
+    assert pcs.wiki_name_for_season("WSH", 2020, rows) == "Washington Football Team"
+    assert pcs.wiki_name_for_season("WSH", 2022, rows) == "Washington Commanders"
+
+
 # --------------------------------------------------- anchor checks (if built)
 
 STAFF_CSV = STUDY / "data" / "processed" / "staff_phase0.csv"
@@ -221,3 +292,95 @@ def test_anchors_in_built_csv():
         assert "Macdonald" in dc_for("BAL", season)
 
     assert "Macdonald" in hc_for("SEA", 2024)
+
+
+# ------------------------------------------- Phase 1a anchors (staff_stints)
+
+STINTS_CSV = STUDY / "data" / "processed" / "staff_stints.csv"
+
+
+@pytest.mark.skipif(not STINTS_CSV.exists(), reason="staff_stints.csv not built yet")
+def test_stints_anchor_ben_johnson():
+    df = pd.read_csv(STINTS_CSV)
+
+    def persons(fr, role, seasons):
+        sub = df[(df.franchise == fr) & (df.role == role) & (df.season.isin(seasons))]
+        return set(sub["person"])
+
+    assert persons("DET", "OC", [2022, 2023, 2024]) == {"Ben Johnson"}
+    assert persons("CHI", "HC", [2025]) == {"Ben Johnson"}
+
+
+@pytest.mark.skipif(not STINTS_CSV.exists(), reason="staff_stints.csv not built yet")
+def test_stints_anchor_mike_macdonald():
+    df = pd.read_csv(STINTS_CSV)
+
+    def persons(fr, role, seasons):
+        sub = df[(df.franchise == fr) & (df.role == role) & (df.season.isin(seasons))]
+        return set(sub["person"])
+
+    assert persons("BAL", "DC", [2022, 2023]) == {"Mike Macdonald"}
+    assert persons("SEA", "HC", [2024, 2025]) == {"Mike Macdonald"}
+
+
+@pytest.mark.skipif(not STINTS_CSV.exists(), reason="staff_stints.csv not built yet")
+def test_stints_anchor_kyle_shanahan_multi_franchise_oc_before_sf_hc():
+    df = pd.read_csv(STINTS_CSV)
+    oc_rows = df[(df.role == "OC") & (df.person == "Kyle Shanahan")]
+    oc_franchises = set(oc_rows["franchise"])
+    # OC for more than one franchise before becoming SF head coach in 2017
+    assert len(oc_franchises - {"SF"}) >= 2
+    hc_rows = df[(df.role == "HC") & (df.person == "Kyle Shanahan") & (df.franchise == "SF")]
+    assert hc_rows["season"].min() == 2017
+
+
+# --------------------------------------------------------- movers builders
+# (small inline frames, no network)
+
+
+def _make_stints_df(rows):
+    return pd.DataFrame(rows, columns=[
+        "season", "franchise", "role", "person", "order_in_season",
+        "n_holders_that_season", "is_co_holder", "is_interim", "note",
+        "source", "wiki_url",
+    ])
+
+
+def test_build_coordinator_moves_requires_two_franchises():
+    import pc_build_derived as pcd
+    rows = [
+        (2020, "AAA", "OC", "Coach X", 1, 1, False, False, "", "infobox", ""),
+        (2021, "BBB", "OC", "Coach X", 1, 1, False, False, "", "infobox", ""),
+        (2020, "AAA", "OC", "Coach Y", 1, 1, False, False, "", "infobox", ""),
+        (2021, "AAA", "OC", "Coach Y", 1, 1, False, False, "", "infobox", ""),
+    ]
+    moves = pcd.build_coordinator_moves(_make_stints_df(rows))
+    people = set(moves["person"])
+    assert "Coach X" in people
+    assert "Coach Y" not in people  # only one franchise, not a mover
+
+
+def test_build_coordinator_to_headcoach_requires_later_season():
+    import pc_build_derived as pcd
+    rows = [
+        (2018, "AAA", "OC", "Coach Z", 1, 1, False, False, "", "infobox", ""),
+        (2021, "BBB", "HC", "Coach Z", 1, 1, False, False, "", "infobox", ""),
+        (2019, "CCC", "HC", "Coach W", 1, 1, False, False, "", "infobox", ""),
+        (2018, "CCC", "OC", "Coach W", 1, 1, False, False, "", "infobox", ""),  # HC before OC
+    ]
+    c2h = pcd.build_coordinator_to_headcoach(_make_stints_df(rows))
+    people = set(c2h["person"])
+    assert "Coach Z" in people
+    # Coach W's only HC season (2019) is not after any coordinator season
+    # more recent than 2018... 2019 > 2018, so it *is* a valid case too:
+    assert "Coach W" in people
+
+
+def test_build_aliases_merges_only_suffix_variants():
+    import pc_build_derived as pcd
+    people = ["Pete Carmichael Jr.", "Pete Carmichael", "Mike Smith", "Mike Smyth"]
+    rename_map, alias_rows = pcd.build_aliases(people)
+    assert rename_map["Pete Carmichael"] == "Pete Carmichael Jr."
+    assert "Mike Smith" not in rename_map or rename_map.get("Mike Smith") == "Mike Smith"
+    assert "Mike Smyth" not in rename_map  # different spelling, not merged
+    assert len(alias_rows) == 1
