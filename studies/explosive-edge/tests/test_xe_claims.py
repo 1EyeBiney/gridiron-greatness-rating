@@ -125,6 +125,12 @@ def test_turnover_playoff_coefficient_range_straddles_zero(facts):
     assert facts["playoff_prediction_tod_lower"] < 0 < facts["playoff_prediction_tod_upper"]
 
 
+def test_top25_finish_counts_add_up_and_a_great_margin_is_no_guarantee(facts):
+    f = facts["top25_finish"]
+    assert f["won"] + f["lost_sb"] + f["lost_earlier"] + f["missed"] == 25
+    assert f["won"] < 5 and f["missed"] >= 1          # "a good sign, not a guarantee"
+
+
 def test_where_the_big_plays_went(facts):
     assert facts["decomposition_to_rate"] < facts["decomposition_from_rate"]
     assert facts["decomposition_share_rate_effect"] > 0.8          # "about 90%"

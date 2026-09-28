@@ -194,6 +194,12 @@ def build_facts(t: dict[str, pd.DataFrame]) -> dict:
         "mechanism_1999": mech_1999, "mechanism_2025": mech_2025,
         "trend": trend,
         "leaderboard_top5": top5,
+        "top25_finish": (lambda f: {
+            "won": int((f == "Won Super Bowl").sum()), "lost_sb": int((f == "Lost Super Bowl").sum()),
+            "missed": int((f == "Missed playoffs").sum()),
+            "lost_earlier": int(f.isin(["Lost conference championship", "Lost divisional round",
+                                        "Lost wild-card round"]).sum()),
+        })(t["leaderboard_team_seasons"].head(25)["season_finish"]),
         "garbage_time_comparison": garbage_comparison,
         # convenience: the last era's headline numbers, flattened
         "shift_last_era": shift_era.get(last_era, {}),
@@ -391,7 +397,7 @@ LEADERBOARD_COLS = [
     ("explosive_diff_per_game", "Explosive differential / game", f2, True),
     ("turnover_diff_per_game", "Turnover differential / game", f2, True),
     ("bayes_rating_z", "TSR z", f2, True),
-    ("won_super_bowl", "Won Super Bowl", lambda x: "Yes" if x else "", False),
+    ("season_finish", "Season finish", str, False),
 ]
 
 TOP_OFF_DEF_COLS = [
@@ -401,6 +407,7 @@ TOP_OFF_DEF_COLS = [
     ("explosive_per_game", "Explosive plays / game (off.)", f2, True),
     ("explosive_allowed_per_game", "Explosive plays allowed / game (def.)", f2, True),
     ("points_per_game", "Points / game", f1, True),
+    ("season_finish", "Season finish", str, False),
 ]
 
 TSR_CORR_COLS = [

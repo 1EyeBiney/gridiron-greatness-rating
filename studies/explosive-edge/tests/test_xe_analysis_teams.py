@@ -201,6 +201,41 @@ def test_leaderboard_merge_loses_no_matched_team_seasons():
     assert pd.isna(zz["bayes_rating_z"])
 
 
+def test_season_finish_reads_the_round_from_the_calendar():
+    def g(gid, week, fr, win):
+        return {"game_id": gid, "season": 2010, "week": week, "game_type": "POST", "franchise": fr, "win": win}
+    post = pd.DataFrame([
+        g("w1", 18, "AA", 1.0), g("w1", 18, "BB", 0.0),      # wild card: BB out
+        g("d1", 19, "AA", 1.0), g("d1", 19, "CC", 0.0),      # divisional: CC out
+        g("c1", 20, "AA", 1.0), g("c1", 20, "DD", 0.0),      # conference: DD out
+        g("s1", 21, "AA", 0.0), g("s1", 21, "EE", 1.0),      # Super Bowl: EE beats AA
+        {"game_id": "r", "season": 2010, "week": 1, "game_type": "REG", "franchise": "FF", "win": 1.0},
+    ])
+    fin = xat.season_finish(post).set_index("franchise")["season_finish"].to_dict()
+    assert fin == {"AA": "Lost Super Bowl", "BB": "Lost wild-card round", "CC": "Lost divisional round",
+                   "DD": "Lost conference championship", "EE": "Won Super Bowl"}
+
+
+def test_leaderboard_marks_teams_with_no_playoff_game_as_missed():
+    tg = pd.DataFrame([_ts_row("AA", 2010, game_id="1", week=1), _ts_row("FF", 2010, game_id="2", week=1)])
+    tsr = pd.DataFrame({"season": [], "franchise": [], "bayes_rating_z": [], "won_super_bowl": [], "reached_super_bowl": []})
+    fin = pd.DataFrame({"season": [2010], "franchise": ["AA"], "season_finish": ["Lost divisional round"]})
+    board, _ = xat.leaderboard(tg, tsr, fin)
+    got = board.set_index("franchise")["season_finish"].to_dict()
+    assert got == {"AA": "Lost divisional round", "FF": "Missed playoffs"}
+
+
+def test_real_season_finish_agrees_with_the_main_sites_super_bowl_flags():
+    board = pd.read_csv(xat.OUT / "leaderboard_team_seasons.csv")
+    if "season_finish" not in board.columns:
+        pytest.skip("leaderboard not regenerated")
+    known = board.dropna(subset=["won_super_bowl"])
+    assert ((known["season_finish"] == "Won Super Bowl") == known["won_super_bowl"].astype(bool)).all()
+    in_sb = known["season_finish"].isin(["Won Super Bowl", "Lost Super Bowl"])
+    assert (in_sb == known["reached_super_bowl"].astype(bool)).all()
+    assert (board.groupby("season")["season_finish"].apply(lambda s: (s == "Won Super Bowl").sum()) == 1).all()
+
+
 def test_leaderboard_sorted_by_explosive_diff_descending():
     tg = pd.DataFrame([
         _ts_row("AA", 2010, game_id="1", week=1, explosive_20_10_diff=5.0),

@@ -287,7 +287,36 @@ def head_to_head_by_season(team_game: pd.DataFrame, exp_col: str = "explosive_20
 # -------------------------------------------------------------------- F
 
 
-def leaderboard(team_game: pd.DataFrame, tsr: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
+FINISH_MISSED = "Missed playoffs"
+# rounds counted back from the last postseason week of a season
+_ROUNDS_FROM_END = {0: "Super Bowl", 1: "conference championship", 2: "divisional round", 3: "wild-card round"}
+
+
+def season_finish(all_team_game: pd.DataFrame) -> pd.DataFrame:
+    """Where each playoff team's season ended: one row per (season,
+    franchise) that played a postseason game, with `season_finish` such as
+    "Won Super Bowl", "Lost Super Bowl", "Lost conference championship",
+    "Lost divisional round", "Lost wild-card round".
+
+    The aggregate labels every playoff game "POST" without a round, so the
+    round is read from the calendar: a season's last postseason week is the
+    Super Bowl, the week before it the conference championships, and so on
+    (every season 1999-2025 has exactly four postseason weeks). A team's
+    finish is the round of its last postseason game."""
+    post = all_team_game[all_team_game["game_type"] == "POST"].copy()
+    if post.empty:
+        return pd.DataFrame(columns=["season", "franchise", "season_finish"])
+    weeks = post.groupby("season")["week"].transform(lambda w: w.rank(method="dense", ascending=False)) - 1
+    post["round"] = weeks.astype(int).map(_ROUNDS_FROM_END).fillna("wild-card round")
+    last = post.sort_values("week").groupby(["season", "franchise"], as_index=False).tail(1)
+    won = last["win"] == 1
+    last["season_finish"] = np.where(won & (last["round"] == "Super Bowl"), "Won Super Bowl",
+                                     "Lost " + last["round"])
+    return last[["season", "franchise", "season_finish"]].reset_index(drop=True)
+
+
+def leaderboard(team_game: pd.DataFrame, tsr: pd.DataFrame,
+                finish: pd.DataFrame | None = None) -> tuple[pd.DataFrame, list[str]]:
     """Per-team-season leaderboard merged with the main project's True
     Strength Rating. Returns (leaderboard_df, unmatched_franchise_codes) -
     unmatched codes are team-seasons present in team_game but with no TSR
@@ -315,6 +344,9 @@ def leaderboard(team_game: pd.DataFrame, tsr: pd.DataFrame) -> tuple[pd.DataFram
     board = pd.DataFrame(rows)
 
     merged = board.merge(tsr, on=["season", "franchise"], how="left")
+    if finish is not None:
+        merged = merged.merge(finish, on=["season", "franchise"], how="left")
+        merged["season_finish"] = merged["season_finish"].fillna(FINISH_MISSED)
     unmatched_mask = merged["bayes_rating_z"].isna()
     unmatched = sorted(merged.loc[unmatched_mask, "franchise"].unique().tolist())
     merged = merged.sort_values("explosive_diff_per_game", ascending=False).reset_index(drop=True)
@@ -381,7 +413,9 @@ def run() -> dict:
     h_season.to_csv(OUT / "head_to_head_by_season.csv", index=False)
     h_ng_era.to_csv(OUT / "head_to_head_ng_by_era.csv", index=False)
 
-    board, unmatched = leaderboard(tg, tsr)
+    all_games = pd.read_csv(TEAM_GAME_CSV)
+    all_games = all_games[all_games["season"].between(FIRST_SEASON, LAST_SEASON)]
+    board, unmatched = leaderboard(tg, tsr, season_finish(all_games))
     board.to_csv(OUT / "leaderboard_team_seasons.csv", index=False)
     board.sort_values("explosive_per_game", ascending=False).head(25).to_csv(
         OUT / "leaderboard_top_offenses.csv", index=False)
