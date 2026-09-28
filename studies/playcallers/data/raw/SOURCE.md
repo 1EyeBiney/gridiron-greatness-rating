@@ -112,3 +112,72 @@ pages themselves).
   every name in them is copied (after markup-stripping) from a raw fetched
   page, cited by `wiki_title`/`wiki_url` and `raw_note` (the raw field text)
   in the CSV itself. No name was filled in from the author's own knowledge.
+
+## Phase 1c addendum (2026-09-27): gap-filling OC/DC from other Wikipedia pages
+
+Request log was at 1335 lines before this phase; 19 new requests were made
+(log now at 1354), all en.wikipedia.org, all in the foreground one at a
+time, well under the 500-request budget (stop-before-1835 limit).
+
+Requests broken down:
+- 4 speculative fetches of "Template:<Team> offensive/defensive coordinator
+  navbox" and similar direct-title guesses (all 404).
+- 3 MediaWiki API searches (`action=query&list=search&srnamespace=10`) for
+  Template-namespace pages matching "<team> offensive/defensive
+  coordinator" and "offensive coordinator navbox" phrasing.
+- 2 more direct-title guesses ("Template:<Team> offensive/defensive
+  coordinators", no "navbox") plus 2 "List of <Team> ... coordinators"
+  guesses (all 404 except "List of Dallas Cowboys head coaches", not used -
+  head coaches were not a gap).
+- 2 fetches of the current league-wide "Template:NFL offensive/defensive
+  coordinators" navboxes, to check whether they could resolve the one
+  2025 gap (TB DC); not used, see report (they reflect the *current*,
+  2026-offseason snapshot, not confirmed as of end of the 2025 season).
+- The remaining ~6 requests were re-tries/variants during the above
+  exploration.
+
+Finding: Source B1 (per-team historical coordinator navigation templates
+with year ranges) does not exist on Wikipedia for the teams tested. All
+gap-filling in this phase therefore comes from Source B2 only: the
+`pastcoaching` infobox field of the 297 coach biography pages already
+cached in Phase 1b (zero new requests needed for this - all reused from
+cache). See `docs/PHASE1C_REPORT.md` for full detail, coverage numbers,
+and every name filled, each cited to its biography page URL.
+
+## Phase 1d addendum (2026-09-27): second gap-fill pass, more biographies
+
+Request log was at 1354 lines before this pass; 203 new requests were made
+(log now at 1557), all en.wikipedia.org, all in the foreground one at a
+time, in two batches (100 then 102 requests, `--max-requests 100` per
+invocation, `tasklist | grep -i python` checked clear before each). Well
+under the 450-request budget (stop-before-1804 limit) for this pass.
+
+Built a priority candidate list of 192 not-yet-cached names
+(`data/reference/gapfill2_fetch_candidates.csv`):
+- Tier 1a (66 names): a "discovery scan" of the cached team-season-page
+  wikitext for each franchise/season that still had a gap (and its
+  adjacent seasons) - sentences mentioning "offensive coordinator" or
+  "defensive coordinator", with the single nearest wikilinked person name
+  in that sentence taken as a candidate. This never fills a gap by itself
+  (see docs/PHASE1C_REPORT.md); it only decides who to fetch a biography
+  for next.
+- Tier 1b (53 names): other staff (any role) of a franchise that still has
+  a gap, in a season within 3 years of one of that franchise's gap
+  seasons.
+- Tier 2 (72 names): everyone else appearing in staff_stints_all.csv or in
+  home_coach/away_coach of studies/home-field-advantage's games.csv,
+  season 1999-2012.
+- Tier 3 (1 name): the rest.
+
+151 of the 192 were not already in playcaller_bio_resolution.csv; all 151
+were attempted this pass (title-guess resolution identical to
+pc_playcall_evidence.resolve_biography_title: try "Name", "Name (American
+football)", "Name (American football coach)", reject disambiguation pages
+and pages whose first ~1500 characters don't read as an American-football-
+coach biography). 137 resolved, 14 did not.
+
+The biography coaching-history parse, gap fill, source validation, and
+combined table (Phase 1c steps 3-6) were then re-run over all 434 cached
+biographies (297 from Phase 1b + 137 new). Results: 46 additional gaps
+filled (168/283 total, up from 122), agreement rate 98.7% (1,157/1,172,
+up from 1,019/1,030). Full detail in docs/PHASE1C_REPORT.md.

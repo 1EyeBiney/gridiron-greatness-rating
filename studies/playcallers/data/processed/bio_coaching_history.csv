@@ -1,0 +1,836 @@
+person,franchise,team_wiki_name,first_season,last_season,role,title_raw,is_interim,is_co,source_url
+Aaron Glenn,DET,Detroit Lions,2021,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Aaron_Glenn
+Aaron Glenn,NYJ,New York Jets,2025,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Aaron_Glenn
+Aaron Kromer,NO,New Orleans Saints,2012,2012,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Aaron_Kromer
+Aaron Kromer,CHI,Chicago Bears,2013,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Aaron_Kromer
+Adam Gase,DEN,Denver Broncos,2013,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Adam_Gase
+Adam Gase,CHI,Chicago Bears,2015,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Adam_Gase
+Adam Gase,MIA,Miami Dolphins,2016,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Adam_Gase
+Adam Gase,NYJ,New York Jets,2019,2020,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Adam_Gase
+Andy Reid,PHI,Philadelphia Eagles,1999,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Andy_Reid
+Andy Reid,KC,Kansas City Chiefs,2013,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Andy_Reid
+Anthony Lynn,BUF,Buffalo Bills,2016,2016,OC,Interim head coach & offensive coordinator,True,False,https://en.wikipedia.org/wiki/Anthony_Lynn
+Anthony Lynn,BUF,Buffalo Bills,2016,2016,HC,Interim head coach & offensive coordinator,True,False,https://en.wikipedia.org/wiki/Anthony_Lynn
+Anthony Lynn,LAC,Los Angeles Chargers,2017,2020,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Anthony_Lynn
+Anthony Lynn,DET,Detroit Lions,2021,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Anthony_Lynn
+Antonio Pierce,OAK,Las Vegas Raiders,2023,2023,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Antonio_Pierce
+Antonio Pierce,OAK,Las Vegas Raiders,2024,2024,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Antonio_Pierce
+Ben McAdoo,NYG,New York Giants,2014,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ben_McAdoo
+Ben McAdoo,NYG,New York Giants,2016,2017,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Ben_McAdoo
+Ben McAdoo,CAR,Carolina Panthers,2022,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ben_McAdoo
+Bill Belichick,NYJ,New York Jets,1999,1999,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Belichick
+Bill Belichick,NE,New England Patriots,2000,2023,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Bill_Belichick
+Brandon Staley,LAR,Los Angeles Rams,2020,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Brandon_Staley
+Brandon Staley,LAC,Los Angeles Chargers,2021,2023,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Brandon_Staley
+Brandon Staley,NO,New Orleans Saints,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Brandon_Staley
+Brian Callahan,CIN,Cincinnati Bengals,2019,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Callahan
+Brian Callahan,TEN,Tennessee Titans,2024,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Brian_Callahan
+Brian Daboll,CLE,Cleveland Browns,2009,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Daboll
+Brian Daboll,MIA,Miami Dolphins,2011,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Daboll
+Brian Daboll,KC,Kansas City Chiefs,2012,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Daboll
+Brian Daboll,BUF,Buffalo Bills,2018,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Daboll
+Brian Daboll,NYG,New York Giants,2022,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Brian_Daboll
+Brian Flores,MIA,Miami Dolphins,2019,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Brian_Flores
+Brian Flores,MIN,Minnesota Vikings,2023,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Flores
+Brian Schottenheimer,NYJ,New York Jets,2006,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Schottenheimer
+Brian Schottenheimer,LAR,St. Louis Rams,2012,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Schottenheimer
+Brian Schottenheimer,SEA,Seattle Seahawks,2018,2020,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Schottenheimer
+Brian Schottenheimer,DAL,Dallas Cowboys,2023,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Schottenheimer
+Brian Schottenheimer,DAL,Dallas Cowboys,2025,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Brian_Schottenheimer
+Bruce Arians,CLE,Cleveland Browns,2001,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bruce_Arians
+Bruce Arians,PIT,Pittsburgh Steelers,2007,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bruce_Arians
+Bruce Arians,IND,Indianapolis Colts,2012,2012,OC,Offensive coordinator & interim head coach,True,False,https://en.wikipedia.org/wiki/Bruce_Arians
+Bruce Arians,IND,Indianapolis Colts,2012,2012,HC,Offensive coordinator & interim head coach,True,False,https://en.wikipedia.org/wiki/Bruce_Arians
+Bruce Arians,ARI,Arizona Cardinals,2013,2017,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Bruce_Arians
+Bruce Arians,TB,Tampa Bay Buccaneers,2019,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Bruce_Arians
+Chan Gailey,DAL,Dallas Cowboys,1999,1999,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Chan_Gailey
+Chan Gailey,MIA,Miami Dolphins,2000,2001,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Chan_Gailey
+Chan Gailey,KC,Kansas City Chiefs,2008,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Chan_Gailey
+Chan Gailey,BUF,Buffalo Bills,2010,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Chan_Gailey
+Chan Gailey,NYJ,New York Jets,2015,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Chan_Gailey
+Chan Gailey,MIA,Miami Dolphins,2020,2020,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Chan_Gailey
+Chris Tabor,CAR,Carolina Panthers,2023,2023,HC,Interim head coach & special teams coordinator,True,False,https://en.wikipedia.org/wiki/Chris_Tabor
+Chuck Pagano,BAL,Baltimore Ravens,2011,2011,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Chuck_Pagano
+Chuck Pagano,IND,Indianapolis Colts,2012,2017,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Chuck_Pagano
+Chuck Pagano,CHI,Chicago Bears,2019,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Chuck_Pagano
+Dan Campbell,MIA,Miami Dolphins,2015,2015,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Dan_Campbell
+Dan Campbell,DET,Detroit Lions,2021,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dan_Campbell
+Darrell Bevell,MIN,Minnesota Vikings,2006,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Darrell_Bevell
+Darrell Bevell,SEA,Seattle Seahawks,2011,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Darrell_Bevell
+Darrell Bevell,DET,Detroit Lions,2019,2020,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Darrell_Bevell
+Darrell Bevell,DET,Detroit Lions,2020,2020,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Darrell_Bevell
+Darrell Bevell,JAX,Jacksonville Jaguars,2021,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Darrell_Bevell
+Darrell Bevell,JAX,Jacksonville Jaguars,2021,2021,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Darrell_Bevell
+Darren Rizzi,MIA,Miami Dolphins,2017,2018,HC,Associate head coach & special teams coordinator,False,False,https://en.wikipedia.org/wiki/Darren_Rizzi
+Darren Rizzi,NO,New Orleans Saints,2024,2024,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Darren_Rizzi
+Dave Canales,TB,Tampa Bay Buccaneers,2023,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dave_Canales
+Dave Canales,CAR,Carolina Panthers,2024,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dave_Canales
+David Culley,HOU,Houston Texans,2021,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/David_Culley
+DeMeco Ryans,SF,San Francisco 49ers,2021,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/DeMeco_Ryans
+DeMeco Ryans,HOU,Houston Texans,2023,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/DeMeco_Ryans
+Dennis Allen,DEN,Denver Broncos,2011,2011,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dennis_Allen_(American_football)
+Dennis Allen,OAK,Oakland Raiders,2012,2014,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dennis_Allen_(American_football)
+Dennis Allen,NO,New Orleans Saints,2015,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dennis_Allen_(American_football)
+Dennis Allen,NO,New Orleans Saints,2022,2024,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dennis_Allen_(American_football)
+Dennis Allen,CHI,Chicago Bears,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dennis_Allen_(American_football)
+Dirk Koetter,JAX,Jacksonville Jaguars,2007,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dirk_Koetter
+Dirk Koetter,ATL,Atlanta Falcons,2012,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dirk_Koetter
+Dirk Koetter,TB,Tampa Bay Buccaneers,2015,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dirk_Koetter
+Dirk Koetter,TB,Tampa Bay Buccaneers,2016,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dirk_Koetter
+Dirk Koetter,ATL,Atlanta Falcons,2019,2020,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dirk_Koetter
+Doug Marrone,NO,New Orleans Saints,2006,2008,OC,Offensive coordinator & offensive line coach,False,False,https://en.wikipedia.org/wiki/Doug_Marrone
+Doug Marrone,BUF,Buffalo Bills,2013,2014,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Doug_Marrone
+Doug Marrone,JAX,Jacksonville Jaguars,2016,2016,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Doug_Marrone
+Doug Marrone,JAX,Jacksonville Jaguars,2017,2020,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Doug_Marrone
+Doug Pederson,KC,Kansas City Chiefs,2013,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Doug_Pederson
+Doug Pederson,PHI,Philadelphia Eagles,2016,2020,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Doug_Pederson
+Doug Pederson,JAX,Jacksonville Jaguars,2022,2024,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Doug_Pederson
+Frank Reich,LAC,San Diego Chargers,2014,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Frank_Reich
+Frank Reich,PHI,Philadelphia Eagles,2016,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Frank_Reich
+Frank Reich,IND,Indianapolis Colts,2018,2022,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Frank_Reich
+Frank Reich,CAR,Carolina Panthers,2023,2023,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Frank_Reich
+Freddie Kitchens,CLE,Cleveland Browns,2018,2018,HC,Associate head coach & running backs coach,False,False,https://en.wikipedia.org/wiki/Freddie_Kitchens
+Freddie Kitchens,CLE,Cleveland Browns,2018,2018,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Freddie_Kitchens
+Freddie Kitchens,CLE,Cleveland Browns,2019,2019,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Freddie_Kitchens
+Freddie Kitchens,NYG,New York Giants,2021,2021,OC,Senior offensive assistant & interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Freddie_Kitchens
+Gary Kubiak,DEN,Denver Broncos,1999,2002,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Gary_Kubiak
+Gary Kubiak,DEN,Denver Broncos,2003,2005,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Gary_Kubiak
+Gary Kubiak,HOU,Houston Texans,2006,2013,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Gary_Kubiak
+Gary Kubiak,BAL,Baltimore Ravens,2014,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Gary_Kubiak
+Gary Kubiak,DEN,Denver Broncos,2015,2016,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Gary_Kubiak
+Gary Kubiak,MIN,Minnesota Vikings,2020,2020,OC,Assistant head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Gary_Kubiak
+Giff Smith,LAC,Los Angeles Chargers,2023,2023,HC,Interim head coach & outside linebackers coach,True,False,https://en.wikipedia.org/wiki/Giff_Smith
+Gregg Williams,BUF,Buffalo Bills,2001,2003,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gregg Williams,WSH,Washington Redskins,2004,2007,DC,Defensive coordinator & assistant head coach,False,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gregg Williams,JAX,Jacksonville Jaguars,2008,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gregg Williams,NO,New Orleans Saints,2009,2011,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gregg Williams,LAR,St. Louis Rams,2012,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gregg Williams,CLE,Cleveland Browns,2017,2018,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gregg Williams,CLE,Cleveland Browns,2018,2018,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gregg Williams,NYJ,New York Jets,2019,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gregg_Williams
+Gus Bradley,SEA,Seattle Seahawks,2009,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gus_Bradley
+Gus Bradley,JAX,Jacksonville Jaguars,2013,2016,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Gus_Bradley
+Gus Bradley,LAC,Los Angeles Chargers,2017,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gus_Bradley
+Gus Bradley,OAK,Las Vegas Raiders,2021,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gus_Bradley
+Gus Bradley,IND,Indianapolis Colts,2022,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gus_Bradley
+Hue Jackson,WSH,Washington Redskins,2003,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Hue_Jackson
+Hue Jackson,ATL,Atlanta Falcons,2007,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Hue_Jackson
+Hue Jackson,OAK,Oakland Raiders,2010,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Hue_Jackson
+Hue Jackson,OAK,Oakland Raiders,2011,2011,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Hue_Jackson
+Hue Jackson,CIN,Cincinnati Bengals,2014,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Hue_Jackson
+Hue Jackson,CLE,Cleveland Browns,2016,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Hue_Jackson
+Jack Del Rio,CAR,Carolina Panthers,2002,2002,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jack_Del_Rio
+Jack Del Rio,JAX,Jacksonville Jaguars,2003,2011,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jack_Del_Rio
+Jack Del Rio,DEN,Denver Broncos,2012,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jack_Del_Rio
+Jack Del Rio,OAK,Oakland Raiders,2015,2017,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jack_Del_Rio
+Jason Garrett,DAL,Dallas Cowboys,2007,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jason_Garrett
+Jason Garrett,DAL,Dallas Cowboys,2008,2010,OC,Assistant head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jason_Garrett
+Jason Garrett,DAL,Dallas Cowboys,2010,2010,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Jason_Garrett
+Jason Garrett,DAL,Dallas Cowboys,2011,2019,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jason_Garrett
+Jason Garrett,NYG,New York Giants,2020,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jason_Garrett
+Jay Gruden,CIN,Cincinnati Bengals,2011,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jay_Gruden
+Jay Gruden,WSH,Washington Redskins,2014,2019,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jay_Gruden
+Jay Gruden,JAX,Jacksonville Jaguars,2020,2020,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jay_Gruden
+Jeff Saturday,IND,Indianapolis Colts,2022,2022,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Jeff_Saturday
+Jeff Ulbrich,ATL,Atlanta Falcons,2020,2020,DC,Interim defensive coordinator & linebackers coach,True,False,https://en.wikipedia.org/wiki/Jeff_Ulbrich
+Jeff Ulbrich,NYJ,New York Jets,2021,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jeff_Ulbrich
+Jeff Ulbrich,NYJ,New York Jets,2024,2024,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Jeff_Ulbrich
+Jeff Ulbrich,ATL,Atlanta Falcons,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jeff_Ulbrich
+Jerod Mayo,NE,New England Patriots,2024,2024,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jerod_Mayo
+Jerry Rosburg,DEN,Denver Broncos,2022,2022,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Jerry_Rosburg
+Jim Harbaugh,SF,San Francisco 49ers,2011,2014,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jim_Harbaugh
+Jim Harbaugh,LAC,Los Angeles Chargers,2024,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jim_Harbaugh
+Jim Schwartz,TEN,Tennessee Titans,2001,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Schwartz
+Jim Schwartz,DET,Detroit Lions,2009,2013,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jim_Schwartz
+Jim Schwartz,BUF,Buffalo Bills,2014,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Schwartz
+Jim Schwartz,PHI,Philadelphia Eagles,2016,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Schwartz
+Jim Schwartz,CLE,Cleveland Browns,2023,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Schwartz
+Jim Tomsula,SF,San Francisco 49ers,2007,2014,HC,Defensive line coach<br>Interim head coach (2010),True,False,https://en.wikipedia.org/wiki/Jim_Tomsula
+Jim Tomsula,SF,San Francisco 49ers,2015,2015,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jim_Tomsula
+Joe Judge,NYG,New York Giants,2020,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Joe_Judge_(American_football)
+Joe Philbin,GB,Green Bay Packers,2007,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Philbin
+Joe Philbin,MIA,Miami Dolphins,2012,2015,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Joe_Philbin
+Joe Philbin,GB,Green Bay Packers,2018,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Philbin
+Joe Philbin,GB,Green Bay Packers,2018,2018,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Joe_Philbin
+Joe Vitt,NO,New Orleans Saints,2012,2012,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Joe_Vitt
+John Fox,NYG,New York Giants,1999,2001,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/John_Fox_(American_football)
+John Fox,CAR,Carolina Panthers,2002,2010,HC,Head coach,False,False,https://en.wikipedia.org/wiki/John_Fox_(American_football)
+John Fox,DEN,Denver Broncos,2011,2014,HC,Head coach,False,False,https://en.wikipedia.org/wiki/John_Fox_(American_football)
+John Fox,CHI,Chicago Bears,2015,2017,HC,Head coach,False,False,https://en.wikipedia.org/wiki/John_Fox_(American_football)
+John Harbaugh,BAL,Baltimore Ravens,2008,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/John_Harbaugh
+Jon Gruden,OAK,Oakland Raiders,1999,2001,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jon_Gruden
+Jon Gruden,TB,Tampa Bay Buccaneers,2002,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jon_Gruden
+Jonathan Gannon,PHI,Philadelphia Eagles,2021,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jonathan_Gannon
+Jonathan Gannon,ARI,Arizona Cardinals,2023,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jonathan_Gannon
+Josh McDaniels,NE,New England Patriots,2006,2008,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Josh_McDaniels
+Josh McDaniels,DEN,Denver Broncos,2009,2010,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Josh_McDaniels
+Josh McDaniels,LAR,St. Louis Rams,2011,2011,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Josh_McDaniels
+Josh McDaniels,NE,New England Patriots,2012,2021,OC,"Offensive coordinator & quarterbacks coach{{efn|In 2020, Jedd Fisch took over as quarterbacks coach from McDaniels}}",False,False,https://en.wikipedia.org/wiki/Josh_McDaniels
+Josh McDaniels,OAK,Las Vegas Raiders,2022,2023,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Josh_McDaniels
+Josh McDaniels,NE,New England Patriots,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Josh_McDaniels
+Kellen Moore,DAL,Dallas Cowboys,2019,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kellen_Moore
+Kellen Moore,LAC,Los Angeles Chargers,2023,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kellen_Moore
+Kellen Moore,PHI,Philadelphia Eagles,2024,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kellen_Moore
+Kellen Moore,NO,New Orleans Saints,2025,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Kellen_Moore
+Ken Whisenhunt,PIT,Pittsburgh Steelers,2004,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ken_Whisenhunt
+Ken Whisenhunt,ARI,Arizona Cardinals,2007,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Ken_Whisenhunt
+Ken Whisenhunt,LAC,San Diego Chargers,2013,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ken_Whisenhunt
+Ken Whisenhunt,TEN,Tennessee Titans,2014,2015,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Ken_Whisenhunt
+Kevin O'Connell,WSH,Washington Redskins,2019,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kevin_O'Connell_(American_football)
+Kevin O'Connell,LAR,Los Angeles Rams,2020,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kevin_O'Connell_(American_football)
+Kevin O'Connell,MIN,Minnesota Vikings,2022,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Kevin_O'Connell_(American_football)
+Kevin Stefanski,MIN,Minnesota Vikings,2006,2008,HC,Assistant to the head coach,False,False,https://en.wikipedia.org/wiki/Kevin_Stefanski
+Kevin Stefanski,MIN,Minnesota Vikings,2018,2018,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Kevin_Stefanski
+Kevin Stefanski,MIN,Minnesota Vikings,2019,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kevin_Stefanski
+Kevin Stefanski,CLE,Cleveland Browns,2020,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Kevin_Stefanski
+Kliff Kingsbury,ARI,Arizona Cardinals,2019,2022,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Kliff_Kingsbury
+Kliff Kingsbury,WSH,Washington Commanders,2024,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kliff_Kingsbury
+Kyle Shanahan,HOU,Houston Texans,2008,2009,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kyle_Shanahan
+Kyle Shanahan,WSH,Washington Redskins,2010,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kyle_Shanahan
+Kyle Shanahan,CLE,Cleveland Browns,2014,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kyle_Shanahan
+Kyle Shanahan,ATL,Atlanta Falcons,2015,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kyle_Shanahan
+Kyle Shanahan,SF,San Francisco 49ers,2017,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Kyle_Shanahan
+Leslie Frazier,CIN,Cincinnati Bengals,2003,2004,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Leslie Frazier,MIN,Minnesota Vikings,2007,2007,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Leslie Frazier,MIN,Minnesota Vikings,2008,2010,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Leslie Frazier,MIN,Minnesota Vikings,2010,2010,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Leslie Frazier,MIN,Minnesota Vikings,2011,2013,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Leslie Frazier,TB,Tampa Bay Buccaneers,2014,2015,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Leslie Frazier,BUF,Buffalo Bills,2017,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Leslie Frazier,BUF,Buffalo Bills,2020,2022,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Leslie_Frazier
+Liam Coen,LAR,Los Angeles Rams,2022,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Liam_Coen
+Liam Coen,TB,Tampa Bay Buccaneers,2024,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Liam_Coen
+Liam Coen,JAX,Jacksonville Jaguars,2025,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Liam_Coen
+Lovie Smith,LAR,St. Louis Rams,2001,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Lovie_Smith
+Lovie Smith,CHI,Chicago Bears,2004,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Lovie_Smith
+Lovie Smith,TB,Tampa Bay Buccaneers,2014,2015,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Lovie_Smith
+Lovie Smith,HOU,Houston Texans,2021,2021,DC,Associate head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Lovie_Smith
+Lovie Smith,HOU,Houston Texans,2021,2021,HC,Associate head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Lovie_Smith
+Lovie Smith,HOU,Houston Texans,2022,2022,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Lovie_Smith
+Marc Trestman,ARI,Arizona Cardinals,1999,2000,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Marc_Trestman
+Marc Trestman,OAK,Oakland Raiders,2001,2003,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Marc_Trestman
+Marc Trestman,CHI,Chicago Bears,2013,2014,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Marc_Trestman
+Marc Trestman,BAL,Baltimore Ravens,2015,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Marc_Trestman
+Marvin Lewis,BAL,Baltimore Ravens,1999,2001,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Marvin_Lewis
+Marvin Lewis,WSH,Washington Redskins,2002,2002,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Marvin_Lewis
+Marvin Lewis,CIN,Cincinnati Bengals,2003,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Marvin_Lewis
+Matt Eberflus,IND,Indianapolis Colts,2018,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Eberflus
+Matt Eberflus,CHI,Chicago Bears,2022,2024,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Matt_Eberflus
+Matt Eberflus,DAL,Dallas Cowboys,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Eberflus
+Matt LaFleur,LAR,Los Angeles Rams,2017,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_LaFleur
+Matt LaFleur,TEN,Tennessee Titans,2018,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_LaFleur
+Matt LaFleur,GB,Green Bay Packers,2019,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Matt_LaFleur
+Matt Nagy,KC,Kansas City Chiefs,2016,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Nagy
+Matt Nagy,CHI,Chicago Bears,2018,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Matt_Nagy
+Matt Nagy,KC,Kansas City Chiefs,2023,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Nagy
+Matt Patricia,NE,New England Patriots,2012,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Patricia
+Matt Patricia,DET,Detroit Lions,2018,2020,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Matt_Patricia
+Mike Kafka,NYG,New York Giants,2022,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Kafka
+Mike Kafka,NYG,New York Giants,2024,2025,OC,Assistant head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Kafka
+Mike Kafka,NYG,New York Giants,2025,2025,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Mike_Kafka
+Mike Macdonald,BAL,Baltimore Ravens,2022,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Macdonald
+Mike Macdonald,SEA,Seattle Seahawks,2024,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Macdonald
+Mike McCarthy,NO,New Orleans Saints,2000,2004,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_McCarthy
+Mike McCarthy,SF,San Francisco 49ers,2005,2005,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_McCarthy
+Mike McCarthy,GB,Green Bay Packers,2006,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_McCarthy
+Mike McCarthy,DAL,Dallas Cowboys,2020,2024,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_McCarthy
+Mike McDaniel,SF,San Francisco 49ers,2021,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_McDaniel
+Mike McDaniel,MIA,Miami Dolphins,2022,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_McDaniel
+Mike Mularkey,PIT,Pittsburgh Steelers,2001,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Mularkey
+Mike Mularkey,BUF,Buffalo Bills,2004,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Mularkey
+Mike Mularkey,MIA,Miami Dolphins,2006,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Mularkey
+Mike Mularkey,ATL,Atlanta Falcons,2008,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Mularkey
+Mike Mularkey,JAX,Jacksonville Jaguars,2012,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Mularkey
+Mike Mularkey,TEN,Tennessee Titans,2016,2017,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Mularkey
+Mike Munchak,TEN,Tennessee Titans,2011,2013,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Munchak
+Mike Pettine,NYJ,New York Jets,2009,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Pettine
+Mike Pettine,BUF,Buffalo Bills,2013,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Pettine
+Mike Pettine,CLE,Cleveland Browns,2014,2015,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Pettine
+Mike Pettine,GB,Green Bay Packers,2018,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Pettine
+Mike Shanahan,DEN,Denver Broncos,1999,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Shanahan
+Mike Shanahan,WSH,Washington Redskins,2010,2013,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Shanahan
+Mike Tomlin,MIN,Minnesota Vikings,2006,2006,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Tomlin
+Mike Tomlin,PIT,Pittsburgh Steelers,2007,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Tomlin
+Mike Vrabel,HOU,Houston Texans,2017,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Vrabel
+Mike Vrabel,TEN,Tennessee Titans,2018,2023,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Vrabel
+Mike Vrabel,NE,New England Patriots,2025,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Vrabel
+Mike Zimmer,DAL,Dallas Cowboys,2000,2006,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Zimmer
+Mike Zimmer,ATL,Atlanta Falcons,2007,2007,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Zimmer
+Mike Zimmer,CIN,Cincinnati Bengals,2008,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Zimmer
+Mike Zimmer,MIN,Minnesota Vikings,2014,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Zimmer
+Mike Zimmer,DAL,Dallas Cowboys,2024,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Zimmer
+Nathaniel Hackett,BUF,Buffalo Bills,2013,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Nathaniel_Hackett
+Nathaniel Hackett,JAX,Jacksonville Jaguars,2016,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Nathaniel_Hackett
+Nathaniel Hackett,GB,Green Bay Packers,2019,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Nathaniel_Hackett
+Nathaniel Hackett,DEN,Denver Broncos,2022,2022,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Nathaniel_Hackett
+Nathaniel Hackett,NYJ,New York Jets,2023,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Nathaniel_Hackett
+Nick Sirianni,IND,Indianapolis Colts,2018,2020,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Nick_Sirianni
+Nick Sirianni,PHI,Philadelphia Eagles,2021,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Nick_Sirianni
+Norv Turner,WSH,Washington Redskins,1999,2000,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,LAC,San Diego Chargers,2001,2001,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,MIA,Miami Dolphins,2002,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,OAK,Oakland Raiders,2004,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,SF,San Francisco 49ers,2006,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,LAC,San Diego Chargers,2007,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,CLE,Cleveland Browns,2013,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,MIN,Minnesota Vikings,2014,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,CAR,Carolina Panthers,2018,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Norv Turner,CAR,Carolina Panthers,2019,2019,HC,Special assistant to the head coach,False,False,https://en.wikipedia.org/wiki/Norv_Turner
+Pat Shurmur,LAR,St. Louis Rams,2009,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Pat Shurmur,CLE,Cleveland Browns,2011,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Pat Shurmur,PHI,Philadelphia Eagles,2013,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Pat Shurmur,PHI,Philadelphia Eagles,2015,2015,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Pat Shurmur,MIN,Minnesota Vikings,2016,2016,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Pat Shurmur,MIN,Minnesota Vikings,2017,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Pat Shurmur,NYG,New York Giants,2018,2019,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Pat Shurmur,DEN,Denver Broncos,2020,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Pat_Shurmur
+Perry Fewell,BUF,Buffalo Bills,2006,2009,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Perry_Fewell
+Perry Fewell,BUF,Buffalo Bills,2009,2009,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Perry_Fewell
+Perry Fewell,NYG,New York Giants,2010,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Perry_Fewell
+Perry Fewell,CAR,Carolina Panthers,2019,2019,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Perry_Fewell
+Pete Carroll,NE,New England Patriots,1999,1999,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Pete_Carroll
+Pete Carroll,SEA,Seattle Seahawks,2010,2023,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Pete_Carroll
+Pete Carroll,OAK,Las Vegas Raiders,2025,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Pete_Carroll
+Raheem Morris,TB,Tampa Bay Buccaneers,2009,2011,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Raheem_Morris
+Raheem Morris,ATL,Atlanta Falcons,2020,2020,DC,Defensive coordinator & interim head coach,True,False,https://en.wikipedia.org/wiki/Raheem_Morris
+Raheem Morris,ATL,Atlanta Falcons,2020,2020,HC,Defensive coordinator & interim head coach,True,False,https://en.wikipedia.org/wiki/Raheem_Morris
+Raheem Morris,LAR,Los Angeles Rams,2021,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Raheem_Morris
+Raheem Morris,ATL,Atlanta Falcons,2024,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Raheem_Morris
+Rex Ryan,BAL,Baltimore Ravens,2005,2007,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Rex_Ryan
+Rex Ryan,BAL,Baltimore Ravens,2008,2008,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Rex_Ryan
+Rex Ryan,NYJ,New York Jets,2009,2014,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Rex_Ryan
+Rex Ryan,BUF,Buffalo Bills,2015,2016,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Rex_Ryan
+Rich Bisaccia,OAK,Las Vegas Raiders,2021,2021,HC,Interim head coach & special teams coordinator,True,False,https://en.wikipedia.org/wiki/Rich_Bisaccia
+Rob Chudzinski,CLE,Cleveland Browns,2007,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rob_Chudzinski
+Rob Chudzinski,CAR,Carolina Panthers,2011,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rob_Chudzinski
+Rob Chudzinski,CLE,Cleveland Browns,2013,2013,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Rob_Chudzinski
+Rob Chudzinski,IND,Indianapolis Colts,2014,2015,HC,Associate head coach,False,False,https://en.wikipedia.org/wiki/Rob_Chudzinski
+Rob Chudzinski,IND,Indianapolis Colts,2015,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rob_Chudzinski
+Robert Prince,DET,Detroit Lions,2020,2020,HC,Acting head coach,False,False,https://en.wikipedia.org/wiki/Robert_Prince_(American_football)
+Robert Saleh,SF,San Francisco 49ers,2017,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Robert_Saleh
+Robert Saleh,NYJ,New York Jets,2021,2024,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Robert_Saleh
+Robert Saleh,SF,San Francisco 49ers,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Robert_Saleh
+Romeo Crennel,CLE,Cleveland Browns,2000,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,NE,New England Patriots,2001,2004,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,CLE,Cleveland Browns,2005,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,KC,Kansas City Chiefs,2010,2011,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,KC,Kansas City Chiefs,2011,2011,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,KC,Kansas City Chiefs,2012,2012,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,HOU,Houston Texans,2014,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,HOU,Houston Texans,2018,2019,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Romeo Crennel,HOU,Houston Texans,2020,2020,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Romeo_Crennel
+Ron Rivera,CHI,Chicago Bears,2004,2006,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ron_Rivera
+Ron Rivera,LAC,San Diego Chargers,2008,2010,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ron_Rivera
+Ron Rivera,CAR,Carolina Panthers,2011,2019,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Ron_Rivera
+Sean McDermott,PHI,Philadelphia Eagles,2001,2001,HC,Assistant to head coach,False,False,https://en.wikipedia.org/wiki/Sean_McDermott
+Sean McDermott,PHI,Philadelphia Eagles,2009,2010,DC,Defensive coordinator & defensive backs coach,False,False,https://en.wikipedia.org/wiki/Sean_McDermott
+Sean McDermott,CAR,Carolina Panthers,2011,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Sean_McDermott
+Sean McDermott,BUF,Buffalo Bills,2017,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Sean_McDermott
+Sean McVay,WSH,Washington Redskins,2014,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Sean_McVay
+Sean McVay,LAR,Los Angeles Rams,2017,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Sean_McVay
+Sean Payton,NYG,New York Giants,2000,2002,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Sean_Payton
+Sean Payton,NO,New Orleans Saints,2006,2011,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Sean_Payton
+Sean Payton,DEN,Denver Broncos,2023,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Sean_Payton
+Shane Steichen,PHI,Philadelphia Eagles,2021,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Shane_Steichen
+Shane Steichen,IND,Indianapolis Colts,2023,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Shane_Steichen
+Steve Spagnuolo,NYG,New York Giants,2007,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Spagnuolo
+Steve Spagnuolo,LAR,St. Louis Rams,2009,2011,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Steve_Spagnuolo
+Steve Spagnuolo,NO,New Orleans Saints,2012,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Spagnuolo
+Steve Spagnuolo,NYG,New York Giants,2015,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Spagnuolo
+Steve Spagnuolo,NYG,New York Giants,2017,2017,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Steve_Spagnuolo
+Steve Spagnuolo,KC,Kansas City Chiefs,2019,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Spagnuolo
+Steve Wilks,CAR,Carolina Panthers,2017,2017,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Wilks
+Steve Wilks,ARI,Arizona Cardinals,2018,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Steve_Wilks
+Steve Wilks,CLE,Cleveland Browns,2019,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Wilks
+Steve Wilks,CAR,Carolina Panthers,2022,2022,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Steve_Wilks
+Steve Wilks,SF,San Francisco 49ers,2023,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Wilks
+Steve Wilks,NYJ,New York Jets,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Wilks
+Todd Bowles,MIA,Miami Dolphins,2011,2011,HC,Interim head coach & secondary coach,True,False,https://en.wikipedia.org/wiki/Todd_Bowles
+Todd Bowles,PHI,Philadelphia Eagles,2012,2012,DC,Interim defensive coordinator & secondary coach,True,False,https://en.wikipedia.org/wiki/Todd_Bowles
+Todd Bowles,ARI,Arizona Cardinals,2013,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Bowles
+Todd Bowles,NYJ,New York Jets,2015,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Todd_Bowles
+Todd Bowles,TB,Tampa Bay Buccaneers,2019,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Bowles
+Todd Bowles,TB,Tampa Bay Buccaneers,2022,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Todd_Bowles
+Todd Haley,ARI,Arizona Cardinals,2007,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Haley
+Todd Haley,KC,Kansas City Chiefs,2009,2011,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Todd_Haley
+Todd Haley,PIT,Pittsburgh Steelers,2012,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Haley
+Todd Haley,CLE,Cleveland Browns,2018,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Haley
+Tom Coughlin,JAX,Jacksonville Jaguars,1999,2002,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Tom_Coughlin
+Tom Coughlin,NYG,New York Giants,2004,2015,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Tom_Coughlin
+Tony Sparano,MIA,Miami Dolphins,2008,2011,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Tony_Sparano
+Tony Sparano,NYJ,New York Jets,2012,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Tony_Sparano
+Tony Sparano,OAK,Oakland Raiders,2014,2014,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Tony_Sparano
+Urban Meyer,JAX,Jacksonville Jaguars,2021,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Urban_Meyer
+Vance Joseph,MIA,Miami Dolphins,2016,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vance_Joseph
+Vance Joseph,DEN,Denver Broncos,2017,2018,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Vance_Joseph
+Vance Joseph,ARI,Arizona Cardinals,2019,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vance_Joseph
+Vance Joseph,DEN,Denver Broncos,2023,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vance_Joseph
+Vic Fangio,IND,Indianapolis Colts,1999,2001,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Vic Fangio,HOU,Houston Texans,2002,2005,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Vic Fangio,BAL,Baltimore Ravens,2006,2008,HC,Special assistant to head coach/Defensive assistant,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Vic Fangio,SF,San Francisco 49ers,2011,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Vic Fangio,CHI,Chicago Bears,2015,2018,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Vic Fangio,DEN,Denver Broncos,2019,2021,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Vic Fangio,MIA,Miami Dolphins,2023,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Vic Fangio,PHI,Philadelphia Eagles,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vic_Fangio
+Wade Phillips,BUF,Buffalo Bills,1999,2000,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,ATL,Atlanta Falcons,2002,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,ATL,Atlanta Falcons,2003,2003,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,LAC,San Diego Chargers,2004,2006,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,DAL,Dallas Cowboys,2007,2010,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,HOU,Houston Texans,2011,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,HOU,Houston Texans,2013,2013,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,DEN,Denver Broncos,2015,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Wade Phillips,LAR,Los Angeles Rams,2017,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Wade_Phillips
+Zac Taylor,MIA,Miami Dolphins,2015,2015,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Zac_Taylor
+Zac Taylor,CIN,Cincinnati Bengals,2019,2025,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Zac_Taylor
+Greg Roman,SF,San Francisco 49ers,2011,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Roman
+Greg Roman,BUF,Buffalo Bills,2015,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Roman
+Greg Roman,BAL,Baltimore Ravens,2019,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Roman
+Greg Roman,LAC,Los Angeles Chargers,2024,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Roman
+Pete Carmichael Jr.,NO,New Orleans Saints,2009,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Pete_Carmichael_Jr.
+Dean Pees,NE,New England Patriots,2006,2009,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dean_Pees
+Dean Pees,BAL,Baltimore Ravens,2012,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dean_Pees
+Dean Pees,TEN,Tennessee Titans,2018,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dean_Pees
+Dean Pees,ATL,Atlanta Falcons,2021,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dean_Pees
+Greg Olson,DET,Detroit Lions,2004,2005,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Greg_Olson_(American_football)
+Greg Olson,LAR,St. Louis Rams,2006,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Olson_(American_football)
+Greg Olson,TB,Tampa Bay Buccaneers,2009,2011,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Greg_Olson_(American_football)
+Greg Olson,OAK,Oakland Raiders,2013,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Olson_(American_football)
+Greg Olson,JAX,Jacksonville Jaguars,2015,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Olson_(American_football)
+Greg Olson,OAK,Las Vegas Raiders,2025,2025,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Greg_Olson_(American_football)
+Lou Anarumo,MIA,Miami Dolphins,2015,2015,DC,Interim defensive coordinator,True,False,https://en.wikipedia.org/wiki/Lou_Anarumo
+Lou Anarumo,CIN,Cincinnati Bengals,2019,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Lou_Anarumo
+Lou Anarumo,IND,Indianapolis Colts,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Lou_Anarumo
+Rod Marinelli,DET,Detroit Lions,2006,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Rod_Marinelli
+Rod Marinelli,CHI,Chicago Bears,2010,2012,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Rod_Marinelli
+Rod Marinelli,DAL,Dallas Cowboys,2014,2019,DC,Defensive coordinator & defensive line coach,False,False,https://en.wikipedia.org/wiki/Rod_Marinelli
+Rod Marinelli,OAK,Las Vegas Raiders,2020,2020,DC,Interim defensive coordinator,True,False,https://en.wikipedia.org/wiki/Rod_Marinelli
+Teryl Austin,DET,Detroit Lions,2014,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Teryl_Austin
+Teryl Austin,CIN,Cincinnati Bengals,2018,2018,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Teryl_Austin
+Teryl Austin,PIT,Pittsburgh Steelers,2022,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Teryl_Austin
+Dom Capers,JAX,Jacksonville Jaguars,1999,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dom_Capers
+Dom Capers,HOU,Houston Texans,2002,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dom_Capers
+Dom Capers,MIA,Miami Dolphins,2006,2007,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dom_Capers
+Dom Capers,GB,Green Bay Packers,2009,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dom_Capers
+Dowell Loggains,TEN,Tennessee Titans,2012,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dowell_Loggains
+Dowell Loggains,CHI,Chicago Bears,2016,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dowell_Loggains
+Dowell Loggains,MIA,Miami Dolphins,2018,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dowell_Loggains
+Dowell Loggains,NYJ,New York Jets,2019,2020,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Dowell_Loggains
+Greg Manusky,SF,San Francisco 49ers,2007,2010,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Manusky
+Greg Manusky,LAC,San Diego Chargers,2011,2011,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Manusky
+Greg Manusky,IND,Indianapolis Colts,2012,2015,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Manusky
+Greg Manusky,WSH,Washington Redskins,2017,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Manusky
+Jim Bob Cooter,DET,Detroit Lions,2016,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Bob_Cooter
+Jim Bob Cooter,IND,Indianapolis Colts,2023,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Bob_Cooter
+Joe Lombardi,DET,Detroit Lions,2014,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Lombardi
+Joe Lombardi,LAC,Los Angeles Chargers,2021,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Lombardi
+Joe Lombardi,DEN,Denver Broncos,2023,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Lombardi
+Joe Woods,DEN,Denver Broncos,2017,2018,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Woods_(American_football)
+Joe Woods,CLE,Cleveland Browns,2020,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Woods_(American_football)
+Joe Woods,NO,New Orleans Saints,2023,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Woods_(American_football)
+Keith Butler,PIT,Pittsburgh Steelers,2015,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Keith_Butler_(American_football)
+Ken Norton Jr.,OAK,Oakland Raiders,2015,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ken_Norton_Jr.
+Ken Norton Jr.,SEA,Seattle Seahawks,2018,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ken_Norton_Jr.
+Mike Shula,TB,Tampa Bay Buccaneers,1999,1999,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Shula
+Mike Shula,CAR,Carolina Panthers,2013,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Shula
+Mike Shula,NYG,New York Giants,2018,2019,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Mike_Shula
+Patrick Graham,MIA,Miami Dolphins,2019,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Patrick_Graham_(American_football)
+Patrick Graham,NYG,New York Giants,2020,2021,DC,Assistant head coach & defensive coordinator,False,False,https://en.wikipedia.org/wiki/Patrick_Graham_(American_football)
+Patrick Graham,OAK,Las Vegas Raiders,2022,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Patrick_Graham_(American_football)
+Scott Linehan,MIN,Minnesota Vikings,2002,2004,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Scott_Linehan
+Scott Linehan,MIA,Miami Dolphins,2005,2005,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Scott_Linehan
+Scott Linehan,LAR,St. Louis Rams,2006,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Scott_Linehan
+Scott Linehan,DET,Detroit Lions,2009,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Scott_Linehan
+Scott Linehan,DAL,Dallas Cowboys,2015,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Scott_Linehan
+Todd Monken,TB,Tampa Bay Buccaneers,2016,2017,OC,Offensive coordinator & wide receivers coach,False,False,https://en.wikipedia.org/wiki/Todd_Monken
+Todd Monken,TB,Tampa Bay Buccaneers,2018,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Monken
+Todd Monken,CLE,Cleveland Browns,2019,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Monken
+Todd Monken,BAL,Baltimore Ravens,2023,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Monken
+Dick LeBeau,CIN,Cincinnati Bengals,1999,2000,DC,Defensive coordinator & assistant head coach,False,False,https://en.wikipedia.org/wiki/Dick_LeBeau
+Dick LeBeau,CIN,Cincinnati Bengals,2000,2002,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dick_LeBeau
+Dick LeBeau,PIT,Pittsburgh Steelers,2004,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dick_LeBeau
+Dick LeBeau,TEN,Tennessee Titans,2015,2017,DC,Defensive coordinator & assistant head coach,False,False,https://en.wikipedia.org/wiki/Dick_LeBeau
+Eric Bieniemy,KC,Kansas City Chiefs,2018,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Eric_Bieniemy
+Eric Bieniemy,WSH,Washington Commanders,2023,2023,OC,Assistant head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Eric_Bieniemy
+George Edwards,WSH,Washington Redskins,2002,2002,DC,Assistant defensive coordinator & linebackers coach,False,False,https://en.wikipedia.org/wiki/George_Edwards_(American_football)
+George Edwards,WSH,Washington Redskins,2003,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/George_Edwards_(American_football)
+George Edwards,BUF,Buffalo Bills,2010,2011,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/George_Edwards_(American_football)
+George Edwards,MIN,Minnesota Vikings,2014,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/George_Edwards_(American_football)
+Marty Mornhinweg,SF,San Francisco 49ers,1999,2000,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Marty_Mornhinweg
+Marty Mornhinweg,DET,Detroit Lions,2001,2002,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Marty_Mornhinweg
+Marty Mornhinweg,PHI,Philadelphia Eagles,2006,2012,OC,Offensive coordinator & assistant head coach,False,False,https://en.wikipedia.org/wiki/Marty_Mornhinweg
+Marty Mornhinweg,NYJ,New York Jets,2013,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Marty_Mornhinweg
+Marty Mornhinweg,BAL,Baltimore Ravens,2016,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Marty_Mornhinweg
+Paul Guenther,CIN,Cincinnati Bengals,2014,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Paul_Guenther_(American_football)
+Rick Dennison,DEN,Denver Broncos,2006,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rick_Dennison
+Rick Dennison,HOU,Houston Texans,2010,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rick_Dennison
+Rick Dennison,DEN,Denver Broncos,2015,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rick_Dennison
+Rick Dennison,BUF,Buffalo Bills,2017,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rick_Dennison
+Alex Van Pelt,BUF,Buffalo Bills,2009,2009,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Alex_Van_Pelt
+Alex Van Pelt,CLE,Cleveland Browns,2020,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Alex_Van_Pelt
+Alex Van Pelt,CLE,Cleveland Browns,2023,2023,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Alex_Van_Pelt
+Alex Van Pelt,NE,New England Patriots,2024,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Alex_Van_Pelt
+Bill Lazor,MIA,Miami Dolphins,2014,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Lazor
+Bill Lazor,CIN,Cincinnati Bengals,2017,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Lazor
+Bill Lazor,CHI,Chicago Bears,2020,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Lazor
+Bill Musgrave,CAR,Carolina Panthers,1999,2000,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Bill_Musgrave
+Bill Musgrave,JAX,Jacksonville Jaguars,2003,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Musgrave
+Bill Musgrave,JAX,Jacksonville Jaguars,2004,2004,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Bill_Musgrave
+Bill Musgrave,MIN,Minnesota Vikings,2011,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Musgrave
+Bill Musgrave,OAK,Oakland Raiders,2015,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Musgrave
+Bill Musgrave,DEN,Denver Broncos,2017,2017,OC,Quarterbacks coach & interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Bill_Musgrave
+Bill Musgrave,DEN,Denver Broncos,2018,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Musgrave
+Harold Goodwin,ARI,Arizona Cardinals,2013,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Harold_Goodwin_(American_football)
+James Bettcher,ARI,Arizona Cardinals,2015,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/James_Bettcher
+James Bettcher,NYG,New York Giants,2018,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/James_Bettcher
+Joe Barry,DET,Detroit Lions,2007,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Barry
+Joe Barry,WSH,Washington Redskins,2015,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Barry
+Joe Barry,GB,Green Bay Packers,2021,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Barry
+Joe Brady,CAR,Carolina Panthers,2020,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Brady
+Joe Brady,BUF,Buffalo Bills,2023,2023,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Joe_Brady
+Joe Brady,BUF,Buffalo Bills,2024,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Brady
+John Pagano,LAC,San Diego Chargers,2012,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/John_Pagano
+Matt Burke,MIA,Miami Dolphins,2017,2018,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Burke_(American_football)
+Matt Burke,HOU,Houston Texans,2023,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Burke_(American_football)
+Mike LaFleur,NYJ,New York Jets,2021,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_LaFleur
+Mike LaFleur,LAR,Los Angeles Rams,2023,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_LaFleur
+Ray Horton,ARI,Arizona Cardinals,2011,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Horton
+Ray Horton,CLE,Cleveland Browns,2013,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Horton
+Ray Horton,TEN,Tennessee Titans,2014,2015,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Horton
+Ray Horton,CLE,Cleveland Browns,2016,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Horton
+Rob Ryan,OAK,Oakland Raiders,2004,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Rob_Ryan
+Rob Ryan,CLE,Cleveland Browns,2009,2010,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Rob_Ryan
+Rob Ryan,DAL,Dallas Cowboys,2011,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Rob_Ryan
+Rob Ryan,NO,New Orleans Saints,2013,2015,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Rob_Ryan
+Tim Kelly,HOU,Houston Texans,2019,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Tim_Kelly_(American_football)
+Tim Kelly,HOU,Houston Texans,2020,2020,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Tim_Kelly_(American_football)
+Tim Kelly,HOU,Houston Texans,2021,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Tim_Kelly_(American_football)
+Tim Kelly,TEN,Tennessee Titans,2023,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Tim_Kelly_(American_football)
+Tim Kelly,NYG,New York Giants,2025,2025,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Tim_Kelly_(American_football)
+Todd Wash,JAX,Jacksonville Jaguars,2016,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Wash
+Adam Stenavich,GB,Green Bay Packers,2022,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Adam_Stenavich
+Alan Williams,MIN,Minnesota Vikings,2012,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Alan_Williams_(American_football)
+Alan Williams,CHI,Chicago Bears,2022,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Alan_Williams_(American_football)
+Byron Leftwich,ARI,Arizona Cardinals,2018,2018,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Byron_Leftwich
+Byron Leftwich,TB,Tampa Bay Buccaneers,2019,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Byron_Leftwich
+Dennis Thurman,NYJ,New York Jets,2013,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dennis_Thurman
+Dennis Thurman,BUF,Buffalo Bills,2015,2016,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dennis_Thurman
+Ejiro Evero,DEN,Denver Broncos,2022,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ejiro_Evero
+Ejiro Evero,CAR,Carolina Panthers,2023,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ejiro_Evero
+Frank Smith,MIA,Miami Dolphins,2022,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Frank_Smith_(American_football)
+Jim Haslett,PIT,Pittsburgh Steelers,1999,1999,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Haslett
+Jim Haslett,NO,New Orleans Saints,2000,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jim_Haslett
+Jim Haslett,LAR,St. Louis Rams,2006,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Haslett
+Jim Haslett,LAR,St. Louis Rams,2008,2008,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Jim_Haslett
+Jim Haslett,WSH,Washington Redskins,2010,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Haslett
+Kris Richard,SEA,Seattle Seahawks,2015,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Kris_Richard
+Kris Richard,NO,New Orleans Saints,2022,2022,DC,Co-defensive coordinator & secondary coach,False,True,https://en.wikipedia.org/wiki/Kris_Richard
+Mike Nolan,WSH,Washington Redskins,1999,1999,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Mike Nolan,NYJ,New York Jets,2000,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Mike Nolan,BAL,Baltimore Ravens,2002,2004,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Mike Nolan,SF,San Francisco 49ers,2005,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Mike Nolan,DEN,Denver Broncos,2009,2009,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Mike Nolan,MIA,Miami Dolphins,2010,2011,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Mike Nolan,ATL,Atlanta Falcons,2012,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Mike Nolan,DAL,Dallas Cowboys,2020,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Nolan
+Shane Bowen,TEN,Tennessee Titans,2021,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Shane_Bowen
+Shane Bowen,NYG,New York Giants,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Shane_Bowen
+Shane Waldron,SEA,Seattle Seahawks,2021,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Shane_Waldron
+Shane Waldron,CHI,Chicago Bears,2024,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Shane_Waldron
+Wes Phillips,MIN,Minnesota Vikings,2022,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Wes_Phillips
+Anthony Weaver,HOU,Houston Texans,2020,2020,DC,Defensive coordinator & defensive line coach,False,False,https://en.wikipedia.org/wiki/Anthony_Weaver
+Anthony Weaver,MIA,Miami Dolphins,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Anthony_Weaver
+Bob Babich,CHI,Chicago Bears,2007,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bob_Babich_(American_football_coach)
+Bob Babich,CHI,Chicago Bears,2009,2009,DC,Defensive coordinator & linebackers coach,False,False,https://en.wikipedia.org/wiki/Bob_Babich_(American_football_coach)
+Bob Babich,JAX,Jacksonville Jaguars,2013,2015,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bob_Babich_(American_football_coach)
+Dave Ragone,ATL,Atlanta Falcons,2021,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dave_Ragone
+Drew Petzing,ARI,Arizona Cardinals,2023,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Drew_Petzing
+Edgar Bennett,GB,Green Bay Packers,2015,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Edgar_Bennett
+Eric Washington,CAR,Carolina Panthers,2018,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Eric_Washington_(American_football)
+Eric Washington,CHI,Chicago Bears,2024,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Eric_Washington_(American_football)
+Gunther Cunningham,KC,Kansas City Chiefs,1999,2000,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Gunther_Cunningham
+Gunther Cunningham,KC,Kansas City Chiefs,2004,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gunther_Cunningham
+Gunther Cunningham,DET,Detroit Lions,2009,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Gunther_Cunningham
+Jason Tarver,OAK,Oakland Raiders,2012,2014,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jason_Tarver
+Josh Boyer,MIA,Miami Dolphins,2020,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Josh_Boyer
+Kacy Rodgers,NYJ,New York Jets,2015,2018,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Kacy_Rodgers
+Ken Dorsey,BUF,Buffalo Bills,2022,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ken_Dorsey
+Ken Dorsey,CLE,Cleveland Browns,2024,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ken_Dorsey
+Klint Kubiak,MIN,Minnesota Vikings,2021,2021,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Klint_Kubiak
+Klint Kubiak,NO,New Orleans Saints,2024,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Klint_Kubiak
+Klint Kubiak,SEA,Seattle Seahawks,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Klint_Kubiak
+Luke Getsy,CHI,Chicago Bears,2022,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Luke_Getsy
+Luke Getsy,OAK,Las Vegas Raiders,2024,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Luke_Getsy
+Marquand Manuel,ATL,Atlanta Falcons,2017,2018,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Marquand_Manuel
+Matt Canada,PIT,Pittsburgh Steelers,2021,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Canada
+Nick Rallis,ARI,Arizona Cardinals,2023,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Nick_Rallis
+Pep Hamilton,IND,Indianapolis Colts,2013,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Pep_Hamilton
+Pep Hamilton,HOU,Houston Texans,2022,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Pep_Hamilton
+Press Taylor,JAX,Jacksonville Jaguars,2022,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Press_Taylor
+Randy Fichtner,PIT,Pittsburgh Steelers,2018,2019,OC,Offensive coordinator & quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Randy_Fichtner
+Randy Fichtner,PIT,Pittsburgh Steelers,2020,2020,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Randy_Fichtner
+Ryan Nielsen,NO,New Orleans Saints,2022,2022,DC,Co-defensive coordinator & defensive line coach,False,True,https://en.wikipedia.org/wiki/Ryan_Nielsen
+Ryan Nielsen,ATL,Atlanta Falcons,2023,2023,DC,Defensive coordinator & defensive line coach,False,False,https://en.wikipedia.org/wiki/Ryan_Nielsen
+Ryan Nielsen,JAX,Jacksonville Jaguars,2024,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ryan_Nielsen
+Todd Downing,OAK,Oakland Raiders,2017,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Downing
+Todd Downing,TEN,Tennessee Titans,2021,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Todd_Downing
+Tom Clements,BUF,Buffalo Bills,2004,2005,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Tom_Clements
+Tom Clements,GB,Green Bay Packers,2012,2014,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Tom_Clements
+Aden Durde,SEA,Seattle Seahawks,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Aden_Durde
+Al Holcomb,ARI,Arizona Cardinals,2018,2018,DC,Defensive coordinator & assistant head coach,False,False,https://en.wikipedia.org/wiki/Al_Holcomb
+Al Holcomb,CAR,Carolina Panthers,2020,2022,DC,"Interim defensive coordinator/Assistant head coach, Defense",True,False,https://en.wikipedia.org/wiki/Al_Holcomb
+Bill Sheridan,NYG,New York Giants,2009,2009,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Sheridan
+Bill Sheridan,TB,Tampa Bay Buccaneers,2012,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bill_Sheridan
+Bobby Babich,BUF,Buffalo Bills,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bobby_Babich
+Bobby Slowik,HOU,Houston Texans,2023,2024,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bobby_Slowik
+Brad Childress,PHI,Philadelphia Eagles,2002,2005,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brad_Childress
+Brad Childress,MIN,Minnesota Vikings,2006,2010,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Brad_Childress
+Brad Childress,CLE,Cleveland Browns,2012,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brad_Childress
+Brad Childress,KC,Kansas City Chiefs,2016,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brad_Childress
+Brad Idzik,CAR,Carolina Panthers,2024,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Brad_Idzik
+Chris Shula,LAR,Los Angeles Rams,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Chris_Shula
+Clint Hurtt,SEA,Seattle Seahawks,2022,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Clint_Hurtt
+Clyde Christensen,TB,Tampa Bay Buccaneers,2001,2001,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Clyde_Christensen
+Clyde Christensen,IND,Indianapolis Colts,2009,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Clyde_Christensen
+Clyde Christensen,MIA,Miami Dolphins,2016,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Clyde_Christensen
+Curtis Modkins,BUF,Buffalo Bills,2010,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Curtis_Modkins
+Curtis Modkins,SF,San Francisco 49ers,2016,2016,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Curtis_Modkins
+Dan Pitcher,CIN,Cincinnati Bengals,2024,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Dan_Pitcher
+Dennard Wilson,TEN,Tennessee Titans,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dennard_Wilson
+Dick Jauron,CHI,Chicago Bears,1999,2003,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dick_Jauron
+Dick Jauron,DET,Detroit Lions,2004,2005,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dick_Jauron
+Dick Jauron,DET,Detroit Lions,2005,2005,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Dick_Jauron
+Dick Jauron,BUF,Buffalo Bills,2006,2009,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dick_Jauron
+Dick Jauron,CLE,Cleveland Browns,2011,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dick_Jauron
+Jason Michael,TEN,Tennessee Titans,2014,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jason_Michael
+Jeff Hafley,GB,Green Bay Packers,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jeff_Hafley
+Jerry Gray,BUF,Buffalo Bills,2001,2005,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jerry_Gray
+Jerry Gray,TEN,Tennessee Titans,2011,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jerry_Gray
+Jesse Minter,LAC,Los Angeles Chargers,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jesse_Minter
+Joe Whitt Jr.,WSH,Washington Commanders,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Whitt_Jr.
+John DeFilippo,CLE,Cleveland Browns,2015,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/John_DeFilippo
+John DeFilippo,MIN,Minnesota Vikings,2018,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/John_DeFilippo
+John DeFilippo,JAX,Jacksonville Jaguars,2019,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/John_DeFilippo
+John Morton,NYJ,New York Jets,2017,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/John_Morton_(American_football)
+John Morton,DET,Detroit Lions,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/John_Morton_(American_football)
+Ken Zampese,CIN,Cincinnati Bengals,2016,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ken_Zampese
+Kevin Gilbride,PIT,Pittsburgh Steelers,1999,2000,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kevin_Gilbride
+Kevin Gilbride,BUF,Buffalo Bills,2002,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kevin_Gilbride
+Kevin Gilbride,NYG,New York Giants,2007,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kevin_Gilbride
+Mark Helfrich,CHI,Chicago Bears,2018,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mark_Helfrich_(American_football)
+Matt Cavanaugh,BAL,Baltimore Ravens,1999,2004,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Cavanaugh
+Matt Cavanaugh,WSH,Washington Redskins,2017,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Matt_Cavanaugh
+Mick Lombardi,SF,San Francisco 49ers,2013,2013,HC,Assistant to the head coach,False,False,https://en.wikipedia.org/wiki/Mick_Lombardi
+Mick Lombardi,OAK,Las Vegas Raiders,2022,2023,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mick_Lombardi
+Mike Groh,PHI,Philadelphia Eagles,2018,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Groh
+Mike Sherman,SEA,Seattle Seahawks,1999,1999,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Sherman
+Mike Sherman,GB,Green Bay Packers,2000,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Sherman
+Mike Sherman,HOU,Houston Texans,2007,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Sherman
+Mike Sherman,MIA,Miami Dolphins,2012,2013,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Sherman
+Nick Holz,TEN,Tennessee Titans,2024,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Nick_Holz
+Paul Pasqualoni,MIA,Miami Dolphins,2008,2009,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Paul_Pasqualoni
+Paul Pasqualoni,DET,Detroit Lions,2018,2019,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Paul_Pasqualoni
+Phil Snow,CAR,Carolina Panthers,2020,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Phil_Snow
+Renaldo Hill,LAC,Los Angeles Chargers,2021,2022,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Renaldo_Hill
+Sean Desai,CHI,Chicago Bears,2021,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Sean_Desai
+Sean Desai,SEA,Seattle Seahawks,2022,2022,HC,Associate head coach & defensive assistant,False,False,https://en.wikipedia.org/wiki/Sean_Desai
+Sean Desai,PHI,Philadelphia Eagles,2023,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Sean_Desai
+Steve Sarkisian,ATL,Atlanta Falcons,2017,2018,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Steve_Sarkisian
+Ted Monachino,IND,Indianapolis Colts,2016,2017,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ted_Monachino
+Terry Robiskie,WSH,Washington Redskins,2000,2000,HC,Passing game coordinator & interim head coach,True,False,https://en.wikipedia.org/wiki/Terry_Robiskie
+Terry Robiskie,CLE,Cleveland Browns,2004,2004,OC,Offensive coordinator & interim head coach,True,False,https://en.wikipedia.org/wiki/Terry_Robiskie
+Terry Robiskie,CLE,Cleveland Browns,2004,2004,HC,Offensive coordinator & interim head coach,True,False,https://en.wikipedia.org/wiki/Terry_Robiskie
+Terry Robiskie,TEN,Tennessee Titans,2016,2017,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Terry_Robiskie
+Zac Robinson,ATL,Atlanta Falcons,2024,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Zac_Robinson
+Zach Orr,BAL,Baltimore Ravens,2024,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Zach_Orr
+Al Golden,CIN,Cincinnati Bengals,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Al_Golden
+Anthony Campanile,JAX,Jacksonville Jaguars,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Anthony_Campanile
+Bill Muir,TB,Tampa Bay Buccaneers,2002,2008,OC,Offensive coordinator & offensive line coach,False,False,https://en.wikipedia.org/wiki/Bill_Muir
+Bill Muir,KC,Kansas City Chiefs,2011,2011,OC,Offensive coordinator & offensive line coach,False,False,https://en.wikipedia.org/wiki/Bill_Muir
+Bo Hardegree,OAK,Las Vegas Raiders,2023,2023,OC,Quarterbacks coach & interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Bo_Hardegree
+Bob Bratkowski,CIN,Cincinnati Bengals,2001,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bob_Bratkowski
+Bob Bratkowski,JAX,Jacksonville Jaguars,2012,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bob_Bratkowski
+Chad O'Shea,MIA,Miami Dolphins,2019,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Chad_O'Shea
+Charlie Bullen,NYG,New York Giants,2025,2025,DC,Interim defensive coordinator,True,False,https://en.wikipedia.org/wiki/Charlie_Bullen
+Chris Beatty,CHI,Chicago Bears,2024,2024,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Chris_Beatty
+Cory Undlin,DET,Detroit Lions,2020,2020,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Cory_Undlin
+Dave Wannstedt,MIA,Miami Dolphins,1999,1999,HC,Associate head coach,False,False,https://en.wikipedia.org/wiki/Dave_Wannstedt
+Dave Wannstedt,MIA,Miami Dolphins,2000,2004,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dave_Wannstedt
+Dave Wannstedt,BUF,Buffalo Bills,2011,2012,HC,Associate head coach & linebackers coach,False,False,https://en.wikipedia.org/wiki/Dave_Wannstedt
+Dave Wannstedt,BUF,Buffalo Bills,2012,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dave_Wannstedt
+DeMarcus Covington,NE,New England Patriots,2024,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/DeMarcus_Covington
+Declan Doyle,CHI,Chicago Bears,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Declan_Doyle
+Derrick Ansley,LAC,Los Angeles Chargers,2023,2023,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Derrick_Ansley
+Doug Nussmeier,NO,New Orleans Saints,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Doug_Nussmeier
+Eddie Faulkner,PIT,Pittsburgh Steelers,2023,2023,OC,Interim offensive coordinator & running backs coach,True,False,https://en.wikipedia.org/wiki/Eddie_Faulkner
+Eric Mangini,NE,New England Patriots,2005,2005,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Eric_Mangini
+Eric Mangini,NYJ,New York Jets,2006,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Eric_Mangini
+Eric Mangini,CLE,Cleveland Browns,2009,2010,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Eric_Mangini
+Eric Mangini,SF,San Francisco 49ers,2015,2015,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Eric_Mangini
+Frank Bush,HOU,Houston Texans,2009,2010,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Frank_Bush
+Frank Bush,NYJ,New York Jets,2020,2020,DC,Interim defensive coordinator,True,False,https://en.wikipedia.org/wiki/Frank_Bush
+Geep Chryst,LAC,San Diego Chargers,1999,2000,OC,"Offensive coordinator, quarterbacks",False,False,https://en.wikipedia.org/wiki/Geep_Chryst
+Geep Chryst,SF,San Francisco 49ers,2015,2015,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Geep_Chryst
+Grant Udinski,MIN,Minnesota Vikings,2022,2022,HC,Assistant to the head coach & special projects,False,False,https://en.wikipedia.org/wiki/Grant_Udinski
+Grant Udinski,MIN,Minnesota Vikings,2024,2024,OC,Assistant offensive coordinator & assistant quarterbacks coach,False,False,https://en.wikipedia.org/wiki/Grant_Udinski
+Grant Udinski,JAX,Jacksonville Jaguars,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Grant_Udinski
+Greg Knapp,SF,San Francisco 49ers,2001,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Knapp
+Greg Knapp,ATL,Atlanta Falcons,2004,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Knapp
+Greg Knapp,OAK,Oakland Raiders,2007,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Knapp
+Greg Knapp,SEA,Seattle Seahawks,2009,2009,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Knapp
+Greg Knapp,OAK,Oakland Raiders,2012,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Knapp
+Jimmy Lake,ATL,Atlanta Falcons,2024,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jimmy_Lake
+Joe Cullen,JAX,Jacksonville Jaguars,2021,2021,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Cullen_(American_football)
+Josh Grizzard,TB,Tampa Bay Buccaneers,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Josh_Grizzard
+Juan Castillo,PHI,Philadelphia Eagles,2011,2012,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Juan_Castillo_(American_football)
+Justin Outten,DEN,Denver Broncos,2022,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Justin_Outten
+Kelvin Sheppard,DET,Detroit Lions,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Kelvin_Sheppard
+Kevin Patullo,PHI,Philadelphia Eagles,2023,2024,HC,Pass game coordinator & associate head coach,False,False,https://en.wikipedia.org/wiki/Kevin_Patullo
+Kevin Patullo,PHI,Philadelphia Eagles,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Kevin_Patullo
+Klay Kubiak,SF,San Francisco 49ers,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Klay_Kubiak
+Klayton Adams,DAL,Dallas Cowboys,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Klayton_Adams
+Marcus Brady,IND,Indianapolis Colts,2021,2022,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Marcus_Brady
+Mark Duffner,CIN,Cincinnati Bengals,2001,2002,DC,Defensive coordinator/linebackers,False,False,https://en.wikipedia.org/wiki/Mark_Duffner
+Mark Duffner,TB,Tampa Bay Buccaneers,2018,2018,DC,Defensive coordinator/linebackers,False,False,https://en.wikipedia.org/wiki/Mark_Duffner
+Mike Tice,MIN,Minnesota Vikings,2001,2001,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Mike_Tice
+Mike Tice,MIN,Minnesota Vikings,2002,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Tice
+Mike Tice,CHI,Chicago Bears,2012,2012,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Tice
+Monte Kiffin,TB,Tampa Bay Buccaneers,1999,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Monte_Kiffin
+Monte Kiffin,DAL,Dallas Cowboys,2013,2013,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Monte_Kiffin
+Nick Caley,HOU,Houston Texans,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Nick_Caley
+Nick Sorensen,SF,San Francisco 49ers,2024,2024,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Nick_Sorensen
+Parks Frazier,IND,Indianapolis Colts,2018,2019,HC,Assistant to the head coach,False,False,https://en.wikipedia.org/wiki/Parks_Frazier
+Parks Frazier,IND,Indianapolis Colts,2022,2022,OC,Interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Parks_Frazier
+Rich Scangarello,DEN,Denver Broncos,2019,2019,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rich_Scangarello
+Tanner Engstrand,NYJ,New York Jets,2025,2025,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Tanner_Engstrand
+Terrell Williams,NE,New England Patriots,2025,2025,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Terrell_Williams
+Al Saunders,LAR,St. Louis Rams,1999,2000,HC,Associate head coach & wide receivers coach,False,False,https://en.wikipedia.org/wiki/Al_Saunders
+Al Saunders,KC,Kansas City Chiefs,2001,2005,OC,Assistant head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Al_Saunders
+Al Saunders,WSH,Washington Redskins,2006,2007,OC,Associate head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Al_Saunders
+Al Saunders,WSH,Washington Redskins,2006,2007,HC,Associate head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Al_Saunders
+Al Saunders,LAR,St. Louis Rams,2008,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Al_Saunders
+Al Saunders,OAK,Oakland Raiders,2011,2014,OC,- Offensive coordinator & quarterbacks coach (2011)<br />- Senior offensive assistant (2012–2014),False,False,https://en.wikipedia.org/wiki/Al_Saunders
+Alex Wood,ARI,Arizona Cardinals,2004,2004,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Alex_Wood_(American_football)
+Bob Slowik,CLE,Cleveland Browns,1999,1999,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bob_Slowik
+Bob Slowik,GB,Green Bay Packers,2004,2004,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bob_Slowik
+Bob Slowik,DEN,Denver Broncos,2007,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Bob_Slowik
+Bruce Coslet,CIN,Cincinnati Bengals,1999,2000,HC,Interim head coach/head coach,True,False,https://en.wikipedia.org/wiki/Bruce_Coslet
+Bruce Coslet,DAL,Dallas Cowboys,2002,2002,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Bruce_Coslet
+Clarence Shelmon,LAC,San Diego Chargers,2007,2009,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Clarence_Shelmon
+Donnie Henderson,NYJ,New York Jets,2004,2005,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Donnie_Henderson
+Donnie Henderson,DET,Detroit Lions,2006,2006,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Donnie_Henderson
+Gil Haskell,CAR,Carolina Panthers,1999,1999,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Gil_Haskell
+Gil Haskell,SEA,Seattle Seahawks,2000,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Gil_Haskell
+Jeff Davidson,CLE,Cleveland Browns,2006,2006,OC,Assistant head coach & offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jeff_Davidson
+Jeff Davidson,CAR,Carolina Panthers,2007,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jeff_Davidson
+Jeff Jagodzinski,GB,Green Bay Packers,2006,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jeff_Jagodzinski
+Jeff Jagodzinski,TB,Tampa Bay Buccaneers,2009,2009,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jeff_Jagodzinski
+Jerry Sullivan,ARI,Arizona Cardinals,2003,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jerry_Sullivan
+Jim Fassel,NYG,New York Giants,1999,2003,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Jim_Fassel
+Jim Fassel,BAL,Baltimore Ravens,2005,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Fassel
+Jimmy Raye II,KC,Kansas City Chiefs,1999,2000,OC,"Offensive coordinator, running backs coach,<br>tight ends coach",False,False,https://en.wikipedia.org/wiki/Jimmy_Raye_II
+Jimmy Raye II,WSH,Washington Redskins,2001,2001,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jimmy_Raye_II
+Jimmy Raye II,OAK,Oakland Raiders,2004,2005,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jimmy_Raye_II
+Jimmy Raye II,SF,San Francisco 49ers,2009,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jimmy_Raye_II
+John Hufnagel,NYG,New York Giants,2004,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/John_Hufnagel
+John Shoop,CHI,Chicago Bears,2001,2003,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/John_Shoop
+John Shoop,OAK,Oakland Raiders,2006,2006,OC,Offensive coordinator & tight ends coach,False,False,https://en.wikipedia.org/wiki/John_Shoop
+Keith Rowen,ARI,Arizona Cardinals,2005,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Keith_Rowen
+Maurice Carthon,DET,Detroit Lions,2001,2002,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Maurice_Carthon
+Maurice Carthon,DAL,Dallas Cowboys,2003,2004,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Maurice_Carthon
+Maurice Carthon,CLE,Cleveland Browns,2005,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Maurice_Carthon
+Mike Heimerdinger,TEN,Tennessee Titans,2000,2004,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Heimerdinger
+Mike Heimerdinger,NYJ,New York Jets,2005,2005,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Heimerdinger
+Mike Heimerdinger,TEN,Tennessee Titans,2008,2010,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Heimerdinger
+Mike Holmgren,SEA,Seattle Seahawks,1999,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Holmgren
+Mike Kruczek,ARI,Arizona Cardinals,2006,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Kruczek
+Mike Martz,LAR,St. Louis Rams,1999,2005,OC,- Offensive coordinator (1999)<br />- Head coach (2000–2005),False,False,https://en.wikipedia.org/wiki/Mike_Martz
+Mike Martz,LAR,St. Louis Rams,1999,2005,HC,- Offensive coordinator (1999)<br />- Head coach (2000–2005),False,False,https://en.wikipedia.org/wiki/Mike_Martz
+Mike Martz,DET,Detroit Lions,2006,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Martz
+Mike Martz,SF,San Francisco 49ers,2008,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Martz
+Mike Martz,CHI,Chicago Bears,2010,2011,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Martz
+Mike Solari,KC,Kansas City Chiefs,2006,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Solari
+Ray Rhodes,GB,Green Bay Packers,1999,1999,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Ray_Rhodes
+Ray Rhodes,WSH,Washington Redskins,2000,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Rhodes
+Ray Rhodes,DEN,Denver Broncos,2001,2002,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Rhodes
+Ray Rhodes,SEA,Seattle Seahawks,2003,2007,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Rhodes
+Ron Turner,CHI,Chicago Bears,2005,2009,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ron_Turner_(American_football)
+Sylvester Croom,DET,Detroit Lions,1999,2000,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Sylvester_Croom
+Tom Cable,OAK,Oakland Raiders,2008,2010,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Tom_Cable
+Art Shell,OAK,Oakland Raiders,2006,2006,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Art_Shell
+Bill Cowher,PIT,Pittsburgh Steelers,1999,2006,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Bill_Cowher
+Bill Parcells,NYJ,New York Jets,1999,1999,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Bill_Parcells
+Bill Parcells,DAL,Dallas Cowboys,2003,2006,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Bill_Parcells
+Brian Stewart,DAL,Dallas Cowboys,2007,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Brian_Stewart_(American_football)
+Carl Smith,JAX,Jacksonville Jaguars,2005,2006,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Carl_Smith_(American_football)
+Carl Smith,SEA,Seattle Seahawks,2018,2018,HC,Associate head coach,False,False,https://en.wikipedia.org/wiki/Carl_Smith_(American_football)
+Carl Smith,SEA,Seattle Seahawks,2021,2023,HC,Associate head coach,False,False,https://en.wikipedia.org/wiki/Carl_Smith_(American_football)
+Chris Foerster,MIA,Miami Dolphins,2004,2004,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Chris_Foerster
+Dan Reeves,ATL,Atlanta Falcons,1999,2003,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dan_Reeves
+Dave McGinnis,ARI,Arizona Cardinals,1999,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dave_McGinnis
+Dave McGinnis,ARI,Arizona Cardinals,2000,2003,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dave_McGinnis
+Dennis Erickson,SF,San Francisco 49ers,2003,2004,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dennis_Erickson
+Dennis Green,MIN,Minnesota Vikings,1999,2001,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dennis_Green
+Dennis Green,ARI,Arizona Cardinals,2004,2006,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dennis_Green
+Dick Vermeil,LAR,St. Louis Rams,1999,1999,HC,"Head coach, General manager & President of Football Operations",False,False,https://en.wikipedia.org/wiki/Dick_Vermeil
+Dick Vermeil,KC,Kansas City Chiefs,2001,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Dick_Vermeil
+Don Blackmon,ATL,Atlanta Falcons,2001,2001,DC,(Defensive coordinator),False,False,https://en.wikipedia.org/wiki/Don_Blackmon
+George Seifert,CAR,Carolina Panthers,1999,2001,HC,Head coach,False,False,https://en.wikipedia.org/wiki/George_Seifert
+Greg Blache,CHI,Chicago Bears,1999,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Blache
+Greg Blache,WSH,Washington Redskins,2008,2009,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Greg_Blache
+Herm Edwards,NYJ,New York Jets,2001,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Herm_Edwards
+Herm Edwards,KC,Kansas City Chiefs,2006,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Herm_Edwards
+Jim Hostler,SF,San Francisco 49ers,2007,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Hostler
+Kurt Schottenheimer,KC,Kansas City Chiefs,1999,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Kurt_Schottenheimer
+Kurt Schottenheimer,WSH,Washington Redskins,2001,2001,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Kurt_Schottenheimer
+Kurt Schottenheimer,DET,Detroit Lions,2002,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Kurt_Schottenheimer
+Larry Marmie,ARI,Arizona Cardinals,2000,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Larry_Marmie
+Larry Marmie,LAR,St. Louis Rams,2004,2005,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Larry_Marmie
+Larry Peccatiello,DET,Detroit Lions,1999,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Larry_Peccatiello
+Les Steckel,TB,Tampa Bay Buccaneers,2000,2000,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Les_Steckel
+Marty Schottenheimer,WSH,Washington Redskins,2001,2001,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Marty_Schottenheimer
+Marty Schottenheimer,LAC,San Diego Chargers,2002,2006,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Marty_Schottenheimer
+Mike Trgovac,CAR,Carolina Panthers,2003,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Mike_Trgovac
+Norm Chow,TEN,Tennessee Titans,2005,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Norm_Chow
+Peter Giunta,LAR,St. Louis Rams,1999,1999,DC,Co-defensive coordinator,False,True,https://en.wikipedia.org/wiki/Peter_Giunta_(American_football)
+Peter Giunta,LAR,St. Louis Rams,2000,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Peter_Giunta_(American_football)
+Sherman Lewis,GB,Green Bay Packers,1999,1999,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Sherman_Lewis
+Sherman Lewis,MIN,Minnesota Vikings,2000,2001,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Sherman_Lewis
+Sherman Lewis,DET,Detroit Lions,2003,2004,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Sherman_Lewis
+Sherman Smith,WSH,Washington Redskins,2008,2009,OC,Offensive coordinator & running backs coach,False,False,https://en.wikipedia.org/wiki/Sherman_Smith
+Steve Mariucci,SF,San Francisco 49ers,1999,2002,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Steve_Mariucci
+Steve Mariucci,DET,Detroit Lions,2003,2005,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Steve_Mariucci
+Steve Spurrier,WSH,Washington Redskins,2002,2003,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Steve_Spurrier
+Ted Cottrell,BUF,Buffalo Bills,1999,2000,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ted_Cottrell
+Ted Cottrell,NYJ,New York Jets,2001,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ted_Cottrell
+Ted Cottrell,MIN,Minnesota Vikings,2004,2005,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ted_Cottrell
+Ted Cottrell,LAC,San Diego Chargers,2007,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ted_Cottrell
+Tim Lewis,PIT,Pittsburgh Steelers,2000,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Tim_Lewis
+Tim Lewis,NYG,New York Giants,2004,2006,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Tim_Lewis
+Tony Dungy,TB,Tampa Bay Buccaneers,1999,2001,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Tony_Dungy
+Tony Dungy,IND,Indianapolis Colts,2002,2008,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Tony_Dungy
+Vince Tobin,ARI,Arizona Cardinals,1999,2000,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Vince_Tobin
+Vince Tobin,DET,Detroit Lions,2001,2001,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Vince_Tobin
+Brian Billick,BAL,Baltimore Ravens,1999,2007,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Brian_Billick
+Dale Lindsey,LAC,San Diego Chargers,2002,2003,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Dale_Lindsey
+Danny Abramowicz,NO,New Orleans Saints,1999,1999,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Danny_Abramowicz
+Emmitt Thomas,GB,Green Bay Packers,1999,1999,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Emmitt_Thomas
+Emmitt Thomas,MIN,Minnesota Vikings,2000,2001,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Emmitt_Thomas
+Emmitt Thomas,ATL,Atlanta Falcons,2007,2007,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Emmitt_Thomas
+Eric Studesville,DEN,Denver Broncos,2010,2010,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Eric_Studesville
+Eric Studesville,MIA,Miami Dolphins,2021,2021,OC,Co-offensive coordinator & running backs coach,False,True,https://en.wikipedia.org/wiki/Eric_Studesville
+Eric Studesville,MIA,Miami Dolphins,2022,2025,HC,Associate head coach & running backs coach,False,False,https://en.wikipedia.org/wiki/Eric_Studesville
+Jim Johnson,PHI,Philadelphia Eagles,1999,2008,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Jim_Johnson_(American_football)
+Joe Pendry,BUF,Buffalo Bills,1999,2000,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Joe_Pendry
+Joe Pendry,HOU,Houston Texans,2005,2006,OC,Offensive line coach & interim offensive coordinator,True,False,https://en.wikipedia.org/wiki/Joe_Pendry
+Mike Ditka,NO,New Orleans Saints,1999,1999,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Ditka
+Mike Singletary,SF,San Francisco 49ers,2008,2008,HC,Interim head coach,True,False,https://en.wikipedia.org/wiki/Mike_Singletary
+Mike Singletary,SF,San Francisco 49ers,2009,2010,HC,Head coach,False,False,https://en.wikipedia.org/wiki/Mike_Singletary
+Ray Sherman,MIN,Minnesota Vikings,1999,1999,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Ray_Sherman
+Rick Neuheisel,BAL,Baltimore Ravens,2007,2007,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Rick_Neuheisel
+Ron Zook,NO,New Orleans Saints,2000,2001,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Ron_Zook
+Turk Schonert,BUF,Buffalo Bills,2008,2008,OC,Offensive coordinator,False,False,https://en.wikipedia.org/wiki/Turk_Schonert
+Willie Shaw,OAK,Oakland Raiders,1999,1999,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Willie_Shaw
+Zaven Yaralian,NO,New Orleans Saints,1999,1999,DC,Defensive coordinator,False,False,https://en.wikipedia.org/wiki/Zaven_Yaralian
+Zaven Yaralian,DEN,Denver Broncos,2001,2001,HC,Assistant to the head coach,False,False,https://en.wikipedia.org/wiki/Zaven_Yaralian

@@ -47,7 +47,7 @@ def build_summary(edges: pd.DataFrame, stints: pd.DataFrame) -> pd.DataFrame:
     this mentor. A man who had already been a head coach before joining the
     mentor's staff (Wade Phillips under Sean McVay, say) is counted
     separately as `n_already_head_coach`; he is not a branch of this tree.
-    Head-coaching seasons before 2011 are outside the data, so "already" is
+    Head-coaching seasons before 1999 are outside the data, so "already" is
     an undercount."""
     hc = stints[stints["role"] == "HC"]
     hc_seasons = hc.groupby("person")["season"].apply(lambda x: sorted(set(x))).to_dict()
@@ -90,7 +90,7 @@ def build_summary(edges: pd.DataFrame, stints: pd.DataFrame) -> pd.DataFrame:
 
 def run():
     OUT.mkdir(parents=True, exist_ok=True)
-    stints = pd.read_csv(OUT / "staff_stints.csv")
+    stints = pd.read_csv(OUT / "staff_stints_all.csv")
     edges = build_edges(stints)
     edges.to_csv(OUT / "coaching_tree_edges.csv", index=False)
     summary = build_summary(edges, stints)

@@ -250,3 +250,15 @@ def test_coaching_tree_does_not_count_men_who_were_already_head_coaches():
     summary = ct.build_summary(ct.build_edges(stints), stints).set_index("mentor").loc["Mentor"]
     assert summary["n_became_head_coach"] == 1 and "Young Gun" in summary["became_head_coach_detail"]
     assert summary["n_already_head_coach"] == 1 and summary["already_head_coach_detail"] == "Old Hand"
+
+
+def test_head_coach_placeholders_are_excluded_from_ratings():
+    draft = pd.DataFrame([
+        {"season": 2004, "franchise": "AAA", "unit": "offense", "proposed_playcaller": "Defensive Head Coach",
+         "basis": "default_no_coordinator_headcoach", "confidence": "low", "midseason_change": False},
+        {"season": 2004, "franchise": "BBB", "unit": "offense", "proposed_playcaller": "Steady Hand",
+         "basis": "continuity_guess", "confidence": "low", "midseason_change": False},
+    ])
+    kept, excluded = pr.apply_exclusions(draft)
+    assert kept["franchise"].tolist() == ["BBB"]
+    assert excluded["reason"].tolist() == ["no_coordinator_listed"]

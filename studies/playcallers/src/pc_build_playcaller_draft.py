@@ -18,7 +18,7 @@ STUDY_DIR = Path(__file__).resolve().parent.parent
 PROCESSED = STUDY_DIR / "data" / "processed"
 REFERENCE = STUDY_DIR / "data" / "reference"
 
-SEASONS = list(range(2011, 2026))
+SEASONS = list(range(1999, 2026))
 FRANCHISES = [
     "ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE", "DAL", "DEN",
     "DET", "GB", "HOU", "IND", "JAX", "KC", "LAC", "LAR", "MIA",
@@ -141,6 +141,33 @@ MODEL_KNOWLEDGE_OVERRIDES += [
 # the head coach. It stays at the no-coordinator default and is flagged in docs/PHASE1B_REVIEW.md.
 
 
+
+# Candidates for the older seasons, added by the reviewing model (Fable), 2026-09-28.
+# Same status as every row here: unverified belief, never 'high'.
+MODEL_KNOWLEDGE_OVERRIDES += [
+    ('LAR', 'offense', [2000, 2001, 2002, 2003, 2004, 2005], 'medium', "Added in review for 1999-2010. Believed: Mike Martz called the Rams's offensive plays as head coach. Not sourced; needs a source."),
+    ('SEA', 'offense', [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008], 'medium', "Added in review for 1999-2010. Believed: Mike Holmgren called Seattle's offensive plays as head coach. Not sourced; needs a source."),
+    ('DEN', 'offense', [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008], 'medium', "Added in review for 1999-2010. Believed: Mike Shanahan called Denver's offensive plays as head coach. Not sourced; needs a source."),
+    ('OAK', 'offense', [1999, 2000, 2001], 'medium', "Added in review for 1999-2010. Believed: Jon Gruden called Oakland's offensive plays as head coach. Not sourced; needs a source."),
+    ('TB', 'offense', [2002, 2003, 2004, 2005, 2006, 2007, 2008], 'medium', "Added in review for 1999-2010. Believed: Jon Gruden called Tampa Bay's offensive plays as head coach. Not sourced; needs a source."),
+    ('PHI', 'offense', [1999, 2000, 2001, 2002, 2003, 2004, 2005], 'medium', "Added in review for 1999-2010. Believed: Andy Reid called Philadelphia's offensive plays as head coach through 2005; he is believed to have handed off during 2006, so later seasons stay at the default. Not sourced; needs a source."),
+    ('NO', 'offense', [2006, 2007, 2008, 2009, 2010], 'medium', "Added in review for 1999-2010. Believed: Sean Payton called New Orleans's offensive plays as head coach. Not sourced; needs a source."),
+    ('LAC', 'offense', [2007, 2008, 2009, 2010, 2011, 2012], 'medium', "Added in review for 1999-2010. Believed: Norv Turner called San Diego's offensive plays as head coach. Not sourced; needs a source."),
+    ('GB', 'offense', [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2017, 2018], 'medium', "Added in review for 1999-2010. Believed: Mike McCarthy called Green Bay's offensive plays as head coach (2015, when he is believed to have handed off for most of the season, stays at the default). Not sourced; needs a source."),
+    ('HOU', 'offense', [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013], 'medium', "Added in review for 1999-2010. Believed: Gary Kubiak called Houston's offensive plays as head coach. Not sourced; needs a source."),
+    ('DEN', 'offense', [2015, 2016], 'medium', "Added in review for 1999-2010. Believed: Gary Kubiak called Denver's offensive plays as head coach. Not sourced; needs a source."),
+    ('WSH', 'offense', [2002, 2003], 'medium', "Added in review for 1999-2010. Believed: Steve Spurrier called Washington's offensive plays as head coach. Not sourced; needs a source."),
+    ('DAL', 'offense', [2011, 2012], 'medium', "Added in review for 1999-2010. Believed: Jason Garrett called Dallas's offensive plays as head coach. Not sourced; needs a source."),
+    ('CHI', 'offense', [2013, 2014], 'medium', "Added in review for 1999-2010. Believed: Marc Trestman called Chicago's offensive plays as head coach. Not sourced; needs a source."),
+    ('BUF', 'offense', [2010, 2011, 2012], 'medium', "Added in review for 1999-2010. Believed: Chan Gailey called Buffalo's offensive plays as head coach. Not sourced; needs a source."),
+    ('OAK', 'offense', [2011], 'low', "Added in review for 1999-2010. Believed: Hue Jackson called Oakland's offensive plays as head coach. Not sourced; needs a source."),
+    ('TEN', 'offense', [2014, 2015], 'low', "Added in review for 1999-2010. Believed: Ken Whisenhunt called Tennessee's offensive plays as head coach. Not sourced; needs a source."),
+    ('BAL', 'offense', [2007], 'low', "Added in review for 1999-2010. Believed: Brian Billick called Baltimore's offensive plays as head coach in 2007 after taking over during 2006. Not sourced; needs a source."),
+    ('NYJ', 'defense', [2009, 2010, 2011, 2012, 2013, 2014], 'medium', "Added in review for 1999-2010. Believed: Rex Ryan called the Jets's defensive plays as head coach. Not sourced; needs a source."),
+    ('BUF', 'defense', [2015, 2016], 'low', "Added in review for 1999-2010. Believed: Rex Ryan called Buffalo's defensive plays as head coach. Not sourced; needs a source."),
+    ('DAL', 'defense', [2007, 2008, 2009, 2010], 'medium', "Added in review for 1999-2010. Believed: Wade Phillips called Dallas's defensive plays as head coach. Not sourced; needs a source."),
+]
+
 def build_model_knowledge_index():
     idx = {}
     for franchise, unit, seasons, confidence, note in MODEL_KNOWLEDGE_OVERRIDES:
@@ -179,6 +206,25 @@ def names_str(rows: list[dict]) -> str:
     return " | ".join(r["person"] for r in rows)
 
 
+CONTINUITY_WINDOW = 3
+
+
+def continuity_guess(stint_idx: dict, season: int, franchise: str, role: str) -> str | None:
+    """When a team-season lists nobody in a role, guess the man who held it
+    both before and after. If the nearest earlier season (within
+    CONTINUITY_WINDOW years) and the nearest later one each list a single
+    holder and it is the same person, he is the guess. A guess, not a
+    finding: the basis is `continuity_guess` and the confidence is low."""
+    def nearest(step: int) -> str | None:
+        for k in range(1, CONTINUITY_WINDOW + 1):
+            rows = stint_idx.get((season + step * k, franchise, role), [])
+            if rows:
+                return rows[0]["person"] if len(rows) == 1 else None
+        return None
+    before, after = nearest(-1), nearest(+1)
+    return before if before and before == after else None
+
+
 def build_draft(stints: list[dict], evidence: list[dict]) -> list[dict]:
     stint_idx = index_stints(stints)
     evidence_idx = index_evidence(evidence)
@@ -206,12 +252,22 @@ def build_draft(stints: list[dict], evidence: list[dict]) -> list[dict]:
                     note = (f"Default assumption: the titled {role} calls "
                             f"{unit} plays. Not evidence-verified.")
                 else:
-                    default_playcaller = head_coach
-                    basis = "default_no_coordinator_headcoach"
-                    confidence = "low"
-                    note = (f"No titled {role} found for this team-season; "
-                            f"defaulting to the head coach as {unit} "
-                            f"play-caller. Not evidence-verified.")
+                    guess = continuity_guess(stint_idx, season, franchise, role)
+                    if guess:
+                        default_playcaller = guess
+                        basis = "continuity_guess"
+                        confidence = "low"
+                        note = (f"No titled {role} found for this team-season; {guess} held the "
+                                f"title for this team both before and after, so he is assumed to "
+                                f"have held it here too. A guess; needs a source.")
+                    else:
+                        default_playcaller = head_coach
+                        basis = "default_no_coordinator_headcoach"
+                        confidence = "low"
+                        note = (f"No titled {role} found for this team-season; "
+                                f"defaulting to the head coach as {unit} "
+                                f"play-caller. Not evidence-verified, and not used in "
+                                f"the ratings unless an override names him.")
 
                 proposed_playcaller = default_playcaller
                 evidence_ids: list[str] = []
@@ -329,7 +385,7 @@ def write_review_csv(rows: list[dict], path: Path) -> None:
 
 
 def main():
-    stints = load_csv(PROCESSED / "staff_stints.csv")
+    stints = load_csv(PROCESSED / "staff_stints_all.csv")
     evidence_path = PROCESSED / "playcall_evidence.csv"
     evidence = load_csv(evidence_path) if evidence_path.exists() else []
 

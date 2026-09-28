@@ -21,7 +21,7 @@ OUT = STUDY / "data" / "processed"
 sys.path.insert(0, str(XE / "src"))
 import xe_metrics  # noqa: E402
 
-FIRST_SEASON = 2011
+FIRST_SEASON = 1999
 LAST_SEASON = 2025
 
 
@@ -31,7 +31,7 @@ LAST_SEASON = 2025
 def load_inputs():
     unit = pd.read_csv(OUT / "unit_season_ratings.csv")
     draft = pd.read_csv(OUT / "playcaller_draft.csv")
-    stints = pd.read_csv(OUT / "staff_stints.csv")
+    stints = pd.read_csv(OUT / "staff_stints_all.csv")
     return unit, draft, stints
 
 
@@ -67,7 +67,9 @@ def apply_exclusions(draft: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     d["_missing"] = d["proposed_playcaller"].isna() | (d["proposed_playcaller"].astype(str).str.strip() == "")
     d["_midseason"] = d["midseason_change"].astype(bool)
 
-    excl_mask = d["_midseason"] | d["_multi"] | d["_missing"]
+    # a head coach credited only because no coordinator is listed is a placeholder, not a guess
+    d["_placeholder"] = d["basis"].astype(str) == "default_no_coordinator_headcoach"
+    excl_mask = d["_midseason"] | d["_multi"] | d["_missing"] | d["_placeholder"]
     excluded = d[excl_mask].copy()
     reasons = []
     for _, row in excluded.iterrows():
@@ -78,11 +80,13 @@ def apply_exclusions(draft: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
             rs.append("multiple_playcallers")
         if row["_missing"]:
             rs.append("no_proposed_playcaller")
+        if row["_placeholder"]:
+            rs.append("no_coordinator_listed")
         reasons.append(";".join(rs))
     excluded["reason"] = reasons
-    excluded = excluded.drop(columns=["_multi", "_missing", "_midseason"])
+    excluded = excluded.drop(columns=["_multi", "_missing", "_midseason", "_placeholder"])
 
-    kept = d[~excl_mask].drop(columns=["_multi", "_missing", "_midseason"]).copy()
+    kept = d[~excl_mask].drop(columns=["_multi", "_missing", "_midseason", "_placeholder"]).copy()
     return kept, excluded
 
 
@@ -202,7 +206,7 @@ def build_careers(seasons: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
         worst = worst.rename(columns={"season": "ws_season", "franchise": "ws_franchise", "z_epa": "ws_z"})
         worst["worst_season"] = worst.apply(lambda r: f"{int(r.ws_season)} {r.ws_franchise} z={r.ws_z:.2f}", axis=1)
 
-        unverified = u["basis"].isin(["model_knowledge_unverified", "default_no_coordinator_headcoach"])
+        unverified = u["basis"].isin(["model_knowledge_unverified", "default_no_coordinator_headcoach", "continuity_guess"])
         share_unv = unverified.groupby(u["person"]).mean().rename("share_unverified").reset_index()
 
         agg = agg.merge(best[["person", "best_season"]], on="person").merge(worst[["person", "worst_season"]], on="person")

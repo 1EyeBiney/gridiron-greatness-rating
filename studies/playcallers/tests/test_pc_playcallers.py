@@ -209,14 +209,14 @@ def test_review_subset_includes_no_coordinator_and_overrides_only():
 
 # --- checks against the real files, if present ---------------------------
 
-def test_real_draft_has_960_rows_if_present():
+def test_real_draft_has_one_row_per_unit_season_if_present():
     path = PROCESSED / "playcaller_draft.csv"
     if not path.exists():
         return
     import csv
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    assert len(rows) == 960
+    assert len(rows) == 2 * (31 * 3 + 32 * 24)      # 1999-2001 had 31 teams
 
 
 def test_real_draft_proposed_playcaller_never_missing_unless_both_missing():
@@ -245,3 +245,18 @@ def test_real_draft_evidence_ids_refer_to_existing_evidence_rows():
         ids = [e for e in r["evidence_ids"].split(" | ") if e]
         for eid in ids:
             assert eid in evidence_ids
+
+
+def test_continuity_guess_fills_a_gap_between_two_seasons_of_the_same_coordinator():
+    stints = [
+        _stint(2003, "IND", "HC", "Head Coach"), _stint(2004, "IND", "HC", "Head Coach"),
+        _stint(2005, "IND", "HC", "Head Coach"),
+        _stint(2003, "IND", "OC", "Steady Hand"), _stint(2005, "IND", "OC", "Steady Hand"),
+        _stint(2003, "IND", "DC", "First Man"), _stint(2005, "IND", "DC", "Second Man"),
+    ]
+    rows = {(r["season"], r["unit"]): r for r in build_draft(stints, []) if r["franchise"] == "IND"}
+    off = rows[(2004, "offense")]
+    assert off["proposed_playcaller"] == "Steady Hand" and off["basis"] == "continuity_guess"
+    assert off["confidence"] == "low"
+    de = rows[(2004, "defense")]                      # different men before and after: no guess
+    assert de["basis"] == "default_no_coordinator_headcoach" and de["proposed_playcaller"] == "Head Coach"

@@ -26,7 +26,7 @@ STUDY = Path(__file__).resolve().parents[1]
 XE = STUDY.parents[0] / "explosive-edge"
 OUT = STUDY / "data" / "processed"
 
-FIRST_SEASON = 2011
+FIRST_SEASON = 1999
 LAST_SEASON = 2025
 RIDGE = 1.0  # ridge penalty on OFF/DEF coefficients (identification + shrinkage)
 
@@ -138,8 +138,8 @@ def sanity_report(out: pd.DataFrame) -> str:
         lines.append(f"{unit} epa_per_play: corr(adjusted, raw{'*(-1) for defense' if unit=='defense' else ''}) = {corr:.3f}")
 
         agg = u.groupby("franchise")["z"].mean().sort_values(ascending=False)
-        lines.append(f"Top 5 {unit} (epa z, 2011-2025 avg): " + ", ".join(f"{f}={v:.2f}" for f, v in agg.head(5).items()))
-        lines.append(f"Bottom 5 {unit} (epa z, 2011-2025 avg): " + ", ".join(f"{f}={v:.2f}" for f, v in agg.tail(5).items()))
+        lines.append(f"Top 5 {unit} (epa z, 1999-2025 avg): " + ", ".join(f"{f}={v:.2f}" for f, v in agg.head(5).items()))
+        lines.append(f"Bottom 5 {unit} (epa z, 1999-2025 avg): " + ", ".join(f"{f}={v:.2f}" for f, v in agg.tail(5).items()))
     return "\n".join(lines)
 
 

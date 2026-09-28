@@ -1,125 +1,183 @@
 mentor,n_distinct_coordinators,n_became_head_coach,became_head_coach_detail,n_already_head_coach,already_head_coach_detail,n_coordinator_elsewhere
-Pete Carroll,10,4,"Brian Schottenheimer (DAL, first HC season 2025); Dan Quinn (ATL,WSH, first HC season 2015); Darrell Bevell (DET,JAX, first HC season 2020); Gus Bradley (JAX, first HC season 2013)",0,,9
+John Fox,9,5,"Adam Gase (MIA,NYJ, first HC season 2016); Dennis Allen (OAK,NO, first HC season 2012); Jack Del Rio (JAX,DEN,OAK, first HC season 2003); Mike McCoy (LAC,TEN, first HC season 2013); Vic Fangio (DEN, first HC season 2019)",0,,7
+Bill Belichick,8,5,"Bill O'Brien (HOU, first HC season 2014); Eric Mangini (NYJ,CLE, first HC season 2006); Josh McDaniels (DEN,OAK, first HC season 2009); Matt Patricia (DET, first HC season 2018); Romeo Crennel (CLE,KC,HOU, first HC season 2005)",1,Greg Schiano,5
+Andy Reid,12,4,"Brad Childress (MIN, first HC season 2006); Doug Pederson (PHI,JAX, first HC season 2016); Matt Nagy (CHI, first HC season 2018); Sean McDermott (BUF, first HC season 2017)",3,Marty Mornhinweg; Steve Spagnuolo; Todd Bowles,7
+Pete Carroll,11,4,"Brian Schottenheimer (DAL, first HC season 2025); Dan Quinn (ATL,WSH, first HC season 2015); Darrell Bevell (DET,JAX, first HC season 2020); Gus Bradley (JAX, first HC season 2013)",0,,10
+Tom Coughlin,11,4,"Ben McAdoo (NYG, first HC season 2016); Bobby Petrino (ATL, first HC season 2007); Dom Capers (HOU, first HC season 2002); Steve Spagnuolo (LAR,NYG, first HC season 2009)",2,Gary Moeller; Perry Fewell,7
+Jack Del Rio,9,4,"Adam Gase (MIA,NYJ, first HC season 2016); Dirk Koetter (TB, first HC season 2016); Mel Tucker (JAX, first HC season 2011); Mike Smith (ATL, first HC season 2008)",1,Gregg Williams,8
 Sean McVay,8,4,"Brandon Staley (LAC, first HC season 2021); Kevin O'Connell (MIN, first HC season 2022); Liam Coen (JAX, first HC season 2025); Matt LaFleur (GB, first HC season 2019)",2,Raheem Morris; Wade Phillips,6
-John Fox,6,4,"Adam Gase (MIA,NYJ, first HC season 2016); Dennis Allen (OAK,NO, first HC season 2012); Mike McCoy (LAC,TEN, first HC season 2013); Vic Fangio (DEN, first HC season 2019)",1,Jack Del Rio,5
-Mike McCarthy,10,3,"Brian Schottenheimer (DAL, first HC season 2025); Joe Philbin (MIA,GB, first HC season 2012); Kellen Moore (NO, first HC season 2025)",3,Dan Quinn; Mike Pettine; Mike Zimmer,6
-Ron Rivera,9,3,"Rob Chudzinski (CLE, first HC season 2013); Sean McDermott (BUF, first HC season 2017); Steve Wilks (ARI,CAR, first HC season 2018)",2,Jack Del Rio; Norv Turner,8
-Dan Campbell,7,3,"Aaron Glenn (NYJ, first HC season 2025); Ben Johnson (CHI, first HC season 2025); Zac Taylor (CIN, first HC season 2019)",1,Anthony Lynn,2
+John Harbaugh,14,3,"Chuck Pagano (IND, first HC season 2012); Mike Macdonald (SEA, first HC season 2024); Rex Ryan (NYJ,BUF, first HC season 2009)",5,Cam Cameron; Gary Kubiak; Jim Caldwell; Marc Trestman; Marty Mornhinweg,9
+Mike McCarthy,12,3,"Brian Schottenheimer (DAL, first HC season 2025); Joe Philbin (MIA,GB, first HC season 2012); Kellen Moore (NO, first HC season 2025)",5,Dan Quinn; Dom Capers; Mike Nolan; Mike Pettine; Mike Zimmer,8
+Marvin Lewis,10,3,"Jay Gruden (WSH, first HC season 2014); Leslie Frazier (MIN, first HC season 2010); Mike Zimmer (MIN, first HC season 2014)",1,Hue Jackson,9
+Todd Bowles,10,3,"Brian Daboll (NYG, first HC season 2022); Dave Canales (CAR, first HC season 2024); Liam Coen (JAX, first HC season 2025)",2,Chan Gailey; Mike Nolan,6
+Ron Rivera,9,3,"Rob Chudzinski (CLE, first HC season 2013); Sean McDermott (BUF, first HC season 2017); Steve Wilks (ARI,CAR, first HC season 2018)",2,Jack Del Rio; Norv Turner,9
+Jeff Fisher,8,3,"Brian Schottenheimer (DAL, first HC season 2025); Gregg Williams (BUF,CLE, first HC season 2001); Jim Schwartz (DET, first HC season 2009)",0,,5
+Dan Campbell,7,3,"Aaron Glenn (NYJ, first HC season 2025); Ben Johnson (CHI, first HC season 2025); Zac Taylor (CIN, first HC season 2019)",1,Anthony Lynn,3
 Frank Reich,7,3,"Matt Eberflus (CHI, first HC season 2022); Nick Sirianni (PHI, first HC season 2021); Thomas Brown (CHI, first HC season 2024)",1,Gus Bradley,3
 Nick Sirianni,7,3,"Jonathan Gannon (ARI, first HC season 2023); Kellen Moore (NO, first HC season 2025); Shane Steichen (IND, first HC season 2023)",1,Vic Fangio,4
+Bill Cowher,6,3,"Jim Haslett (NO,LAR, first HC season 2000); Ken Whisenhunt (ARI,TEN, first HC season 2007); Mike Mularkey (BUF,JAX,TEN, first HC season 2004)",1,Dick LeBeau,6
+Brian Billick,6,3,"Marvin Lewis (CIN, first HC season 2003); Mike Nolan (SF, first HC season 2005); Rex Ryan (NYJ,BUF, first HC season 2009)",1,Jim Fassel,3
 Kyle Shanahan,6,3,"DeMeco Ryans (HOU, first HC season 2023); Mike McDaniel (MIA, first HC season 2022); Robert Saleh (NYJ, first HC season 2021)",1,Steve Wilks,1
-Bill Belichick,4,3,"Bill O'Brien (HOU, first HC season 2014); Josh McDaniels (OAK, first HC season 2022); Matt Patricia (DET, first HC season 2018)",1,Greg Schiano,0
-John Harbaugh,12,2,"Chuck Pagano (IND, first HC season 2012); Mike Macdonald (SEA, first HC season 2024)",3,Gary Kubiak; Jim Caldwell; Marc Trestman,7
-Andy Reid,9,2,"Doug Pederson (PHI,JAX, first HC season 2016); Matt Nagy (CHI, first HC season 2018)",2,Steve Spagnuolo; Todd Bowles,5
-Dan Quinn,8,2,"Jeff Ulbrich (NYJ, first HC season 2024); Kyle Shanahan (SF, first HC season 2017)",2,Dirk Koetter; Kliff Kingsbury,4
+Brad Childress,3,3,"Darrell Bevell (DET,JAX, first HC season 2020); Leslie Frazier (MIN, first HC season 2010); Mike Tomlin (PIT, first HC season 2007)",0,,2
+Lovie Smith,11,2,"Dirk Koetter (TB, first HC season 2016); Ron Rivera (CAR,WSH, first HC season 2011)",4,Leslie Frazier; Mike Martz; Mike Tice; Rod Marinelli,7
+Norv Turner,10,2,"Mike Nolan (SF, first HC season 2005); Ron Rivera (CAR,WSH, first HC season 2011)",1,Ray Rhodes,7
+Dan Quinn,8,2,"Jeff Ulbrich (NYJ, first HC season 2024); Kyle Shanahan (SF, first HC season 2017)",2,Dirk Koetter; Kliff Kingsbury,5
 Doug Marrone,8,2,"Mike Pettine (CLE, first HC season 2014); Nathaniel Hackett (DEN, first HC season 2022)",2,Jay Gruden; Jim Schwartz,6
-Mike Vrabel,8,2,"Arthur Smith (ATL, first HC season 2021); Matt LaFleur (GB, first HC season 2019)",1,Josh McDaniels,6
-Todd Bowles,8,2,"Dave Canales (CAR, first HC season 2024); Liam Coen (JAX, first HC season 2025)",1,Chan Gailey,3
-Jack Del Rio,6,2,"Adam Gase (MIA,NYJ, first HC season 2016); Dirk Koetter (TB, first HC season 2016)",1,Mel Tucker,6
-Jason Garrett,6,2,"Bill Callahan (WSH, first HC season 2019); Kellen Moore (NO, first HC season 2025)",0,,4
-Jay Gruden,6,2,"Kevin O'Connell (MIN, first HC season 2022); Sean McVay (LAR, first HC season 2017)",0,,4
-Marvin Lewis,6,2,"Jay Gruden (WSH, first HC season 2014); Mike Zimmer (MIN, first HC season 2014)",1,Hue Jackson,4
-Hue Jackson,5,2,"Freddie Kitchens (CLE, first HC season 2019); Gregg Williams (CLE, first HC season 2018)",1,Todd Haley,4
-Jeff Fisher,4,2,"Brian Schottenheimer (DAL, first HC season 2025); Gregg Williams (CLE, first HC season 2018)",0,,2
-Mike Smith,4,2,"Dirk Koetter (TB, first HC season 2016); Mike Mularkey (JAX,TEN, first HC season 2012)",0,,2
-Tom Coughlin,4,2,"Ben McAdoo (NYG, first HC season 2016); Perry Fewell (CAR, first HC season 2019)",1,Steve Spagnuolo,2
-Mike Tomlin,9,1,"Bruce Arians (IND,ARI,TB, first HC season 2012)",2,Arthur Smith; Todd Haley,5
-Sean Payton,7,1,"Gregg Williams (CLE, first HC season 2018)",3,Dennis Allen; Steve Spagnuolo; Vance Joseph,6
-Adam Gase,6,1,"Vance Joseph (DEN, first HC season 2017)",1,Gregg Williams,4
+Mike Shanahan,8,2,"Gary Kubiak (HOU,DEN, first HC season 2006); Kyle Shanahan (SF, first HC season 2017)",2,Jim Haslett; Ray Rhodes,8
+Mike Vrabel,8,2,"Arthur Smith (ATL, first HC season 2021); Matt LaFleur (GB, first HC season 2019)",1,Josh McDaniels,7
+Steve Mariucci,8,2,"Jim L. Mora (SEA, first HC season 2009); Marty Mornhinweg (DET, first HC season 2001)",2,Dick Jauron; Jim Mora,5
+Mike Tice,7,2,"Emmitt Thomas (ATL, first HC season 2007); Scott Linehan (LAR, first HC season 2006)",0,,5
+Rex Ryan,7,2,"Brian Schottenheimer (DAL, first HC season 2025); Mike Pettine (CLE, first HC season 2014)",3,Anthony Lynn; Marty Mornhinweg; Tony Sparano,5
+Romeo Crennel,7,2,"Brian Daboll (NYG, first HC season 2022); Rob Chudzinski (CLE, first HC season 2013)",0,,7
+Jay Gruden,6,2,"Kevin O'Connell (MIN, first HC season 2022); Sean McVay (LAR, first HC season 2017)",1,Jim Haslett,6
+Bill Callahan,4,2,"Kevin O'Connell (MIN, first HC season 2022); Marc Trestman (CHI, first HC season 2013)",0,,4
+Bill Parcells,4,2,"Bill Belichick (NE, first HC season 2000); Mike Zimmer (MIN, first HC season 2014)",0,,3
+Eric Mangini,4,2,"Brian Daboll (NYG, first HC season 2022); Brian Schottenheimer (DAL, first HC season 2025)",0,,4
+Jim Fassel,3,2,"John Fox (CAR,DEN,CHI, first HC season 2002); Sean Payton (NO,DEN, first HC season 2006)",0,,0
+Steve Spurrier,3,2,"Hue Jackson (OAK,CLE, first HC season 2011); Marvin Lewis (CIN, first HC season 2003)",0,,3
+Bobby Petrino,2,2,"Hue Jackson (OAK,CLE, first HC season 2011); Mike Zimmer (MIN, first HC season 2014)",0,,2
+Emmitt Thomas,2,2,"Hue Jackson (OAK,CLE, first HC season 2011); Mike Zimmer (MIN, first HC season 2014)",0,,2
+Vince Tobin,2,2,"Dave McGinnis (ARI, first HC season 2000); Marc Trestman (CHI, first HC season 2013)",0,,1
+Jon Gruden,9,1,"Bill Callahan (OAK,WSH, first HC season 2002)",2,Gus Bradley; Rod Marinelli,9
+Mike Tomlin,9,1,"Bruce Arians (IND,ARI,TB, first HC season 2012)",3,Arthur Smith; Dick LeBeau; Todd Haley,5
+Sean Payton,9,1,"Doug Marrone (BUF,JAX, first HC season 2013)",4,Dennis Allen; Gregg Williams; Steve Spagnuolo; Vance Joseph,7
+Dennis Green,8,1,"Emmitt Thomas (ATL, first HC season 2007)",0,,3
+Dick Jauron,8,1,"Perry Fewell (BUF,CAR, first HC season 2009)",0,,4
+Gary Kubiak,7,1,"Kyle Shanahan (SF, first HC season 2017)",2,Mike Sherman; Wade Phillips,6
+Jason Garrett,7,1,"Kellen Moore (NO, first HC season 2025)",3,Bill Callahan; Rod Marinelli; Scott Linehan,7
+Adam Gase,6,1,"Vance Joseph (DEN, first HC season 2017)",1,Gregg Williams,6
+Dick Vermeil,6,1,"Mike Martz (LAR, first HC season 2000)",1,Gunther Cunningham,4
 Doug Pederson,6,1,"Frank Reich (IND,CAR, first HC season 2018)",1,Jim Schwartz,3
-Joe Philbin,6,1,"Zac Taylor (CIN, first HC season 2019)",1,Mike Pettine,3
-Lovie Smith,6,1,"Dirk Koetter (TB, first HC season 2016)",1,Leslie Frazier,4
-Mike Zimmer,6,1,"Kevin Stefanski (CLE, first HC season 2020)",3,Gary Kubiak; Norv Turner; Pat Shurmur,4
+Gregg Williams,6,1,"Freddie Kitchens (CLE, first HC season 2019)",1,Todd Haley,5
+Hue Jackson,6,1,"Freddie Kitchens (CLE, first HC season 2019)",2,Gregg Williams; Todd Haley,5
+Joe Philbin,6,1,"Zac Taylor (CIN, first HC season 2019)",2,Mike Pettine; Mike Sherman,4
+Josh McDaniels,6,1,"Mike McCoy (LAC,TEN, first HC season 2013)",1,Mike Nolan,4
+Ken Whisenhunt,6,1,"Todd Haley (KC, first HC season 2009)",0,,3
+Mike Holmgren,6,1,"Mike Sherman (GB, first HC season 2000)",1,Ray Rhodes,4
+Mike Nolan,6,1,"Mike McCarthy (GB,DAL, first HC season 2006)",2,Mike Martz; Norv Turner,5
+Mike Zimmer,6,1,"Kevin Stefanski (CLE, first HC season 2020)",3,Gary Kubiak; Norv Turner; Pat Shurmur,5
+Raheem Morris,6,1,"Jeff Ulbrich (NYJ, first HC season 2024)",2,Dirk Koetter; Jim Bates,4
 Sean McDermott,6,1,"Brian Daboll (NYG, first HC season 2022)",1,Leslie Frazier,5
+Tony Sparano,6,1,"Brian Daboll (NYG, first HC season 2022)",1,Mike Nolan,5
+Wade Phillips,6,1,"Jason Garrett (DAL, first HC season 2010)",0,,5
+Anthony Lynn,5,1,"Shane Steichen (IND, first HC season 2023)",2,Gus Bradley; Ken Whisenhunt,5
 Bill O'Brien,5,1,"Mike Vrabel (TEN,NE, first HC season 2018)",1,Romeo Crennel,3
 Brian Daboll,5,1,"Mike Kafka (NYG, first HC season 2025)",0,,3
-Gus Bradley,5,1,"Nathaniel Hackett (DEN, first HC season 2022)",0,,2
+Gus Bradley,5,1,"Nathaniel Hackett (DEN, first HC season 2022)",0,,3
+Jim Haslett,5,1,"Mike McCarthy (GB,DAL, first HC season 2006)",0,,3
+Marty Schottenheimer,5,1,"Cam Cameron (MIA, first HC season 2007)",1,Wade Phillips,4
 Matt LaFleur,5,1,"Nathaniel Hackett (DEN, first HC season 2022)",1,Mike Pettine,3
 Matt Nagy,5,1,"Vic Fangio (DEN, first HC season 2019)",1,Chuck Pagano,4
-Mike McCoy,5,1,"Frank Reich (IND,CAR, first HC season 2018)",1,Ken Whisenhunt,1
-Rex Ryan,5,1,"Mike Pettine (CLE, first HC season 2014)",1,Tony Sparano,3
-Anthony Lynn,4,1,"Shane Steichen (IND, first HC season 2023)",2,Gus Bradley; Ken Whisenhunt,3
+Mike McCoy,5,1,"Frank Reich (IND,CAR, first HC season 2018)",1,Ken Whisenhunt,2
 Brandon Staley,4,1,"Kellen Moore (NO, first HC season 2025)",0,,2
+Chan Gailey,4,1,"Dave Campo (DAL, first HC season 2000)",1,Dave Wannstedt,2
 Chris Tabor,4,1,"Thomas Brown (CHI, first HC season 2024)",0,,3
-Matt Patricia,4,1,"Darrell Bevell (DET,JAX, first HC season 2020)",0,,2
-Raheem Morris,4,1,"Jeff Ulbrich (NYJ, first HC season 2024)",1,Dirk Koetter,2
+Dave McGinnis,4,1,"Marc Trestman (CHI, first HC season 2013)",0,,2
+Dave Wannstedt,4,1,"Jim Bates (MIA, first HC season 2004)",2,Chan Gailey; Norv Turner,3
+Jim Mora,4,1,"Vic Fangio (DEN, first HC season 2019)",0,,3
+Matt Patricia,4,1,"Darrell Bevell (DET,JAX, first HC season 2020)",0,,3
+Mike Martz,4,1,"Lovie Smith (CHI,TB,HOU, first HC season 2004)",0,,2
+Mike Smith,4,1,"Dirk Koetter (TB, first HC season 2016)",2,Mike Mularkey; Mike Nolan,3
+Nick Saban,4,1,"Scott Linehan (LAR, first HC season 2006)",2,Dom Capers; Mike Mularkey,4
 Robert Saleh,4,1,"Jeff Ulbrich (NYJ, first HC season 2024)",1,Nathaniel Hackett,4
-Romeo Crennel,4,1,"Brian Daboll (NYG, first HC season 2022)",0,,3
 Zac Taylor,4,1,"Brian Callahan (TEN, first HC season 2024)",0,,1
+Butch Davis,3,1,"Bruce Arians (IND,ARI,TB, first HC season 2012)",1,Terry Robiskie,3
+Chris Palmer,3,1,"Romeo Crennel (CLE,KC,HOU, first HC season 2005)",0,,3
 Darrell Bevell,3,1,"Brian Schottenheimer (DAL, first HC season 2025)",0,,1
-Gregg Williams,3,1,"Freddie Kitchens (CLE, first HC season 2019)",1,Todd Haley,2
+Dom Capers,3,1,"Vic Fangio (DEN, first HC season 2019)",1,Chris Palmer,3
 Jim Harbaugh,3,1,"Vic Fangio (DEN, first HC season 2019)",0,,2
+Leslie Frazier,3,1,"Darrell Bevell (DET,JAX, first HC season 2020)",0,,3
 Mike Pettine,3,1,"Kyle Shanahan (SF, first HC season 2017)",0,,3
-Bill Callahan,2,1,"Kevin O'Connell (MIN, first HC season 2022)",0,,2
-Gary Kubiak,2,1,"Wade Phillips (HOU, first HC season 2013)",0,,2
+Steve Spagnuolo,3,1,"Pat Shurmur (CLE,PHI,NYG, first HC season 2011)",1,Josh McDaniels,3
+Tom Cable,3,1,"Hue Jackson (OAK,CLE, first HC season 2011)",0,,3
+Al Groh,2,1,"Mike Nolan (SF, first HC season 2005)",0,,2
+Bruce Coslet,2,1,"Dick LeBeau (CIN, first HC season 2000)",0,,1
+Dave Campo,2,1,"Mike Zimmer (MIN, first HC season 2014)",1,Bruce Coslet,1
+Eric Studesville,2,1,"Mike McCoy (LAC,TEN, first HC season 2013)",0,,2
 Giff Smith,2,1,"Kellen Moore (NO, first HC season 2025)",0,,1
-John Fassel,2,1,"Gregg Williams (CLE, first HC season 2018)",0,,1
-Mike Shanahan,2,1,"Kyle Shanahan (SF, first HC season 2017)",0,,1
+Jim L. Mora,2,1,"Gus Bradley (JAX, first HC season 2013)",0,,2
+Ray Rhodes,2,1,"Emmitt Thomas (ATL, first HC season 2007)",0,,2
 Urban Meyer,2,1,"Brian Schottenheimer (DAL, first HC season 2025)",0,,1
 Mel Tucker,1,1,"Dirk Koetter (TB, first HC season 2016)",0,,1
-Dennis Allen,8,0,,0,,5
-Mike Mularkey,6,0,,1,Mel Tucker,3
+Dennis Allen,8,0,,0,,7
+Mike Mularkey,8,0,,3,Dick LeBeau; Mel Tucker; Terry Robiskie,7
+Jim Caldwell,6,0,,0,,5
+Tony Dungy,6,0,,0,,4
 Antonio Pierce,5,0,,0,,3
+Brian Flores,5,0,,2,Chan Gailey; Eric Studesville,2
 Bruce Arians,5,0,,1,Todd Bowles,3
-Chip Kelly,5,0,,1,Pat Shurmur,3
+Chip Kelly,5,0,,1,Pat Shurmur,5
 Chuck Pagano,5,0,,2,Bruce Arians; Rob Chudzinski,4
 Kevin Stefanski,5,0,,1,Jim Schwartz,4
 Matt Eberflus,5,0,,0,,4
 Matt Rhule,5,0,,1,Ben McAdoo,3
-Pat Shurmur,5,0,,0,,3
-Brian Flores,4,0,,1,Chan Gailey,2
-Jon Gruden,4,0,,1,Gus Bradley,4
+Mike Priefer,5,0,,2,Norv Turner; Pat Shurmur,5
+Pat Shurmur,5,0,,2,Brad Childress; Dick Jauron,5
+Dan Reeves,4,0,,1,Wade Phillips,1
+George Seifert,4,0,,0,,3
+Herman Edwards,4,0,,0,,3
+Jim Tomsula,4,0,,1,Eric Mangini,4
+Joe Gibbs,4,0,,1,Gregg Williams,3
+Joe Vitt,4,0,,2,Mike Martz; Steve Spagnuolo,4
 Mike McDaniel,4,0,,1,Vic Fangio,2
+Mike Sherman,4,0,,1,Jim Bates,3
+Rod Marinelli,4,0,,1,Mike Martz,3
 Arthur Smith,3,0,,0,,2
 DeMeco Ryans,3,0,,0,,1
-Dirk Koetter,3,0,,1,Mike Smith,1
-Jim Caldwell,3,0,,0,,3
-Joe Judge,3,0,,2,Freddie Kitchens; Jason Garrett,2
-Josh McDaniels,3,0,,0,,1
-Ken Whisenhunt,3,0,,0,,1
+Dirk Koetter,3,0,,1,Mike Smith,3
+Herm Edwards,3,0,,2,Chan Gailey; Gunther Cunningham,2
+Jim Zorn,3,0,,0,,2
+Joe Judge,3,0,,2,Freddie Kitchens; Jason Garrett,3
 Kevin O'Connell,3,0,,1,Brian Flores,1
+Marty Mornhinweg,3,0,,1,Vince Tobin,2
 Mike Macdonald,3,0,,0,,1
-Mike Munchak,3,0,,0,,1
-Mike Priefer,3,0,,0,,2
+Mike Munchak,3,0,,1,Chris Palmer,3
+Mike Riley,3,0,,1,Norv Turner,2
+Mike Singletary,3,0,,1,Mike Martz,3
+Perry Fewell,3,0,,1,Norv Turner,3
+Scott Linehan,3,0,,1,Jim Haslett,3
 Shane Steichen,3,0,,1,Gus Bradley,3
 Steve Wilks,3,0,,2,Ben McAdoo; Mike McCoy,2
 Thomas Brown,3,0,,0,,2
+Todd Haley,3,0,,1,Romeo Crennel,3
 Vance Joseph,3,0,,1,Mike McCoy,3
 Vic Fangio,3,0,,1,Pat Shurmur,2
 Aaron Glenn,2,0,,0,,0
-Aaron Kromer,2,0,,1,Steve Spagnuolo,1
+Aaron Kromer,2,0,,1,Steve Spagnuolo,2
+Art Shell,2,0,,0,,2
 Ben Johnson,2,0,,1,Dennis Allen,1
 Ben McAdoo,2,0,,1,Steve Spagnuolo,2
+Bobby Ross,2,0,,0,,0
 Brian Callahan,2,0,,0,,0
 Brian Schottenheimer,2,0,,1,Matt Eberflus,1
-Chan Gailey,2,0,,0,,1
 Darren Rizzi,2,0,,0,,2
 Dave Canales,2,0,,0,,1
-David Culley,2,0,,1,Lovie Smith,1
+David Culley,2,0,,1,Lovie Smith,2
+Dennis Erickson,2,0,,1,Jim Mora,1
+Dick LeBeau,2,0,,0,,2
 Freddie Kitchens,2,0,,1,Steve Wilks,2
-Greg Schiano,2,0,,0,,1
+Gary Moeller,2,0,,0,,0
+Greg Schiano,2,0,,0,,2
+Gunther Cunningham,2,0,,0,,2
 Jeff Saturday,2,0,,1,Gus Bradley,1
 Jeff Ulbrich,2,0,,1,Nathaniel Hackett,2
 Jerod Mayo,2,0,,0,,1
 Jerry Rosburg,2,0,,0,,1
-Jim Schwartz,2,0,,0,,1
-Jim Tomsula,2,0,,0,,0
+Jim Schwartz,2,0,,2,Gunther Cunningham; Scott Linehan,2
 Joe DeCamillis,2,0,,1,Wade Phillips,2
-Joe Vitt,2,0,,1,Steve Spagnuolo,1
+John Fassel,2,0,,1,Gregg Williams,1
 Jonathan Gannon,2,0,,0,,0
 Kellen Moore,2,0,,1,Brandon Staley,1
-Leslie Frazier,2,0,,0,,2
+Lane Kiffin,2,0,,0,,2
 Liam Coen,2,0,,0,,0
 Marc Trestman,2,0,,2,Aaron Kromer; Mel Tucker,1
+Mike Ditka,2,0,,0,,0
 Mike Kafka,2,0,,0,,1
 Nathaniel Hackett,2,0,,0,,1
-Norv Turner,2,0,,0,,0
-Perry Fewell,2,0,,1,Norv Turner,2
 Rich Bisaccia,2,0,,1,Gus Bradley,2
 Rob Chudzinski,2,0,,1,Norv Turner,2
-Todd Haley,2,0,,1,Romeo Crennel,1
-Tony Sparano,2,0,,0,,1
+Robert Prince,2,0,,1,Darrell Bevell,1
+Cam Cameron,1,0,,1,Dom Capers,1
+Jim Bates,1,0,,0,,0
 Kliff Kingsbury,1,0,,1,Vance Joseph,1
-Robert Prince,1,0,,0,,0
-Steve Spagnuolo,1,0,,0,,1
-Wade Phillips,1,0,,0,,1
+Terry Robiskie,1,0,,1,Ray Rhodes,1
