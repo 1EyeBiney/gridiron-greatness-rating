@@ -1,0 +1,97 @@
+season,franchise,wiki_head_coach,schedule_head_coaches,match
+2022,ARI,Kliff Kingsbury,Kliff Kingsbury (17g),True
+2022,ATL,Arthur Smith,Arthur Smith (17g),True
+2022,BAL,John Harbaugh,John Harbaugh (18g),True
+2022,BUF,Sean McDermott,Sean McDermott (18g),True
+2022,CAR,Matt Rhule | Steve Wilks,Steve Wilks (12g); Matt Rhule (5g),True
+2022,CHI,Matt Eberflus,Matt Eberflus (17g),True
+2022,CIN,Zac Taylor,Zac Taylor (19g),True
+2022,CLE,Kevin Stefanski,Kevin Stefanski (17g),True
+2022,DAL,Mike McCarthy,Mike McCarthy (19g),True
+2022,DEN,Nathaniel Hackett | Jerry Rosburg,Nathaniel Hackett (15g); Jay Rosburg (2g),True
+2022,DET,Dan Campbell,Dan Campbell (17g),True
+2022,GB,Matt LaFleur,Matt LaFleur (17g),True
+2022,HOU,Lovie Smith,Lovie Smith (17g),True
+2022,IND,Frank Reich | Jeff Saturday,Frank Reich (9g); Jeff Saturday (8g),True
+2022,JAX,Doug Pederson,Doug Pederson (19g),True
+2022,KC,Andy Reid,Andy Reid (20g),True
+2022,LAC,Brandon Staley,Brandon Staley (18g),True
+2022,LAR,Sean McVay,Sean McVay (17g),True
+2022,MIA,Mike McDaniel,Mike McDaniel (18g),True
+2022,MIN,Kevin O'Connell,Kevin O'Connell (18g),True
+2022,NE,Bill Belichick,Bill Belichick (17g),True
+2022,NO,Dennis Allen,Dennis Allen (17g),True
+2022,NYG,Brian Daboll,Brian Daboll (19g),True
+2022,NYJ,Robert Saleh,Robert Saleh (17g),True
+2022,OAK,Josh McDaniels,Josh McDaniels (17g),True
+2022,PHI,Nick Sirianni,Nick Sirianni (20g),True
+2022,PIT,Mike Tomlin,Mike Tomlin (17g),True
+2022,SEA,Pete Carroll,Pete Carroll (18g),True
+2022,SF,Kyle Shanahan,Kyle Shanahan (20g),True
+2022,TB,Todd Bowles,Todd Bowles (18g),True
+2022,TEN,Mike Vrabel,Mike Vrabel (17g),True
+2022,WSH,Ron Rivera,Ron Rivera (17g),True
+2023,ARI,Jonathan Gannon,Jonathan Gannon (17g),True
+2023,ATL,Arthur Smith,Arthur Smith (17g),True
+2023,BAL,John Harbaugh,John Harbaugh (19g),True
+2023,BUF,Sean McDermott,Sean McDermott (19g),True
+2023,CAR,Frank Reich | Chris Tabor,Frank Reich (11g); Chris Tabor (6g),True
+2023,CHI,Matt Eberflus,Matt Eberflus (17g),True
+2023,CIN,Zac Taylor,Zac Taylor (17g),True
+2023,CLE,Kevin Stefanski,Kevin Stefanski (18g),True
+2023,DAL,Mike McCarthy,Mike McCarthy (18g),True
+2023,DEN,Sean Payton,Sean Payton (17g),True
+2023,DET,Dan Campbell,Dan Campbell (20g),True
+2023,GB,Matt LaFleur,Matt LaFleur (19g),True
+2023,HOU,DeMeco Ryans,DeMeco Ryans (19g),True
+2023,IND,Shane Steichen,Shane Steichen (17g),True
+2023,JAX,Doug Pederson,Doug Pederson (17g),True
+2023,KC,Andy Reid,Andy Reid (21g),True
+2023,LAC,Brandon Staley | Giff Smith,Brandon Staley (14g); Giff Smith (3g),True
+2023,LAR,Sean McVay,Sean McVay (18g),True
+2023,MIA,Mike McDaniel,Mike McDaniel (18g),True
+2023,MIN,Kevin O'Connell,Kevin O'Connell (17g),True
+2023,NE,Bill Belichick,Bill Belichick (17g),True
+2023,NO,Dennis Allen,Dennis Allen (17g),True
+2023,NYG,Brian Daboll,Brian Daboll (17g),True
+2023,NYJ,Robert Saleh,Robert Saleh (17g),True
+2023,OAK,Josh McDaniels | Antonio Pierce,Antonio Pierce (9g); Josh McDaniels (8g),True
+2023,PHI,Nick Sirianni,Nick Sirianni (18g),True
+2023,PIT,Mike Tomlin,Mike Tomlin (18g),True
+2023,SEA,Pete Carroll,Pete Carroll (17g),True
+2023,SF,Kyle Shanahan,Kyle Shanahan (20g),True
+2023,TB,Todd Bowles,Todd Bowles (19g),True
+2023,TEN,Mike Vrabel,Mike Vrabel (17g),True
+2023,WSH,Ron Rivera,Ron Rivera (17g),True
+2024,ARI,Jonathan Gannon,Jonathan Gannon (17g),True
+2024,ATL,Raheem Morris,Raheem Morris (17g),True
+2024,BAL,John Harbaugh,John Harbaugh (19g),True
+2024,BUF,Sean McDermott,Sean McDermott (20g),True
+2024,CAR,Dave Canales,Dave Canales (17g),True
+2024,CHI,Matt Eberflus | Thomas Brown,Matt Eberflus (17g),False
+2024,CIN,Zac Taylor,Zac Taylor (17g),True
+2024,CLE,Kevin Stefanski,Kevin Stefanski (17g),True
+2024,DAL,Mike McCarthy,Mike McCarthy (17g),True
+2024,DEN,Sean Payton,Sean Payton (18g),True
+2024,DET,Dan Campbell,Dan Campbell (18g),True
+2024,GB,Matt LaFleur,Matt LaFleur (18g),True
+2024,HOU,DeMeco Ryans,DeMeco Ryans (19g),True
+2024,IND,Shane Steichen,Shane Steichen (17g),True
+2024,JAX,Doug Pederson,Doug Pederson (17g),True
+2024,KC,Andy Reid,Andy Reid (20g),True
+2024,LAC,Jim Harbaugh,Jim Harbaugh (18g),True
+2024,LAR,Sean McVay,Sean McVay (19g),True
+2024,MIA,Mike McDaniel,Mike McDaniel (17g),True
+2024,MIN,Kevin O'Connell,Kevin O'Connell (18g),True
+2024,NE,Jerod Mayo,Jerod Mayo (17g),True
+2024,NO,Dennis Allen | Darren Rizzi,Dennis Allen (17g),False
+2024,NYG,Brian Daboll,Brian Daboll (17g),True
+2024,NYJ,Robert Saleh | Jeff Ulbrich,Robert Saleh (17g),False
+2024,OAK,Antonio Pierce,Antonio Pierce (17g),True
+2024,PHI,Nick Sirianni,Nick Sirianni (21g),True
+2024,PIT,Mike Tomlin,Mike Tomlin (18g),True
+2024,SEA,Mike Macdonald,Mike Macdonald (17g),True
+2024,SF,Kyle Shanahan,Kyle Shanahan (17g),True
+2024,TB,Todd Bowles,Todd Bowles (18g),True
+2024,TEN,Brian Callahan,Brian Callahan (17g),True
+2024,WSH,Dan Quinn,Dan Quinn (20g),True
