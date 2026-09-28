@@ -1,0 +1,860 @@
+season,franchise,unit,person,role_that_season,z_epa,z_explosive,z_ypp,basis,confidence,primary_qb_id,primary_qb_name
+2011,ARI,defense,Ken Whisenhunt,HC,0.1116352848930592,-0.3831750974330998,0.3127530748648017,default_no_coordinator_headcoach,low,,
+2011,ATL,defense,Brian VanGorder,coordinator,0.7009244209663291,-0.10518334810864,0.3769088087695492,default_coordinator,medium,,
+2011,BAL,defense,Chuck Pagano,coordinator,1.4636506692051992,1.453156434139416,1.4625166568464594,default_coordinator,medium,,
+2011,BUF,defense,Chan Gailey,HC,-0.7960569004966737,-0.977146464806426,-1.059297122260305,default_no_coordinator_headcoach,low,,
+2011,CAR,defense,Ron Rivera,HC,-1.8508085644853,-1.3053804594204377,-1.7859347751456014,default_no_coordinator_headcoach,low,,
+2011,CHI,defense,Lovie Smith,HC,1.6148081018091336,1.724771592720392,0.8319962183458189,default_no_coordinator_headcoach,low,,
+2011,CIN,defense,Mike Zimmer,coordinator,0.0906062081014701,0.6732968254931319,0.4795998978378482,default_coordinator,medium,,
+2011,CLE,defense,Dick Jauron,coordinator,-0.5330482686702182,0.3960898410262469,0.3854480399569406,default_coordinator,medium,,
+2011,DAL,defense,Rob Ryan,coordinator,-0.0583416534827541,-0.1504502123495701,-0.3523340694182849,default_coordinator,medium,,
+2011,DEN,defense,Dennis Allen,coordinator,-0.0595342073200022,0.2805490990871762,0.2350268568181764,default_coordinator,medium,,
+2011,DET,defense,Gunther Cunningham,coordinator,1.535900634941288,0.8734119039639523,-0.1136333867902596,default_coordinator,medium,,
+2011,GB,defense,Dom Capers,coordinator,-1.099881866706268,-0.4386564318325624,-2.1257380374309665,default_coordinator,medium,,
+2011,HOU,defense,Wade Phillips,coordinator,1.530135443268414,0.5546913013808358,1.4674744765328416,default_coordinator,medium,,
+2011,IND,defense,Jim Caldwell,HC,-1.0332335949723903,-0.2316425834224266,-0.4556366590299566,default_no_coordinator_headcoach,low,,
+2011,LAC,defense,Norv Turner,HC,-1.4114590822552535,-0.9589101204598084,-1.105817511316476,default_no_coordinator_headcoach,low,,
+2011,LAR,defense,Steve Spagnuolo,HC,-0.3294576506291128,-0.8807100123678472,-0.1973252113244893,default_no_coordinator_headcoach,low,,
+2011,MIN,defense,Leslie Frazier,HC,-0.4984365054089637,0.108387887846655,0.136426153585296,default_no_coordinator_headcoach,low,,
+2011,NE,defense,Bill Belichick,HC,-1.3058927984691684,-1.8252104151761217,-1.732899037320605,default_no_coordinator_headcoach,low,,
+2011,NO,defense,Gregg Williams,coordinator,-0.2395022640285081,0.0374648010599293,-0.9722598874728438,default_coordinator,medium,,
+2011,NYG,defense,Tom Coughlin,HC,-0.5358575838149452,-0.0367095074328996,0.0191504097959975,default_no_coordinator_headcoach,low,,
+2011,NYJ,defense,Rex Ryan,HC,1.756395462062393,1.3262351453441736,1.3803329288074735,default_no_coordinator_headcoach,low,,
+2011,OAK,defense,Hue Jackson,HC,-1.125778289948837,-1.480608797435731,-1.045480846013581,default_no_coordinator_headcoach,low,,
+2011,PHI,defense,Andy Reid,HC,0.33681537463384,-1.2756750844655689,0.1961582752924232,default_no_coordinator_headcoach,low,,
+2011,PIT,defense,Dick LeBeau,coordinator,0.4370829838027736,1.583700524997688,1.704348129264539,default_coordinator,medium,,
+2011,SEA,defense,Pete Carroll,HC,0.5578400904897826,0.7378003452565106,0.5785016765113467,default_no_coordinator_headcoach,low,,
+2011,SF,defense,Vic Fangio,coordinator,1.5043811388700548,1.490677059020498,0.8280164657033862,default_coordinator,medium,,
+2011,TB,defense,Raheem Morris,HC,-1.5733408110812814,-2.116364933310028,-1.826398164594499,default_no_coordinator_headcoach,low,,
+2011,TEN,defense,Mike Munchak,HC,-0.3173742219475683,-0.4030352516533662,0.1454690310219448,default_no_coordinator_headcoach,low,,
+2011,WSH,defense,Jim Haslett,coordinator,-0.3664033247394495,0.1135085277245516,0.1601362261311889,default_coordinator,medium,,
+2012,ARI,defense,Ray Horton,coordinator,2.1265077189604167,-0.164041006130162,0.6620904715369208,default_coordinator,medium,,
+2012,ATL,defense,Mike Nolan,coordinator,0.508409031020538,-0.2792288208806043,-0.6797317919999031,default_coordinator,medium,,
+2012,BAL,defense,Dean Pees,coordinator,-0.0295569413295947,0.6111182386332356,0.6143852842079044,default_coordinator,medium,,
+2012,BUF,defense,Dave Wannstedt,coordinator,-1.4116076367423642,-1.3953774533402363,-0.934673405300348,default_coordinator,medium,,
+2012,CAR,defense,Sean McDermott,coordinator,0.2154604601557335,0.9469649075511312,0.9577892117758456,default_coordinator,medium,,
+2012,CHI,defense,Rod Marinelli,coordinator,2.454142708881533,-0.1193071651246862,1.1517442915848124,default_coordinator,medium,,
+2012,CIN,defense,Mike Zimmer,coordinator,0.5854477798031776,0.0377780914307339,0.9596490632398198,default_coordinator,medium,,
+2012,CLE,defense,Dick Jauron,coordinator,-0.3579739786628598,0.921319360064242,0.2207532378333276,default_coordinator,medium,,
+2012,DAL,defense,Rob Ryan,coordinator,-0.4599937799935443,-0.0731652186781273,-0.2867734806413069,default_coordinator,medium,,
+2012,DEN,defense,Jack Del Rio,coordinator,1.2443314678624082,1.627411963226361,1.9054805654223148,default_coordinator,medium,,
+2012,DET,defense,Gunther Cunningham,coordinator,-0.3914714022661022,-0.921326760232136,-0.4306242682123925,default_coordinator,medium,,
+2012,GB,defense,Dom Capers,coordinator,0.318355861761209,0.414528805610575,0.5565765267628097,default_coordinator,medium,,
+2012,HOU,defense,Wade Phillips,coordinator,1.200358982112028,-0.7437114370739981,0.5084004591005312,default_coordinator,medium,,
+2012,JAX,defense,Mel Tucker,coordinator,-1.221101072114641,0.1448924948751456,-0.6325129713412642,default_coordinator,medium,,
+2012,KC,defense,Romeo Crennel,HC,-1.4873938579074748,-1.665327013852944,-1.091986657691718,default_no_coordinator_headcoach,low,,
+2012,LAC,defense,John Pagano,coordinator,0.2077995800300246,0.834792926571805,0.6618475132164032,default_coordinator,medium,,
+2012,LAR,defense,Gregg Williams,coordinator,0.5135429010687895,0.509394659437086,0.3282379499873991,default_coordinator,medium,,
+2012,MIA,defense,Kevin Coyle,coordinator,-0.4223395423189773,-0.0401110103780087,-0.1447143809579448,default_coordinator,medium,,
+2012,MIN,defense,Alan Williams,coordinator,0.0310593011352422,1.515207722030724,0.5293438672059747,default_coordinator,medium,,
+2012,NE,defense,Matt Patricia,coordinator,-0.0848838967528082,-1.226355667532076,-1.1314663025022988,default_coordinator,medium,,
+2012,NYG,defense,Perry Fewell,coordinator,0.0395079020486364,-0.7964549411492514,-1.1511574755300729,default_coordinator,medium,,
+2012,NYJ,defense,Mike Pettine,coordinator,0.2207064920719406,0.6456565606029546,0.4954333838970077,default_coordinator,medium,,
+2012,OAK,defense,Jason Tarver,coordinator,-1.5251846404653369,-0.9115035955522716,-0.9746015001865768,default_coordinator,medium,,
+2012,PIT,defense,Dick LeBeau,coordinator,0.3681311118915389,1.9219611370699945,1.598536480384266,default_coordinator,medium,,
+2012,SEA,defense,Gus Bradley,coordinator,1.082456435348703,0.8953383087581208,0.7507864173596697,default_coordinator,medium,,
+2012,SF,defense,Vic Fangio,coordinator,1.242732472194492,1.9884122438116612,1.6980458136276757,default_coordinator,medium,,
+2012,TB,defense,Bill Sheridan,coordinator,-0.00012347482819,-0.9423845005872598,-0.703000689176472,default_coordinator,medium,,
+2012,TEN,defense,Jerry Gray,coordinator,-1.0153492017292804,-1.21397232568195,-0.8165167038862948,default_coordinator,medium,,
+2012,WSH,defense,Jim Haslett,coordinator,-0.3426002783651624,0.1304489421315663,-0.6465422777638222,default_coordinator,medium,,
+2013,ARI,defense,Todd Bowles,coordinator,1.724045530394602,1.376500371578691,1.352329760171352,default_coordinator,medium,,
+2013,ATL,defense,Mike Nolan,coordinator,-1.2430606698293485,-0.352957825199681,-1.9349922019047685,default_coordinator,medium,,
+2013,BAL,defense,Dean Pees,coordinator,0.1697963219194301,0.5384304143127207,0.4201327210709078,default_coordinator,medium,,
+2013,BUF,defense,Mike Pettine,coordinator,0.964490949643028,-0.026630303003995,0.6885252297819658,default_coordinator,medium,,
+2013,CAR,defense,Sean McDermott,coordinator,1.4189546858798312,0.1962830320427428,0.956799333018952,default_coordinator,medium,,
+2013,CHI,defense,Mel Tucker,coordinator,-1.5183719396851645,-3.137399987860281,-1.911079098017868,default_coordinator,medium,,
+2013,CIN,defense,Mike Zimmer,coordinator,1.14478353543663,1.7882608630185912,1.5646740964292845,default_coordinator,medium,,
+2013,CLE,defense,Ray Horton,coordinator,-0.5937051556961368,1.3549141486737075,0.9781703145968416,default_coordinator,medium,,
+2013,DAL,defense,Monte Kiffin,coordinator,-0.8302977579938507,-1.707802497550342,-1.2882593780201386,default_coordinator,medium,,
+2013,DET,defense,Gunther Cunningham,coordinator,0.0934330180783472,0.2754216021743178,-0.5869961662683388,default_coordinator,medium,,
+2013,GB,defense,Dom Capers,coordinator,-1.4149646879294873,-1.7769685865701084,-1.0512927454857863,default_coordinator,medium,,
+2013,IND,defense,Greg Manusky,coordinator,-0.3251489493323408,-0.216917952446512,-0.626241146051253,default_coordinator,medium,,
+2013,JAX,defense,Bob Babich,coordinator,-1.1389012716792035,-0.9497823787619396,-0.7042000351785707,default_coordinator,medium,,
+2013,KC,defense,Bob Sutton,coordinator,0.9437479563122192,-0.6107198195735506,-0.1236306629657119,default_coordinator,medium,,
+2013,LAC,defense,John Pagano,coordinator,-1.4856117256739243,-0.8432896630734641,-1.8194951708082128,default_coordinator,medium,,
+2013,LAR,defense,Tim Walton,coordinator,0.7052057849088462,0.1217733114627018,-0.0004037199579888,default_coordinator,medium,,
+2013,MIA,defense,Kevin Coyle,coordinator,-0.2687299473217064,0.0214919279571418,-0.0736543444071818,default_coordinator,medium,,
+2013,MIN,defense,Alan Williams,coordinator,-1.2465539941434716,0.2300713486355827,-0.415961710608608,default_coordinator,medium,,
+2013,NE,defense,Matt Patricia,coordinator,-0.4100493296655214,-0.3298852308371454,-0.3168720686744599,default_coordinator,medium,,
+2013,NO,defense,Rob Ryan,coordinator,0.6806540138310591,0.204774733677867,0.3272190164078838,default_coordinator,medium,,
+2013,NYG,defense,Perry Fewell,coordinator,1.4345621577814176,1.1145106389711252,1.980874807448148,default_coordinator,medium,,
+2013,NYJ,defense,Dennis Thurman,coordinator,-0.1872508678744177,0.5148299781712622,0.1311333211419328,default_coordinator,medium,,
+2013,OAK,defense,Jason Tarver,coordinator,-0.861616801629782,0.1553244535861737,-0.5077598823674605,default_coordinator,medium,,
+2013,PHI,defense,Billy Davis,coordinator,-0.1076076958204979,0.4951278846060172,-0.1164473656100708,default_coordinator,medium,,
+2013,PIT,defense,Dick LeBeau,coordinator,-0.5174389654683508,0.7868686480148717,0.0698129121002618,default_coordinator,medium,,
+2013,SEA,defense,Dan Quinn,coordinator,2.3997120649612533,1.063923632383952,2.1759859757333437,default_coordinator,medium,,
+2013,SF,defense,Vic Fangio,coordinator,1.113632859270077,1.365209928468716,0.9646670850684844,default_coordinator,medium,,
+2013,TB,defense,Bill Sheridan,coordinator,0.3169391791977211,0.04001795729647,-0.1149996526338227,default_coordinator,medium,,
+2013,TEN,defense,Jerry Gray,coordinator,-0.3233902298517899,-0.3100423620310727,0.1126000013480988,default_coordinator,medium,,
+2013,WSH,defense,Jim Haslett,coordinator,-0.3826125663090944,-0.8559209989841094,-0.3881338165488709,default_coordinator,medium,,
+2014,ARI,defense,Todd Bowles,coordinator,0.7906974430362044,-0.4377583384359306,-0.8235956706336967,default_coordinator,medium,,
+2014,ATL,defense,Mike Nolan,coordinator,-1.569060777464978,-0.401520779597419,-2.0080600928110623,default_coordinator,medium,,
+2014,BAL,defense,Dean Pees,coordinator,0.0818015671421348,0.8589416082179677,0.7149845888555036,default_coordinator,medium,,
+2014,BUF,defense,Jim Schwartz,coordinator,1.803540344556414,0.8637830461187903,1.3676859489729702,default_coordinator,medium,,
+2014,CAR,defense,Sean McDermott,coordinator,-0.0408565517780838,0.1408327393546019,0.1646250598734275,default_coordinator,medium,,
+2014,CHI,defense,Mel Tucker,coordinator,-1.2527458841492742,-1.2315613604562832,-1.6384427522176497,default_coordinator,medium,,
+2014,CIN,defense,Paul Guenther,coordinator,0.1272637658692035,0.6281637429565465,0.4856371561627677,default_coordinator,medium,,
+2014,CLE,defense,Jim O'Neil,coordinator,0.3412523217867013,-0.7105643215201244,0.5046891697594806,default_coordinator,medium,,
+2014,DAL,defense,Rod Marinelli,coordinator,-0.5700994324531565,0.6131634974440807,-0.973358062685048,default_coordinator,medium,,
+2014,DEN,defense,Jack Del Rio,coordinator,1.0704913820274309,2.050719042479186,1.815435290059753,default_coordinator,medium,,
+2014,DET,defense,Teryl Austin,coordinator,1.740578985789673,1.3572063161204506,1.3697077722487057,default_coordinator,medium,,
+2014,GB,defense,Dom Capers,coordinator,0.375403260465066,-0.4124481786618025,0.1836913418034055,default_coordinator,medium,,
+2014,HOU,defense,Romeo Crennel,coordinator,1.3506592777754545,1.00140169361348,0.6405803134468641,default_coordinator,medium,,
+2014,IND,defense,Greg Manusky,coordinator,0.4450220328882422,-1.0810161579953397,0.0650836894029159,default_coordinator,medium,,
+2014,JAX,defense,Bob Babich,coordinator,-0.4583273880202032,-0.5525554756042299,0.1327302728038041,default_coordinator,medium,,
+2014,KC,defense,Bob Sutton,coordinator,0.3447493255263078,-0.652636333870818,0.7229705502960336,default_coordinator,medium,,
+2014,LAC,defense,John Pagano,coordinator,0.1541161252494725,-0.3109550236904744,-0.0809915796629703,default_coordinator,medium,,
+2014,LAR,defense,Gregg Williams,coordinator,0.8667979448898727,0.4349607196570167,-0.5347535805024076,default_coordinator,medium,,
+2014,MIA,defense,Kevin Coyle,coordinator,-0.0273812461773014,-0.0494715009174139,0.0820235685295029,default_coordinator,medium,,
+2014,MIN,defense,Mike Zimmer,HC,-0.4405481404913187,0.1947610980462677,0.0372932403240243,model_knowledge_unverified,medium,,
+2014,NE,defense,Matt Patricia,coordinator,0.4701748323111269,-0.7401171926305503,0.2162214348086436,default_coordinator,medium,,
+2014,NO,defense,Rob Ryan,coordinator,-1.8217309873995724,-1.517796622521287,-1.558950155148152,default_coordinator,medium,,
+2014,NYG,defense,Perry Fewell,coordinator,-0.7873402877476826,-2.286950231481408,-1.36085768292606,default_coordinator,medium,,
+2014,NYJ,defense,Dennis Thurman,coordinator,-0.2774086489235459,0.6340887964801311,0.2539113743415847,default_coordinator,medium,,
+2014,PHI,defense,Bill Davis,coordinator,0.3048234965576756,-0.2256944382960901,0.1729611508234772,default_coordinator,medium,,
+2014,PIT,defense,Dick LeBeau,coordinator,-1.3220909235410525,-1.3795271519012873,-1.6916849819540491,default_coordinator,medium,,
+2014,SEA,defense,Dan Quinn,coordinator,1.9678764487714555,2.516223531154765,2.251063792740382,default_coordinator,medium,,
+2014,SF,defense,Vic Fangio,coordinator,0.4470020857292509,0.8966009584936601,0.8420530827411429,default_coordinator,medium,,
+2014,TB,defense,Leslie Frazier,coordinator,-0.5622558561687983,-0.179172928010998,-0.0283887342513742,default_coordinator,medium,,
+2014,TEN,defense,Ray Horton,coordinator,-1.5809959406268888,-0.2610989641424604,-0.1478757841140027,default_coordinator,medium,,
+2014,WSH,defense,Jim Haslett,coordinator,-1.7199758032920172,0.438314251897315,-1.098446808885098,default_coordinator,medium,,
+2015,ARI,defense,James Bettcher,coordinator,1.417398865218457,0.1007581653926338,0.7172570858402414,default_coordinator,medium,,
+2015,ATL,defense,Dan Quinn,HC,-0.3731652510177221,-0.5277559921185032,-0.5537607395359072,model_knowledge_unverified,low,,
+2015,BAL,defense,Dean Pees,coordinator,-0.1499463611240659,1.3132610249456642,0.6606918128496636,default_coordinator,medium,,
+2015,BUF,defense,Dennis Thurman,coordinator,-0.7462164409073555,-0.5852333078631634,-0.6403606086791136,default_coordinator,medium,,
+2015,CAR,defense,Sean McDermott,coordinator,1.308348174077973,0.481166050257875,1.2480043082089132,default_coordinator,medium,,
+2015,CHI,defense,Vic Fangio,coordinator,-0.511689733128332,-0.0925063129622825,-0.3364772099685557,default_coordinator,medium,,
+2015,CIN,defense,Paul Guenther,coordinator,0.6491936666024191,2.3338597886444123,0.8161471261358771,default_coordinator,medium,,
+2015,CLE,defense,Jim O'Neil,coordinator,-0.8232411490235279,-0.320569501695465,-0.951956285193418,default_coordinator,medium,,
+2015,DAL,defense,Rod Marinelli,coordinator,-0.7447325771775247,-1.0108997015748569,-0.3905195315216205,default_coordinator,medium,,
+2015,DEN,defense,Wade Phillips,coordinator,2.2451392817774782,1.6835801087621092,2.624191822434999,default_coordinator,medium,,
+2015,DET,defense,Teryl Austin,coordinator,-0.4262464196748721,-0.562903376389773,-0.3346274147319614,default_coordinator,medium,,
+2015,GB,defense,Dom Capers,coordinator,0.65112024132201,-0.272284824955407,0.1914470801745242,default_coordinator,medium,,
+2015,HOU,defense,Romeo Crennel,coordinator,1.137374847004921,0.1792738940597673,0.8580359214808224,default_coordinator,medium,,
+2015,IND,defense,Greg Manusky,coordinator,-0.4922676051414555,-1.023577850685273,-0.5371847282731829,default_coordinator,medium,,
+2015,JAX,defense,Bob Babich,coordinator,-1.017687724000061,-0.2256403382944886,-0.4415831045842925,default_coordinator,medium,,
+2015,KC,defense,Bob Sutton,coordinator,1.4030814473458797,0.4697502691587903,0.9898302464679742,default_coordinator,medium,,
+2015,LAC,defense,John Pagano,coordinator,-0.6491408822787343,-0.8571754369522205,-1.201284112146355,default_coordinator,medium,,
+2015,LAR,defense,Gregg Williams,coordinator,1.4568828839528412,0.7088786194577419,0.5670250578344547,default_coordinator,medium,,
+2015,MIN,defense,Mike Zimmer,HC,0.599993984351058,0.7606932188610055,0.1641393778503657,model_knowledge_unverified,medium,,
+2015,NE,defense,Matt Patricia,coordinator,0.1524367678302626,0.2512875672626388,0.537083993007608,default_coordinator,medium,,
+2015,NYG,defense,Steve Spagnuolo,coordinator,-1.0974625276475356,-0.425107402053061,-1.579096323677876,default_coordinator,medium,,
+2015,NYJ,defense,Todd Bowles,HC,0.8975386589732726,-0.4585642966349308,0.7423780169967905,model_knowledge_unverified,medium,,
+2015,OAK,defense,Ken Norton Jr.,coordinator,0.0982186511224627,0.1309221237861909,0.4764735835928594,default_coordinator,medium,,
+2015,PIT,defense,Keith Butler,coordinator,0.5530205613654379,0.6378768708076306,0.0658717863495331,default_coordinator,medium,,
+2015,SEA,defense,Kris Richard,coordinator,1.201959107221573,2.026432210799965,1.5840817382132495,default_coordinator,medium,,
+2015,SF,defense,Eric Mangini,coordinator,-0.589897563754086,0.5607807129979356,-0.3233189929675502,default_coordinator,medium,,
+2015,TB,defense,Leslie Frazier,coordinator,-0.9230892452789136,0.2741395220954941,0.1984969324465835,default_coordinator,medium,,
+2015,WSH,defense,Joe Barry,coordinator,-0.5223286912309133,-1.218714599749097,-1.195644614932107,default_coordinator,medium,,
+2016,ARI,defense,James Bettcher,coordinator,1.2637441509926866,0.845162016293891,1.9095532157348116,default_coordinator,medium,,
+2016,ATL,defense,Dan Quinn,HC,-0.867078649700223,-0.1994202443844086,-0.4497786615899747,model_knowledge_unverified,low,,
+2016,BAL,defense,Dean Pees,coordinator,0.9168146867215524,0.9375773246101836,0.8882733341270506,default_coordinator,medium,,
+2016,CAR,defense,Sean McDermott,coordinator,0.2772307378144065,-0.1399010773967037,0.2368629419272092,default_coordinator,medium,,
+2016,CHI,defense,Vic Fangio,coordinator,-0.7981250868701212,-0.4360418028586254,-0.3260974143461196,default_coordinator,medium,,
+2016,CIN,defense,Paul Guenther,coordinator,-0.1668842482379835,0.0299922540925453,0.0173685002833997,default_coordinator,medium,,
+2016,CLE,defense,Ray Horton,coordinator,-1.7261695410497833,-0.7805848187966774,-0.8920698623041483,default_coordinator,medium,,
+2016,DAL,defense,Rod Marinelli,coordinator,0.076236229806704,1.3170421353330324,0.2050042293405258,default_coordinator,medium,,
+2016,DET,defense,Teryl Austin,coordinator,-1.5730927691565575,-0.3198167020201516,-1.146377933025708,default_coordinator,medium,,
+2016,GB,defense,Dom Capers,coordinator,-0.6520414094778875,-0.1417543821608397,-0.9202960746195168,default_coordinator,medium,,
+2016,HOU,defense,Romeo Crennel,coordinator,1.304618486200234,0.8942613389525232,1.2219786582555414,default_coordinator,medium,,
+2016,IND,defense,Ted Monachino,coordinator,-1.177164242440974,-1.1263431154713646,-1.666643919165791,default_coordinator,medium,,
+2016,KC,defense,Bob Sutton,coordinator,0.4730661984864711,-0.1321655894195982,-0.1201956774305725,default_coordinator,medium,,
+2016,LAC,defense,John Pagano,coordinator,0.3585984096098383,-0.2222545177070594,0.1828782871818396,default_coordinator,medium,,
+2016,MIA,defense,Vance Joseph,coordinator,-0.2456582757957832,-0.6387784874762421,-0.5749744961815618,default_coordinator,medium,,
+2016,NE,defense,Matt Patricia,coordinator,0.1327550023340588,0.8428926725396365,0.342518148514019,default_coordinator,medium,,
+2016,NO,defense,Dennis Allen,coordinator,-1.0594164085797195,0.2951214890307109,-1.4765720854235145,default_coordinator,medium,,
+2016,NYG,defense,Steve Spagnuolo,coordinator,1.7246127021845483,0.8210948368294159,1.1146249442402592,default_coordinator,medium,,
+2016,NYJ,defense,Todd Bowles,HC,-0.3823752286235887,-0.8447093598158754,-0.1587430898243551,model_knowledge_unverified,medium,,
+2016,OAK,defense,Ken Norton Jr.,coordinator,-0.4277887196588638,-1.0026894450375328,-1.6255359674048004,default_coordinator,medium,,
+2016,PHI,defense,Jim Schwartz,coordinator,1.1336287252214858,-1.5561573001761408,0.0065403207323038,default_coordinator,medium,,
+2016,PIT,defense,Keith Butler,coordinator,0.023163842410979,0.950887943482342,0.0561548784397185,default_coordinator,medium,,
+2016,SEA,defense,Kris Richard,coordinator,0.6290092951509776,0.8357308891902117,1.149821655181402,default_coordinator,medium,,
+2016,SF,defense,Jim O'Neil,coordinator,-1.292979032590359,-1.958369888593051,-1.118489887031032,default_coordinator,medium,,
+2016,TB,defense,Mike Smith,coordinator,0.2410775604049326,-1.3306133014398096,-0.3660917326582829,default_coordinator,medium,,
+2016,TEN,defense,Dick LeBeau,coordinator,-0.8525915023480138,0.364926113070212,-0.5489803354246652,default_coordinator,medium,,
+2016,WSH,defense,Joe Barry,coordinator,-1.0794791464664444,-0.9339192627496938,-0.9317899383793912,default_coordinator,medium,,
+2017,ARI,defense,James Bettcher,coordinator,1.188539379140484,1.1973357575957753,1.4060844891965771,default_coordinator,medium,,
+2017,ATL,defense,Dan Quinn,HC,-0.1499615808334934,0.5155979099090695,0.5746226676837277,model_knowledge_unverified,low,,
+2017,BAL,defense,Dean Pees,coordinator,1.084280362210693,0.5471526214185473,0.6349728581123489,default_coordinator,medium,,
+2017,BUF,defense,Leslie Frazier,coordinator,-0.6627786625915167,-0.9728450647151898,-0.088028711791002,default_coordinator,medium,,
+2017,CAR,defense,Steve Wilks,coordinator,0.9932384165411952,0.2327018283327536,0.4976772662551654,default_coordinator,medium,,
+2017,CHI,defense,Vic Fangio,coordinator,0.6306296161913798,1.4934859628099804,0.7455599379166197,default_coordinator,medium,,
+2017,CIN,defense,Paul Guenther,coordinator,-0.392680703016648,-0.0057517588313225,0.3215606678346825,default_coordinator,medium,,
+2017,CLE,defense,Gregg Williams,coordinator,-0.671002167765389,-0.2598147023966506,-0.0646137113245414,default_coordinator,medium,,
+2017,DAL,defense,Rod Marinelli,coordinator,-0.4718592491969813,0.2442346817108916,0.7839835313454956,default_coordinator,medium,,
+2017,DEN,defense,Joe Woods,coordinator,1.3464041074287385,0.8048216774311087,1.4250565112489644,default_coordinator,medium,,
+2017,DET,defense,Teryl Austin,coordinator,0.364069578489047,-0.2703672135185769,-0.891559300371611,default_coordinator,medium,,
+2017,GB,defense,Dom Capers,coordinator,-0.9404630134643316,-0.1677061317799553,-0.4475839305480551,default_coordinator,medium,,
+2017,HOU,defense,Mike Vrabel,coordinator,-0.7584237236722031,-1.2636642721448832,-1.5756434687183003,default_coordinator,medium,,
+2017,IND,defense,Ted Monachino,coordinator,-2.034361675764248,-1.450260490855238,-1.8850101254796257,default_coordinator,medium,,
+2017,JAX,defense,Todd Wash,coordinator,2.090699077099845,0.1573424049622393,1.5582930055452326,default_coordinator,medium,,
+2017,KC,defense,Bob Sutton,coordinator,-0.7759789876299479,-1.4375987132906178,-0.9504427933740784,default_coordinator,medium,,
+2017,LAC,defense,Gus Bradley,coordinator,0.4149303292714766,-0.0767997516405513,0.0906045951458247,default_coordinator,medium,,
+2017,LAR,defense,Wade Phillips,coordinator,0.640170112934275,-0.5279621311949221,-0.1466940418624717,default_coordinator,medium,,
+2017,MIA,defense,Matt Burke,coordinator,-0.8356308830489946,-1.8050430572737624,-0.3946978390251095,default_coordinator,medium,,
+2017,MIN,defense,Mike Zimmer,HC,1.962943849596304,2.888748517234219,2.192942417936749,model_knowledge_unverified,medium,,
+2017,NE,defense,Matt Patricia,coordinator,-1.0945070073467,-0.0031748256981147,-1.4047443749398416,default_coordinator,medium,,
+2017,NO,defense,Dennis Allen,coordinator,0.299103565698086,-0.5502394138941068,0.1480348301317781,default_coordinator,medium,,
+2017,NYJ,defense,Todd Bowles,HC,-0.1988161075834985,-0.2321115615887871,0.1215910506864087,model_knowledge_unverified,medium,,
+2017,OAK,defense,Ken Norton Jr.,coordinator,-1.5736669404356856,-0.2933575061080685,-1.1292752511874211,default_coordinator,medium,,
+2017,PHI,defense,Jim Schwartz,coordinator,1.396281413424008,1.036941974771548,0.7575740193871147,default_coordinator,medium,,
+2017,PIT,defense,Keith Butler,coordinator,-0.20920172976339,-0.6835362436145968,-0.3142098426767698,default_coordinator,medium,,
+2017,SEA,defense,Kris Richard,coordinator,0.8190346281741462,0.7467610280654776,0.9107913858285842,default_coordinator,medium,,
+2017,SF,defense,Robert Saleh,coordinator,-0.9098601852971144,-0.0011073628481301,-0.4133654693160238,default_coordinator,medium,,
+2017,TB,defense,Mike Smith,coordinator,-1.2401826222763197,-0.88642284056573,-2.108008159151688,default_coordinator,medium,,
+2017,TEN,defense,Dick LeBeau,coordinator,-0.3136976209099288,2.0715815770586,0.3081097090379042,default_coordinator,medium,,
+2017,WSH,defense,Greg Manusky,coordinator,0.2811469434625139,-0.6736939905500875,0.2386823331941777,default_coordinator,medium,,
+2018,ARI,defense,Al Holcomb,coordinator,0.1049627743684082,0.4397043181439964,1.0663165918881286,default_coordinator,medium,,
+2018,ATL,defense,Dan Quinn,HC,-1.072317693886103,0.284150875931472,-0.7725497937965873,model_knowledge_unverified,low,,
+2018,BAL,defense,Don Martindale,coordinator,1.971608176144704,1.4988698307984123,2.644298297460192,default_coordinator,medium,,
+2018,BUF,defense,Leslie Frazier,coordinator,1.4033373052793414,-0.5852634195676303,1.43084664186159,default_coordinator,medium,,
+2018,CHI,defense,Vic Fangio,coordinator,1.9801432643212284,2.2678001976621225,1.9527721420942143,default_coordinator,medium,,
+2018,CIN,defense,Marvin Lewis,HC,-1.0668168046803193,-0.4117255044605294,-0.5623609712367446,default_no_coordinator_headcoach,low,,
+2018,DAL,defense,Rod Marinelli,coordinator,0.9320453514178646,1.1983387753439865,0.4899816494082885,default_coordinator,medium,,
+2018,DEN,defense,Joe Woods,coordinator,0.5627772067770326,0.7516642912444025,0.136335822344968,default_coordinator,medium,,
+2018,DET,defense,Paul Pasqualoni,coordinator,-0.8248420933717906,0.4348734974346616,-0.5812769404408262,default_coordinator,medium,,
+2018,HOU,defense,Romeo Crennel,coordinator,0.6547470093768469,0.8106543298929287,-0.0019667926899102,default_coordinator,medium,,
+2018,IND,defense,Matt Eberflus,coordinator,0.0103971293263601,0.5552843893764822,-0.4917081536776128,default_coordinator,medium,,
+2018,JAX,defense,Todd Wash,coordinator,0.7904663563563079,0.7410946918014881,0.9644806164773678,default_coordinator,medium,,
+2018,KC,defense,Bob Sutton,coordinator,-0.7253313042417942,-0.4999730322339472,-0.3096396801952737,default_coordinator,medium,,
+2018,LAC,defense,Gus Bradley,coordinator,0.658700341821791,1.0501683145307938,0.7881574040435,default_coordinator,medium,,
+2018,LAR,defense,Wade Phillips,coordinator,0.2103260225778077,-1.3148590862766545,-0.8224557982125448,default_coordinator,medium,,
+2018,MIA,defense,Matt Burke,coordinator,-1.3845251308833526,-1.9533154708659937,-2.0576359326080644,default_coordinator,medium,,
+2018,MIN,defense,Mike Zimmer,HC,1.904354568970148,0.6894377690661581,1.157710404303728,model_knowledge_unverified,medium,,
+2018,NE,defense,Bill Belichick,HC,0.2765262297092892,-1.7153017541535018,-0.810631459013732,default_no_coordinator_headcoach,low,,
+2018,NO,defense,Dennis Allen,coordinator,0.6036361986175379,1.1344880205915393,0.2422192633235665,default_coordinator,medium,,
+2018,NYG,defense,James Bettcher,coordinator,-0.9789318736598775,-0.8456875844381844,-0.723095735478951,default_coordinator,medium,,
+2018,NYJ,defense,Todd Bowles,HC,-1.0035278184106624,-1.1260854542482155,-0.9176559455687802,model_knowledge_unverified,medium,,
+2018,OAK,defense,Paul Guenther,coordinator,-1.8335114507926416,-0.3710383331811084,-1.1903683159121383,default_coordinator,medium,,
+2018,PHI,defense,Jim Schwartz,coordinator,-0.1686245362973985,0.2432741034636305,-0.4816382054808781,default_coordinator,medium,,
+2018,PIT,defense,Keith Butler,coordinator,0.0073345607502021,0.6757713340063376,1.1516246981451912,default_coordinator,medium,,
+2018,SEA,defense,Ken Norton Jr.,coordinator,0.3142061604697655,-0.6530965429053912,-0.6269284980908406,default_coordinator,medium,,
+2018,SF,defense,Robert Saleh,coordinator,-0.5305938069952192,0.7253914765723054,0.5613581783030304,default_coordinator,medium,,
+2018,TB,defense,Mark Duffner,coordinator,-1.2134885426336492,-1.7812678295051476,-1.296492665812849,default_coordinator,medium,,
+2018,TEN,defense,Dean Pees,coordinator,-0.2370709708358523,0.1357021863155184,-0.0063942928977219,default_coordinator,medium,,
+2018,WSH,defense,Greg Manusky,coordinator,-0.1338379253292163,-0.4448838538299299,-0.3491192749035864,default_coordinator,medium,,
+2019,ARI,defense,Vance Joseph,coordinator,-0.9838287063011292,-0.8061220998323929,-0.6571953802430738,default_coordinator,medium,,
+2019,ATL,defense,Dan Quinn,HC,-0.4489305784858687,0.0562582692354496,-0.4582436493277424,model_knowledge_unverified,low,,
+2019,BAL,defense,Don Martindale,coordinator,1.046885194598173,0.6637259657472753,0.3953398029431411,default_coordinator,medium,,
+2019,BUF,defense,Leslie Frazier,coordinator,0.4264931170404409,0.3443030234188754,0.8152606253451097,default_coordinator,medium,,
+2019,CHI,defense,Chuck Pagano,coordinator,0.6051744450313115,1.7330558288145677,1.1742766384449508,default_coordinator,medium,,
+2019,CIN,defense,Lou Anarumo,coordinator,-1.4516656264708143,-2.1650108620873185,-1.8036671129410555,default_coordinator,medium,,
+2019,CLE,defense,Steve Wilks,coordinator,-0.4704680620191961,-1.0203456041728003,-0.8787225386553977,default_coordinator,medium,,
+2019,DAL,defense,Rod Marinelli,coordinator,-0.0741729604883196,-0.3994623438271714,0.1785224511661312,default_coordinator,medium,,
+2019,DEN,defense,Vic Fangio,HC,0.3202192949056797,0.6652647261944851,0.6498361514222514,model_knowledge_unverified,medium,,
+2019,DET,defense,Paul Pasqualoni,coordinator,-0.7372097602095963,-0.2502851408702372,-0.8483959358106361,default_coordinator,medium,,
+2019,GB,defense,Mike Pettine,coordinator,0.0519563045538415,-0.3689871865371587,-0.4417996411906043,default_coordinator,medium,,
+2019,HOU,defense,Romeo Crennel,coordinator,-0.6821057026097861,-0.4764253024793006,-1.162221354087975,default_coordinator,medium,,
+2019,IND,defense,Matt Eberflus,coordinator,-0.1067948637517063,0.1799231342685435,-0.2923326746241186,default_coordinator,medium,,
+2019,JAX,defense,Todd Wash,coordinator,-0.8798380859829933,-1.685461455246602,-1.1452379687408585,default_coordinator,medium,,
+2019,KC,defense,Steve Spagnuolo,coordinator,0.2381217022319341,0.1242179189122838,0.4744818525894199,default_coordinator,medium,,
+2019,LAC,defense,Gus Bradley,coordinator,-0.5136628529030453,0.4501383868227447,0.0076618373083071,default_coordinator,medium,,
+2019,LAR,defense,Wade Phillips,coordinator,0.6936072154630124,1.2902388429544027,1.0038829878866715,default_coordinator,medium,,
+2019,MIA,defense,Brian Flores,HC,-1.9831886359218407,-1.122085131542085,-1.8071088602497365,model_knowledge_unverified,medium,,
+2019,MIN,defense,Mike Zimmer,HC,0.8480435761785314,0.994530830128068,0.7655273656027181,model_knowledge_unverified,medium,,
+2019,NE,defense,Greg Schiano,coordinator,2.296095473081193,0.8252382952018591,1.4319736058604855,default_coordinator,medium,,
+2019,NO,defense,Dennis Allen,coordinator,0.7766444464232641,0.4428048799750436,0.6324692416439573,default_coordinator,medium,,
+2019,NYG,defense,James Bettcher,coordinator,-1.1086639397900402,-1.333238407478635,-0.9130645879835376,default_coordinator,medium,,
+2019,NYJ,defense,Gregg Williams,coordinator,0.1056903357601773,0.7022497146189287,0.6324850559304284,default_coordinator,medium,,
+2019,OAK,defense,Paul Guenther,coordinator,-1.2982707937195683,-1.7898960354261375,-1.050604653147975,default_coordinator,medium,,
+2019,PHI,defense,Jim Schwartz,coordinator,0.0961100280701383,0.3197857304723188,-0.124825852516965,default_coordinator,medium,,
+2019,PIT,defense,Keith Butler,coordinator,1.732223075030199,1.6486618118052927,1.8152412461931635,default_coordinator,medium,,
+2019,SEA,defense,Ken Norton Jr.,coordinator,-0.1184664678046834,-0.1478244144079719,-0.8785990549152181,default_coordinator,medium,,
+2019,SF,defense,Robert Saleh,coordinator,1.983145810174593,1.35087006593626,2.255007286636844,default_coordinator,medium,,
+2019,TB,defense,Todd Bowles,coordinator,1.132631599042539,1.1553605645194391,1.107048838725072,default_coordinator,medium,,
+2019,TEN,defense,Dean Pees,coordinator,0.4072755351866173,0.3392853196876934,0.2064370429567643,default_coordinator,medium,,
+2020,ARI,defense,Vance Joseph,coordinator,0.0906442479191423,-0.5931994060576341,0.5370193810736787,default_coordinator,medium,,
+2020,BAL,defense,Don Martindale,coordinator,0.9676258425284036,0.6518313264213209,0.6143496518345838,default_coordinator,medium,,
+2020,BUF,defense,Leslie Frazier,coordinator,0.022897988358088,-0.1280604869523053,0.1888473925586725,default_coordinator,medium,,
+2020,CAR,defense,Phil Snow,coordinator,-0.3453671544682667,0.1846924522216857,0.0316461737512235,default_coordinator,medium,,
+2020,CHI,defense,Chuck Pagano,coordinator,0.6038165621523315,-0.5593051478108312,0.7847169622878647,default_coordinator,medium,,
+2020,CIN,defense,Lou Anarumo,coordinator,-0.93690205882387,-2.555575606562198,-1.627054860307769,default_coordinator,medium,,
+2020,DAL,defense,Mike Nolan,coordinator,-0.6487775618181268,-1.3253081432657643,-0.9956645279047872,default_coordinator,medium,,
+2020,DEN,defense,Vic Fangio,HC,0.1436915130803605,-1.0839167010926587,0.0559340971176838,model_knowledge_unverified,medium,,
+2020,GB,defense,Mike Pettine,coordinator,-0.0269058576610217,1.248935675895411,0.44248793624406,default_coordinator,medium,,
+2020,IND,defense,Matt Eberflus,coordinator,0.7897131094467709,0.8246689579461128,0.5025558479275689,default_coordinator,medium,,
+2020,JAX,defense,Todd Wash,coordinator,-1.2132539772640814,-1.1156042972134117,-1.6600239433177872,default_coordinator,medium,,
+2020,KC,defense,Steve Spagnuolo,coordinator,-0.3447764204360788,0.6595701086212469,-0.0363138447092743,default_coordinator,medium,,
+2020,LAC,defense,Gus Bradley,coordinator,-0.0175478059408343,0.0537462512921864,0.245564095943514,default_coordinator,medium,,
+2020,LAR,defense,Brandon Staley,coordinator,2.512070910633987,1.8995520432445887,2.2764888868615087,default_coordinator,medium,,
+2020,MIA,defense,Brian Flores,HC,0.7417600084294386,-1.182245264215897,-0.8377625946697327,model_knowledge_unverified,medium,,
+2020,MIN,defense,Mike Zimmer,HC,-0.5721527153603111,-0.5861286984652309,-0.9094148745644244,model_knowledge_unverified,medium,,
+2020,NE,defense,Bill Belichick,HC,-0.3971890583523923,0.0245361834586994,-0.2860628308909473,default_no_coordinator_headcoach,low,,
+2020,NO,defense,Dennis Allen,coordinator,1.6350181452157917,1.2324865966338705,1.6884710441639583,default_coordinator,medium,,
+2020,NYG,defense,Patrick Graham,coordinator,-0.2403427231319012,0.2753959018582396,0.2308350188088331,default_coordinator,medium,,
+2020,NYJ,defense,Frank Bush,coordinator,-0.3646396505028164,0.7936786064157282,-0.1806459373273146,default_coordinator,medium,,
+2020,OAK,defense,Rod Marinelli,coordinator,-1.2232890399019674,-0.2999198731769346,-0.8484164292414241,default_coordinator,medium,,
+2020,PHI,defense,Jim Schwartz,coordinator,0.0653852386633551,-0.286699205539396,-0.1846740102830503,default_coordinator,medium,,
+2020,PIT,defense,Keith Butler,coordinator,1.6967696484435075,0.3368083908811169,1.3076965236027165,default_coordinator,medium,,
+2020,SEA,defense,Ken Norton Jr.,coordinator,-0.3677767999407317,0.9989596146180156,0.2362891350018355,default_coordinator,medium,,
+2020,SF,defense,Robert Saleh,coordinator,0.8835224645245452,0.6916249236760614,1.1109521623380436,default_coordinator,medium,,
+2020,TB,defense,Todd Bowles,coordinator,1.141940758691822,1.7724164144992305,1.3248437687411887,default_coordinator,medium,,
+2020,TEN,defense,Mike Vrabel,HC,-1.148588230813142,0.0114786045541432,-0.6603311573024686,default_no_coordinator_headcoach,low,,
+2020,WSH,defense,Jack Del Rio,coordinator,1.2358052951604976,1.180304925674769,1.328206851563853,default_coordinator,medium,,
+2021,ARI,defense,Vance Joseph,coordinator,0.970001887753899,-0.190020518068009,0.2696226195305365,default_coordinator,medium,,
+2021,ATL,defense,Dean Pees,coordinator,-1.5980085597133875,-0.3641916186810189,-0.8133404488894682,default_coordinator,medium,,
+2021,BAL,defense,Don Martindale,coordinator,-1.0852682131983746,-1.4839929362791,-1.7377102673653215,default_coordinator,medium,,
+2021,BUF,defense,Leslie Frazier,coordinator,2.0957855953038886,0.772986277876334,2.1360444593854337,default_coordinator,medium,,
+2021,CAR,defense,Phil Snow,coordinator,0.7345475700060871,-0.9619286259336955,0.9380209788729144,default_coordinator,medium,,
+2021,CIN,defense,Lou Anarumo,coordinator,0.1634712772481065,-0.5373626377877516,-0.4187421444842785,default_coordinator,medium,,
+2021,CLE,defense,Joe Woods,coordinator,0.1218072771192087,0.9018693148728254,1.4468681998189736,default_coordinator,medium,,
+2021,DAL,defense,Dan Quinn,coordinator,1.5259888738404326,-0.9655002347065568,-0.3047248053393921,default_coordinator,medium,,
+2021,DEN,defense,Vic Fangio,HC,-0.0122054042691654,0.4879411575907391,0.4398392341004637,model_knowledge_unverified,medium,,
+2021,DET,defense,Aaron Glenn,coordinator,-1.356240003498093,-0.4433768306455453,-1.5075586143744903,default_coordinator,medium,,
+2021,GB,defense,Joe Barry,coordinator,-0.1275537859109755,0.6609501397759189,0.3227840501932613,default_coordinator,medium,,
+2021,HOU,defense,Lovie Smith,coordinator,-1.103810713152463,-1.9903296528062144,-1.912893554910167,default_coordinator,medium,,
+2021,IND,defense,Matt Eberflus,coordinator,-0.1578116841978308,0.7515416137996385,-0.488399267176082,default_coordinator,medium,,
+2021,KC,defense,Steve Spagnuolo,coordinator,-0.116128693659891,0.3277975715955408,-1.3419145001299435,default_coordinator,medium,,
+2021,LAC,defense,Brandon Staley,HC,-0.415551000351511,-0.3225335340487311,-0.1197394165207215,model_knowledge_unverified,medium,,
+2021,LAR,defense,Raheem Morris,coordinator,0.6702569413498677,1.0685389454407608,0.8949985695787327,default_coordinator,medium,,
+2021,MIA,defense,Brian Flores,HC,0.2320498303530393,-1.3027109064301452,-0.1553091192540232,model_knowledge_unverified,medium,,
+2021,MIN,defense,Mike Zimmer,HC,0.4687771265199816,0.5921885876309767,-0.5426587018496128,model_knowledge_unverified,medium,,
+2021,NE,defense,Bill Belichick,HC,1.0359575954974591,0.3771679621289617,0.6047365381182078,default_no_coordinator_headcoach,low,,
+2021,NO,defense,Dennis Allen,coordinator,1.9507128895620751,0.5067751944484441,1.0119908313203332,default_coordinator,medium,,
+2021,NYG,defense,Patrick Graham,coordinator,-0.2240139675385495,0.6400976698546141,0.6780815731320837,default_coordinator,medium,,
+2021,NYJ,defense,Jeff Ulbrich,coordinator,-2.1830447958836032,-2.7641273575212457,-2.1563250472130413,default_coordinator,medium,,
+2021,PHI,defense,Jonathan Gannon,coordinator,-0.3322006871762171,1.3345135659646707,0.629885226795887,default_coordinator,medium,,
+2021,PIT,defense,Keith Butler,coordinator,0.176511134495016,-0.3549901533007638,0.171167215387282,default_coordinator,medium,,
+2021,SEA,defense,Ken Norton Jr.,coordinator,-0.4352979350483003,2.080759317867315,0.1570746366438884,default_coordinator,medium,,
+2021,SF,defense,DeMeco Ryans,coordinator,0.737114336256188,0.4221591576378419,1.28441258104688,default_coordinator,medium,,
+2021,TB,defense,Todd Bowles,coordinator,0.8335830098070277,-0.6230227139977936,0.3568423992893,default_coordinator,medium,,
+2021,TEN,defense,Shane Bowen,coordinator,0.5478249842159573,0.660303004096819,0.085093824624204,default_coordinator,medium,,
+2021,WSH,defense,Jack Del Rio,coordinator,-0.6812434535828702,0.467976795382374,-0.6115088354932526,default_coordinator,medium,,
+2022,ARI,defense,Vance Joseph,coordinator,-0.3214640765179292,0.1811127421038001,-0.0723108633992594,default_coordinator,medium,,
+2022,ATL,defense,Dean Pees,coordinator,-1.8339417312660864,-0.2823801949123656,-0.9859201872055656,default_coordinator,medium,,
+2022,BAL,defense,Mike Macdonald,coordinator,0.4785519511269882,1.3019103027580032,0.6014620643867098,default_coordinator,medium,,
+2022,BUF,defense,Leslie Frazier,coordinator,0.9126911429676,-0.1358738168940663,1.048975045198864,default_coordinator,medium,,
+2022,CHI,defense,Matt Eberflus,HC,-2.063771882475808,-1.6328897760434142,-1.9794159571614247,model_knowledge_unverified,low,,
+2022,CIN,defense,Lou Anarumo,coordinator,0.9666540143820928,0.4408540038498084,0.2320054519679859,default_coordinator,medium,,
+2022,CLE,defense,Joe Woods,coordinator,-0.3987833502779466,-1.301610710045349,-0.0795007643529936,default_coordinator,medium,,
+2022,DAL,defense,Dan Quinn,coordinator,1.421217985215632,-0.6688443203751212,0.3754956833348026,default_coordinator,medium,,
+2022,DET,defense,Aaron Glenn,coordinator,-1.4348632738965408,-0.9774569257211648,-2.057609250229318,default_coordinator,medium,,
+2022,GB,defense,Joe Barry,coordinator,-0.7198095501805263,-1.2068058125999226,-1.1146638753799825,default_coordinator,medium,,
+2022,HOU,defense,Lovie Smith,HC,-0.300700509904504,-2.2406356283364453,-1.0463465221513173,default_no_coordinator_headcoach,low,,
+2022,JAX,defense,Mike Caldwell,coordinator,-0.348873458520813,-0.3526404206525764,-0.4375108129614338,default_coordinator,medium,,
+2022,KC,defense,Steve Spagnuolo,coordinator,-0.2088496275422783,0.7226953076738188,0.7384621694352362,default_coordinator,medium,,
+2022,LAC,defense,Brandon Staley,HC,-0.2942016401248734,-0.7775737126682023,-1.0356910645720003,model_knowledge_unverified,medium,,
+2022,LAR,defense,Raheem Morris,coordinator,-0.3183030551710521,1.3941097731581718,-0.0602366346172602,default_coordinator,medium,,
+2022,MIN,defense,Ed Donatell,coordinator,-0.3818848537444348,-0.2634811139152771,-1.2883325399329886,default_coordinator,medium,,
+2022,NE,defense,Bill Belichick,HC,1.808579015893335,1.2068987375368931,1.4283417876299331,default_no_coordinator_headcoach,low,,
+2022,NYG,defense,Don Martindale,coordinator,-1.237015393235127,-1.6269964108123776,-0.984894032719301,default_coordinator,medium,,
+2022,NYJ,defense,Jeff Ulbrich,coordinator,1.2645348317046323,1.313019918755833,2.1976417675113287,default_coordinator,medium,,
+2022,OAK,defense,Patrick Graham,coordinator,-1.6557658234004926,-0.7226971685645225,-1.180575828115126,default_coordinator,medium,,
+2022,PHI,defense,Jonathan Gannon,coordinator,0.5271165325178091,-0.0483824363417513,1.0279908409583638,default_coordinator,medium,,
+2022,PIT,defense,Teryl Austin,coordinator,-0.2484472083644855,0.1881909665980211,0.046476182180608,default_coordinator,medium,,
+2022,SEA,defense,Clint Hurtt,coordinator,-0.6549242040543708,-0.8115523842185048,-0.4870881877135287,default_coordinator,medium,,
+2022,SF,defense,DeMeco Ryans,coordinator,1.7380716103312055,1.8187716851211613,0.9484931940957804,default_coordinator,medium,,
+2022,TB,defense,Todd Bowles,HC,0.6299389745689314,0.5498085792854381,0.9590299937879992,model_knowledge_unverified,medium,,
+2022,TEN,defense,Shane Bowen,coordinator,-0.3191642766470653,0.3143818931290943,-0.1112211173514419,default_coordinator,medium,,
+2022,WSH,defense,Jack Del Rio,coordinator,1.4013904670295418,0.9185995568887266,0.3900255860300893,default_coordinator,medium,,
+2023,ARI,defense,Nick Rallis,coordinator,-1.530594858252918,-1.1059098396122402,-0.8700752254514452,default_coordinator,medium,,
+2023,ATL,defense,Ryan Nielsen,coordinator,-0.0436554107258138,-0.3431117082175364,-0.0593553042963609,default_coordinator,medium,,
+2023,BAL,defense,Mike Macdonald,coordinator,2.2148575868989018,1.298344784648253,2.2172078161566247,default_coordinator,medium,,
+2023,BUF,defense,Sean McDermott,HC,0.1658275164402214,-1.2899775872161487,0.0767016994993691,model_knowledge_unverified,medium,,
+2023,CHI,defense,Matt Eberflus,HC,0.0095422188795289,0.4687766484347893,-0.1890017198126334,model_knowledge_unverified,low,,
+2023,CIN,defense,Lou Anarumo,coordinator,-0.7833835327576256,-1.773007025927298,-1.7439678965498575,default_coordinator,medium,,
+2023,CLE,defense,Jim Schwartz,coordinator,2.677847003555434,0.670615994024,1.931147735068524,default_coordinator,medium,,
+2023,DAL,defense,Dan Quinn,coordinator,1.251068180078373,0.2853291889548108,0.7119917449679212,default_coordinator,medium,,
+2023,DEN,defense,Vance Joseph,coordinator,-1.0886563694339575,-1.5174029137174567,-1.551849186725613,default_coordinator,medium,,
+2023,DET,defense,Aaron Glenn,coordinator,-0.0264808651716984,-0.6342737135525045,-0.736436280262366,default_coordinator,medium,,
+2023,GB,defense,Joe Barry,coordinator,-0.9092249653432304,-1.2109761784222135,-0.435120105643472,default_coordinator,medium,,
+2023,HOU,defense,DeMeco Ryans,HC,-0.3864599769788338,-0.8116497983441823,-0.342318727673183,model_knowledge_unverified,low,,
+2023,IND,defense,Gus Bradley,coordinator,-0.6911334986582708,-0.7786941967834952,-0.482765569293477,default_coordinator,medium,,
+2023,JAX,defense,Mike Caldwell,coordinator,0.2635658380533453,0.8203995116872127,-0.4946947769806221,default_coordinator,medium,,
+2023,KC,defense,Steve Spagnuolo,coordinator,0.8667422106253306,1.2329088960359298,1.5199262235689537,default_coordinator,medium,,
+2023,LAR,defense,Raheem Morris,coordinator,0.1043965156067628,0.8174475207145407,0.1368733811566048,default_coordinator,medium,,
+2023,MIA,defense,Vic Fangio,coordinator,-0.5396975033101349,-0.0950699343841925,-0.4701708535053714,default_coordinator,medium,,
+2023,MIN,defense,Brian Flores,coordinator,0.134476027676805,1.8663472393181555,0.3024899919085084,default_coordinator,medium,,
+2023,NE,defense,Bill Belichick,HC,0.4030756771296129,1.9412404040181488,1.482967660713008,default_no_coordinator_headcoach,low,,
+2023,NO,defense,Dennis Allen,HC,0.563618401150392,-1.288110415906046,-0.7154166470168403,model_knowledge_unverified,low,,
+2023,NYG,defense,Don Martindale,coordinator,0.2300594066564546,-0.8197792375407853,-0.5840336669995498,default_coordinator,medium,,
+2023,NYJ,defense,Jeff Ulbrich,coordinator,1.403326507361325,0.2211113967561999,1.989412088073598,default_coordinator,medium,,
+2023,PHI,defense,Sean Desai,coordinator,-1.3724720888146908,-0.1025347112974601,-0.3753847881006057,default_coordinator,medium,,
+2023,PIT,defense,Teryl Austin,coordinator,0.5999482128044291,-0.6457607398263921,-0.3727952370496837,default_coordinator,medium,,
+2023,SEA,defense,Clint Hurtt,coordinator,-1.068936801725873,-0.1076699750069136,-0.4828158916437884,default_coordinator,medium,,
+2023,SF,defense,Steve Wilks,coordinator,0.9625423613798044,1.8948682575306075,0.9746608682255988,default_coordinator,medium,,
+2023,TB,defense,Todd Bowles,HC,-0.0137985965718331,0.2664544486217563,-0.3647206376039396,model_knowledge_unverified,medium,,
+2023,TEN,defense,Shane Bowen,coordinator,-0.7214430326179825,0.8276395113872002,0.2160564718908444,default_coordinator,medium,,
+2024,ARI,defense,Nick Rallis,coordinator,-0.3457772671998027,0.0554849059285205,-0.0005847908157034,default_coordinator,medium,,
+2024,ATL,defense,Jimmy Lake,coordinator,-1.0723529345251095,-0.1694949994750528,-0.7698267388455143,default_coordinator,medium,,
+2024,BAL,defense,Zach Orr,coordinator,0.7771092324134188,1.057565298386288,0.4144775171045091,default_coordinator,medium,,
+2024,BUF,defense,Bobby Babich,coordinator,0.1926812223037635,-0.029777185801621,-0.1862500934132066,default_coordinator,medium,,
+2024,CAR,defense,Ejiro Evero,coordinator,-2.3623774468635195,-1.9762560656247468,-2.028524944654325,default_coordinator,medium,,
+2024,CIN,defense,Lou Anarumo,coordinator,-0.906569409189568,-0.1359411098845428,-0.7020815125254684,default_coordinator,medium,,
+2024,CLE,defense,Jim Schwartz,coordinator,0.1469961448078988,-2.354190858370067,-0.8743403667413869,default_coordinator,medium,,
+2024,DAL,defense,Mike Zimmer,coordinator,-0.8325853344052538,-0.66563670144117,-1.0726662681876504,default_coordinator,medium,,
+2024,DEN,defense,Vance Joseph,coordinator,1.6871531670678772,0.885878314873212,1.368594834040047,default_coordinator,medium,,
+2024,DET,defense,Aaron Glenn,coordinator,1.113746702096089,-0.2570828205066257,-0.6217585340301851,default_coordinator,medium,,
+2024,GB,defense,Jeff Hafley,coordinator,1.240094876117365,0.8250881901903884,1.0089437554449174,default_coordinator,medium,,
+2024,HOU,defense,DeMeco Ryans,HC,1.0897489049388165,-0.0002239650139542,1.1687894051631098,model_knowledge_unverified,low,,
+2024,IND,defense,Gus Bradley,coordinator,-0.2525938521088383,-0.4310288153481615,-0.9054836257744489,default_coordinator,medium,,
+2024,JAX,defense,Ryan Nielsen,coordinator,-2.4840782307618974,-1.9263963185241064,-2.107119922610756,default_coordinator,medium,,
+2024,KC,defense,Steve Spagnuolo,coordinator,-0.0121816376011203,0.5795321127921225,0.6249079278641639,default_coordinator,medium,,
+2024,LAC,defense,Jesse Minter,coordinator,0.9012503234949636,-0.6536667033856359,0.0671488873626858,default_coordinator,medium,,
+2024,LAR,defense,Chris Shula,coordinator,-0.4211818750190121,0.3263975364879685,-0.3464584263083939,default_coordinator,medium,,
+2024,MIA,defense,Anthony Weaver,coordinator,0.1856628843998058,0.7634706066391747,0.3648831226908243,default_coordinator,medium,,
+2024,MIN,defense,Brian Flores,coordinator,1.6331660077671355,1.6744773707131986,0.8049249741115023,default_coordinator,medium,,
+2024,NE,defense,DeMarcus Covington,coordinator,-0.9683750655452784,0.8440494915835199,-0.0086545417931742,default_coordinator,medium,,
+2024,NYG,defense,Shane Bowen,coordinator,-0.7907604065321553,-1.0616526533303354,-0.5971975994840351,default_coordinator,medium,,
+2024,OAK,defense,Patrick Graham,coordinator,0.0053798082615983,-0.0998660658006181,-0.0251845795011334,default_coordinator,medium,,
+2024,PHI,defense,Vic Fangio,coordinator,1.7550541724747584,1.290076016893814,2.5382811398763785,default_coordinator,medium,,
+2024,PIT,defense,Teryl Austin,coordinator,0.4073640000577926,0.4154537775072587,0.2470625768659816,default_coordinator,medium,,
+2024,SEA,defense,Mike Macdonald,HC,0.6778388053994111,1.0659508044672033,0.8716518437499187,model_knowledge_unverified,medium,,
+2024,SF,defense,Nick Sorensen,coordinator,-0.1661668560784243,1.5253559613125574,0.9801566635911596,default_coordinator,medium,,
+2024,TB,defense,Todd Bowles,HC,0.0375477914430838,0.7974012992040231,0.0493959502105822,model_knowledge_unverified,medium,,
+2024,TEN,defense,Dennard Wilson,coordinator,-0.235926112394594,0.4398607721895366,0.6537516417254995,default_coordinator,medium,,
+2024,WSH,defense,Joe Whitt Jr.,coordinator,-0.3819068573378258,-1.1719609043580843,-0.1687842975721157,default_coordinator,medium,,
+2025,ARI,defense,Nick Rallis,coordinator,-0.5839861287420341,-0.661835834118594,-0.3875391658360548,default_coordinator,medium,,
+2025,ATL,defense,Jeff Ulbrich,coordinator,0.0821280048670708,-0.0866678228456957,0.2318535692648303,default_coordinator,medium,,
+2025,BAL,defense,Zach Orr,coordinator,-0.3197926247054746,-0.6646288183643531,-0.5958550800607818,default_coordinator,medium,,
+2025,BUF,defense,Bobby Babich,coordinator,-0.1431302157186701,-1.2138660875473488,-0.0982949456651385,default_coordinator,medium,,
+2025,CAR,defense,Ejiro Evero,coordinator,-0.5775887033134195,0.4910950919783421,-0.1907746254865834,default_coordinator,medium,,
+2025,CHI,defense,Dennis Allen,coordinator,-0.2203359162787901,-1.6055262553733705,-1.3075558847867232,default_coordinator,medium,,
+2025,CIN,defense,Al Golden,coordinator,-1.5697796905939514,-1.4270978441783075,-1.9433315306846923,default_coordinator,medium,,
+2025,CLE,defense,Jim Schwartz,coordinator,1.160993792958297,0.4433229628914036,1.0882769885364294,default_coordinator,medium,,
+2025,DAL,defense,Matt Eberflus,coordinator,-2.0452131922703187,-1.5740206310816236,-2.0596684637073683,default_coordinator,medium,,
+2025,DEN,defense,Vance Joseph,coordinator,0.9280009570016884,1.6762845901325167,1.5853872441741292,default_coordinator,medium,,
+2025,DET,defense,Kelvin Sheppard,coordinator,0.3176595998065878,-0.563808450700075,0.0043705845738164,default_coordinator,medium,,
+2025,GB,defense,Jeff Hafley,coordinator,-0.3590346765959561,1.318095695809406,0.8449154387221934,default_coordinator,medium,,
+2025,HOU,defense,DeMeco Ryans,HC,1.8416748800837472,1.0092882456404204,1.3782260567653248,model_knowledge_unverified,low,,
+2025,IND,defense,Lou Anarumo,coordinator,-0.0239544505022582,0.232086559034902,-0.1789791069673778,default_coordinator,medium,,
+2025,JAX,defense,Anthony Campanile,coordinator,1.219730401807714,0.8988825290821281,0.5767675526884739,default_coordinator,medium,,
+2025,KC,defense,Steve Spagnuolo,coordinator,0.2876257320967652,0.4770601747733048,0.292833251828174,default_coordinator,medium,,
+2025,LAC,defense,Jesse Minter,coordinator,0.845459674228686,-0.1278192606243427,0.3183629096543846,default_coordinator,medium,,
+2025,LAR,defense,Chris Shula,coordinator,0.9699605569195092,0.7820347186241468,0.6095296279093492,default_coordinator,medium,,
+2025,MIA,defense,Anthony Weaver,coordinator,-1.0657912679295751,-0.9891774456170116,-0.9613654397929018,default_coordinator,medium,,
+2025,MIN,defense,Brian Flores,coordinator,1.4716134332481028,1.0338089675859574,1.7390492626161065,default_coordinator,medium,,
+2025,NE,defense,Terrell Williams,coordinator,0.0248464720795251,0.2750801234958991,-0.1786253575163657,default_coordinator,medium,,
+2025,NO,defense,Brandon Staley,coordinator,0.8459093871170994,0.5133835736420747,0.9817755647872384,default_coordinator,medium,,
+2025,NYJ,defense,Chris Harris,coordinator,-1.6239783680310629,-1.3475665486293935,-0.6306434867128948,evidence_wikipedia,high,,
+2025,OAK,defense,Patrick Graham,coordinator,-0.0522530664695646,0.8286756887400692,0.5188545631236265,default_coordinator,medium,,
+2025,PHI,defense,Vic Fangio,coordinator,1.3393207451197826,0.4338628176847606,1.1437190940844544,default_coordinator,medium,,
+2025,PIT,defense,Teryl Austin,coordinator,-0.2299575606374727,0.4949450673895446,-0.1524220298212558,default_coordinator,medium,,
+2025,SEA,defense,Mike Macdonald,HC,1.5844957756419062,1.7826115910820162,1.7731941520573038,model_knowledge_unverified,medium,,
+2025,SF,defense,Robert Saleh,coordinator,-0.712436438275805,1.1755354522502068,-0.4271375240932974,default_coordinator,medium,,
+2025,TB,defense,Todd Bowles,HC,-0.1090363664873923,-0.0428954527320891,-0.7064221532339442,model_knowledge_unverified,medium,,
+2025,WSH,defense,Joe Whitt Jr.,coordinator,-1.5247334079538846,-0.860992796840362,-1.3288776581818973,default_coordinator,medium,,
+2011,ARI,offense,Ken Whisenhunt,HC,-0.7127412655640489,-0.5602730488612986,-0.1503225311831248,default_no_coordinator_headcoach,low,00-0025423,Kevin Kolb
+2011,ATL,offense,Mike Mularkey,coordinator,0.3865428017150757,0.0642405377283509,0.1472948940791918,default_coordinator,medium,00-0026143,Matt Ryan
+2011,BAL,offense,Cam Cameron,coordinator,0.4455101720404805,-0.415712111711004,0.1208109510575236,default_coordinator,medium,00-0026158,Joe Flacco
+2011,BUF,offense,Chan Gailey,HC,-0.0890027156741537,-0.2142930033780063,0.33434515253949,default_no_coordinator_headcoach,low,00-0023682,Ryan Fitzpatrick
+2011,CAR,offense,Ron Rivera,HC,1.2110738298676875,2.239476925247919,1.2148123734814529,default_no_coordinator_headcoach,low,00-0027939,Cam Newton
+2011,CHI,offense,Lovie Smith,HC,-1.179194077506853,-0.035127788526356,-0.9254674869575426,default_no_coordinator_headcoach,low,00-0024226,Jay Cutler
+2011,CIN,offense,Jay Gruden,coordinator,-0.0591470404595456,-0.1179282181763958,-0.2813677596256481,default_coordinator,medium,00-0027973,Andy Dalton
+2011,CLE,offense,Pat Shurmur,HC,-0.6713521925249332,-1.9684771064920032,-1.2245407322939676,default_no_coordinator_headcoach,low,00-0027688,Colt McCoy
+2011,DAL,offense,Jason Garrett,HC,0.6078433310570068,-0.4098888836947029,0.8048095028830571,default_no_coordinator_headcoach,low,00-0021678,Tony Romo
+2011,DEN,offense,Mike McCoy,coordinator,-0.905064481175653,0.6245111421789832,-1.0128958847953025,default_coordinator,medium,00-0027876,Tim Tebow
+2011,DET,offense,Scott Linehan,coordinator,0.5480406912757039,-0.1588965364664921,0.4480787374796159,default_coordinator,medium,00-0026498,Matthew Stafford
+2011,GB,offense,Joe Philbin,coordinator,2.205039239171651,0.6275928983867586,1.716069194173896,default_coordinator,medium,00-0023459,Aaron Rodgers
+2011,HOU,offense,Rick Dennison,coordinator,0.2865609837776925,1.3826685614022298,0.5202000938359819,default_coordinator,medium,00-0022787,Matt Schaub
+2011,IND,offense,Jim Caldwell,HC,-1.1770995814867125,-1.3363440503213893,-0.8610414311167078,default_no_coordinator_headcoach,low,00-0027134,Curtis Painter
+2011,LAC,offense,Norv Turner,HC,0.937458468800228,1.0320096604084237,0.8697109740858413,default_no_coordinator_headcoach,low,00-0022942,Philip Rivers
+2011,LAR,offense,Steve Spagnuolo,HC,-1.7106594529942176,-0.7126573688776762,-1.5058337116381666,default_no_coordinator_headcoach,low,00-0027854,Sam Bradford
+2011,MIN,offense,Leslie Frazier,HC,-0.3789891474307643,0.7948645999751718,-0.7454236886004129,default_no_coordinator_headcoach,low,00-0027950,Christian Ponder
+2011,NE,offense,Bill O'Brien,coordinator,2.041077262192074,0.0685098683127419,1.4644050208588932,default_coordinator,medium,00-0019596,Tom Brady
+2011,NO,offense,Sean Payton,HC,1.9446999444804849,0.4606601651863619,1.8535830655968104,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2011,NYG,offense,Tom Coughlin,HC,0.5079205278521368,-0.2159750014183737,0.8863583901930865,default_no_coordinator_headcoach,low,00-0022803,Eli Manning
+2011,NYJ,offense,Rex Ryan,HC,-0.9894163766418378,-1.769102294219936,-1.1776764420490644,default_no_coordinator_headcoach,low,00-0026898,Mark Sanchez
+2011,OAK,offense,Hue Jackson,HC,0.3730613103954,1.3075430207361352,0.9132675230380028,default_no_coordinator_headcoach,low,00-0021429,Carson Palmer
+2011,PHI,offense,Andy Reid,HC,0.7555086510713677,2.357588895955171,1.3184578391132546,default_no_coordinator_headcoach,low,00-0020245,Michael Vick
+2011,PIT,offense,Bruce Arians,coordinator,0.8171246109155882,0.6710720583235501,1.057584791283176,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2011,SEA,offense,Pete Carroll,HC,-0.4063597465030902,-0.136812628259544,-0.7134383563025739,default_no_coordinator_headcoach,low,00-0024279,Tarvaris Jackson
+2011,SF,offense,Greg Roman,coordinator,0.1177223814728737,-0.031528988253899,-0.4449633188373892,default_coordinator,medium,00-0023436,Alex Smith
+2011,TB,offense,Raheem Morris,HC,-0.8486447315197387,-1.3104082814916205,-0.4094727418436186,default_no_coordinator_headcoach,low,00-0026993,Josh Freeman
+2011,TEN,offense,Mike Munchak,HC,-0.3631166992820964,-0.2434849991535897,0.0957260931199734,default_no_coordinator_headcoach,low,00-0007091,Matt Hasselbeck
+2011,WSH,offense,Kyle Shanahan,coordinator,-0.5196628575310294,-0.5446647279981733,-0.4490888030826142,default_coordinator,medium,00-0022121,Rex Grossman
+2012,ARI,offense,Mike Miller,coordinator,-2.3646897466070373,-1.5270655049774844,-2.5837123953412857,default_coordinator,medium,00-0027754,John Skelton
+2012,ATL,offense,Dirk Koetter,coordinator,0.7346115064726529,-1.2073856567134462,0.5570529319978864,default_coordinator,medium,00-0026143,Matt Ryan
+2012,BUF,offense,Curtis Modkins,coordinator,-0.0976008164190241,0.5498194996046083,0.2377943748332056,default_coordinator,medium,00-0023682,Ryan Fitzpatrick
+2012,CAR,offense,Rob Chudzinski,coordinator,0.7567813957545785,1.140313952241326,0.6070834490909796,default_coordinator,medium,00-0027939,Cam Newton
+2012,CHI,offense,Mike Tice,coordinator,-0.5186690817597532,0.0844742226640136,-0.753460918012881,default_coordinator,medium,00-0024226,Jay Cutler
+2012,CIN,offense,Jay Gruden,coordinator,-0.2592229052264586,-1.032714146793533,-0.0880679132222778,default_coordinator,medium,00-0027973,Andy Dalton
+2012,CLE,offense,Brad Childress,coordinator,-0.8800219548039148,-0.6039437266009576,-0.7293038685561366,default_coordinator,medium,00-0029677,Brandon Weeden
+2012,DAL,offense,Bill Callahan,coordinator,0.6207358274110208,-1.0934074249474866,0.6966968279287733,default_coordinator,medium,00-0021678,Tony Romo
+2012,DEN,offense,Mike McCoy,coordinator,0.8387303187838914,0.1657324759213085,0.9395398127712596,default_coordinator,medium,00-0010346,Peyton Manning
+2012,DET,offense,Scott Linehan,coordinator,0.2396998683176937,-0.2644967135610013,0.6512382193721685,default_coordinator,medium,00-0026498,Matthew Stafford
+2012,GB,offense,Tom Clements,coordinator,1.1873848571353527,-0.3976523469683348,0.3307918544454561,default_coordinator,medium,00-0023459,Aaron Rodgers
+2012,HOU,offense,Rick Dennison,coordinator,0.3624855228124186,-0.0704418513644173,-0.0531745688624033,default_coordinator,medium,00-0022787,Matt Schaub
+2012,JAX,offense,Bob Bratkowski,coordinator,-1.4833907558624089,-1.2638100979210969,-1.661518024267729,default_coordinator,medium,00-0027948,Blaine Gabbert
+2012,KC,offense,Brian Daboll,coordinator,-1.6654041024380226,0.2564535847393765,-0.8719957289051186,default_coordinator,medium,00-0023662,Matt Cassel
+2012,LAC,offense,Hal Hunter,coordinator,-0.7430599647942313,-1.1704179990955454,-1.2541422257285268,default_coordinator,medium,00-0022942,Philip Rivers
+2012,LAR,offense,Brian Schottenheimer,coordinator,0.1306155805433517,-0.1471224498116901,0.0330740705281088,default_coordinator,medium,00-0027854,Sam Bradford
+2012,MIA,offense,Mike Sherman,coordinator,-0.723680757551275,-0.7243034498477067,-0.737063265549294,default_coordinator,medium,00-0029701,Ryan Tannehill
+2012,MIN,offense,Bill Musgrave,coordinator,0.2692316288816501,0.3150342739074185,0.0746764786610282,default_coordinator,medium,00-0027950,Christian Ponder
+2012,NE,offense,Josh McDaniels,coordinator,1.8047167266669757,0.2567650982782591,0.8867789278304723,default_coordinator,medium,00-0019596,Tom Brady
+2012,NYG,offense,Kevin Gilbride,coordinator,0.6129690428857011,1.090928015358716,1.1250619834411602,default_coordinator,medium,00-0022803,Eli Manning
+2012,NYJ,offense,Tony Sparano,coordinator,-1.3648402872255,-0.9982129191278616,-1.937652081557556,default_coordinator,medium,00-0026898,Mark Sanchez
+2012,OAK,offense,Greg Knapp,coordinator,-0.7985488406563839,-0.9198559578432992,-0.1900049883117941,default_coordinator,medium,00-0021429,Carson Palmer
+2012,PHI,offense,Marty Mornhinweg,coordinator,-0.8011463148394258,0.2479117095256959,-0.6546355518162958,default_coordinator,medium,00-0020245,Michael Vick
+2012,PIT,offense,Todd Haley,coordinator,-0.2415336856661122,-0.2132965687413819,-0.3185921190368413,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2012,SEA,offense,Darrell Bevell,coordinator,1.547006274470289,1.795439587442253,1.2039165154056717,default_coordinator,medium,00-0029263,Russell Wilson
+2012,SF,offense,Greg Roman,coordinator,1.4868075461653056,2.4480564085014818,1.325970347715964,default_coordinator,medium,00-0023436,Alex Smith
+2012,TB,offense,Mike Sullivan,coordinator,0.0975502876553212,0.562777584532231,0.5385340334687306,default_coordinator,medium,00-0026993,Josh Freeman
+2012,WSH,offense,Kyle Shanahan,coordinator,1.3942379112425762,2.597704884381949,1.6159216538999386,default_coordinator,medium,00-0029665,Robert Griffin
+2013,ARI,offense,Bruce Arians,HC,0.0232014391484898,-0.1501244399903812,0.283454814375522,model_knowledge_unverified,medium,00-0021429,Carson Palmer
+2013,ATL,offense,Dirk Koetter,coordinator,0.4653260626184813,-1.5097287658605154,0.3214978605514046,default_coordinator,medium,00-0026143,Matt Ryan
+2013,BAL,offense,Jim Caldwell,coordinator,-1.4616521394983284,-1.4327454066225838,-1.866415908335758,default_coordinator,medium,00-0026158,Joe Flacco
+2013,BUF,offense,Nathaniel Hackett,coordinator,-0.9366856419815246,0.0279324125113509,-0.9992738942780272,default_coordinator,medium,00-0030526,EJ Manuel
+2013,CAR,offense,Mike Shula,coordinator,0.8785387477871248,-0.1220248706340593,-0.373441445153204,default_coordinator,medium,00-0027939,Cam Newton
+2013,CHI,offense,Aaron Kromer,coordinator,0.8399297599591635,1.066127874510285,1.4509986850654444,default_coordinator,medium,00-0024226,Jay Cutler
+2013,CIN,offense,Jay Gruden,coordinator,-0.0074601279802489,-0.5287979594773787,0.0013284258620547,default_coordinator,medium,00-0027973,Andy Dalton
+2013,CLE,offense,Norv Turner,coordinator,-0.938059778060432,-1.043084833464868,-0.7975012777454484,default_coordinator,medium,00-0023460,Jason Campbell
+2013,DAL,offense,Bill Callahan,coordinator,0.5930615082540386,-0.4536946385399985,0.5759658929305879,default_coordinator,medium,00-0021678,Tony Romo
+2013,DET,offense,Scott Linehan,coordinator,-0.2663021729653992,0.0482790966953494,0.6205226397981417,default_coordinator,medium,00-0026498,Matthew Stafford
+2013,GB,offense,Tom Clements,coordinator,0.5165240053966296,1.0398355727035604,1.148063078849425,default_coordinator,medium,00-0023459,Aaron Rodgers
+2013,IND,offense,Pep Hamilton,coordinator,0.4604033981109993,-0.4569887517604437,0.1291851216161791,default_coordinator,medium,00-0029668,Andrew Luck
+2013,JAX,offense,Jedd Fisch,coordinator,-1.7044266545745457,-1.5446081921107404,-1.6221735671295816,default_coordinator,medium,00-0026197,Chad Henne
+2013,KC,offense,Andy Reid,HC,0.0690504646375274,0.3598033697157638,-0.2975584760874895,model_knowledge_unverified,medium,00-0023436,Alex Smith
+2013,LAC,offense,Ken Whisenhunt,coordinator,1.595649468498388,-0.1535447105310221,1.1860318681081436,default_coordinator,medium,00-0022942,Philip Rivers
+2013,LAR,offense,Brian Schottenheimer,coordinator,-0.584835378095358,-0.3019197950288523,-0.5173207954681761,default_coordinator,medium,00-0024264,Kellen Clemens
+2013,MIA,offense,Mike Sherman,coordinator,-0.422218291993902,-0.6581502682409252,-0.7507730624697144,default_coordinator,medium,00-0029701,Ryan Tannehill
+2013,MIN,offense,Bill Musgrave,coordinator,-0.4818641523509654,0.793605402135903,0.0578458659576169,default_coordinator,medium,00-0027950,Christian Ponder
+2013,NE,offense,Josh McDaniels,coordinator,0.6402309400281903,-0.2470050837664448,0.405881894145069,default_coordinator,medium,00-0019596,Tom Brady
+2013,NO,offense,Sean Payton,HC,1.687564734358726,0.317919629056914,1.389508922486456,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2013,NYG,offense,Kevin Gilbride,coordinator,-1.9416624308062724,-0.580967790163681,-1.2769625271021323,default_coordinator,medium,00-0022803,Eli Manning
+2013,NYJ,offense,Marty Mornhinweg,coordinator,-1.0503423045427844,0.2367911684887579,-0.7282062864963473,default_coordinator,medium,00-0030565,Geno Smith
+2013,OAK,offense,Greg Olson,coordinator,-0.806377237759015,-0.6247847238433345,-0.311391341395772,default_coordinator,medium,00-0028825,Terrelle Pryor
+2013,PHI,offense,Chip Kelly,HC,1.14414579349587,3.058157891657081,2.037584514635326,model_knowledge_unverified,medium,00-0029567,Nick Foles
+2013,PIT,offense,Todd Haley,coordinator,-0.1180494199841698,-0.1843637518422897,-0.0652097265929391,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2013,SEA,offense,Darrell Bevell,coordinator,1.0519152092317523,2.4852063690997954,0.8354000482935212,default_coordinator,medium,00-0029263,Russell Wilson
+2013,SF,offense,Greg Roman,coordinator,0.7561473772366629,1.6878502522046916,0.3422795307668703,default_coordinator,medium,00-0027974,Colin Kaepernick
+2013,TB,offense,Mike Sullivan,coordinator,-0.6807183339672344,-0.1830247045406292,-1.7379444605798902,default_coordinator,medium,00-0030520,Mike Glennon
+2013,TEN,offense,Dowell Loggains,coordinator,0.3180544831345815,-0.1767180337346596,-0.3149581931930954,default_coordinator,medium,00-0023682,Ryan Fitzpatrick
+2013,WSH,offense,Kyle Shanahan,coordinator,-0.7270297878936967,-0.6060072582658209,-0.5039349608925398,default_coordinator,medium,00-0029665,Robert Griffin
+2014,ARI,offense,Bruce Arians,HC,-0.1695087835901408,0.0827753174499039,-0.4932121272940398,model_knowledge_unverified,medium,00-0025430,Drew Stanton
+2014,ATL,offense,Dirk Koetter,coordinator,0.0702404876197863,-0.6754387577315429,0.600929384101543,default_coordinator,medium,00-0026143,Matt Ryan
+2014,BAL,offense,Gary Kubiak,coordinator,0.5302270283801058,0.8245158743867013,0.5609428420589798,default_coordinator,medium,00-0026158,Joe Flacco
+2014,BUF,offense,Nathaniel Hackett,coordinator,-0.4911946783957965,-1.1991178352298066,-0.7168195929940228,default_coordinator,medium,00-0023541,Kyle Orton
+2014,CAR,offense,Mike Shula,coordinator,-0.2146873107011498,-0.3166493558775874,-0.7420458484879185,default_coordinator,medium,00-0027939,Cam Newton
+2014,CHI,offense,Aaron Kromer,coordinator,-0.5136335534365154,-0.9510388234622144,-0.4839100601904502,default_coordinator,medium,00-0024226,Jay Cutler
+2014,CIN,offense,Hue Jackson,coordinator,-0.2531894978405632,-0.5692305902414834,-0.0044491883627878,default_coordinator,medium,00-0027973,Andy Dalton
+2014,CLE,offense,Kyle Shanahan,coordinator,-1.0542468600817867,-0.0633454198690224,-0.9364770210220402,default_coordinator,medium,00-0026625,Brian Hoyer
+2014,DAL,offense,Bill Callahan,coordinator,1.4409250618386198,1.106830458140435,1.238209252929982,default_coordinator,medium,00-0021678,Tony Romo
+2014,DEN,offense,Adam Gase,coordinator,1.75133315879509,1.2114244562252492,1.8253398933323168,default_coordinator,medium,00-0010346,Peyton Manning
+2014,DET,offense,Joe Lombardi,coordinator,-0.1961365371944541,-0.97738057956845,-0.79317623208448,default_coordinator,medium,00-0026498,Matthew Stafford
+2014,GB,offense,Tom Clements,coordinator,1.869501893599092,2.3269926063008,1.8712686350584,default_coordinator,medium,00-0023459,Aaron Rodgers
+2014,HOU,offense,Bill O'Brien,HC,-0.4868354768468882,-0.1291222344502629,-0.5215561938992807,default_no_coordinator_headcoach,low,00-0023682,Ryan Fitzpatrick
+2014,IND,offense,Pep Hamilton,coordinator,0.1943096392127876,0.90293059598574,1.1872220733959071,default_coordinator,medium,00-0029668,Andrew Luck
+2014,JAX,offense,Jedd Fisch,coordinator,-2.121591163251122,-0.7719502368214234,-1.985083721591722,default_coordinator,medium,00-0031407,Blake Bortles
+2014,KC,offense,Andy Reid,HC,0.7651482827545961,-0.0452008986676061,-0.1566366463577283,model_knowledge_unverified,medium,00-0023436,Alex Smith
+2014,LAC,offense,Frank Reich,coordinator,0.7262201259134637,0.0972179658801326,0.3795984910814051,default_coordinator,medium,00-0022942,Philip Rivers
+2014,LAR,offense,Brian Schottenheimer,coordinator,-1.0718223748625164,0.2116432322190552,-0.2419418984923883,default_coordinator,medium,00-0020679,Shaun Hill
+2014,MIA,offense,Bill Lazor,coordinator,0.5172550571789882,-0.167511516126957,0.2551044446236987,default_coordinator,medium,00-0029701,Ryan Tannehill
+2014,MIN,offense,Norv Turner,coordinator,-0.2899774123559391,-0.7176539082246418,-0.813524677229144,default_coordinator,medium,00-0031237,Teddy Bridgewater
+2014,NE,offense,Josh McDaniels,coordinator,1.4842526955997757,-0.7818315374991248,0.469708085870903,default_coordinator,medium,00-0019596,Tom Brady
+2014,NO,offense,Sean Payton,HC,0.6941651593087539,-0.3395175018504842,1.1520076340177814,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2014,NYG,offense,Ben McAdoo,coordinator,-0.0090722675022511,-0.7842509214816107,-0.2423980628397892,default_coordinator,medium,00-0022803,Eli Manning
+2014,NYJ,offense,Marty Mornhinweg,coordinator,-0.687460047432202,-0.0513119887596276,-0.970316714784992,default_coordinator,medium,00-0030565,Geno Smith
+2014,PHI,offense,Chip Kelly,HC,-0.1348145058106699,0.5501752531100731,0.231940468752268,model_knowledge_unverified,medium,00-0026898,Mark Sanchez
+2014,PIT,offense,Todd Haley,coordinator,1.3523209699147734,-0.3214224631038573,1.926345373113688,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2014,SEA,offense,Darrell Bevell,coordinator,1.4867947532025678,2.900023791634394,1.1201339763696831,default_coordinator,medium,00-0029263,Russell Wilson
+2014,SF,offense,Greg Roman,coordinator,-0.2204858001800292,1.1143032978272247,-0.6687638605442581,default_coordinator,medium,00-0027974,Colin Kaepernick
+2014,TB,offense,Jeff Tedford,coordinator,-1.5028096279792282,-0.5962508769353936,-1.6341788713908325,default_coordinator,medium,00-0021206,Josh McCown
+2014,TEN,offense,Jason Michael,coordinator,-1.262463462785628,-0.2109668063876379,-0.2651291640040131,default_coordinator,medium,00-0031266,Zach Mettenberger
+2014,WSH,offense,Sean McVay,coordinator,-0.6828658180964133,0.5516931918155971,0.4046520070314378,default_coordinator,medium,00-0029665,Robert Griffin
+2015,ARI,offense,Bruce Arians,HC,1.876913001537579,1.817683562092158,2.766117896114718,model_knowledge_unverified,medium,00-0021429,Carson Palmer
+2015,ATL,offense,Kyle Shanahan,coordinator,-0.4426130125961698,-0.9223444505018068,-0.2948062508905604,default_coordinator,medium,00-0026143,Matt Ryan
+2015,BAL,offense,Marc Trestman,coordinator,-0.5642421420272318,-0.286394916613875,-0.3247224186682482,default_coordinator,medium,00-0026158,Joe Flacco
+2015,BUF,offense,Greg Roman,coordinator,0.6628526084063542,1.4268651813548614,0.5909384144109031,default_coordinator,medium,00-0028118,Tyrod Taylor
+2015,CAR,offense,Mike Shula,coordinator,0.6144969492175206,0.4701649128133313,-0.3974557392500329,default_coordinator,medium,00-0027939,Cam Newton
+2015,CHI,offense,Adam Gase,coordinator,0.2899039037311675,0.2457640455641224,-0.0988527380404583,default_coordinator,medium,00-0024226,Jay Cutler
+2015,CIN,offense,Hue Jackson,coordinator,1.6318476162215256,1.454874680733072,1.164722703339076,default_coordinator,medium,00-0027973,Andy Dalton
+2015,CLE,offense,John DeFilippo,coordinator,-0.484102809016815,-0.0708236335283313,-0.4988248249764907,default_coordinator,medium,00-0021206,Josh McCown
+2015,DAL,offense,Scott Linehan,coordinator,-1.3964395542748087,-0.6121936281621894,-0.3985361808151758,default_coordinator,medium,00-0023662,Matt Cassel
+2015,DEN,offense,Rick Dennison,coordinator,-0.7498396615104431,-0.8335667808447331,-0.2480982815780386,default_coordinator,medium,00-0010346,Peyton Manning
+2015,GB,offense,Edgar Bennett,coordinator,0.1079619121644613,0.6623103319785916,-0.7975792759152847,default_coordinator,medium,00-0023459,Aaron Rodgers
+2015,HOU,offense,George Godsey,coordinator,-1.001646787216369,-1.5045379193319557,-1.5648352155858969,default_coordinator,medium,00-0026625,Brian Hoyer
+2015,IND,offense,Rob Chudzinski,coordinator,-1.183423582683553,-1.3410681632114456,-1.392962095871143,default_coordinator,medium,00-0007091,Matt Hasselbeck
+2015,JAX,offense,Greg Olson,coordinator,-0.9549552019134284,0.8495224069401722,-0.2074242916000437,default_coordinator,medium,00-0031407,Blake Bortles
+2015,KC,offense,Andy Reid,HC,0.8954659979373322,0.6189060607896577,0.5726993894907061,model_knowledge_unverified,medium,00-0023436,Alex Smith
+2015,LAC,offense,Frank Reich,coordinator,0.3398069068777758,-1.2407803634447372,0.2190005411328583,default_coordinator,medium,00-0022942,Philip Rivers
+2015,LAR,offense,Rob Boras,coordinator,-1.8671901864447176,0.827125176344217,-0.490584646507277,default_coordinator,medium,00-0029567,Nick Foles
+2015,MIN,offense,Norv Turner,coordinator,0.4756056338445074,0.9590338046154406,-0.3185226878487288,default_coordinator,medium,00-0031237,Teddy Bridgewater
+2015,NE,offense,Josh McDaniels,coordinator,1.321338103723899,-0.5008160062007041,0.5449761335635201,default_coordinator,medium,00-0019596,Tom Brady
+2015,NO,offense,Sean Payton,HC,0.900655204457586,0.3466015756547453,1.0021717501851035,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2015,NYG,offense,Ben McAdoo,coordinator,-0.1023146179152696,-1.148364562438784,-0.0053194437313138,default_coordinator,medium,00-0022803,Eli Manning
+2015,NYJ,offense,Todd Bowles,HC,-0.0874691779546908,0.1178635775265063,-0.330941306521364,default_no_coordinator_headcoach,low,00-0023682,Ryan Fitzpatrick
+2015,OAK,offense,Bill Musgrave,coordinator,-0.1094073702188323,-0.4281798978168782,-0.1453545809827676,default_coordinator,medium,00-0031280,Derek Carr
+2015,PIT,offense,Todd Haley,coordinator,1.363590382633482,1.4923168839054324,2.750498667113505,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2015,SEA,offense,Darrell Bevell,coordinator,2.0307821747991315,1.944139127756609,1.4131686411976816,default_coordinator,medium,00-0029263,Russell Wilson
+2015,SF,offense,Geep Chryst,coordinator,-0.5832476867047843,0.16335949011238,-1.04607062785968,default_coordinator,medium,00-0027948,Blaine Gabbert
+2015,TB,offense,Dirk Koetter,coordinator,-0.0004435744256878,0.0940060718812113,0.6968907366984864,default_coordinator,medium,00-0031503,Jameis Winston
+2015,WSH,offense,Sean McVay,coordinator,0.1145872074742149,-1.4114751722249956,-0.1666604684303969,default_coordinator,medium,00-0029604,Kirk Cousins
+2016,ARI,offense,Bruce Arians,HC,-0.4394741467632818,-0.4885917597340416,-0.2561773256090602,model_knowledge_unverified,medium,00-0021429,Carson Palmer
+2016,ATL,offense,Kyle Shanahan,coordinator,2.1904265070825097,1.8671127819865043,2.353068793331414,default_coordinator,medium,00-0026143,Matt Ryan
+2016,CAR,offense,Mike Shula,coordinator,-0.6663343842818591,-0.3040601663109967,-0.6562975236500301,default_coordinator,medium,00-0027939,Cam Newton
+2016,CHI,offense,Dowell Loggains,coordinator,-0.501017190648271,0.7795923207865793,0.6807492486460631,default_coordinator,medium,00-0030533,Matt Barkley
+2016,CIN,offense,Ken Zampese,coordinator,0.5311848930904619,-0.3318669462847003,0.0195763113504381,default_coordinator,medium,00-0027973,Andy Dalton
+2016,CLE,offense,Hue Jackson,HC,-0.788241717409806,0.4457591837867784,-0.9359126600336544,default_no_coordinator_headcoach,low,00-0033104,Cody Kessler
+2016,DAL,offense,Scott Linehan,coordinator,1.4723505699461632,0.9675276707386412,0.9554452330409202,default_coordinator,medium,00-0033077,Dak Prescott
+2016,DET,offense,Jim Bob Cooter,coordinator,0.4688140512792711,-0.212212452168689,0.0414710794682618,default_coordinator,medium,00-0026498,Matthew Stafford
+2016,GB,offense,Edgar Bennett,coordinator,1.2151032685317718,0.9402793367874274,0.6059492703344405,default_coordinator,medium,00-0023459,Aaron Rodgers
+2016,HOU,offense,George Godsey,coordinator,-1.1943717541935022,-1.043817038779557,-1.633392104589595,default_coordinator,medium,00-0029682,Brock Osweiler
+2016,IND,offense,Rob Chudzinski,coordinator,0.4211269050571872,0.702165810081715,0.5574751359727854,default_coordinator,medium,00-0029668,Andrew Luck
+2016,LAC,offense,Ken Whisenhunt,coordinator,-0.0226932978649982,-0.0980941972628342,0.1260309514183676,default_coordinator,medium,00-0022942,Philip Rivers
+2016,MIA,offense,Clyde Christensen,coordinator,-0.048937604458948,1.2239863840631229,0.7149457342427962,default_coordinator,medium,00-0029701,Ryan Tannehill
+2016,NE,offense,Josh McDaniels,coordinator,1.4064358975039448,-0.0159467739902025,1.027096085574304,default_coordinator,medium,00-0019596,Tom Brady
+2016,NO,offense,Sean Payton,HC,1.159037899078989,0.2255902090881312,1.5187190414015912,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2016,NYG,offense,Mike Sullivan,coordinator,-0.9595854748113288,-1.4695649022396629,-0.6535988253996351,default_coordinator,medium,00-0022803,Eli Manning
+2016,NYJ,offense,Chan Gailey,coordinator,-1.1852038277185033,-0.0068638406426566,-0.5900203395384381,default_coordinator,medium,00-0023682,Ryan Fitzpatrick
+2016,OAK,offense,Bill Musgrave,coordinator,0.6024919629047671,-0.0908621110692229,0.6328231174913184,default_coordinator,medium,00-0031280,Derek Carr
+2016,PHI,offense,Doug Pederson,HC,-0.2528769500498559,-0.0665186201578548,-0.9643295342418856,model_knowledge_unverified,low,00-0032950,Carson Wentz
+2016,PIT,offense,Todd Haley,coordinator,0.8130897437302298,1.2088505909300555,0.5574566558637204,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2016,SEA,offense,Darrell Bevell,coordinator,0.041858287313265,-0.3435656189227411,0.3922015655083022,default_coordinator,medium,00-0029263,Russell Wilson
+2016,SF,offense,Curtis Modkins,coordinator,-0.9496690712062256,0.2014529842995224,-0.8705850326601762,default_coordinator,medium,00-0027974,Colin Kaepernick
+2016,TB,offense,Todd Monken,coordinator,-0.0919000979378781,-1.4708717535997224,-0.5410873522493198,default_coordinator,medium,00-0031503,Jameis Winston
+2016,TEN,offense,Terry Robiskie,coordinator,0.3105234840621108,1.433495266293645,0.3851396774967441,default_coordinator,medium,00-0032268,Marcus Mariota
+2016,WSH,offense,Sean McVay,coordinator,1.4101428991719294,1.682642518223421,2.0232133639583925,default_coordinator,medium,00-0029604,Kirk Cousins
+2017,ARI,offense,Bruce Arians,HC,-1.5674184104776243,-1.1141066291156363,-1.2211466841212633,model_knowledge_unverified,medium,00-0021429,Carson Palmer
+2017,ATL,offense,Steve Sarkisian,coordinator,0.9059641124715336,0.9043257536511546,1.3355462530545372,default_coordinator,medium,00-0026143,Matt Ryan
+2017,BAL,offense,Marty Mornhinweg,coordinator,-0.6269076557081227,-1.2996171357961293,-1.4025513270411747,default_coordinator,medium,00-0026158,Joe Flacco
+2017,BUF,offense,Rick Dennison,coordinator,-0.8321949394467653,-0.0275694636663886,-1.3190059774549814,default_coordinator,medium,00-0028118,Tyrod Taylor
+2017,CAR,offense,Mike Shula,coordinator,-0.101820420092565,0.3139015269908811,-0.5020099636272392,default_coordinator,medium,00-0027939,Cam Newton
+2017,CHI,offense,Dowell Loggains,coordinator,-0.8211394711646203,-0.051554969863521,-0.7612362939918444,default_coordinator,medium,00-0033869,Mitch Trubisky
+2017,CLE,offense,Hue Jackson,HC,-1.6116153465125769,0.751707495214637,-0.8652003591718883,default_no_coordinator_headcoach,low,00-0033899,DeShone Kizer
+2017,DAL,offense,Scott Linehan,coordinator,0.545204423482445,-0.0373161311827399,-0.0060800960196502,default_coordinator,medium,00-0033077,Dak Prescott
+2017,DEN,offense,Mike McCoy,coordinator,-1.6431726360317145,-0.6960559730487712,-1.2973025407534742,default_coordinator,medium,00-0032156,Trevor Siemian
+2017,DET,offense,Jim Bob Cooter,coordinator,-0.0476353981697956,0.7184210907861289,0.6741147239921056,default_coordinator,medium,00-0026498,Matthew Stafford
+2017,GB,offense,Edgar Bennett,coordinator,0.2699202069679416,-0.747391135300521,-0.5950650378688249,default_coordinator,medium,00-0031589,Brett Hundley
+2017,HOU,offense,Bill O'Brien,HC,-0.6322909024508145,-0.0654142354397737,-0.7113691018452946,default_no_coordinator_headcoach,low,00-0031064,Tom Savage
+2017,IND,offense,Rob Chudzinski,coordinator,-0.88348198688784,-0.9800410001345315,-1.296532052666669,default_coordinator,medium,00-0033119,Jacoby Brissett
+2017,JAX,offense,Nathaniel Hackett,coordinator,0.4055583759547717,-0.714185930443344,0.1759483368490905,default_coordinator,medium,00-0031407,Blake Bortles
+2017,LAC,offense,Ken Whisenhunt,coordinator,1.1998936671943885,0.65478990286542,1.4117484478146505,default_coordinator,medium,00-0022942,Philip Rivers
+2017,LAR,offense,Sean McVay,HC,1.2627460225452145,2.062834683126988,1.481422509743193,model_knowledge_unverified,medium,00-0033106,Jared Goff
+2017,MIA,offense,Clyde Christensen,coordinator,-1.3525660363486018,-1.5440173490153413,-0.8939801234815078,default_coordinator,medium,00-0024226,Jay Cutler
+2017,MIN,offense,Pat Shurmur,coordinator,0.6552674328591968,0.2647025765327421,0.3774302969527526,default_coordinator,medium,00-0028986,Case Keenum
+2017,NE,offense,Josh McDaniels,coordinator,1.8251175542349445,-0.1120841577011219,1.187189896188202,default_coordinator,medium,00-0019596,Tom Brady
+2017,NO,offense,Sean Payton,HC,1.7949173475013784,2.363793280504152,2.195537469617393,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2017,NYJ,offense,John Morton,coordinator,-0.7076095768047743,-0.3799688675099591,-0.8004488569201739,default_coordinator,medium,00-0021206,Josh McCown
+2017,OAK,offense,Todd Downing,coordinator,-0.170608712352899,-0.2935489586410265,0.3556840542443181,default_coordinator,medium,00-0031280,Derek Carr
+2017,PHI,offense,Doug Pederson,HC,1.1766278195476303,0.5177860175334783,0.5299378168805595,model_knowledge_unverified,low,00-0032950,Carson Wentz
+2017,PIT,offense,Todd Haley,coordinator,1.2702619037865666,0.6043888376024223,1.1998435119972195,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2017,SEA,offense,Darrell Bevell,coordinator,0.1352403006467197,1.804762174238588,0.0040873614682245,default_coordinator,medium,00-0029263,Russell Wilson
+2017,SF,offense,Kyle Shanahan,coordinator,0.2715245139009979,0.5295668393574708,0.2393938227625173,model_knowledge_unverified,medium,00-0026625,Brian Hoyer
+2017,TB,offense,Todd Monken,coordinator,0.5126490442665831,-1.2551786597375334,0.7335430783526898,default_coordinator,medium,00-0031503,Jameis Winston
+2017,TEN,offense,Terry Robiskie,coordinator,-0.8395560348363215,-0.9275259490680648,-0.3141761286563664,default_coordinator,medium,00-0032268,Marcus Mariota
+2017,WSH,offense,Matt Cavanaugh,coordinator,-0.1248857519640532,0.5543484906278192,0.2269455209212373,default_coordinator,medium,00-0029604,Kirk Cousins
+2018,ARI,offense,Mike McCoy,coordinator,-2.721247889279076,-2.112647455264538,-2.438782467174336,default_coordinator,medium,00-0034343,Josh Rosen
+2018,ATL,offense,Steve Sarkisian,coordinator,0.5423665908069366,-0.1064053049423729,0.8999459298018161,default_coordinator,medium,00-0026143,Matt Ryan
+2018,BUF,offense,Brian Daboll,coordinator,-1.5311366462427438,-0.7706484804245227,-1.6628357265624123,default_coordinator,medium,00-0034857,Josh Allen
+2018,CAR,offense,Norv Turner,coordinator,0.3714113518768472,1.1786348678546144,0.4918213689646394,default_coordinator,medium,00-0027939,Cam Newton
+2018,CHI,offense,Matt Nagy,HC,0.0365515181700293,-1.0351531114265675,-0.4336984588467445,model_knowledge_unverified,medium,00-0033869,Mitch Trubisky
+2018,CIN,offense,Bill Lazor,coordinator,-0.208719889773785,0.6609737803367643,-0.4555221871417083,default_coordinator,medium,00-0027973,Andy Dalton
+2018,DAL,offense,Scott Linehan,coordinator,-0.0065215310922722,-0.2557582255253313,-0.5984309348465413,default_coordinator,medium,00-0033077,Dak Prescott
+2018,DEN,offense,Bill Musgrave,coordinator,-0.3853179844726462,0.275320643639878,-0.1149263177318503,default_coordinator,medium,00-0028986,Case Keenum
+2018,DET,offense,Jim Bob Cooter,coordinator,-0.3106453964142027,-1.2529247600329851,-0.7024901620755492,default_coordinator,medium,00-0026498,Matthew Stafford
+2018,HOU,offense,Bill O'Brien,HC,0.1352345304347784,-0.1064353183053818,-0.0547998471884176,default_no_coordinator_headcoach,low,00-0033537,Deshaun Watson
+2018,IND,offense,Frank Reich,HC,0.5704773338752658,-1.0576533287251195,0.2828640492214355,model_knowledge_unverified,medium,00-0029668,Andrew Luck
+2018,KC,offense,Andy Reid,HC,2.4689106409055395,1.982853508950828,2.411488851645772,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2018,LAC,offense,Ken Whisenhunt,coordinator,1.2853057354923765,1.7002423924896248,1.3807262897855492,default_coordinator,medium,00-0022942,Philip Rivers
+2018,LAR,offense,Sean McVay,coordinator,1.414305920720898,1.9137791556888235,1.598526580712076,model_knowledge_unverified,medium,00-0033106,Jared Goff
+2018,MIA,offense,Dowell Loggains,coordinator,-1.06787217798997,-1.1316646620491588,-0.4488783387315361,default_coordinator,medium,00-0029701,Ryan Tannehill
+2018,MIN,offense,Kevin Stefanski,coordinator,-0.9273699190459428,-1.0474266622461843,-0.188398549774798,default_coordinator,medium,00-0029604,Kirk Cousins
+2018,NE,offense,Josh McDaniels,coordinator,0.780339906981888,0.4437779423786674,0.5885106948086251,default_coordinator,medium,00-0019596,Tom Brady
+2018,NO,offense,Sean Payton,HC,1.2753577069885875,-0.0592261178856949,0.7580804115407466,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2018,NYG,offense,Mike Shula,coordinator,0.2123985716585666,0.1021189574500885,0.2510940177670006,default_coordinator,medium,00-0022803,Eli Manning
+2018,NYJ,offense,Jeremy Bates,coordinator,-1.185446499069187,-0.9380236960910664,-1.1759278635553383,default_coordinator,medium,00-0034869,Sam Darnold
+2018,OAK,offense,Jon Gruden,HC,-0.5861605890979689,-0.2939037156297988,-0.1708641798901417,model_knowledge_unverified,medium,00-0031280,Derek Carr
+2018,PHI,offense,Doug Pederson,HC,0.3101153306001136,-0.5763529563989891,-0.0870198193728242,model_knowledge_unverified,low,00-0032950,Carson Wentz
+2018,PIT,offense,Randy Fichtner,coordinator,1.0367872999980836,-0.2814359523768571,1.0735687975454815,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2018,SEA,offense,Brian Schottenheimer,coordinator,0.8747925927928387,1.6640426751063222,0.2724017130203111,default_coordinator,medium,00-0029263,Russell Wilson
+2018,SF,offense,Kyle Shanahan,coordinator,-0.5627890705502282,1.116939161657292,0.2619360973711585,model_knowledge_unverified,medium,00-0033319,Nick Mullens
+2018,TB,offense,Todd Monken,coordinator,0.3310615866136928,0.5498268430719123,1.3108641377152483,default_coordinator,medium,00-0031503,Jameis Winston
+2018,TEN,offense,Matt LaFleur,coordinator,-0.2335566271848043,0.2136708864275849,-0.4930967815710808,default_coordinator,medium,00-0032268,Marcus Mariota
+2018,WSH,offense,Matt Cavanaugh,coordinator,-0.8845847808138585,-0.3527102905427939,-1.2510480585475483,default_coordinator,medium,00-0023436,Alex Smith
+2019,ARI,offense,Kliff Kingsbury,HC,0.4130062898855088,0.7714345254767826,0.1399456496548848,model_knowledge_unverified,medium,00-0035228,Kyler Murray
+2019,ATL,offense,Dirk Koetter,coordinator,0.4321609355492399,-1.0193493801726423,0.2500273047309891,default_coordinator,medium,00-0026143,Matt Ryan
+2019,BAL,offense,Greg Roman,coordinator,2.628231093753944,2.1730356676388203,1.4864243861785156,default_coordinator,medium,00-0034796,Lamar Jackson
+2019,BUF,offense,Brian Daboll,coordinator,-0.1926689670327359,0.8301470538510171,-0.5632343331907016,default_coordinator,medium,00-0034857,Josh Allen
+2019,CHI,offense,Matt Nagy,HC,-1.007637142626634,-1.964684824300264,-1.6780300423452534,model_knowledge_unverified,medium,00-0033869,Mitch Trubisky
+2019,CIN,offense,Zac Taylor,HC,-0.9530102191327892,-0.64106536427783,-0.947576782087165,model_knowledge_unverified,medium,00-0027973,Andy Dalton
+2019,CLE,offense,Todd Monken,coordinator,-0.0786566557665594,1.0326471998444406,0.4440285485454563,default_coordinator,medium,00-0034855,Baker Mayfield
+2019,DAL,offense,Kellen Moore,coordinator,1.3571244721327274,1.3521659974212206,1.882902069918989,default_coordinator,medium,00-0033077,Dak Prescott
+2019,DEN,offense,Rich Scangarello,coordinator,-0.8602062308353141,-0.5154924960865097,-1.0400713582547845,default_coordinator,medium,00-0026158,Joe Flacco
+2019,DET,offense,Darrell Bevell,coordinator,-0.4231152810203572,0.0652057893675097,0.0163934931590154,default_coordinator,medium,00-0026498,Matthew Stafford
+2019,GB,offense,Matt LaFleur,HC,0.6230434930915631,0.0960394927035083,0.184597364091168,model_knowledge_unverified,medium,00-0023459,Aaron Rodgers
+2019,HOU,offense,Tim Kelly,coordinator,0.8603616018149705,0.2329514665986328,0.454371797494789,default_coordinator,medium,00-0033537,Deshaun Watson
+2019,IND,offense,Frank Reich,HC,-0.1122344081393841,-0.688569349567383,-0.7606518633283013,model_knowledge_unverified,medium,00-0033119,Jacoby Brissett
+2019,JAX,offense,John DeFilippo,coordinator,-0.6432748898156543,-0.1468182173530379,-0.4340823538724938,default_coordinator,medium,00-0035289,Gardner Minshew
+2019,KC,offense,Andy Reid,HC,1.5356100223989082,-0.1755638551636376,1.5181733564885336,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2019,LAC,offense,Shane Steichen,coordinator,0.2523890490044745,-0.2783429367236085,0.7070300406261525,default_coordinator,medium,00-0022942,Philip Rivers
+2019,LAR,offense,Sean McVay,coordinator,0.355052745081601,0.5968130488782316,0.550438470822661,model_knowledge_unverified,medium,00-0033106,Jared Goff
+2019,MIA,offense,Chad O'Shea,coordinator,-0.931475305856226,-1.400043667060735,-1.1106830034974235,default_coordinator,medium,00-0023682,Ryan Fitzpatrick
+2019,MIN,offense,Kevin Stefanski,coordinator,0.4230119293098127,0.7960647346500428,0.5289698263581297,default_coordinator,medium,00-0029604,Kirk Cousins
+2019,NE,offense,Josh McDaniels,coordinator,-0.3286735081654472,-0.2713461523140459,-0.7655957486507456,default_coordinator,medium,00-0019596,Tom Brady
+2019,NO,offense,Sean Payton,HC,1.3283959233014089,0.1526730167958185,1.123640706557968,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2019,NYG,offense,Mike Shula,coordinator,-0.8333005367644523,0.087504857010067,-0.3559057881604353,default_coordinator,medium,00-0035710,Daniel Jones
+2019,NYJ,offense,Adam Gase,HC,-1.8897842954972692,-1.917310922434286,-2.0023480052450844,model_knowledge_unverified,medium,00-0034869,Sam Darnold
+2019,OAK,offense,Jon Gruden,HC,0.5292228395307189,-0.1482487809055576,0.7144596876011302,model_knowledge_unverified,medium,00-0031280,Derek Carr
+2019,PHI,offense,Mike Groh,coordinator,-0.3013746052178201,-0.6406729893643742,-0.7175486901744712,default_coordinator,medium,00-0032950,Carson Wentz
+2019,PIT,offense,Randy Fichtner,coordinator,-1.935316286543956,-1.3461961503483977,-1.606113206963054,default_coordinator,medium,00-0034771,Mason Rudolph
+2019,SEA,offense,Brian Schottenheimer,coordinator,0.816488723626776,1.18521147320102,0.9755443343460504,default_coordinator,medium,00-0029263,Russell Wilson
+2019,SF,offense,Kyle Shanahan,coordinator,0.8052231138326603,1.5782000763037916,1.066073351560139,model_knowledge_unverified,medium,00-0031345,Jimmy Garoppolo
+2019,TB,offense,Byron Leftwich,coordinator,-0.0879377358613815,0.2418863810890516,0.6350062394578146,default_coordinator,medium,00-0031503,Jameis Winston
+2019,TEN,offense,Arthur Smith,coordinator,0.5592866349361822,1.5744139687320629,1.1732536718592623,default_coordinator,medium,00-0029701,Ryan Tannehill
+2020,ARI,offense,Kliff Kingsbury,HC,0.3406390845727575,0.8238891864432155,0.5572487902655698,model_knowledge_unverified,medium,00-0035228,Kyler Murray
+2020,BAL,offense,Greg Roman,coordinator,0.8404868203945088,1.121658072127968,0.3154903211929502,default_coordinator,medium,00-0034796,Lamar Jackson
+2020,BUF,offense,Brian Daboll,coordinator,1.734446467977345,1.4079902828886457,1.5413878283533,default_coordinator,medium,00-0034857,Josh Allen
+2020,CAR,offense,Joe Brady,coordinator,-0.1747654394650607,0.4701773315298403,0.3190923992655254,default_coordinator,medium,00-0031237,Teddy Bridgewater
+2020,CIN,offense,Zac Taylor,HC,-0.9782162851041062,-2.0394962606581784,-1.5679662350989994,model_knowledge_unverified,medium,00-0036442,Joe Burrow
+2020,DAL,offense,Kellen Moore,coordinator,-0.5346356222116664,-0.7293037164177457,-0.3489450334962691,default_coordinator,medium,00-0027973,Andy Dalton
+2020,DEN,offense,Pat Shurmur,coordinator,-1.6795156459913627,0.0439556423346552,-0.8339021403106246,default_coordinator,medium,00-0035704,Drew Lock
+2020,GB,offense,Matt LaFleur,HC,2.026133433568272,0.5066301842541892,1.4476644939531556,model_knowledge_unverified,medium,00-0023459,Aaron Rodgers
+2020,IND,offense,Frank Reich,HC,-0.0437748831774001,0.9549019791229924,0.1314730505614122,model_knowledge_unverified,medium,00-0022942,Philip Rivers
+2020,JAX,offense,Jay Gruden,coordinator,-1.4273541203947795,-0.7091590080283484,-1.3366785413337587,default_coordinator,medium,00-0035289,Gardner Minshew II
+2020,KC,offense,Andy Reid,HC,1.842617785471668,1.4520533891008192,1.5962637758279898,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2020,LAC,offense,Shane Steichen,coordinator,-0.2269152880241496,-1.173594739921174,-0.6370007382158441,default_coordinator,medium,00-0036355,Justin Herbert
+2020,LAR,offense,Sean McVay,HC,-0.3510214025713405,0.0390766203688175,0.2760036721804209,model_knowledge_unverified,medium,00-0033106,Jared Goff
+2020,MIA,offense,Chan Gailey,coordinator,-0.4292938329316114,-1.2314868355886617,-0.5998705994318755,default_coordinator,medium,00-0036212,Tua Tagovailoa
+2020,MIN,offense,Gary Kubiak,coordinator,0.489216848249933,1.780403406370022,0.9073269407306054,default_coordinator,medium,00-0029604,Kirk Cousins
+2020,NE,offense,Josh McDaniels,coordinator,-0.3792079542980257,0.3457622891957757,-0.4814522705829021,default_coordinator,medium,00-0027939,Cam Newton
+2020,NO,offense,Sean Payton,HC,0.6977128596248594,0.17833021874219,0.4975310719884833,model_knowledge_unverified,medium,00-0020531,Drew Brees
+2020,NYG,offense,Jason Garrett,coordinator,-0.6235092080695851,-0.786310348458895,-0.8898758650316902,default_coordinator,medium,00-0035710,Daniel Jones
+2020,OAK,offense,Jon Gruden,HC,0.3078764751732215,0.9559925555114396,0.8537347305336217,model_knowledge_unverified,medium,00-0031280,Derek Carr
+2020,PHI,offense,Doug Pederson,HC,-1.092063274848878,-0.6234004432132619,-1.0255407248455477,default_no_coordinator_headcoach,low,00-0032950,Carson Wentz
+2020,PIT,offense,Randy Fichtner,coordinator,-0.5449804516762028,-1.8322791959075515,-1.2805777970928185,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2020,SEA,offense,Brian Schottenheimer,coordinator,1.0712042402040218,0.4393021492572361,0.8285429985405487,default_coordinator,medium,00-0029263,Russell Wilson
+2020,SF,offense,Kyle Shanahan,coordinator,0.1431147372525052,0.2873945200889955,0.5633012458437104,model_knowledge_unverified,medium,00-0033319,Nick Mullens
+2020,TB,offense,Byron Leftwich,coordinator,1.11006002721466,0.2684998411584859,1.3266933748149343,default_coordinator,medium,00-0019596,Tom Brady
+2020,TEN,offense,Arthur Smith,coordinator,1.3408251064470025,0.4229514542255415,0.7630614919321925,default_coordinator,medium,00-0029701,Ryan Tannehill
+2020,WSH,offense,Scott Turner,coordinator,-1.233436100796717,-1.2438875956250035,-1.629342237839124,default_coordinator,medium,00-0035232,Dwayne Haskins
+2021,ARI,offense,Kliff Kingsbury,HC,0.8388408823803667,0.8105164864098526,0.6039252711512384,model_knowledge_unverified,medium,00-0035228,Kyler Murray
+2021,ATL,offense,Arthur Smith,HC,-0.9973582769793384,-0.8780528982418253,-0.4879371426853114,model_knowledge_unverified,medium,00-0026143,Matt Ryan
+2021,BAL,offense,Greg Roman,coordinator,0.0217007755832599,0.5526159165755073,0.05783715472677,default_coordinator,medium,00-0034796,Lamar Jackson
+2021,BUF,offense,Brian Daboll,coordinator,1.0259417300932188,-0.2316962349797315,0.4069715608795082,default_coordinator,medium,00-0034857,Josh Allen
+2021,CIN,offense,Zac Taylor,HC,0.3520686142994955,0.1153151805693619,0.8299255364684425,model_knowledge_unverified,medium,00-0036442,Joe Burrow
+2021,CLE,offense,Kevin Stefanski,HC,0.0124177358760066,1.5798897237699845,-0.046818183271511,model_knowledge_unverified,medium,00-0034855,Baker Mayfield
+2021,DAL,offense,Kellen Moore,coordinator,1.1210739617580734,0.6556943171527007,1.3808686355151114,default_coordinator,medium,00-0033077,Dak Prescott
+2021,DEN,offense,Pat Shurmur,coordinator,-0.1706679579686387,0.0217197983480596,-0.3200629755445776,default_coordinator,medium,00-0031237,Teddy Bridgewater
+2021,DET,offense,Anthony Lynn,coordinator,-0.7781132679453006,0.2161738618485316,-0.4741926177998686,default_coordinator,medium,00-0033106,Jared Goff
+2021,GB,offense,Matt LaFleur,HC,1.563887321747404,-0.1557288906898346,0.8738616859045241,model_knowledge_unverified,medium,00-0023459,Aaron Rodgers
+2021,HOU,offense,Tim Kelly,coordinator,-1.7072763616430282,-1.8473624534730744,-1.568303168523649,default_coordinator,medium,00-0036898,Davis Mills
+2021,IND,offense,Frank Reich,HC,0.488302442788049,0.7337885970958804,0.2966048579880881,model_knowledge_unverified,medium,00-0032950,Carson Wentz
+2021,KC,offense,Andy Reid,HC,1.703930970261745,0.4266703714197571,1.4344216308078086,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2021,LAC,offense,Joe Lombardi,coordinator,1.0253563316146257,-0.4474190739721495,0.9001235232592012,default_coordinator,medium,00-0036355,Justin Herbert
+2021,LAR,offense,Sean McVay,HC,0.7929521639382902,0.8020887467645844,1.1877353045211,model_knowledge_unverified,medium,00-0026498,Matthew Stafford
+2021,MIA,offense,Brian Flores,HC,-0.7914231949095614,-1.814899190521368,-1.4238084035218177,default_no_coordinator_headcoach,low,00-0036212,Tua Tagovailoa
+2021,MIN,offense,Klint Kubiak,coordinator,0.1621096152876513,0.910664254521708,0.6094115376422604,default_coordinator,medium,00-0029604,Kirk Cousins
+2021,NE,offense,Josh McDaniels,coordinator,0.7555748827194126,1.2246516345041296,0.6507856057801716,default_coordinator,medium,00-0036972,Mac Jones
+2021,NO,offense,Sean Payton,HC,-0.8925197506030731,-0.9944010927636596,-0.9792923164788114,model_knowledge_unverified,medium,00-0031503,Jameis Winston
+2021,NYJ,offense,Mike LaFleur,coordinator,-0.8817611877615735,-0.1585764989051374,-0.7846406920988834,default_coordinator,medium,00-0037013,Zach Wilson
+2021,PHI,offense,Shane Steichen,coordinator,0.7450294942569481,1.485370146287432,0.5012987400878176,default_coordinator,medium,00-0036389,Jalen Hurts
+2021,PIT,offense,Matt Canada,coordinator,-1.0077140234404376,-1.2188401345192912,-1.30502674122354,default_coordinator,medium,00-0022924,Ben Roethlisberger
+2021,SEA,offense,Shane Waldron,coordinator,0.4198166390717965,1.3648205138943883,0.7603849359736702,default_coordinator,medium,00-0029263,Russell Wilson
+2021,SF,offense,Kyle Shanahan,HC,0.8650352966319593,1.6779289969549207,1.449202286986066,model_knowledge_unverified,medium,00-0031345,Jimmy Garoppolo
+2021,TB,offense,Byron Leftwich,coordinator,1.7583559695382494,0.3438718378958065,1.6321801215114204,default_coordinator,medium,00-0019596,Tom Brady
+2021,TEN,offense,Todd Downing,coordinator,0.0742686793508926,-0.8451527897521027,-0.7749779453118956,default_coordinator,medium,00-0029701,Ryan Tannehill
+2021,WSH,offense,Scott Turner,coordinator,-0.5292151040888539,0.0890523959106174,-0.4231634119162803,default_coordinator,medium,00-0031800,Taylor Heinicke
+2022,ARI,offense,Kliff Kingsbury,HC,-0.957367538211058,-1.4285598025551045,-1.3642721147798154,model_knowledge_unverified,medium,00-0035228,Kyler Murray
+2022,ATL,offense,Arthur Smith,HC,0.3310721403456215,0.925189962403834,0.0682148089205177,model_knowledge_unverified,medium,00-0032268,Marcus Mariota
+2022,BAL,offense,Greg Roman,coordinator,0.3159000418831217,1.439651864913002,0.6237047097120304,default_coordinator,medium,00-0034796,Lamar Jackson
+2022,BUF,offense,Ken Dorsey,coordinator,1.552953710130908,1.2011433436614187,1.9304905064277091,default_coordinator,medium,00-0034857,Josh Allen
+2022,CHI,offense,Luke Getsy,coordinator,-0.3987483092454137,1.3918810804378623,-0.4815216019062828,default_coordinator,medium,00-0036945,Justin Fields
+2022,CIN,offense,Zac Taylor,HC,1.2116093853991596,-0.6624495736189375,0.6690118309590269,model_knowledge_unverified,medium,00-0036442,Joe Burrow
+2022,CLE,offense,Kevin Stefanski,HC,0.526003450656456,1.163614633427526,0.1534310689771979,model_knowledge_unverified,medium,00-0033119,Jacoby Brissett
+2022,DAL,offense,Kellen Moore,coordinator,0.1472757424600427,-0.0388274380467497,-0.2432649521287422,default_coordinator,medium,00-0033077,Dak Prescott
+2022,DET,offense,Ben Johnson,coordinator,0.941799236722278,-0.0430308386132178,0.9672156531463718,default_coordinator,medium,00-0033106,Jared Goff
+2022,GB,offense,Matt LaFleur,HC,0.068055441680574,0.339705357215353,-0.0010574328146047,model_knowledge_unverified,medium,00-0023459,Aaron Rodgers
+2022,HOU,offense,Pep Hamilton,coordinator,-2.37783401728165,-1.1662217738468794,-1.6479111567607752,default_coordinator,medium,00-0036898,Davis Mills
+2022,JAX,offense,Press Taylor,coordinator,0.6823847174460789,0.1763181685243554,0.4999447862936991,default_coordinator,medium,00-0036971,Trevor Lawrence
+2022,KC,offense,Andy Reid,HC,2.387701880633718,0.8604223267132244,2.2409012998291247,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2022,LAC,offense,Joe Lombardi,coordinator,-0.0169896418058522,-1.4361106819695824,-0.197635157743503,default_coordinator,medium,00-0036355,Justin Herbert
+2022,LAR,offense,Sean McVay,HC,-0.9101624419851796,-1.174087448074684,-1.3086929648508847,model_knowledge_unverified,medium,00-0026498,Matthew Stafford
+2022,MIA,offense,Mike McDaniel,HC,0.9096546504216658,0.8288419134252667,1.8342986569564443,model_knowledge_unverified,medium,00-0036212,Tua Tagovailoa
+2022,MIN,offense,Kevin O'Connell,HC,-0.1024954897287974,-0.9042923977860232,-0.034078880766171,model_knowledge_unverified,medium,00-0029604,Kirk Cousins
+2022,NE,offense,Bill Belichick,HC,-0.600208525034136,0.855059026626112,0.0724655498615817,default_no_coordinator_headcoach,low,00-0036972,Mac Jones
+2022,NO,offense,Pete Carmichael Jr.,coordinator,-0.4800344825679139,-0.4111099785581473,0.3761794951499181,default_coordinator,medium,00-0027973,Andy Dalton
+2022,NYG,offense,Mike Kafka,coordinator,0.508233536399604,-0.5247898298830863,-0.6486009740830676,default_coordinator,medium,00-0035710,Daniel Jones
+2022,NYJ,offense,Mike LaFleur,coordinator,-0.9415106750981894,-0.6418234155816881,-0.8520154729416802,default_coordinator,medium,00-0037013,Zach Wilson
+2022,OAK,offense,Josh McDaniels,HC,0.2154559420435727,0.8714629851306119,0.7188330203801505,model_knowledge_unverified,medium,00-0031280,Derek Carr
+2022,PHI,offense,Shane Steichen,coordinator,1.3343552087727133,1.335197216106842,0.8029244890652918,default_coordinator,medium,00-0036389,Jalen Hurts
+2022,PIT,offense,Matt Canada,coordinator,0.4388939208565303,-0.3914212438268926,-0.694436855525937,default_coordinator,medium,00-0038102,Kenny Pickett
+2022,SEA,offense,Shane Waldron,coordinator,-0.0112172115306172,0.7878444680735973,0.7503404292300085,default_coordinator,medium,00-0030565,Geno Smith
+2022,SF,offense,Kyle Shanahan,coordinator,0.9493264434320676,1.170338065945425,1.1848393149511287,model_knowledge_unverified,medium,00-0031345,Jimmy Garoppolo
+2022,TB,offense,Byron Leftwich,coordinator,-0.3600839113600026,-1.8705853200372808,-0.6512080613631437,default_coordinator,medium,00-0019596,Tom Brady
+2022,TEN,offense,Todd Downing,coordinator,-0.6054168332756459,-0.4396221951409548,-0.7995471591627437,default_coordinator,medium,00-0029701,Ryan Tannehill
+2022,WSH,offense,Scott Turner,coordinator,-1.0204974952640138,-1.3964909678930173,-1.4771983382183356,default_coordinator,medium,00-0031800,Taylor Heinicke
+2023,ARI,offense,Drew Petzing,coordinator,-0.3172377069516197,0.4786557788988546,-0.2415002049247812,default_coordinator,medium,00-0033949,Joshua Dobbs
+2023,ATL,offense,Arthur Smith,HC,-0.8682652161380627,0.0982237436644016,-0.2657043862287621,model_knowledge_unverified,medium,00-0038122,Desmond Ridder
+2023,BAL,offense,Todd Monken,coordinator,0.9999787394642808,0.9876678833503708,0.8845142245748943,default_coordinator,medium,00-0034796,Lamar Jackson
+2023,CHI,offense,Luke Getsy,coordinator,-0.2736054404682679,0.864380356099168,-0.5850482236469783,default_coordinator,medium,00-0036945,Justin Fields
+2023,CIN,offense,Zac Taylor,HC,0.5458355691625031,-0.3562729446153671,0.1927701953604085,model_knowledge_unverified,medium,00-0036442,Joe Burrow
+2023,CLE,offense,Kevin Stefanski,HC,-1.0805521183763964,-0.3431883321452121,-0.8785002844122922,model_knowledge_unverified,medium,00-0033537,Deshaun Watson
+2023,DAL,offense,Mike McCarthy,HC,1.157620821824429,0.1817686461103614,0.6367615621817132,model_knowledge_unverified,medium,00-0033077,Dak Prescott
+2023,DEN,offense,Sean Payton,HC,-0.1951011628399939,0.1928948517512325,-0.2918166313013019,model_knowledge_unverified,medium,00-0029263,Russell Wilson
+2023,DET,offense,Ben Johnson,coordinator,1.0192671056058522,1.2793537816194576,1.297600056744778,default_coordinator,medium,00-0033106,Jared Goff
+2023,GB,offense,Matt LaFleur,HC,1.0269136689850713,0.1941869488541607,0.4833976485624034,model_knowledge_unverified,medium,00-0036264,Jordan Love
+2023,HOU,offense,Bobby Slowik,coordinator,0.0771532107612455,0.6422158307079632,0.095252677543058,default_coordinator,medium,00-0039163,C.J. Stroud
+2023,IND,offense,Shane Steichen,HC,0.1455760922444207,-0.164315915506057,0.0193586034417862,model_knowledge_unverified,medium,00-0035289,Gardner Minshew
+2023,JAX,offense,Press Taylor,coordinator,-0.2799555844760691,-0.7553561463454855,-0.0069713136470407,default_coordinator,medium,00-0036971,Trevor Lawrence
+2023,KC,offense,Andy Reid,HC,0.4025481920138002,-0.2497174327819125,0.4324072268879588,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2023,LAR,offense,Sean McVay,HC,0.7097385358218397,0.080715879255598,0.461059427107644,model_knowledge_unverified,medium,00-0026498,Matthew Stafford
+2023,MIA,offense,Mike McDaniel,HC,1.4522203150849866,1.4661173390908646,2.5309919171071047,model_knowledge_unverified,medium,00-0036212,Tua Tagovailoa
+2023,MIN,offense,Kevin O'Connell,HC,-0.2044112582306624,0.4398944405891142,0.2529433912570308,model_knowledge_unverified,medium,00-0029604,Kirk Cousins
+2023,NE,offense,Bill O'Brien,coordinator,-1.6642231698394792,-2.192709895808714,-1.2870579245418614,default_coordinator,medium,00-0036972,Mac Jones
+2023,NO,offense,Pete Carmichael Jr.,coordinator,0.1014864291935873,-0.4858686335619331,-0.1622747991122699,default_coordinator,medium,00-0031280,Derek Carr
+2023,NYG,offense,Mike Kafka,coordinator,-1.620022636905679,-0.4227012292956323,-1.3896721692852525,default_coordinator,medium,00-0038476,Tommy DeVito
+2023,NYJ,offense,Nathaniel Hackett,coordinator,-2.3073276381898693,-1.4261909101931216,-1.6970616911640275,default_coordinator,medium,00-0037013,Zach Wilson
+2023,PHI,offense,Brian Johnson,coordinator,0.9111226101259072,0.0547535632491218,0.3020391184643829,default_coordinator,medium,00-0036389,Jalen Hurts
+2023,SEA,offense,Shane Waldron,coordinator,0.4895477016204833,0.6320025032344886,0.4813610279990591,default_coordinator,medium,00-0030565,Geno Smith
+2023,SF,offense,Kyle Shanahan,coordinator,2.105462435141726,3.111849609711953,2.5302238112553828,model_knowledge_unverified,medium,00-0037834,Brock Purdy
+2023,TB,offense,Dave Canales,coordinator,0.0941334630063528,-0.1385410570593931,-0.2407513872071851,default_coordinator,medium,00-0034855,Baker Mayfield
+2023,TEN,offense,Tim Kelly,coordinator,-0.1875472324960391,0.0441480328899316,-0.7348186397274412,default_coordinator,medium,00-0039152,Will Levis
+2023,WSH,offense,Eric Bieniemy,coordinator,-0.818199362061448,-0.287387988108105,-0.5002648330903267,default_coordinator,medium,00-0037077,Sam Howell
+2024,ARI,offense,Drew Petzing,coordinator,0.6494505279284183,1.0250527121676964,0.8526733938648288,default_coordinator,medium,00-0035228,Kyler Murray
+2024,ATL,offense,Zac Robinson,coordinator,0.2205867856112761,0.1346730673309137,0.6006749800916266,default_coordinator,medium,00-0029604,Kirk Cousins
+2024,BAL,offense,Todd Monken,coordinator,2.2039694457982746,2.108595746257258,2.643304156341712,default_coordinator,medium,00-0034796,Lamar Jackson
+2024,BUF,offense,Joe Brady,coordinator,1.711359500601193,0.9753369786359491,1.2032090416313204,default_coordinator,medium,00-0034857,Josh Allen
+2024,CAR,offense,Dave Canales,HC,-0.6700722527850894,-0.8844977174452673,-0.7075651475319201,model_knowledge_unverified,medium,00-0027973,Andy Dalton
+2024,CIN,offense,Zac Taylor,HC,0.9172435527304108,-0.9541691103403682,0.6516567895995403,model_knowledge_unverified,medium,00-0036442,Joe Burrow
+2024,DAL,offense,Mike McCarthy,HC,-1.1870955893286008,-1.1443175131289478,-0.7339772020024498,model_knowledge_unverified,medium,00-0033662,Cooper Rush
+2024,DEN,offense,Sean Payton,HC,0.0466781174109286,0.102477275124591,-0.364522420627585,model_knowledge_unverified,medium,00-0039732,Bo Nix
+2024,DET,offense,Ben Johnson,coordinator,1.741227824233481,1.2657400251555255,1.543629538041353,default_coordinator,medium,00-0033106,Jared Goff
+2024,GB,offense,Matt LaFleur,HC,0.9054128024090946,1.7175151507420543,1.2483025089996167,model_knowledge_unverified,medium,00-0036264,Jordan Love
+2024,HOU,offense,Bobby Slowik,coordinator,-0.7443437318728013,-0.388433739814075,-0.6661864210255454,default_coordinator,medium,00-0039163,C.J. Stroud
+2024,IND,offense,Shane Steichen,HC,-0.6717437468563469,0.7015415032115107,0.1005003881307471,model_knowledge_unverified,medium,00-0026158,Joe Flacco
+2024,JAX,offense,Press Taylor,coordinator,-0.0757126366740394,0.3722366652716941,-0.2253074098502016,default_coordinator,medium,00-0036971,Trevor Lawrence
+2024,KC,offense,Andy Reid,HC,0.6716108745995871,-1.7123046529273187,-0.5068292333082004,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2024,LAC,offense,Greg Roman,coordinator,0.2490075004669809,0.136853914848941,0.1152756524696294,default_coordinator,medium,00-0036355,Justin Herbert
+2024,LAR,offense,Sean McVay,HC,0.2922398381213072,-0.3667014607079063,0.2184553389062185,model_knowledge_unverified,medium,00-0026498,Matthew Stafford
+2024,MIA,offense,Mike McDaniel,HC,-0.5955778800626566,-0.8734326034704883,-0.5263689860241448,model_knowledge_unverified,medium,00-0036212,Tua Tagovailoa
+2024,MIN,offense,Kevin O'Connell,HC,0.1140832518712638,0.583737173345877,0.4305735875721702,model_knowledge_unverified,medium,00-0034869,Sam Darnold
+2024,NE,offense,Alex Van Pelt,coordinator,-0.9758058550049236,-0.4041496227254348,-1.050409358490232,default_coordinator,medium,00-0039851,Drake Maye
+2024,NYG,offense,Brian Daboll,HC,-1.1856413115866975,-1.374606389968401,-1.3635722292201058,model_knowledge_unverified,low,00-0035710,Daniel Jones
+2024,PHI,offense,Kellen Moore,coordinator,0.7258593948346556,0.502298727074837,0.1065628384906119,default_coordinator,medium,00-0036389,Jalen Hurts
+2024,PIT,offense,Arthur Smith,coordinator,-0.4233914034295654,0.5645745737286173,-0.7162385350124008,default_coordinator,medium,00-0029263,Russell Wilson
+2024,SEA,offense,Ryan Grubb,coordinator,-0.3223026520584596,0.1553608479938644,0.2154169922011474,default_coordinator,medium,00-0030565,Geno Smith
+2024,SF,offense,Kyle Shanahan,coordinator,0.6886621769529886,1.5671692303980969,1.5521494556462732,model_knowledge_unverified,medium,00-0037834,Brock Purdy
+2024,TB,offense,Liam Coen,coordinator,1.0522439837788868,1.1118488725669793,1.222581539456936,default_coordinator,medium,00-0034855,Baker Mayfield
+2024,TEN,offense,Brian Callahan,HC,-1.273833203889987,-0.4378327883179608,-0.9195692627078929,model_knowledge_unverified,low,00-0034771,Mason Rudolph
+2024,WSH,offense,Kliff Kingsbury,coordinator,1.1902882292848798,0.0410463010277504,0.3892736906183143,default_coordinator,medium,00-0039910,Jayden Daniels
+2025,ARI,offense,Drew Petzing,coordinator,-0.1169758966584812,-0.627314936333669,-0.3110390014581631,default_coordinator,medium,00-0033119,Jacoby Brissett
+2025,ATL,offense,Zac Robinson,coordinator,-0.3701837294490813,0.2531757298303985,0.1535200162846077,default_coordinator,medium,00-0039917,Michael Penix
+2025,BAL,offense,Todd Monken,coordinator,0.3369223856148551,1.5046435474645856,0.979653564786398,default_coordinator,medium,00-0034796,Lamar Jackson
+2025,BUF,offense,Joe Brady,coordinator,1.2381042460336478,1.5123055497596458,1.0334374034575624,default_coordinator,medium,00-0034857,Josh Allen
+2025,CAR,offense,Dave Canales,HC,-0.5757799291318842,-0.4583480160586633,-0.6284012119619954,model_knowledge_unverified,medium,00-0039150,Bryce Young
+2025,CHI,offense,Ben Johnson,HC,0.7841663744975083,1.459385814713172,0.7692802474547076,model_knowledge_unverified,medium,00-0039918,Caleb Williams
+2025,CIN,offense,Zac Taylor,HC,-0.1279978335603829,-1.1310628964954614,-0.078210936034231,model_knowledge_unverified,medium,00-0036442,Joe Burrow
+2025,CLE,offense,Tommy Rees,coordinator,-2.5187693284960284,-1.7667246758472093,-2.342469731132738,default_coordinator,medium,00-0040668,Shedeur Sanders
+2025,DAL,offense,Brian Schottenheimer,HC,0.902628489313631,-0.3797686193701211,1.2125688159965466,model_knowledge_unverified,low,00-0033077,Dak Prescott
+2025,DEN,offense,Sean Payton,HC,0.3246579173938371,-0.4436510551481099,-0.1036268600480519,model_knowledge_unverified,medium,00-0039732,Bo Nix
+2025,DET,offense,Dan Campbell,HC,0.7668923673451306,0.4846464678148217,1.083217674041196,model_knowledge_unverified,low,00-0033106,Jared Goff
+2025,GB,offense,Matt LaFleur,HC,1.0932929834608829,1.0325457559758366,0.414840164456042,model_knowledge_unverified,medium,00-0036264,Jordan Love
+2025,HOU,offense,Nick Caley,coordinator,-0.030206892109217,-0.456605348547714,-0.3496537718876423,default_coordinator,medium,00-0039163,C.J. Stroud
+2025,IND,offense,Shane Steichen,HC,1.0400406766053816,0.1134251237187575,1.054909433618785,model_knowledge_unverified,medium,00-0035710,Daniel Jones
+2025,JAX,offense,Liam Coen,HC,0.3715856929905832,0.4140467636709112,0.0293965421381893,model_knowledge_unverified,low,00-0036971,Trevor Lawrence
+2025,KC,offense,Andy Reid,HC,0.4272122446090184,-0.2941241224575404,-0.2913751820718269,model_knowledge_unverified,medium,00-0033873,Patrick Mahomes
+2025,LAC,offense,Greg Roman,coordinator,-0.2174398349912263,-0.2075157790526084,-0.0840386176715805,default_coordinator,medium,00-0036355,Justin Herbert
+2025,LAR,offense,Sean McVay,HC,1.7512611348781593,1.8762228343557197,2.03157203429204,model_knowledge_unverified,medium,00-0026498,Matthew Stafford
+2025,MIA,offense,Mike McDaniel,HC,-0.5117283950836129,0.1994530235684545,-0.1792778159029361,model_knowledge_unverified,medium,00-0036212,Tua Tagovailoa
+2025,MIN,offense,Kevin O'Connell,HC,-1.4001531166963002,-0.138774065216592,-0.9546591937295656,model_knowledge_unverified,medium,00-0039923,J.J. McCarthy
+2025,NE,offense,Josh McDaniels,coordinator,1.2096916088793574,1.1323922748961837,1.4617465964874057,default_coordinator,medium,00-0039851,Drake Maye
+2025,NO,offense,Doug Nussmeier,coordinator,-1.2875646970750694,-2.373474075419087,-0.9514397669281368,default_coordinator,medium,00-0040743,Tyler Shough
+2025,NYJ,offense,Tanner Engstrand,coordinator,-1.6170472452954927,-1.326850954027289,-2.0239167166327148,default_coordinator,medium,00-0028118,Tyrod Taylor
+2025,OAK,offense,Greg Olson,coordinator,-2.1644867942672925,-1.5351438617368396,-1.7430742656011378,default_coordinator,medium,00-0030565,Geno Smith
+2025,PHI,offense,Kevin Patullo,coordinator,-0.0469291965342311,-0.1853771884338599,-0.3753451822743057,default_coordinator,medium,00-0036389,Jalen Hurts
+2025,PIT,offense,Arthur Smith,coordinator,0.183103296691245,-0.8400844797909233,-0.2365799657131937,default_coordinator,medium,00-0023459,Aaron Rodgers
+2025,SEA,offense,Klint Kubiak,coordinator,0.4214781406101738,1.4732323121846755,1.231908403297495,default_coordinator,medium,00-0034869,Sam Darnold
+2025,SF,offense,Kyle Shanahan,HC,1.2061179489656568,-0.1337438996952271,0.5976932720854202,model_knowledge_unverified,medium,00-0037834,Brock Purdy
+2025,TB,offense,Josh Grizzard,coordinator,0.02309813875135,0.2288903442410182,-0.2543337804981784,default_coordinator,medium,00-0034855,Baker Mayfield
+2025,WSH,offense,Kliff Kingsbury,coordinator,0.0839415503085889,0.3912669225042466,0.402782916005948,default_coordinator,medium,00-0039910,Jayden Daniels

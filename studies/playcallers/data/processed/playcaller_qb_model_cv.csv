@@ -1,0 +1,4 @@
+model,lam_caller,lam_qb,cv_mse
+crossed_caller_qb,20.0,2.0,0.7632180569588997
+caller_only,5.0,,0.8533926191098654
+qb_only,,2.0,0.7638172240127565
